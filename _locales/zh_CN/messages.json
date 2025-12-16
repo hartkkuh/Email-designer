@@ -161,9 +161,6 @@
   "tplNewsletter": {
     "message": "新闻通讯"
   },
-  "tplAnnouncement": {
-    "message": "公告"
-  },
   "tplInvitation": {
     "message": "邀请"
   },
@@ -176,17 +173,38 @@
   "tplWelcome": {
     "message": "欢迎"
   },
-  "tplThankyou": {
-    "message": "感谢"
-  },
   "tplReminder": {
     "message": "提醒"
   },
-  "tplFeedback": {
-    "message": "反馈"
-  },
   "tplAlert": {
     "message": "警报"
+  },
+  "tplBirthday": {
+    "message": "生日"
+  },
+  "tplJob": {
+    "message": "职位招聘"
+  },
+  "tplSurvey": {
+    "message": "问卷调查"
+  },
+  "tplReceipt": {
+    "message": "收据"
+  },
+  "tplSocial": {
+    "message": "社交媒体"
+  },
+  "tplWebinar": {
+    "message": "网络研讨会"
+  },
+  "tplEvent": {
+    "message": "活动"
+  },
+  "tplShipping": {
+    "message": "物流更新"
+  },
+  "tplReferral": {
+    "message": "推荐好友"
   },
   "saveTemplate": {
     "message": "保存模板"

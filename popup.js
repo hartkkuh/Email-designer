@@ -193,17 +193,6 @@ const templates = {
     <p style="color: #6b7280; font-size: 13px; margin: 0;">© 2024 השם שלכם. כל הזכויות שמורות.</p>
   </div>
 </div>`,
-  announcement: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 50px 30px; text-align: center; border-radius: 12px;">
-    <div style="background: white; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
-      <span style="font-size: 40px;">✓</span>
-    </div>
-    <h1 style="color: white; margin: 0; font-size: 32px;">הודעה חשובה!</h1>
-    <p style="color: rgba(255,255,255,0.95); font-size: 18px; margin: 20px 0 0; line-height: 1.6;">כאן תוכלו לכתוב את ההודעה החשובה שלכם. תוכן זה יבלוט ויתפוס את תשומת הלב של הקוראים.</p>
-    <a href="#" style="display: inline-block; background: white; color: #059669; padding: 14px 32px; border-radius: 8px; text-decoration: none; margin-top: 25px; font-weight: 600;">לפרטים נוספים</a>
-  </div>
-</div>`,
   invitation: `
 <div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
   <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 40px 30px; text-align: center; border-radius: 12px; border: 2px solid #f59e0b;">
@@ -271,20 +260,6 @@ const templates = {
     <p style="color: #6b7280; font-size: 13px; margin: 0;">יש שאלות? אנחנו כאן בשבילכם!</p>
   </div>
 </div>`,
-  thankyou: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); padding: 50px 30px; text-align: center; border-radius: 12px;">
-    <div style="background: white; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
-      <span style="font-size: 40px;">❤️</span>
-    </div>
-    <h1 style="color: white; margin: 0; font-size: 32px;">תודה רבה!</h1>
-    <p style="color: rgba(255,255,255,0.95); font-size: 18px; margin: 20px 0 0; line-height: 1.6;">אנחנו מעריכים את האמון שלכם בנו. ההזמנה שלכם התקבלה בהצלחה!</p>
-    <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 8px; margin: 25px 0;">
-      <p style="color: white; font-size: 14px; margin: 0;">מספר הזמנה: <strong>#12345</strong></p>
-    </div>
-    <a href="#" style="display: inline-block; background: white; color: #0d9488; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">צפייה בהזמנה</a>
-  </div>
-</div>`,
   reminder: `
 <div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
   <div style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 30px; border-radius: 12px 12px 0 0;">
@@ -305,29 +280,6 @@ const templates = {
     </div>
   </div>
 </div>`,
-  feedback: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <h1 style="color: white; margin: 0; font-size: 28px;">נשמח לשמוע מכם!</h1>
-    <p style="color: rgba(255,255,255,0.9); margin: 15px 0 0;">דעתכם חשובה לנו</p>
-  </div>
-  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; text-align: center;">איך הייתה החוויה שלכם?</p>
-    <div style="text-align: center; margin: 25px 0; font-size: 40px;">
-      <span style="cursor: pointer; margin: 0 5px;">😞</span>
-      <span style="cursor: pointer; margin: 0 5px;">😐</span>
-      <span style="cursor: pointer; margin: 0 5px;">🙂</span>
-      <span style="cursor: pointer; margin: 0 5px;">😊</span>
-      <span style="cursor: pointer; margin: 0 5px;">🤩</span>
-    </div>
-    <div style="text-align: center;">
-      <a href="#" style="display: inline-block; background: #06b6d4; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">שלחו משוב</a>
-    </div>
-  </div>
-  <div style="background: #f9fafb; padding: 15px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #6b7280; font-size: 13px; margin: 0;">המשוב שלכם עוזר לנו להשתפר</p>
-  </div>
-</div>`,
   alert: `
 <div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
   <div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 30px; border-radius: 12px;">
@@ -340,6 +292,259 @@ const templates = {
       </div>
       <a href="#" style="display: inline-block; background: white; color: #dc2626; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">לפעולה מיידית</a>
     </div>
+  </div>
+</div>`,
+  birthday: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #f472b6 0%, #db2777 50%, #9333ea 100%); padding: 50px 30px; text-align: center; border-radius: 12px;">
+    <div style="font-size: 70px; margin-bottom: 15px;">🎂</div>
+    <h1 style="color: white; margin: 0; font-size: 36px;">יום הולדת שמח!</h1>
+    <p style="color: rgba(255,255,255,0.95); font-size: 20px; margin: 20px 0; line-height: 1.6;">מאחלים לך יום מלא באושר, שמחה והפתעות נעימות!</p>
+    <div style="font-size: 40px; margin: 20px 0;">🎈🎁🎉</div>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 0;">שיהיה לך יום נפלא!</p>
+  </div>
+</div>`,
+  job: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
+    <h1 style="color: white; margin: 0; font-size: 28px;">🚀 הזדמנות קריירה מרגשת!</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">אנחנו מחפשים אותך!</p>
+  </div>
+  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
+    <h2 style="color: #0369a1; font-size: 22px; margin-top: 0;">שם המשרה</h2>
+    <div style="background: #f0f9ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
+      <p style="color: #0c4a6e; margin: 0;">📍 מיקום: תל אביב | ⏰ היקף: משרה מלאה | 💰 שכר: תחרותי</p>
+    </div>
+    <h3 style="color: #1e293b; font-size: 16px;">דרישות התפקיד:</h3>
+    <ul style="color: #475569; line-height: 2; padding-right: 20px;">
+      <li>ניסיון של X שנים בתחום</li>
+      <li>יכולת עבודה בצוות</li>
+      <li>אנגלית ברמה גבוהה</li>
+    </ul>
+    <h3 style="color: #1e293b; font-size: 16px;">מה אנחנו מציעים:</h3>
+    <ul style="color: #475569; line-height: 2; padding-right: 20px;">
+      <li>סביבת עבודה דינמית</li>
+      <li>אפשרויות קידום</li>
+      <li>הטבות מעולות</li>
+    </ul>
+    <div style="text-align: center; margin-top: 25px;">
+      <a href="#" style="display: inline-block; background: #0ea5e9; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">שלח קורות חיים</a>
+    </div>
+  </div>
+</div>`,
+  survey: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
+    <span style="font-size: 50px;">📋</span>
+    <h1 style="color: white; margin: 15px 0 0; font-size: 28px;">דעתכם חשובה לנו!</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 10px 0 0;">סקר קצר בן 2 דקות</p>
+  </div>
+  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
+    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; text-align: center;">עזרו לנו להשתפר! מלאו את הסקר הקצר וקבלו <strong style="color: #7c3aed;">10% הנחה</strong> על הרכישה הבאה.</p>
+    <div style="background: #faf5ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+      <p style="color: #6b21a8; margin: 0 0 10px; font-size: 14px;">⏱️ זמן מילוי משוער: 2 דקות</p>
+      <p style="color: #6b21a8; margin: 0; font-size: 14px;">🎁 תקבלו קוד הנחה בסיום</p>
+    </div>
+    <div style="text-align: center;">
+      <a href="#" style="display: inline-block; background: #a855f7; color: white; padding: 16px 50px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">למילוי הסקר</a>
+    </div>
+    <p style="color: #9ca3af; font-size: 12px; text-align: center; margin: 20px 0 0;">*ההנחה תקפה ל-30 יום מיום קבלת הקוד</p>
+  </div>
+</div>`,
+  receipt: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: #1f2937; padding: 30px; border-radius: 12px 12px 0 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h1 style="color: white; margin: 0; font-size: 24px;">אישור הזמנה</h1>
+      <span style="color: #10b981; font-size: 14px; background: rgba(16,185,129,0.15); padding: 6px 12px; border-radius: 20px;">שולם ✓</span>
+    </div>
+    <p style="color: #9ca3af; margin: 10px 0 0;">מספר הזמנה: #12345678</p>
+  </div>
+  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr style="border-bottom: 1px solid #e5e7eb;">
+        <th style="text-align: right; padding: 12px 0; color: #6b7280; font-weight: 500;">פריט</th>
+        <th style="text-align: center; padding: 12px 0; color: #6b7280; font-weight: 500;">כמות</th>
+        <th style="text-align: left; padding: 12px 0; color: #6b7280; font-weight: 500;">מחיר</th>
+      </tr>
+      <tr style="border-bottom: 1px solid #e5e7eb;">
+        <td style="padding: 15px 0; color: #1f2937;">שם המוצר הראשון</td>
+        <td style="padding: 15px 0; color: #6b7280; text-align: center;">1</td>
+        <td style="padding: 15px 0; color: #1f2937; text-align: left;">₪199</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #e5e7eb;">
+        <td style="padding: 15px 0; color: #1f2937;">שם המוצר השני</td>
+        <td style="padding: 15px 0; color: #6b7280; text-align: center;">2</td>
+        <td style="padding: 15px 0; color: #1f2937; text-align: left;">₪298</td>
+      </tr>
+    </table>
+    <div style="border-top: 2px solid #e5e7eb; margin-top: 15px; padding-top: 15px;">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+        <span style="color: #6b7280;">סכום ביניים:</span>
+        <span style="color: #1f2937;">₪497</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+        <span style="color: #6b7280;">משלוח:</span>
+        <span style="color: #1f2937;">₪30</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: 600;">
+        <span style="color: #1f2937;">סה״כ:</span>
+        <span style="color: #1f2937;">₪527</span>
+      </div>
+    </div>
+  </div>
+  <div style="background: #f9fafb; padding: 20px 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
+    <p style="color: #6b7280; font-size: 13px; margin: 0; text-align: center;">שאלות? צרו קשר: support@example.com</p>
+  </div>
+</div>`,
+  social: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #ec4899 0%, #f43f5e 50%, #f97316 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
+    <h1 style="color: white; margin: 0; font-size: 28px;">הצטרפו לקהילה שלנו!</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">עקבו אחרינו ברשתות החברתיות</p>
+  </div>
+  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; text-align: center;">
+    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; margin-bottom: 25px;">הישארו מעודכנים בכל החדשות, הטיפים והמבצעים המיוחדים!</p>
+    <div style="margin: 25px 0;">
+      <a href="#" style="display: inline-block; background: #1877F2; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">Facebook</a>
+      <a href="#" style="display: inline-block; background: #1DA1F2; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">Twitter</a>
+      <a href="#" style="display: inline-block; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">Instagram</a>
+      <a href="#" style="display: inline-block; background: #0A66C2; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">LinkedIn</a>
+      <a href="#" style="display: inline-block; background: #FF0000; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">YouTube</a>
+    </div>
+    <p style="color: #9ca3af; font-size: 14px;">כבר יותר מ-10,000 עוקבים!</p>
+  </div>
+  <div style="background: #f9fafb; padding: 20px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
+    <p style="color: #6b7280; font-size: 13px; margin: 0;">שתפו את הניוזלטר הזה עם חברים!</p>
+  </div>
+</div>`,
+  webinar: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
+    <span style="background: #fbbf24; color: #0e7490; padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">וובינר חינמי</span>
+    <h1 style="color: white; margin: 20px 0 10px; font-size: 28px;">שם הוובינר</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 0;">למדו איך להצליח ב...</p>
+  </div>
+  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
+      <div style="flex: 1; min-width: 140px; background: #ecfeff; padding: 15px; border-radius: 8px; text-align: center;">
+        <span style="font-size: 24px;">📅</span>
+        <p style="color: #0e7490; margin: 8px 0 0; font-weight: 600;">יום רביעי</p>
+        <p style="color: #0e7490; margin: 5px 0 0; font-size: 14px;">15/01/2025</p>
+      </div>
+      <div style="flex: 1; min-width: 140px; background: #ecfeff; padding: 15px; border-radius: 8px; text-align: center;">
+        <span style="font-size: 24px;">⏰</span>
+        <p style="color: #0e7490; margin: 8px 0 0; font-weight: 600;">20:00</p>
+        <p style="color: #0e7490; margin: 5px 0 0; font-size: 14px;">שעון ישראל</p>
+      </div>
+    </div>
+    <h3 style="color: #1f2937; font-size: 16px;">מה תלמדו:</h3>
+    <ul style="color: #4b5563; line-height: 2; padding-right: 20px;">
+      <li>נושא ראשון חשוב</li>
+      <li>נושא שני מעניין</li>
+      <li>טיפים מעשיים</li>
+    </ul>
+    <div style="text-align: center; margin-top: 25px;">
+      <a href="#" style="display: inline-block; background: #0891b2; color: white; padding: 16px 50px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">הרשמה חינם</a>
+    </div>
+    <p style="color: #9ca3af; font-size: 13px; text-align: center; margin-top: 15px;">מקומות מוגבלים - הירשמו עכשיו!</p>
+  </div>
+</div>`,
+  event: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 50px 30px; text-align: center; border-radius: 12px 12px 0 0; position: relative;">
+    <div style="position: absolute; top: 20px; right: 20px; background: #fbbf24; color: #1a1a2e; padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">VIP</div>
+    <div style="font-size: 50px; margin-bottom: 15px;">🎪</div>
+    <h1 style="color: #fbbf24; margin: 0; font-size: 32px;">אירוע השנה!</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin: 15px 0 0;">הזמנה בלעדית</p>
+  </div>
+  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
+    <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-right: 4px solid #fbbf24;">
+      <p style="color: #92400e; margin: 0; line-height: 1.8;">
+        <strong>📍 מיקום:</strong> שם המקום<br>
+        <strong>📅 תאריך:</strong> יום שישי, 20/01/2025<br>
+        <strong>⏰ שעה:</strong> 20:00
+      </p>
+    </div>
+    <p style="color: #4b5563; line-height: 1.8; text-align: center;">הצטרפו אלינו לערב בלתי נשכח של נטוורקינג, תוכן מקצועי וכיף!</p>
+    <div style="text-align: center; margin-top: 25px;">
+      <a href="#" style="display: inline-block; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #1a1a2e; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">שריינו מקום</a>
+    </div>
+  </div>
+  <div style="background: #1a1a2e; padding: 15px 30px; text-align: center; border-radius: 0 0 12px 12px;">
+    <p style="color: #fbbf24; font-size: 13px; margin: 0;">מספר המקומות מוגבל!</p>
+  </div>
+</div>`,
+  shipping: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); padding: 30px; border-radius: 12px 12px 0 0;">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+      <span style="font-size: 40px;">📦</span>
+      <div>
+        <h1 style="color: white; margin: 0; font-size: 24px;">ההזמנה שלך בדרך!</h1>
+        <p style="color: rgba(255,255,255,0.9); margin: 5px 0 0; font-size: 14px;">מספר מעקב: #TRK123456789</p>
+      </div>
+    </div>
+  </div>
+  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+      <div style="text-align: center; flex: 1;">
+        <div style="width: 30px; height: 30px; background: #22c55e; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white;">✓</div>
+        <p style="color: #22c55e; font-size: 12px; margin: 0;">הוזמן</p>
+      </div>
+      <div style="flex: 1; height: 2px; background: #22c55e;"></div>
+      <div style="text-align: center; flex: 1;">
+        <div style="width: 30px; height: 30px; background: #22c55e; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white;">✓</div>
+        <p style="color: #22c55e; font-size: 12px; margin: 0;">נארז</p>
+      </div>
+      <div style="flex: 1; height: 2px; background: #22c55e;"></div>
+      <div style="text-align: center; flex: 1;">
+        <div style="width: 30px; height: 30px; background: #fbbf24; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center;">🚚</div>
+        <p style="color: #fbbf24; font-size: 12px; margin: 0; font-weight: 600;">בדרך</p>
+      </div>
+      <div style="flex: 1; height: 2px; background: #e5e7eb;"></div>
+      <div style="text-align: center; flex: 1;">
+        <div style="width: 30px; height: 30px; background: #e5e7eb; border-radius: 50%; margin: 0 auto 8px;"></div>
+        <p style="color: #9ca3af; font-size: 12px; margin: 0;">נמסר</p>
+      </div>
+    </div>
+    <div style="background: #f0fdf4; padding: 15px; border-radius: 8px;">
+      <p style="color: #166534; margin: 0; font-size: 14px;"><strong>זמן הגעה משוער:</strong> יום שני, 22/01/2025</p>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="#" style="display: inline-block; background: #22c55e; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 500;">מעקב משלוח</a>
+    </div>
+  </div>
+</div>`,
+  referral: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
+    <div style="font-size: 50px; margin-bottom: 15px;">🎁</div>
+    <h1 style="color: white; margin: 0; font-size: 28px;">הזמינו חברים וקבלו הטבות!</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">שתפו את הקוד שלכם והרוויחו</p>
+  </div>
+  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
+    <div style="background: #fff7ed; border: 2px dashed #f97316; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
+      <p style="color: #9a3412; margin: 0 0 10px; font-size: 14px;">הקוד האישי שלכם:</p>
+      <p style="color: #ea580c; font-size: 28px; font-weight: 700; margin: 0; letter-spacing: 3px;">FRIEND50</p>
+    </div>
+    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+      <div style="flex: 1; background: #fef3c7; padding: 15px; border-radius: 8px; text-align: center;">
+        <p style="color: #92400e; font-size: 24px; font-weight: 700; margin: 0;">₪50</p>
+        <p style="color: #92400e; font-size: 12px; margin: 5px 0 0;">לכם</p>
+      </div>
+      <div style="flex: 1; background: #fef3c7; padding: 15px; border-radius: 8px; text-align: center;">
+        <p style="color: #92400e; font-size: 24px; font-weight: 700; margin: 0;">₪50</p>
+        <p style="color: #92400e; font-size: 12px; margin: 5px 0 0;">לחברים</p>
+      </div>
+    </div>
+    <p style="color: #4b5563; line-height: 1.8; text-align: center;">על כל חבר שנרשם עם הקוד שלכם, שניכם מקבלים ₪50 הנחה!</p>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="#" style="display: inline-block; background: #f97316; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600;">שתפו עכשיו</a>
+    </div>
+  </div>
+  <div style="background: #fff7ed; padding: 15px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
+    <p style="color: #9a3412; font-size: 13px; margin: 0;">כבר הזמנתם 3 חברים והרווחתם ₪150!</p>
   </div>
 </div>`
 };

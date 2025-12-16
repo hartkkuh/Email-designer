@@ -161,9 +161,6 @@
   "tplNewsletter": {
     "message": "نشرة إخبارية"
   },
-  "tplAnnouncement": {
-    "message": "إعلان"
-  },
   "tplInvitation": {
     "message": "دعوة"
   },
@@ -176,17 +173,38 @@
   "tplWelcome": {
     "message": "ترحيب"
   },
-  "tplThankyou": {
-    "message": "شكر"
-  },
   "tplReminder": {
     "message": "تذكير"
   },
-  "tplFeedback": {
-    "message": "ملاحظات"
-  },
   "tplAlert": {
     "message": "تنبيه"
+  },
+  "tplBirthday": {
+    "message": "عيد ميلاد"
+  },
+  "tplJob": {
+    "message": "عرض وظيفة"
+  },
+  "tplSurvey": {
+    "message": "استبيان"
+  },
+  "tplReceipt": {
+    "message": "إيصال"
+  },
+  "tplSocial": {
+    "message": "وسائل التواصل"
+  },
+  "tplWebinar": {
+    "message": "ندوة عبر الإنترنت"
+  },
+  "tplEvent": {
+    "message": "حدث"
+  },
+  "tplShipping": {
+    "message": "تحديث الشحن"
+  },
+  "tplReferral": {
+    "message": "إحالة صديق"
   },
   "saveTemplate": {
     "message": "حفظ القالب"

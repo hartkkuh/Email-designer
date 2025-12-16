@@ -161,9 +161,6 @@
   "tplNewsletter": {
     "message": "Newsletter"
   },
-  "tplAnnouncement": {
-    "message": "Annonce"
-  },
   "tplInvitation": {
     "message": "Invitation"
   },
@@ -176,17 +173,38 @@
   "tplWelcome": {
     "message": "Bienvenue"
   },
-  "tplThankyou": {
-    "message": "Remerciement"
-  },
   "tplReminder": {
     "message": "Rappel"
   },
-  "tplFeedback": {
-    "message": "Retour"
-  },
   "tplAlert": {
     "message": "Alerte"
+  },
+  "tplBirthday": {
+    "message": "Anniversaire"
+  },
+  "tplJob": {
+    "message": "Offre d'emploi"
+  },
+  "tplSurvey": {
+    "message": "Sondage"
+  },
+  "tplReceipt": {
+    "message": "Reçu"
+  },
+  "tplSocial": {
+    "message": "Réseaux sociaux"
+  },
+  "tplWebinar": {
+    "message": "Webinaire"
+  },
+  "tplEvent": {
+    "message": "Événement"
+  },
+  "tplShipping": {
+    "message": "Mise à jour livraison"
+  },
+  "tplReferral": {
+    "message": "Parrainage"
   },
   "saveTemplate": {
     "message": "Enregistrer Modèle"

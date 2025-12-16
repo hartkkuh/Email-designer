@@ -161,9 +161,6 @@
   "tplNewsletter": {
     "message": "Newsletter"
   },
-  "tplAnnouncement": {
-    "message": "Anúncio"
-  },
   "tplInvitation": {
     "message": "Convite"
   },
@@ -176,17 +173,38 @@
   "tplWelcome": {
     "message": "Boas-vindas"
   },
-  "tplThankyou": {
-    "message": "Agradecimento"
-  },
   "tplReminder": {
     "message": "Lembrete"
   },
-  "tplFeedback": {
-    "message": "Feedback"
-  },
   "tplAlert": {
     "message": "Alerta"
+  },
+  "tplBirthday": {
+    "message": "Aniversário"
+  },
+  "tplJob": {
+    "message": "Oferta de emprego"
+  },
+  "tplSurvey": {
+    "message": "Pesquisa"
+  },
+  "tplReceipt": {
+    "message": "Recibo"
+  },
+  "tplSocial": {
+    "message": "Redes sociais"
+  },
+  "tplWebinar": {
+    "message": "Webinar"
+  },
+  "tplEvent": {
+    "message": "Evento"
+  },
+  "tplShipping": {
+    "message": "Atualização de envio"
+  },
+  "tplReferral": {
+    "message": "Indicar amigos"
   },
   "saveTemplate": {
     "message": "Salvar Modelo"

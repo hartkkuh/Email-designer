@@ -163,9 +163,6 @@
   "tplNewsletter": {
     "message": "ניוזלטר"
   },
-  "tplAnnouncement": {
-    "message": "הודעה"
-  },
   "tplInvitation": {
     "message": "הזמנה"
   },
@@ -178,17 +175,38 @@
   "tplWelcome": {
     "message": "ברוכים הבאים"
   },
-  "tplThankyou": {
-    "message": "תודה"
-  },
   "tplReminder": {
     "message": "תזכורת"
   },
-  "tplFeedback": {
-    "message": "משוב"
-  },
   "tplAlert": {
     "message": "התראה"
+  },
+  "tplBirthday": {
+    "message": "יום הולדת"
+  },
+  "tplJob": {
+    "message": "הצעת עבודה"
+  },
+  "tplSurvey": {
+    "message": "סקר"
+  },
+  "tplReceipt": {
+    "message": "קבלה/חשבונית"
+  },
+  "tplSocial": {
+    "message": "רשתות חברתיות"
+  },
+  "tplWebinar": {
+    "message": "וובינר"
+  },
+  "tplEvent": {
+    "message": "אירוע"
+  },
+  "tplShipping": {
+    "message": "עדכון משלוח"
+  },
+  "tplReferral": {
+    "message": "הפניית חברים"
   },
   "saveTemplate": {
     "message": "שמור תבנית"

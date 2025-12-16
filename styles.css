@@ -707,10 +707,6 @@ body {
   background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
 }
 
-.announcement-preview {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-}
-
 .invitation-preview {
   background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
 }
@@ -727,20 +723,48 @@ body {
   background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
 }
 
-.thankyou-preview {
-  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-}
-
 .reminder-preview {
   background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
 }
 
-.feedback-preview {
-  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-}
-
 .alert-preview {
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.birthday-preview {
+  background: linear-gradient(135deg, #f472b6 0%, #db2777 50%, #9333ea 100%);
+}
+
+.job-preview {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+}
+
+.survey-preview {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+}
+
+.receipt-preview {
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+}
+
+.social-preview {
+  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 50%, #f97316 100%);
+}
+
+.webinar-preview {
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+}
+
+.event-preview {
+  background: linear-gradient(135deg, #1a1a2e 0%, #fbbf24 100%);
+}
+
+.shipping-preview {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.referral-preview {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
 }
 
 .personal-preview {
@@ -1192,16 +1216,17 @@ body {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
+  left: auto;
   margin-top: 4px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 10px;
   box-shadow: var(--shadow-lg);
-  z-index: 100;
-  width: 280px;
-  max-height: 250px;
+  z-index: 1000;
+  width: 260px;
+  max-height: 220px;
   overflow-y: auto;
 }
 

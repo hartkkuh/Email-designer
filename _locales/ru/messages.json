@@ -161,9 +161,6 @@
   "tplNewsletter": {
     "message": "Рассылка"
   },
-  "tplAnnouncement": {
-    "message": "Объявление"
-  },
   "tplInvitation": {
     "message": "Приглашение"
   },
@@ -176,17 +173,38 @@
   "tplWelcome": {
     "message": "Приветствие"
   },
-  "tplThankyou": {
-    "message": "Благодарность"
-  },
   "tplReminder": {
     "message": "Напоминание"
   },
-  "tplFeedback": {
-    "message": "Отзыв"
-  },
   "tplAlert": {
     "message": "Уведомление"
+  },
+  "tplBirthday": {
+    "message": "День рождения"
+  },
+  "tplJob": {
+    "message": "Вакансия"
+  },
+  "tplSurvey": {
+    "message": "Опрос"
+  },
+  "tplReceipt": {
+    "message": "Квитанция"
+  },
+  "tplSocial": {
+    "message": "Социальные сети"
+  },
+  "tplWebinar": {
+    "message": "Вебинар"
+  },
+  "tplEvent": {
+    "message": "Мероприятие"
+  },
+  "tplShipping": {
+    "message": "Статус доставки"
+  },
+  "tplReferral": {
+    "message": "Пригласить друзей"
   },
   "saveTemplate": {
     "message": "Сохранить Шаблон"
