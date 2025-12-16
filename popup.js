@@ -580,6 +580,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initAdvancedTableEditor();
   initAIFeatures();
   initVariables();
+  initShortcutsHelp();
 });
 
 // Tab Navigation
@@ -1505,12 +1506,97 @@ function showToast(message, type = 'info') {
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
+  // Only apply shortcuts when editor is focused or in popup
+  const isEditorFocused = document.activeElement === editor || editor?.contains(document.activeElement);
+  
   if (e.ctrlKey || e.metaKey) {
     switch(e.key.toLowerCase()) {
       case 's':
         e.preventDefault();
         document.getElementById('saveTemplate').click();
         break;
+      case 'b':
+        if (isEditorFocused) {
+          e.preventDefault();
+          document.execCommand('bold', false, null);
+        }
+        break;
+      case 'i':
+        if (isEditorFocused) {
+          e.preventDefault();
+          document.execCommand('italic', false, null);
+        }
+        break;
+      case 'u':
+        if (isEditorFocused) {
+          e.preventDefault();
+          document.execCommand('underline', false, null);
+        }
+        break;
+      case 'k':
+        if (isEditorFocused) {
+          e.preventDefault();
+          openModal('linkModal');
+        }
+        break;
+      case 'l':
+        if (isEditorFocused && e.shiftKey) {
+          e.preventDefault();
+          document.execCommand('insertUnorderedList', false, null);
+        } else if (isEditorFocused) {
+          e.preventDefault();
+          document.execCommand('justifyLeft', false, null);
+        }
+        break;
+      case 'e':
+        if (isEditorFocused) {
+          e.preventDefault();
+          document.execCommand('justifyCenter', false, null);
+        }
+        break;
+      case 'r':
+        if (isEditorFocused) {
+          e.preventDefault();
+          document.execCommand('justifyRight', false, null);
+        }
+        break;
+      case 'j':
+        if (isEditorFocused) {
+          e.preventDefault();
+          document.execCommand('justifyFull', false, null);
+        }
+        break;
+      case 'o':
+        if (isEditorFocused && e.shiftKey) {
+          e.preventDefault();
+          document.execCommand('insertOrderedList', false, null);
+        }
+        break;
+      case 'z':
+        if (isEditorFocused) {
+          e.preventDefault();
+          document.execCommand('undo', false, null);
+        }
+        break;
+      case 'y':
+        if (isEditorFocused) {
+          e.preventDefault();
+          document.execCommand('redo', false, null);
+        }
+        break;
+    }
+    // Strikethrough: Ctrl+Shift+X
+    if (e.shiftKey && e.key.toLowerCase() === 'x' && isEditorFocused) {
+      e.preventDefault();
+      document.execCommand('strikeThrough', false, null);
+    }
+  }
+  
+  // Escape to close modals
+  if (e.key === 'Escape') {
+    const openModal = document.querySelector('.modal.show');
+    if (openModal) {
+      openModal.classList.remove('show');
     }
   }
 });
@@ -1834,6 +1920,23 @@ function loadSavedContent() {
     } else if (editor) {
       editor.innerHTML = '<p>התחל לכתוב את ההודעה שלך כאן...</p>';
     }
+  });
+}
+
+// ===========================================
+// KEYBOARD SHORTCUTS HELP
+// ===========================================
+function initShortcutsHelp() {
+  const shortcutsBtn = document.getElementById('shortcutsHelp');
+  if (!shortcutsBtn) return;
+  
+  shortcutsBtn.addEventListener('click', () => {
+    openModal('shortcutsModal');
+  });
+  
+  // Close button
+  document.getElementById('closeShortcutsModal')?.addEventListener('click', () => {
+    closeModal('shortcutsModal');
   });
 }
 
@@ -2384,51 +2487,87 @@ function initAdvancedTableEditor() {
 }
 
 // ===========================================
-// AI FEATURES - Gemini Integration
+// AI FEATURES - Gemini & OpenAI Integration
 // ===========================================
 let geminiApiKey = '';
+let openaiApiKey = '';
+let currentAiProvider = 'gemini'; // 'gemini' or 'openai'
 let apiKeyValidated = false;
 
 async function initAIFeatures() {
-  // Load saved API key and validate it
-  const result = await chrome.storage.local.get('geminiApiKey');
+  // Load saved API keys and provider
+  const result = await chrome.storage.local.get(['geminiApiKey', 'openaiApiKey', 'aiProvider']);
+  
   if (result.geminiApiKey) {
     geminiApiKey = result.geminiApiKey;
-    // Validate the saved key in background
-    try {
-      apiKeyValidated = await testGeminiApiKey(geminiApiKey);
-      if (!apiKeyValidated) {
-        geminiApiKey = '';
-      }
-    } catch (e) {
-      apiKeyValidated = false;
-      geminiApiKey = '';
-    }
+    document.getElementById('geminiApiKey').value = geminiApiKey;
   }
   
-  // Toggle password visibility
-  document.getElementById('toggleApiKeyVisibility')?.addEventListener('click', () => {
-    const input = document.getElementById('geminiApiKey');
-    const eyeIcon = document.querySelector('.eye-icon');
-    const eyeOffIcon = document.querySelector('.eye-off-icon');
-    
-    if (input.type === 'password') {
-      input.type = 'text';
-      eyeIcon.style.display = 'none';
-      eyeOffIcon.style.display = 'block';
-    } else {
-      input.type = 'password';
-      eyeIcon.style.display = 'block';
-      eyeOffIcon.style.display = 'none';
-    }
+  if (result.openaiApiKey) {
+    openaiApiKey = result.openaiApiKey;
+    document.getElementById('openaiApiKey').value = openaiApiKey;
+  }
+  
+  if (result.aiProvider) {
+    currentAiProvider = result.aiProvider;
+  }
+  
+  // Validate the saved key for current provider
+  await validateCurrentProvider();
+  
+  // AI Provider tabs
+  document.querySelectorAll('.ai-provider-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const provider = tab.dataset.provider;
+      
+      // Update tabs UI
+      document.querySelectorAll('.ai-provider-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      // Show/hide key sections
+      document.getElementById('geminiKeySection').classList.toggle('hidden', provider !== 'gemini');
+      document.getElementById('openaiKeySection').classList.toggle('hidden', provider !== 'openai');
+      
+      // Update current provider
+      currentAiProvider = provider;
+      
+      // Hide error
+      document.getElementById('apiErrorMessage')?.classList.add('hidden');
+    });
+  });
+  
+  // Set initial tab state
+  updateProviderTabUI();
+  
+  // Toggle password visibility for both inputs
+  document.querySelectorAll('.toggle-password-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const input = document.getElementById(targetId);
+      const eyeIcon = btn.querySelector('.eye-icon');
+      const eyeOffIcon = btn.querySelector('.eye-off-icon');
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        eyeIcon.style.display = 'none';
+        eyeOffIcon.style.display = 'block';
+      } else {
+        input.type = 'password';
+        eyeIcon.style.display = 'block';
+        eyeOffIcon.style.display = 'none';
+      }
+    });
   });
   
   // Save API Key - validates before saving
   document.getElementById('saveApiKey')?.addEventListener('click', async () => {
-    const apiKey = document.getElementById('geminiApiKey').value.trim();
     const errorMessage = document.getElementById('apiErrorMessage');
     const loading = document.getElementById('apiKeyLoading');
     const saveBtn = document.getElementById('saveApiKey');
+    
+    const apiKey = currentAiProvider === 'gemini' 
+      ? document.getElementById('geminiApiKey').value.trim()
+      : document.getElementById('openaiApiKey').value.trim();
     
     if (!apiKey) {
       errorMessage.classList.remove('hidden');
@@ -2441,13 +2580,21 @@ async function initAIFeatures() {
     saveBtn.disabled = true;
     
     try {
-      const isValid = await testGeminiApiKey(apiKey);
+      const isValid = currentAiProvider === 'gemini' 
+        ? await testGeminiApiKey(apiKey)
+        : await testOpenAIApiKey(apiKey);
       
       if (isValid) {
-        // Save and continue to AI Write modal
-        geminiApiKey = apiKey;
+        // Save the key and provider
+        if (currentAiProvider === 'gemini') {
+          geminiApiKey = apiKey;
+          await chrome.storage.local.set({ geminiApiKey: apiKey, aiProvider: 'gemini' });
+        } else {
+          openaiApiKey = apiKey;
+          await chrome.storage.local.set({ openaiApiKey: apiKey, aiProvider: 'openai' });
+        }
+        
         apiKeyValidated = true;
-        await chrome.storage.local.set({ geminiApiKey: apiKey });
         
         loading.classList.add('hidden');
         saveBtn.disabled = false;
@@ -2486,9 +2633,12 @@ async function initAIFeatures() {
     
     saveSelection();
     
-    if (!geminiApiKey || !apiKeyValidated) {
+    const hasValidKey = (currentAiProvider === 'gemini' && geminiApiKey) || 
+                        (currentAiProvider === 'openai' && openaiApiKey);
+    
+    if (!hasValidKey || !apiKeyValidated) {
       // No valid API key - open settings modal
-      document.getElementById('geminiApiKey').value = '';
+      updateProviderTabUI();
       document.getElementById('apiErrorMessage')?.classList.add('hidden');
       openModal('aiSettingsModal');
     } else {
@@ -2500,7 +2650,7 @@ async function initAIFeatures() {
   // Change API Key button (in AI Write modal)
   document.getElementById('changeApiKeyBtn')?.addEventListener('click', () => {
     closeModal('aiWriteModal');
-    document.getElementById('geminiApiKey').value = geminiApiKey;
+    updateProviderTabUI();
     document.getElementById('apiErrorMessage')?.classList.add('hidden');
     openModal('aiSettingsModal');
   });
@@ -2516,7 +2666,10 @@ async function initAIFeatures() {
       return;
     }
     
-    if (!geminiApiKey) {
+    const hasKey = (currentAiProvider === 'gemini' && geminiApiKey) || 
+                   (currentAiProvider === 'openai' && openaiApiKey);
+    
+    if (!hasKey) {
       showToast(msg('configureApiFirst') || 'יש להגדיר מפתח API קודם', 'error');
       return;
     }
@@ -2526,7 +2679,9 @@ async function initAIFeatures() {
     document.getElementById('generateAiEmail').disabled = true;
     
     try {
-      const emailContent = await generateEmailWithGemini(instructions, tone, language);
+      const emailContent = currentAiProvider === 'gemini'
+        ? await generateEmailWithGemini(instructions, tone, language)
+        : await generateEmailWithOpenAI(instructions, tone, language);
       
       if (emailContent) {
         // Insert into editor
@@ -2561,6 +2716,41 @@ async function initAIFeatures() {
   document.getElementById('cancelAiWrite')?.addEventListener('click', () => {
     closeModal('aiWriteModal');
   });
+}
+
+function updateProviderTabUI() {
+  // Update tabs
+  document.querySelectorAll('.ai-provider-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.provider === currentAiProvider);
+  });
+  
+  // Show/hide sections
+  document.getElementById('geminiKeySection')?.classList.toggle('hidden', currentAiProvider !== 'gemini');
+  document.getElementById('openaiKeySection')?.classList.toggle('hidden', currentAiProvider !== 'openai');
+  
+  // Fill in saved keys
+  if (geminiApiKey) {
+    document.getElementById('geminiApiKey').value = geminiApiKey;
+  }
+  if (openaiApiKey) {
+    document.getElementById('openaiApiKey').value = openaiApiKey;
+  }
+}
+
+async function validateCurrentProvider() {
+  try {
+    if (currentAiProvider === 'gemini' && geminiApiKey) {
+      apiKeyValidated = await testGeminiApiKey(geminiApiKey);
+      if (!apiKeyValidated) geminiApiKey = '';
+    } else if (currentAiProvider === 'openai' && openaiApiKey) {
+      apiKeyValidated = await testOpenAIApiKey(openaiApiKey);
+      if (!apiKeyValidated) openaiApiKey = '';
+    } else {
+      apiKeyValidated = false;
+    }
+  } catch (e) {
+    apiKeyValidated = false;
+  }
 }
 
 
@@ -2656,6 +2846,101 @@ if (!response.ok) {
     
     const data = await response.json();
     let content = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    
+    // Clean up markdown code blocks if present
+    content = content.replace(/```html\n?/gi, '').replace(/```\n?/g, '');
+    
+    // Wrap in a div if needed
+    if (!content.startsWith('<')) {
+      content = `<div>${content.replace(/\n/g, '<br>')}</div>`;
+    }
+    
+    return content;
+  } catch (error) {
+    throw error;
+  }
+}
+
+// OpenAI API Functions
+async function testOpenAIApiKey(apiKey) {
+  try {
+    const response = await fetch('https://api.openai.com/v1/models', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    return response.ok;
+  } catch (error) {
+    return false;
+  }
+}
+
+async function generateEmailWithOpenAI(instructions, tone, language) {
+  const languageNames = {
+    'he': 'Hebrew',
+    'en': 'English',
+    'es': 'Spanish',
+    'fr': 'French',
+    'de': 'German',
+    'ru': 'Russian',
+    'ar': 'Arabic',
+    'pt': 'Portuguese',
+    'zh_CN': 'Chinese'
+  };
+  
+  const toneDescriptions = {
+    'professional': 'professional and business-appropriate',
+    'friendly': 'warm and friendly',
+    'formal': 'very formal and respectful',
+    'casual': 'casual and relaxed'
+  };
+  
+  const systemPrompt = `You are an expert email writer. Write a well-structured email based on the user's instructions.
+
+IMPORTANT RULES:
+1. Write the email ONLY in ${languageNames[language] || 'English'}
+2. Use a ${toneDescriptions[tone] || 'professional'} tone
+3. Format the email with proper HTML for email clients:
+   - Use <p> tags for paragraphs
+   - Use <br> for line breaks where needed
+   - Use proper greeting and closing
+4. Return ONLY the email body HTML, no explanations
+5. Do NOT include subject line in the output
+6. Make sure the email is complete and ready to send
+7. If the language is RTL (Hebrew, Arabic), add dir="rtl" to the main container`;
+
+  const userPrompt = `Write an email based on these instructions: ${instructions}`;
+  
+  try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${openaiApiKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'gpt-3.5-turbo',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt }
+        ],
+        temperature: 0.7,
+        max_tokens: 1024
+      })
+    });
+    
+    if (!response.ok) {
+      if (response.status === 429) {
+        throw new Error('RATE_LIMIT');
+      }
+      throw new Error(`API request failed: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    let content = data.choices?.[0]?.message?.content || '';
     
     // Clean up markdown code blocks if present
     content = content.replace(/```html\n?/gi, '').replace(/```\n?/g, '');

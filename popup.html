@@ -35,6 +35,17 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
         </button>
+        <button id="shortcutsHelp" class="shortcuts-help-btn" data-i18n-title="keyboardShortcuts">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <line x1="6" y1="8" x2="6" y2="8"/>
+            <line x1="10" y1="8" x2="10" y2="8"/>
+            <line x1="14" y1="8" x2="14" y2="8"/>
+            <line x1="18" y1="8" x2="18" y2="8"/>
+            <line x1="6" y1="12" x2="18" y2="12"/>
+            <line x1="8" y1="16" x2="16" y2="16"/>
+          </svg>
+        </button>
         <select id="langSelect" class="lang-select" title="Language">
           <option value="en">English</option>
           <option value="he">עברית</option>
@@ -938,27 +949,68 @@
 
   <!-- Modal for AI Settings -->
   <div id="aiSettingsModal" class="modal">
-    <div class="modal-content" style="max-width: 450px;">
+    <div class="modal-content" style="max-width: 480px;">
       <h3 data-i18n="enterApiKey">Enter API Key</h3>
+      
+      <!-- AI Provider Selection -->
       <div class="form-group">
-        <label for="geminiApiKey" data-i18n="geminiApiKey">Gemini API Key:</label>
-        <div class="api-key-input-wrapper">
-          <input type="password" id="geminiApiKey" placeholder="AIza..." dir="ltr">
-          <button type="button" class="toggle-password-btn" id="toggleApiKeyVisibility">
-            <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
-            </svg>
-            <svg class="eye-off-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
-              <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
-              <line x1="1" y1="1" x2="23" y2="23"/>
-            </svg>
+        <label data-i18n="selectAiProvider">Select AI Provider:</label>
+        <div class="ai-provider-tabs">
+          <button type="button" class="ai-provider-tab active" data-provider="gemini">
+            <span class="provider-icon">✨</span> Gemini
+          </button>
+          <button type="button" class="ai-provider-tab" data-provider="openai">
+            <span class="provider-icon">🤖</span> OpenAI
           </button>
         </div>
-        <small class="form-hint">
-          <a href="https://aistudio.google.com/apikey" target="_blank" data-i18n="getApiKeyLink">Get your free API key from Google AI Studio →</a>
-        </small>
       </div>
+      
+      <!-- Gemini API Key -->
+      <div class="api-key-section" id="geminiKeySection">
+        <div class="form-group">
+          <label for="geminiApiKey" data-i18n="geminiApiKey">Gemini API Key:</label>
+          <div class="api-key-input-wrapper">
+            <input type="password" id="geminiApiKey" placeholder="AIza..." dir="ltr">
+            <button type="button" class="toggle-password-btn" data-target="geminiApiKey">
+              <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <svg class="eye-off-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+          <small class="form-hint">
+            <a href="https://aistudio.google.com/apikey" target="_blank" data-i18n="getGeminiKeyLink">Get free API key from Google AI Studio →</a>
+          </small>
+        </div>
+      </div>
+      
+      <!-- OpenAI API Key -->
+      <div class="api-key-section hidden" id="openaiKeySection">
+        <div class="form-group">
+          <label for="openaiApiKey" data-i18n="openaiApiKey">OpenAI API Key:</label>
+          <div class="api-key-input-wrapper">
+            <input type="password" id="openaiApiKey" placeholder="sk-..." dir="ltr">
+            <button type="button" class="toggle-password-btn" data-target="openaiApiKey">
+              <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <svg class="eye-off-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+          <small class="form-hint">
+            <a href="https://platform.openai.com/api-keys" target="_blank" data-i18n="getOpenaiKeyLink">Get API key from OpenAI Platform →</a>
+          </small>
+        </div>
+      </div>
+      
       <div class="api-error-message hidden" id="apiErrorMessage">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
@@ -1094,6 +1146,45 @@
       <div class="modal-actions">
         <button class="btn btn-secondary" id="cancelVariablesSettings" data-i18n="cancel">Cancel</button>
         <button class="btn btn-primary" id="saveVariablesSettings" data-i18n="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keyboard Shortcuts Modal -->
+  <div id="shortcutsModal" class="modal">
+    <div class="modal-content shortcuts-modal">
+      <h3 data-i18n="keyboardShortcuts">Keyboard Shortcuts</h3>
+      <div class="shortcuts-grid">
+        <div class="shortcut-category">
+          <h4 data-i18n="shortcutsFormatting">Formatting</h4>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>B</kbd> <span data-i18n="shortcutBold">Bold</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>I</kbd> <span data-i18n="shortcutItalic">Italic</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>U</kbd> <span data-i18n="shortcutUnderline">Underline</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> <span data-i18n="shortcutStrikethrough">Strikethrough</span></div>
+        </div>
+        <div class="shortcut-category">
+          <h4 data-i18n="shortcutsAlignment">Alignment</h4>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>L</kbd> <span data-i18n="shortcutAlignLeft">Align Left</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>E</kbd> <span data-i18n="shortcutAlignCenter">Align Center</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>R</kbd> <span data-i18n="shortcutAlignRight">Align Right</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>J</kbd> <span data-i18n="shortcutJustify">Justify</span></div>
+        </div>
+        <div class="shortcut-category">
+          <h4 data-i18n="shortcutsLists">Lists</h4>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> <span data-i18n="shortcutBulletList">Bullet List</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> <span data-i18n="shortcutNumberedList">Numbered List</span></div>
+        </div>
+        <div class="shortcut-category">
+          <h4 data-i18n="shortcutsOther">Other</h4>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>K</kbd> <span data-i18n="shortcutInsertLink">Insert Link</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>S</kbd> <span data-i18n="shortcutSaveTemplate">Save Template</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>Z</kbd> <span data-i18n="shortcutUndo">Undo</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>Y</kbd> <span data-i18n="shortcutRedo">Redo</span></div>
+          <div class="shortcut-item"><kbd>Esc</kbd> <span data-i18n="shortcutCloseModal">Close Modal</span></div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="closeShortcutsModal" data-i18n="close">Close</button>
       </div>
     </div>
   </div>

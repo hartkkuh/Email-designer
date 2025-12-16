@@ -569,6 +569,66 @@
   "close": {
     "message": "Close"
   },
+  "keyboardShortcuts": {
+    "message": "Keyboard Shortcuts"
+  },
+  "shortcutsFormatting": {
+    "message": "Formatting"
+  },
+  "shortcutsAlignment": {
+    "message": "Alignment"
+  },
+  "shortcutsLists": {
+    "message": "Lists"
+  },
+  "shortcutsOther": {
+    "message": "Other"
+  },
+  "shortcutBold": {
+    "message": "Bold"
+  },
+  "shortcutItalic": {
+    "message": "Italic"
+  },
+  "shortcutUnderline": {
+    "message": "Underline"
+  },
+  "shortcutStrikethrough": {
+    "message": "Strikethrough"
+  },
+  "shortcutAlignLeft": {
+    "message": "Align Left"
+  },
+  "shortcutAlignCenter": {
+    "message": "Align Center"
+  },
+  "shortcutAlignRight": {
+    "message": "Align Right"
+  },
+  "shortcutJustify": {
+    "message": "Justify"
+  },
+  "shortcutBulletList": {
+    "message": "Bullet List"
+  },
+  "shortcutNumberedList": {
+    "message": "Numbered List"
+  },
+  "shortcutInsertLink": {
+    "message": "Insert Link"
+  },
+  "shortcutSaveTemplate": {
+    "message": "Save Template"
+  },
+  "shortcutUndo": {
+    "message": "Undo"
+  },
+  "shortcutRedo": {
+    "message": "Redo"
+  },
+  "shortcutCloseModal": {
+    "message": "Close Modal"
+  },
   "varName": {
     "message": "{{name}}"
   },
@@ -640,6 +700,18 @@
   },
   "geminiApiKey": {
     "message": "Gemini API Key"
+  },
+  "openaiApiKey": {
+    "message": "OpenAI API Key"
+  },
+  "selectAiProvider": {
+    "message": "Select AI Provider:"
+  },
+  "getGeminiKeyLink": {
+    "message": "Get free API key from Google AI Studio →"
+  },
+  "getOpenaiKeyLink": {
+    "message": "Get API key from OpenAI Platform →"
   },
   "apiKeyHint": {
     "message": "Get your free API key from Google AI Studio"

@@ -567,6 +567,66 @@
   "close": {
     "message": "关闭"
   },
+  "keyboardShortcuts": {
+    "message": "键盘快捷键"
+  },
+  "shortcutsFormatting": {
+    "message": "格式"
+  },
+  "shortcutsAlignment": {
+    "message": "对齐"
+  },
+  "shortcutsLists": {
+    "message": "列表"
+  },
+  "shortcutsOther": {
+    "message": "其他"
+  },
+  "shortcutBold": {
+    "message": "粗体"
+  },
+  "shortcutItalic": {
+    "message": "斜体"
+  },
+  "shortcutUnderline": {
+    "message": "下划线"
+  },
+  "shortcutStrikethrough": {
+    "message": "删除线"
+  },
+  "shortcutAlignLeft": {
+    "message": "左对齐"
+  },
+  "shortcutAlignCenter": {
+    "message": "居中"
+  },
+  "shortcutAlignRight": {
+    "message": "右对齐"
+  },
+  "shortcutJustify": {
+    "message": "两端对齐"
+  },
+  "shortcutBulletList": {
+    "message": "项目符号列表"
+  },
+  "shortcutNumberedList": {
+    "message": "编号列表"
+  },
+  "shortcutInsertLink": {
+    "message": "插入链接"
+  },
+  "shortcutSaveTemplate": {
+    "message": "保存模板"
+  },
+  "shortcutUndo": {
+    "message": "撤销"
+  },
+  "shortcutRedo": {
+    "message": "重做"
+  },
+  "shortcutCloseModal": {
+    "message": "关闭窗口"
+  },
   "categoryAll": {
     "message": "全部"
   },
@@ -620,6 +680,18 @@
   },
   "geminiApiKey": {
     "message": "Gemini API密钥"
+  },
+  "openaiApiKey": {
+    "message": "OpenAI API密钥"
+  },
+  "selectAiProvider": {
+    "message": "选择AI提供商:"
+  },
+  "getGeminiKeyLink": {
+    "message": "从Google AI Studio获取免费API密钥 →"
+  },
+  "getOpenaiKeyLink": {
+    "message": "从OpenAI Platform获取API密钥 →"
   },
   "apiKeyHint": {
     "message": "从Google AI Studio获取免费API密钥"

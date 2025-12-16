@@ -569,6 +569,66 @@
   "close": {
     "message": "סגור"
   },
+  "keyboardShortcuts": {
+    "message": "קיצורי מקלדת"
+  },
+  "shortcutsFormatting": {
+    "message": "עיצוב טקסט"
+  },
+  "shortcutsAlignment": {
+    "message": "יישור"
+  },
+  "shortcutsLists": {
+    "message": "רשימות"
+  },
+  "shortcutsOther": {
+    "message": "אחר"
+  },
+  "shortcutBold": {
+    "message": "מודגש"
+  },
+  "shortcutItalic": {
+    "message": "נטוי"
+  },
+  "shortcutUnderline": {
+    "message": "קו תחתון"
+  },
+  "shortcutStrikethrough": {
+    "message": "קו חוצה"
+  },
+  "shortcutAlignLeft": {
+    "message": "יישור לשמאל"
+  },
+  "shortcutAlignCenter": {
+    "message": "יישור למרכז"
+  },
+  "shortcutAlignRight": {
+    "message": "יישור לימין"
+  },
+  "shortcutJustify": {
+    "message": "יישור לשני הצדדים"
+  },
+  "shortcutBulletList": {
+    "message": "רשימה עם תבליטים"
+  },
+  "shortcutNumberedList": {
+    "message": "רשימה ממוספרת"
+  },
+  "shortcutInsertLink": {
+    "message": "הוסף קישור"
+  },
+  "shortcutSaveTemplate": {
+    "message": "שמור תבנית"
+  },
+  "shortcutUndo": {
+    "message": "בטל"
+  },
+  "shortcutRedo": {
+    "message": "בצע שוב"
+  },
+  "shortcutCloseModal": {
+    "message": "סגור חלון"
+  },
   "varName": {
     "message": "{{שם}}"
   },
@@ -640,6 +700,18 @@
   },
   "geminiApiKey": {
     "message": "מפתח API של Gemini"
+  },
+  "openaiApiKey": {
+    "message": "מפתח API של OpenAI"
+  },
+  "selectAiProvider": {
+    "message": "בחר ספק AI:"
+  },
+  "getGeminiKeyLink": {
+    "message": "קבל מפתח API בחינם מ-Google AI Studio →"
+  },
+  "getOpenaiKeyLink": {
+    "message": "קבל מפתח API מ-OpenAI Platform →"
   },
   "apiKeyHint": {
     "message": "קבל מפתח API בחינם מ-Google AI Studio"

@@ -18,7 +18,8 @@
     "https://mail.yahoo.com/*",
     "https://mail.proton.me/*",
     "https://mail.protonmail.com/*",
-    "https://generativelanguage.googleapis.com/*"
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.openai.com/*"
   ],
   "action": {
     "default_popup": "popup.html",

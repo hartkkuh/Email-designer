@@ -567,6 +567,66 @@
   "close": {
     "message": "Schließen"
   },
+  "keyboardShortcuts": {
+    "message": "Tastenkürzel"
+  },
+  "shortcutsFormatting": {
+    "message": "Formatierung"
+  },
+  "shortcutsAlignment": {
+    "message": "Ausrichtung"
+  },
+  "shortcutsLists": {
+    "message": "Listen"
+  },
+  "shortcutsOther": {
+    "message": "Sonstiges"
+  },
+  "shortcutBold": {
+    "message": "Fett"
+  },
+  "shortcutItalic": {
+    "message": "Kursiv"
+  },
+  "shortcutUnderline": {
+    "message": "Unterstrichen"
+  },
+  "shortcutStrikethrough": {
+    "message": "Durchgestrichen"
+  },
+  "shortcutAlignLeft": {
+    "message": "Linksbündig"
+  },
+  "shortcutAlignCenter": {
+    "message": "Zentriert"
+  },
+  "shortcutAlignRight": {
+    "message": "Rechtsbündig"
+  },
+  "shortcutJustify": {
+    "message": "Blocksatz"
+  },
+  "shortcutBulletList": {
+    "message": "Aufzählung"
+  },
+  "shortcutNumberedList": {
+    "message": "Nummerierung"
+  },
+  "shortcutInsertLink": {
+    "message": "Link einfügen"
+  },
+  "shortcutSaveTemplate": {
+    "message": "Vorlage speichern"
+  },
+  "shortcutUndo": {
+    "message": "Rückgängig"
+  },
+  "shortcutRedo": {
+    "message": "Wiederholen"
+  },
+  "shortcutCloseModal": {
+    "message": "Fenster schließen"
+  },
   "categoryAll": {
     "message": "Alle"
   },
@@ -620,6 +680,18 @@
   },
   "geminiApiKey": {
     "message": "Gemini API-Schlüssel"
+  },
+  "openaiApiKey": {
+    "message": "OpenAI API-Schlüssel"
+  },
+  "selectAiProvider": {
+    "message": "KI-Anbieter auswählen:"
+  },
+  "getGeminiKeyLink": {
+    "message": "Kostenlosen API-Schlüssel von Google AI Studio holen →"
+  },
+  "getOpenaiKeyLink": {
+    "message": "API-Schlüssel von OpenAI Platform holen →"
   },
   "apiKeyHint": {
     "message": "Holen Sie sich Ihren kostenlosen API-Schlüssel von Google AI Studio"

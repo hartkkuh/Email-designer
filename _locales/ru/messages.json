@@ -567,6 +567,66 @@
   "close": {
     "message": "Закрыть"
   },
+  "keyboardShortcuts": {
+    "message": "Горячие клавиши"
+  },
+  "shortcutsFormatting": {
+    "message": "Форматирование"
+  },
+  "shortcutsAlignment": {
+    "message": "Выравнивание"
+  },
+  "shortcutsLists": {
+    "message": "Списки"
+  },
+  "shortcutsOther": {
+    "message": "Прочее"
+  },
+  "shortcutBold": {
+    "message": "Жирный"
+  },
+  "shortcutItalic": {
+    "message": "Курсив"
+  },
+  "shortcutUnderline": {
+    "message": "Подчеркнутый"
+  },
+  "shortcutStrikethrough": {
+    "message": "Зачеркнутый"
+  },
+  "shortcutAlignLeft": {
+    "message": "По левому краю"
+  },
+  "shortcutAlignCenter": {
+    "message": "По центру"
+  },
+  "shortcutAlignRight": {
+    "message": "По правому краю"
+  },
+  "shortcutJustify": {
+    "message": "По ширине"
+  },
+  "shortcutBulletList": {
+    "message": "Маркированный список"
+  },
+  "shortcutNumberedList": {
+    "message": "Нумерованный список"
+  },
+  "shortcutInsertLink": {
+    "message": "Вставить ссылку"
+  },
+  "shortcutSaveTemplate": {
+    "message": "Сохранить шаблон"
+  },
+  "shortcutUndo": {
+    "message": "Отменить"
+  },
+  "shortcutRedo": {
+    "message": "Повторить"
+  },
+  "shortcutCloseModal": {
+    "message": "Закрыть окно"
+  },
   "categoryAll": {
     "message": "Все"
   },
@@ -620,6 +680,18 @@
   },
   "geminiApiKey": {
     "message": "API-ключ Gemini"
+  },
+  "openaiApiKey": {
+    "message": "API-ключ OpenAI"
+  },
+  "selectAiProvider": {
+    "message": "Выберите провайдера ИИ:"
+  },
+  "getGeminiKeyLink": {
+    "message": "Получить бесплатный API-ключ в Google AI Studio →"
+  },
+  "getOpenaiKeyLink": {
+    "message": "Получить API-ключ на OpenAI Platform →"
   },
   "apiKeyHint": {
     "message": "Получите бесплатный API-ключ в Google AI Studio"
