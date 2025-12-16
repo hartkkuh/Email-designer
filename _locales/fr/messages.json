@@ -1,0 +1,748 @@
+{
+  "appName": {
+    "message": "Éditeur HTML Email"
+  },
+  "appDescription": {
+    "message": "Créez et modifiez de beaux emails HTML dans Gmail, Outlook, Yahoo et ProtonMail"
+  },
+  "tabVisual": {
+    "message": "Éditeur Visuel"
+  },
+  "tabHtml": {
+    "message": "Code HTML"
+  },
+  "tabPreview": {
+    "message": "Aperçu"
+  },
+  "tabTemplates": {
+    "message": "Modèles"
+  },
+  "subjectLabel": {
+    "message": "Objet:"
+  },
+  "subjectPlaceholder": {
+    "message": "Entrez l'objet du message..."
+  },
+  "bold": {
+    "message": "Gras (Ctrl+B)"
+  },
+  "italic": {
+    "message": "Italique (Ctrl+I)"
+  },
+  "underline": {
+    "message": "Souligné (Ctrl+U)"
+  },
+  "fontSize": {
+    "message": "Taille"
+  },
+  "fontSizeVerySmall": {
+    "message": "Très Petit"
+  },
+  "fontSizeSmall": {
+    "message": "Petit"
+  },
+  "fontSizeNormal": {
+    "message": "Normal"
+  },
+  "fontSizeMedium": {
+    "message": "Moyen"
+  },
+  "fontSizeLarge": {
+    "message": "Grand"
+  },
+  "fontSizeVeryLarge": {
+    "message": "Très Grand"
+  },
+  "fontSizeHuge": {
+    "message": "Énorme"
+  },
+  "textColor": {
+    "message": "Couleur du Texte"
+  },
+  "bgColor": {
+    "message": "Couleur de Fond"
+  },
+  "customColor": {
+    "message": "Personnalisé:"
+  },
+  "alignRight": {
+    "message": "Aligner à Droite"
+  },
+  "alignCenter": {
+    "message": "Centrer"
+  },
+  "alignLeft": {
+    "message": "Aligner à Gauche"
+  },
+  "insertLink": {
+    "message": "Insérer Lien"
+  },
+  "insertImage": {
+    "message": "Insérer Image"
+  },
+  "insertVideo": {
+    "message": "Insérer Vidéo"
+  },
+  "insertFile": {
+    "message": "Insérer Fichier"
+  },
+  "advancedTools": {
+    "message": "Outils Avancés"
+  },
+  "strikethrough": {
+    "message": "Barré"
+  },
+  "subscript": {
+    "message": "Indice"
+  },
+  "superscript": {
+    "message": "Exposant"
+  },
+  "fontFamily": {
+    "message": "Police"
+  },
+  "bulletList": {
+    "message": "Liste à Puces"
+  },
+  "numberedList": {
+    "message": "Liste Numérotée"
+  },
+  "insertTable": {
+    "message": "Insérer Tableau"
+  },
+  "insertDivider": {
+    "message": "Séparateur"
+  },
+  "insertQuote": {
+    "message": "Citation"
+  },
+  "insertCode": {
+    "message": "Code"
+  },
+  "insertButton": {
+    "message": "Bouton"
+  },
+  "clearFormat": {
+    "message": "Effacer Format"
+  },
+  "undo": {
+    "message": "Annuler"
+  },
+  "redo": {
+    "message": "Rétablir"
+  },
+  "clearAll": {
+    "message": "Tout Effacer"
+  },
+  "editorPlaceholder": {
+    "message": "Commencez à taper votre message ici..."
+  },
+  "htmlPlaceholder": {
+    "message": "<p>Écrivez le code HTML ici...</p>"
+  },
+  "builtinTemplates": {
+    "message": "Modèles Intégrés"
+  },
+  "myTemplates": {
+    "message": "Mes Modèles"
+  },
+  "importTemplate": {
+    "message": "Importer Modèle"
+  },
+  "exportAll": {
+    "message": "Tout Exporter"
+  },
+  "noTemplates": {
+    "message": "Aucun modèle enregistré"
+  },
+  "saveTemplateHint": {
+    "message": "Enregistrez un modèle depuis l'éditeur"
+  },
+  "tplNewsletter": {
+    "message": "Newsletter"
+  },
+  "tplAnnouncement": {
+    "message": "Annonce"
+  },
+  "tplInvitation": {
+    "message": "Invitation"
+  },
+  "tplSimple": {
+    "message": "Simple"
+  },
+  "tplPromo": {
+    "message": "Promo"
+  },
+  "tplWelcome": {
+    "message": "Bienvenue"
+  },
+  "tplThankyou": {
+    "message": "Remerciement"
+  },
+  "tplReminder": {
+    "message": "Rappel"
+  },
+  "tplFeedback": {
+    "message": "Retour"
+  },
+  "tplAlert": {
+    "message": "Alerte"
+  },
+  "saveTemplate": {
+    "message": "Enregistrer Modèle"
+  },
+  "copyHtml": {
+    "message": "Copier HTML"
+  },
+  "insertToEmail": {
+    "message": "Insérer dans Email"
+  },
+  "addLinkTitle": {
+    "message": "Ajouter Lien"
+  },
+  "linkText": {
+    "message": "Texte du Lien:"
+  },
+  "linkTextPlaceholder": {
+    "message": "Cliquez ici"
+  },
+  "linkUrl": {
+    "message": "URL:"
+  },
+  "cancel": {
+    "message": "Annuler"
+  },
+  "add": {
+    "message": "Ajouter"
+  },
+  "addImageTitle": {
+    "message": "Ajouter Image"
+  },
+  "selectFile": {
+    "message": "Sélectionner Fichier"
+  },
+  "urlAddress": {
+    "message": "Adresse URL"
+  },
+  "dragImageHere": {
+    "message": "Glissez une image ici ou cliquez pour sélectionner"
+  },
+  "imageUrl": {
+    "message": "URL de l'Image:"
+  },
+  "imageAlt": {
+    "message": "Description (alt):"
+  },
+  "imageAltPlaceholder": {
+    "message": "Description de l'image"
+  },
+  "imageWidth": {
+    "message": "Largeur (pixels):"
+  },
+  "remove": {
+    "message": "Supprimer"
+  },
+  "addVideoTitle": {
+    "message": "Ajouter Vidéo"
+  },
+  "dragVideoHere": {
+    "message": "Glissez une vidéo ici ou cliquez pour sélectionner"
+  },
+  "videoSizeLimit": {
+    "message": "MP4, WebM (jusqu'à 10MB)"
+  },
+  "videoUrl": {
+    "message": "URL de la Vidéo:"
+  },
+  "youtubeVimeo": {
+    "message": "YouTube/Vimeo"
+  },
+  "embedLink": {
+    "message": "Lien YouTube ou Vimeo:"
+  },
+  "videoWidth": {
+    "message": "Largeur (pixels):"
+  },
+  "addFileTitle": {
+    "message": "Ajouter Fichier"
+  },
+  "dragFileHere": {
+    "message": "Glissez un fichier ici ou cliquez pour sélectionner"
+  },
+  "fileTypes": {
+    "message": "PDF, DOC, DOCX, XLS, XLSX, TXT"
+  },
+  "fileName": {
+    "message": "Nom du fichier"
+  },
+  "fileSize": {
+    "message": "Taille du fichier"
+  },
+  "fileLinkText": {
+    "message": "Texte du lien:"
+  },
+  "fileLinkPlaceholder": {
+    "message": "Cliquez pour télécharger"
+  },
+  "addFileLink": {
+    "message": "Ajouter Lien"
+  },
+  "addTableTitle": {
+    "message": "Ajouter Tableau"
+  },
+  "rows": {
+    "message": "Lignes:"
+  },
+  "columns": {
+    "message": "Colonnes:"
+  },
+  "addButtonTitle": {
+    "message": "Ajouter Bouton"
+  },
+  "buttonText": {
+    "message": "Texte du Bouton:"
+  },
+  "buttonTextPlaceholder": {
+    "message": "Cliquez ici"
+  },
+  "buttonUrl": {
+    "message": "URL:"
+  },
+  "buttonColor": {
+    "message": "Couleur du Bouton:"
+  },
+  "saveTemplateTitle": {
+    "message": "Enregistrer Modèle"
+  },
+  "templateName": {
+    "message": "Nom du Modèle:"
+  },
+  "templateNamePlaceholder": {
+    "message": "Mon Modèle"
+  },
+  "save": {
+    "message": "Enregistrer"
+  },
+  "editTemplateTitle": {
+    "message": "Modifier Modèle"
+  },
+  "codeCopied": {
+    "message": "Code copié dans le presse-papiers!"
+  },
+  "templateSaved": {
+    "message": "Modèle enregistré!"
+  },
+  "templateLoaded": {
+    "message": "Modèle chargé avec succès"
+  },
+  "templateDeleted": {
+    "message": "Modèle supprimé"
+  },
+  "templateUpdated": {
+    "message": "Modèle mis à jour"
+  },
+  "templateExported": {
+    "message": "Modèle exporté"
+  },
+  "templatesImported": {
+    "message": "Modèles importés avec succès"
+  },
+  "exportingTemplates": {
+    "message": "Exportation de $COUNT$ modèles...",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noTemplatesToExport": {
+    "message": "Aucun modèle à exporter"
+  },
+  "enterTemplateName": {
+    "message": "Veuillez entrer un nom de modèle"
+  },
+  "contentInsertedTo": {
+    "message": "Contenu inséré dans $SERVICE$!",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "openEmailFirst": {
+    "message": "Ouvrez d'abord une fenêtre de nouveau message dans $SERVICE$",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "refreshAndRetry": {
+    "message": "Actualisez $SERVICE$ et réessayez",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorInserting": {
+    "message": "Erreur lors de l'insertion du contenu"
+  },
+  "openEmailService": {
+    "message": "Veuillez ouvrir Gmail, Outlook, Yahoo ou ProtonMail"
+  },
+  "selectFileFirst": {
+    "message": "Veuillez sélectionner un fichier"
+  },
+  "selectImageFirst": {
+    "message": "Veuillez sélectionner une image ou entrer une URL"
+  },
+  "selectVideoFirst": {
+    "message": "Veuillez sélectionner une vidéo ou entrer une URL"
+  },
+  "fileLoaded": {
+    "message": "Fichier chargé avec succès"
+  },
+  "imageLoaded": {
+    "message": "Image chargée avec succès"
+  },
+  "videoLoaded": {
+    "message": "Vidéo chargée avec succès"
+  },
+  "fileAdded": {
+    "message": "Fichier ajouté avec succès"
+  },
+  "fileTooLarge": {
+    "message": "Fichier trop volumineux (max 5MB)"
+  },
+  "imageTooLarge": {
+    "message": "Image trop volumineuse (max 5MB)"
+  },
+  "videoTooLarge": {
+    "message": "Vidéo trop volumineuse (max 10MB)"
+  },
+  "fileLoadError": {
+    "message": "Erreur lors du chargement du fichier"
+  },
+  "selectImageFile": {
+    "message": "Veuillez sélectionner un fichier image"
+  },
+  "selectVideoFile": {
+    "message": "Veuillez sélectionner un fichier vidéo"
+  },
+  "contentCleared": {
+    "message": "Contenu effacé"
+  },
+  "confirmClearAll": {
+    "message": "Êtes-vous sûr de vouloir tout effacer?"
+  },
+  "confirmDeleteTemplate": {
+    "message": "Supprimer le modèle \"$NAME$\"?",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "insertEmoji": {
+    "message": "Insérer un Emoji"
+  },
+  "emojiSmileys": {
+    "message": "Smileys"
+  },
+  "emojiGestures": {
+    "message": "Gestes"
+  },
+  "emojiSymbols": {
+    "message": "Symboles"
+  },
+  "emojiObjects": {
+    "message": "Objets"
+  },
+  "previewDesktop": {
+    "message": "Bureau"
+  },
+  "previewMobile": {
+    "message": "Mobile"
+  },
+  "words": {
+    "message": "Mots"
+  },
+  "chars": {
+    "message": "Caractères"
+  },
+  "insertQrCode": {
+    "message": "Insérer un Code QR"
+  },
+  "addQrCodeTitle": {
+    "message": "Ajouter un Code QR"
+  },
+  "qrContent": {
+    "message": "Contenu (URL ou texte):"
+  },
+  "qrSize": {
+    "message": "Taille (pixels):"
+  },
+  "qrPreviewHint": {
+    "message": "L'aperçu apparaîtra ici"
+  },
+  "insertMap": {
+    "message": "Insérer une Carte"
+  },
+  "addMapTitle": {
+    "message": "Ajouter une Carte"
+  },
+  "mapAddress": {
+    "message": "Adresse:"
+  },
+  "mapAddressPlaceholder": {
+    "message": "Entrez l'adresse..."
+  },
+  "mapZoom": {
+    "message": "Niveau de zoom:"
+  },
+  "mapWidth": {
+    "message": "Largeur (pixels):"
+  },
+  "insertSocial": {
+    "message": "Boutons Sociaux"
+  },
+  "addSocialTitle": {
+    "message": "Ajouter des Boutons de Réseaux Sociaux"
+  },
+  "socialStyle": {
+    "message": "Style du bouton:"
+  },
+  "socialStyleColored": {
+    "message": "Coloré"
+  },
+  "socialStyleRounded": {
+    "message": "Arrondi"
+  },
+  "socialStyleMinimal": {
+    "message": "Minimal"
+  },
+  "insertSignature": {
+    "message": "Insérer une Signature"
+  },
+  "signatureManager": {
+    "message": "Gestionnaire de Signatures"
+  },
+  "noSignatures": {
+    "message": "Aucune signature enregistrée"
+  },
+  "createSignature": {
+    "message": "Créer une Nouvelle Signature"
+  },
+  "signatureName": {
+    "message": "Nom de la signature:"
+  },
+  "signatureNamePlaceholder": {
+    "message": "Personnel / Travail"
+  },
+  "signatureContent": {
+    "message": "Contenu de la signature:"
+  },
+  "editSignature": {
+    "message": "Modifier la Signature"
+  },
+  "close": {
+    "message": "Fermer"
+  },
+  "categoryAll": {
+    "message": "Tous"
+  },
+  "addCategoryTitle": {
+    "message": "Ajouter une Catégorie"
+  },
+  "categoryName": {
+    "message": "Nom de la catégorie:"
+  },
+  "categoryNamePlaceholder": {
+    "message": "Travail / Personnel"
+  },
+  "editTableTitle": {
+    "message": "Modifier le Tableau"
+  },
+  "addRow": {
+    "message": "+ Ligne"
+  },
+  "addColumn": {
+    "message": "+ Colonne"
+  },
+  "deleteRow": {
+    "message": "- Ligne"
+  },
+  "deleteColumn": {
+    "message": "- Colonne"
+  },
+  "mergeCells": {
+    "message": "Fusionner"
+  },
+  "cellBackground": {
+    "message": "Fond de cellule:"
+  },
+  "headerBackground": {
+    "message": "Fond d'en-tête:"
+  },
+  "apply": {
+    "message": "Appliquer"
+  },
+  "enterAtLeastOneLink": {
+    "message": "Entrez au moins un lien"
+  },
+  "socialButtonsAdded": {
+    "message": "Boutons sociaux ajoutés!"
+  },
+  "aiSettings": {
+    "message": "Paramètres IA"
+  },
+  "aiSettingsTitle": {
+    "message": "Paramètres IA"
+  },
+  "geminiApiKey": {
+    "message": "Clé API Gemini"
+  },
+  "apiKeyHint": {
+    "message": "Obtenez votre clé API gratuite sur Google AI Studio"
+  },
+  "apiNotConfigured": {
+    "message": "API non configurée"
+  },
+  "apiConfigured": {
+    "message": "API configurée et active"
+  },
+  "apiInvalid": {
+    "message": "Clé API invalide"
+  },
+  "testingApi": {
+    "message": "Test de la clé API..."
+  },
+  "testApiKey": {
+    "message": "Tester la clé"
+  },
+  "enterApiKey": {
+    "message": "Entrez la clé API"
+  },
+  "getApiKeyLink": {
+    "message": "Obtenez votre clé API gratuite sur Google AI Studio →"
+  },
+  "saveAndContinue": {
+    "message": "Enregistrer et continuer"
+  },
+  "changeApiKey": {
+    "message": "Changer la clé API"
+  },
+  "apiKeyValid": {
+    "message": "La clé API est valide!"
+  },
+  "apiKeyInvalid": {
+    "message": "La clé API n'est pas valide"
+  },
+  "apiKeyError": {
+    "message": "Erreur lors du test de la clé"
+  },
+  "apiKeySaved": {
+    "message": "Clé API enregistrée!"
+  },
+  "aiWrite": {
+    "message": "Écrire avec l'IA"
+  },
+  "aiWriteTitle": {
+    "message": "Écrire un email avec l'IA"
+  },
+  "aiInstructions": {
+    "message": "Décrivez l'email que vous souhaitez écrire:"
+  },
+  "aiInstructionsPlaceholder": {
+    "message": "Ex: Un email de remerciement formel à un client pour son achat récent"
+  },
+  "aiTone": {
+    "message": "Ton"
+  },
+  "toneProfessional": {
+    "message": "Professionnel"
+  },
+  "toneFriendly": {
+    "message": "Amical"
+  },
+  "toneFormal": {
+    "message": "Formel"
+  },
+  "toneCasual": {
+    "message": "Décontracté"
+  },
+  "aiLanguageLabel": {
+    "message": "Langue de l'email"
+  },
+  "aiGenerating": {
+    "message": "Génération de l'email..."
+  },
+  "generate": {
+    "message": "Générer"
+  },
+  "configureApiFirst": {
+    "message": "Veuillez d'abord configurer la clé API"
+  },
+  "enterInstructions": {
+    "message": "Entrez les instructions pour l'email"
+  },
+  "emailGenerated": {
+    "message": "Email généré avec succès!"
+  },
+  "aiGenerationError": {
+    "message": "Erreur lors de la génération de l'email"
+  },
+  "rateLimitError": {
+    "message": "Trop de demandes. Réessayez dans une minute"
+  },
+  "insertVariable": {
+    "message": "Insérer une Variable"
+  },
+  "variablesSettings": {
+    "message": "Paramètres des Variables"
+  },
+  "personalInfo": {
+    "message": "Informations Personnelles"
+  },
+  "customVariables": {
+    "message": "Variables Personnalisées"
+  },
+  "addVariable": {
+    "message": "Ajouter"
+  },
+  "yourName": {
+    "message": "Votre nom"
+  },
+  "yourEmail": {
+    "message": "votre@email.fr"
+  },
+  "yourPhone": {
+    "message": "+33-6-12-34-56-78"
+  },
+  "yourCompany": {
+    "message": "Nom de l'entreprise"
+  },
+  "yourTitle": {
+    "message": "Votre titre"
+  },
+  "variableName": {
+    "message": "Nom de variable"
+  },
+  "variableValue": {
+    "message": "Valeur"
+  },
+  "noCustomVariables": {
+    "message": "Pas de variables personnalisées"
+  },
+  "variablesSaved": {
+    "message": "Variables enregistrées!"
+  },
+  "notSet": {
+    "message": "Non défini"
+  },
+  "signatureInserted": {
+    "message": "Signature insérée!"
+  }
+}
+

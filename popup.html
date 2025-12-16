@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email HTML Editor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span data-i18n="appName">Email HTML Editor</span>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+          <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <select id="langSelect" class="lang-select" title="Language">
+          <option value="en">English</option>
+          <option value="he">עברית</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="ru">Русский</option>
+          <option value="ar">العربية</option>
+          <option value="pt">Português</option>
+          <option value="zh_CN">中文</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="visual" data-i18n="tabVisual">Visual Editor</button>
+      <button class="tab" data-tab="html" data-i18n="tabHtml">HTML Code</button>
+      <button class="tab" data-tab="preview" data-i18n="tabPreview">Preview</button>
+      <button class="tab" data-tab="templates" data-i18n="tabTemplates">Templates</button>
+    </div>
+
+    <!-- Subject Field -->
+    <div class="subject-wrapper" id="subjectWrapper">
+      <label for="emailSubject" data-i18n="subjectLabel">Subject:</label>
+      <input type="text" id="emailSubject" data-i18n-placeholder="subjectPlaceholder" placeholder="Enter message subject...">
+    </div>
+
+    <!-- Toolbar - Basic -->
+    <div class="toolbar" id="toolbar">
+      <!-- Basic Tools - Always Visible -->
+      <div class="toolbar-row" id="basicToolbar">
+        <div class="toolbar-group">
+          <button class="tool-btn" data-command="bold" data-i18n-title="bold">
+            <strong>B</strong>
+          </button>
+          <button class="tool-btn" data-command="italic" data-i18n-title="italic">
+            <em>I</em>
+          </button>
+          <button class="tool-btn" data-command="underline" data-i18n-title="underline">
+            <u>U</u>
+          </button>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+          <select id="fontSize" class="tool-select" data-i18n-title="fontSize">
+            <option value="" selected disabled>Size</option>
+            <option value="1">Very Small</option>
+            <option value="2">Small</option>
+            <option value="3">Normal</option>
+            <option value="4">Medium</option>
+            <option value="5">Large</option>
+            <option value="6">Very Large</option>
+            <option value="7">Huge</option>
+          </select>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+          <!-- Text Color Button -->
+          <div class="color-dropdown">
+            <button class="tool-btn" id="colorPaletteBtn" data-i18n-title="textColor">
+              <span class="color-icon" id="currentColorIcon">A</span>
+            </button>
+            <div class="color-dropdown-menu" id="colorDropdownMenu">
+              <div class="color-grid">
+                <button class="color-swatch" data-color="#000000" style="background:#000000"></button>
+                <button class="color-swatch" data-color="#434343" style="background:#434343"></button>
+                <button class="color-swatch" data-color="#666666" style="background:#666666"></button>
+                <button class="color-swatch" data-color="#999999" style="background:#999999"></button>
+                <button class="color-swatch" data-color="#cccccc" style="background:#cccccc"></button>
+                <button class="color-swatch" data-color="#ffffff" style="background:#ffffff; border:1px solid #555"></button>
+                <button class="color-swatch" data-color="#e53935" style="background:#e53935"></button>
+                <button class="color-swatch" data-color="#fb8c00" style="background:#fb8c00"></button>
+                <button class="color-swatch" data-color="#fdd835" style="background:#fdd835"></button>
+                <button class="color-swatch" data-color="#43a047" style="background:#43a047"></button>
+                <button class="color-swatch" data-color="#1e88e5" style="background:#1e88e5"></button>
+                <button class="color-swatch" data-color="#8e24aa" style="background:#8e24aa"></button>
+              </div>
+              <div class="color-custom">
+                <label data-i18n="customColor">Custom:</label>
+                <input type="color" id="textColor" value="#000000">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Background Color Button -->
+          <div class="color-dropdown">
+            <button class="tool-btn" id="bgColorPaletteBtn" data-i18n-title="bgColor">
+              <span class="bg-color-icon" id="currentBgColorIcon">▀</span>
+            </button>
+            <div class="color-dropdown-menu" id="bgColorDropdownMenu">
+              <div class="color-grid">
+                <button class="bg-color-swatch" data-color="#ffff00" style="background:#ffff00"></button>
+                <button class="bg-color-swatch" data-color="#00ffff" style="background:#00ffff"></button>
+                <button class="bg-color-swatch" data-color="#00ff00" style="background:#00ff00"></button>
+                <button class="bg-color-swatch" data-color="#ff9999" style="background:#ff9999"></button>
+                <button class="bg-color-swatch" data-color="#99ccff" style="background:#99ccff"></button>
+                <button class="bg-color-swatch" data-color="#ffcdd2" style="background:#ffcdd2"></button>
+                <button class="bg-color-swatch" data-color="#fff9c4" style="background:#fff9c4"></button>
+                <button class="bg-color-swatch" data-color="#c8e6c9" style="background:#c8e6c9"></button>
+                <button class="bg-color-swatch" data-color="#bbdefb" style="background:#bbdefb"></button>
+                <button class="bg-color-swatch" data-color="#e1bee7" style="background:#e1bee7"></button>
+                <button class="bg-color-swatch" data-color="#ffffff" style="background:#ffffff; border:1px solid #555"></button>
+                <button class="bg-color-swatch" data-color="transparent" style="background:linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%); background-size: 6px 6px;"></button>
+              </div>
+              <div class="color-custom">
+                <label data-i18n="customColor">Custom:</label>
+                <input type="color" id="bgColor" value="#ffff00">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+          <button class="tool-btn" data-command="justifyRight" data-i18n-title="alignRight">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 21h18v-2H3v2zm6-4h12v-2H9v2zm-6-4h18v-2H3v2zm6-4h12V7H9v2zM3 3v2h18V3H3z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" data-command="justifyCenter" data-i18n-title="alignCenter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 15v2h10v-2H7zm-4 6h18v-2H3v2zm0-8h18v-2H3v2zm4-6v2h10V7H7zM3 3v2h18V3H3z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" data-command="justifyLeft" data-i18n-title="alignLeft">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15 15H3v2h12v-2zm0-8H3v2h12V7zM3 13h18v-2H3v2zm0 8h18v-2H3v2zM3 3v2h18V3H3z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+          <button class="tool-btn" id="insertLink" data-i18n-title="insertLink">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertImage" data-i18n-title="insertImage">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertVideo" data-i18n-title="insertVideo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertFile" data-i18n-title="insertFile">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+            </svg>
+          </button>
+          <!-- Emoji Picker -->
+          <div class="emoji-dropdown">
+            <button class="tool-btn" id="emojiPickerBtn" data-i18n-title="insertEmoji">
+              😊
+            </button>
+            <div class="emoji-dropdown-menu" id="emojiDropdownMenu">
+              <div class="emoji-category">
+                <div class="emoji-category-title" data-i18n="emojiSmileys">Smileys</div>
+                <div class="emoji-grid" id="emojiGridSmileys"></div>
+              </div>
+              <div class="emoji-category">
+                <div class="emoji-category-title" data-i18n="emojiGestures">Gestures</div>
+                <div class="emoji-grid" id="emojiGridGestures"></div>
+              </div>
+              <div class="emoji-category">
+                <div class="emoji-category-title" data-i18n="emojiSymbols">Symbols</div>
+                <div class="emoji-grid" id="emojiGridSymbols"></div>
+              </div>
+              <div class="emoji-category">
+                <div class="emoji-category-title" data-i18n="emojiObjects">Objects</div>
+                <div class="emoji-grid" id="emojiGridObjects"></div>
+              </div>
+            </div>
+          </div>
+          <!-- AI Write Button -->
+          <button class="tool-btn ai-write-btn" id="aiWriteBtn" data-i18n-title="aiWrite">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+            <span class="ai-label">AI</span>
+          </button>
+          <!-- Variables Button -->
+          <button class="tool-btn" id="insertVariableBtn" data-i18n-title="insertVariable">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7V4h16v3"/>
+              <path d="M9 20h6"/>
+              <path d="M12 4v16"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="toolbar-spacer"></div>
+        
+        <button class="tool-btn toggle-advanced" id="toggleAdvanced" data-i18n-title="advancedTools">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Advanced Tools - Hidden by Default -->
+      <div class="toolbar-row advanced-toolbar hidden" id="advancedToolbar">
+        <div class="toolbar-group">
+          <button class="tool-btn" data-command="strikeThrough" data-i18n-title="strikethrough">
+            <s>S</s>
+          </button>
+          <button class="tool-btn" data-command="subscript" data-i18n-title="subscript">
+            <span style="font-size:11px">X<sub>2</sub></span>
+          </button>
+          <button class="tool-btn" data-command="superscript" data-i18n-title="superscript">
+            <span style="font-size:11px">X<sup>2</sup></span>
+          </button>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+          <select id="fontFamily" class="tool-select" data-i18n-title="fontFamily">
+            <option value="" selected disabled>Font</option>
+            <option value="Heebo, sans-serif">Heebo</option>
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="David, serif">David</option>
+            <option value="Georgia, serif">Georgia</option>
+            <option value="Courier New, monospace">Courier New</option>
+            <option value="Tahoma, sans-serif">Tahoma</option>
+            <option value="Verdana, sans-serif">Verdana</option>
+            <option value="Times New Roman, serif">Times New Roman</option>
+          </select>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+          <button class="tool-btn" data-command="insertUnorderedList" data-i18n-title="bulletList">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" data-command="insertOrderedList" data-i18n-title="numberedList">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2 17h2v.5H3v1h1v.5H2v1h3v-4H2v1zm1-9h1V4H2v1h1v3zm-1 3h1.8L2 13.1v.9h3v-1H3.2L5 10.9V10H2v1zm5-6v2h14V5H7zm0 14h14v-2H7v2zm0-6h14v-2H7v2z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+          <button class="tool-btn" id="insertTable" data-i18n-title="insertTable">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 3v18h18V3H3zm8 16H5v-6h6v6zm0-8H5V5h6v6zm8 8h-6v-6h6v6zm0-8h-6V5h6v6z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertDivider" data-i18n-title="insertDivider">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 13H5v-2h14v2z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertQuote" data-i18n-title="insertQuote">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertCode" data-i18n-title="insertCode">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertButton" data-i18n-title="insertButton">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 7H5c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm0 8H5V9h14v6z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertQrCode" data-i18n-title="insertQrCode">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm13-2h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3zm-5 0h2v2h-2v-2zm4 4h2v2h-2v-2z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertMap" data-i18n-title="insertMap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertSocial" data-i18n-title="insertSocial">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="insertSignature" data-i18n-title="insertSignature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+          <button class="tool-btn" data-command="removeFormat" data-i18n-title="clearFormat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.27 5L2 6.27l6.97 6.97L6.5 19h3l1.57-3.66L16.73 21 18 19.73 3.27 5zM6 5v.18L8.82 8h2.4l-.72 1.68 2.1 2.1L14.21 8H20V5H6z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" data-command="undo" data-i18n-title="undo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" data-command="redo" data-i18n-title="redo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="clearAll" data-i18n-title="clearAll">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+      <!-- Visual Editor -->
+      <div class="tab-content active" id="visual-content">
+        <div class="editor-wrapper">
+          <div id="editor" contenteditable="true">
+            <p>Start typing your message here...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HTML Code Editor -->
+      <div class="tab-content" id="html-content">
+        <textarea id="htmlEditor" dir="ltr" spellcheck="false" data-i18n-placeholder="htmlPlaceholder" placeholder="<p>Write HTML code here...</p>"></textarea>
+      </div>
+
+      <!-- Preview -->
+      <div class="tab-content" id="preview-content">
+        <div class="preview-controls">
+          <button class="preview-mode-btn active" data-mode="desktop" id="previewDesktop">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/>
+            </svg>
+            <span data-i18n="previewDesktop">Desktop</span>
+          </button>
+          <button class="preview-mode-btn" data-mode="mobile" id="previewMobile">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+            </svg>
+            <span data-i18n="previewMobile">Mobile</span>
+          </button>
+          <div style="flex:1"></div>
+          <div class="word-counter" id="wordCounter">
+            <span><span data-i18n="words">Words</span>: <span class="counter-value" id="wordCount">0</span></span>
+            <span><span data-i18n="chars">Chars</span>: <span class="counter-value" id="charCount">0</span></span>
+          </div>
+        </div>
+        <div class="preview-frame" id="previewFrameContainer">
+          <iframe id="previewFrame" sandbox="allow-same-origin"></iframe>
+        </div>
+      </div>
+
+      <!-- Templates -->
+      <div class="tab-content" id="templates-content">
+        <div class="templates-container">
+          <!-- Built-in Templates -->
+          <div class="templates-section">
+            <h4 class="templates-section-title" data-i18n="builtinTemplates">Built-in Templates</h4>
+            <div class="templates-grid" id="builtinTemplates">
+              <div class="template-card" data-template="newsletter">
+                <div class="template-preview newsletter-preview"></div>
+                <span data-i18n="tplNewsletter">Newsletter</span>
+              </div>
+              <div class="template-card" data-template="announcement">
+                <div class="template-preview announcement-preview"></div>
+                <span data-i18n="tplAnnouncement">Announcement</span>
+              </div>
+              <div class="template-card" data-template="invitation">
+                <div class="template-preview invitation-preview"></div>
+                <span data-i18n="tplInvitation">Invitation</span>
+              </div>
+              <div class="template-card" data-template="simple">
+                <div class="template-preview simple-preview"></div>
+                <span data-i18n="tplSimple">Simple</span>
+              </div>
+              <div class="template-card" data-template="promo">
+                <div class="template-preview promo-preview"></div>
+                <span data-i18n="tplPromo">Promo</span>
+              </div>
+              <div class="template-card" data-template="welcome">
+                <div class="template-preview welcome-preview"></div>
+                <span data-i18n="tplWelcome">Welcome</span>
+              </div>
+              <div class="template-card" data-template="thankyou">
+                <div class="template-preview thankyou-preview"></div>
+                <span data-i18n="tplThankyou">Thank You</span>
+              </div>
+              <div class="template-card" data-template="reminder">
+                <div class="template-preview reminder-preview"></div>
+                <span data-i18n="tplReminder">Reminder</span>
+              </div>
+              <div class="template-card" data-template="feedback">
+                <div class="template-preview feedback-preview"></div>
+                <span data-i18n="tplFeedback">Feedback</span>
+              </div>
+              <div class="template-card" data-template="alert">
+                <div class="template-preview alert-preview"></div>
+                <span data-i18n="tplAlert">Alert</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Personal Templates -->
+          <div class="templates-section">
+            <div class="templates-section-header">
+              <h4 class="templates-section-title" data-i18n="myTemplates">My Templates</h4>
+              <div class="templates-actions">
+                <button class="btn-small" id="importTemplate" data-i18n-title="importTemplate">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                  </svg>
+                </button>
+                <button class="btn-small" id="exportAllTemplates" data-i18n-title="exportAll">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="templates-grid personal-templates" id="personalTemplates">
+              <div class="template-empty" id="noPersonalTemplates">
+                <p data-i18n="noTemplates">No saved templates</p>
+                <small data-i18n="saveTemplateHint">Save a template from the editor</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <input type="file" id="templateFileInput" accept=".html,.htm" style="display:none" multiple>
+      </div>
+    </div>
+
+    <!-- Footer Actions -->
+    <footer class="footer">
+      <div class="footer-left">
+        <button id="saveTemplate" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            <polyline points="17 21 17 13 7 13 7 21"/>
+            <polyline points="7 3 7 8 15 8"/>
+          </svg>
+          <span data-i18n="saveTemplate">Save Template</span>
+        </button>
+      </div>
+      <div class="footer-right">
+        <button id="copyHtml" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <span data-i18n="copyHtml">Copy HTML</span>
+        </button>
+        <button id="insertToGmail" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+          <span data-i18n="insertToEmail">Insert to Email</span>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal for Link -->
+  <div id="linkModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="addLinkTitle">Add Link</h3>
+      <div class="form-group">
+        <label for="linkText" data-i18n="linkText">Link Text:</label>
+        <input type="text" id="linkText" data-i18n-placeholder="linkTextPlaceholder" placeholder="Click here">
+      </div>
+      <div class="form-group">
+        <label for="linkUrl" data-i18n="linkUrl">URL:</label>
+        <input type="url" id="linkUrl" placeholder="https://example.com" dir="ltr">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelLink" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmLink" data-i18n="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Image -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="addImageTitle">Add Image</h3>
+      
+      <div class="form-group">
+        <label for="imageUrl" data-i18n="imageUrl">Image URL:</label>
+        <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" dir="ltr">
+        <small class="form-hint" data-i18n="imageUrlHint">Paste a link to an image hosted online</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="imageAlt" data-i18n="imageAlt">Description (alt):</label>
+        <input type="text" id="imageAlt" data-i18n-placeholder="imageAltPlaceholder" placeholder="Image description">
+      </div>
+      <div class="form-group">
+        <label for="imageWidth" data-i18n="imageWidth">Width (pixels):</label>
+        <input type="number" id="imageWidth" placeholder="400" dir="ltr">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelImage" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmImage" data-i18n="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Video -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="addVideoTitle">Add Video</h3>
+      
+      <div class="modal-tabs">
+        <button class="modal-tab active" data-source="embed" data-i18n="youtubeVimeo">YouTube/Vimeo</button>
+        <button class="modal-tab" data-source="url" data-i18n="urlAddress">URL Address</button>
+      </div>
+      
+      <div class="video-source-section" id="videoEmbedSection">
+        <div class="form-group">
+          <label for="videoEmbed" data-i18n="embedLink">YouTube or Vimeo link:</label>
+          <input type="url" id="videoEmbed" placeholder="https://www.youtube.com/watch?v=..." dir="ltr">
+          <small class="form-hint" data-i18n="videoEmbedHint">Paste a YouTube or Vimeo link</small>
+        </div>
+      </div>
+      
+      <div class="video-source-section hidden" id="videoUrlSection">
+        <div class="form-group">
+          <label for="videoUrl" data-i18n="videoUrl">Video URL:</label>
+          <input type="url" id="videoUrl" placeholder="https://example.com/video.mp4" dir="ltr">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="videoWidth" data-i18n="videoWidth">Width (pixels):</label>
+        <input type="number" id="videoWidth" placeholder="560" dir="ltr">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelVideo" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmVideo" data-i18n="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for File -->
+  <div id="fileModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="addFileTitle">Add File Link</h3>
+      
+      <div class="form-group">
+        <label for="fileUrl" data-i18n="fileUrl">File URL:</label>
+        <input type="url" id="fileUrl" placeholder="https://example.com/document.pdf" dir="ltr">
+        <small class="form-hint" data-i18n="fileUrlHint">Paste a link to a file (Google Drive, Dropbox, etc.)</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="fileLinkText" data-i18n="fileLinkText">Link text:</label>
+        <input type="text" id="fileLinkText" data-i18n-placeholder="fileLinkPlaceholder" placeholder="Click to download">
+      </div>
+      
+      <div class="info-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+        </svg>
+        <span data-i18n="fileAttachHint">To attach files directly, use Gmail's attachment button (📎)</span>
+      </div>
+      
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelFile" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmFile" data-i18n="addFileLink">Add Link</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Table -->
+  <div id="tableModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="addTableTitle">Add Table</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="tableRows" data-i18n="rows">Rows:</label>
+          <input type="number" id="tableRows" value="3" min="1" max="20" dir="ltr">
+        </div>
+        <div class="form-group">
+          <label for="tableCols" data-i18n="columns">Columns:</label>
+          <input type="number" id="tableCols" value="3" min="1" max="10" dir="ltr">
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelTable" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmTable" data-i18n="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Button -->
+  <div id="buttonModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="addButtonTitle">Add Button</h3>
+      <div class="form-group">
+        <label for="buttonText" data-i18n="buttonText">Button Text:</label>
+        <input type="text" id="buttonText" data-i18n-placeholder="buttonTextPlaceholder" placeholder="Click here">
+      </div>
+      <div class="form-group">
+        <label for="buttonUrl" data-i18n="buttonUrl">URL:</label>
+        <input type="url" id="buttonUrl" placeholder="https://example.com" dir="ltr">
+      </div>
+      <div class="form-group">
+        <label for="buttonColor" data-i18n="buttonColor">Button Color:</label>
+        <input type="color" id="buttonColor" value="#3b82f6">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelButton" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmButton" data-i18n="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Save Template -->
+  <div id="saveTemplateModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="saveTemplateTitle">Save Template</h3>
+      <div class="form-group">
+        <label for="templateName" data-i18n="templateName">Template Name:</label>
+        <input type="text" id="templateName" data-i18n-placeholder="templateNamePlaceholder" placeholder="My Template">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelSaveTemplate" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmSaveTemplate" data-i18n="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Edit Template -->
+  <div id="editTemplateModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="editTemplateTitle">Edit Template</h3>
+      <div class="form-group">
+        <label for="editTemplateName" data-i18n="templateName">Template Name:</label>
+        <input type="text" id="editTemplateName">
+      </div>
+      <input type="hidden" id="editTemplateId">
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelEditTemplate" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmEditTemplate" data-i18n="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for QR Code -->
+  <div id="qrModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="addQrCodeTitle">Add QR Code</h3>
+      <div class="form-group">
+        <label for="qrContent" data-i18n="qrContent">Content (URL or Text):</label>
+        <input type="text" id="qrContent" placeholder="https://example.com" dir="ltr">
+      </div>
+      <div class="form-group">
+        <label for="qrSize" data-i18n="qrSize">Size (pixels):</label>
+        <input type="number" id="qrSize" value="150" min="50" max="300" dir="ltr">
+      </div>
+      <div class="qr-preview" id="qrPreview">
+        <span style="color: var(--text-muted);" data-i18n="qrPreviewHint">QR preview will appear here</span>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelQr" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmQr" data-i18n="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Google Map -->
+  <div id="mapModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="addMapTitle">Add Map</h3>
+      <div class="form-group">
+        <label for="mapAddress" data-i18n="mapAddress">Address:</label>
+        <input type="text" id="mapAddress" data-i18n-placeholder="mapAddressPlaceholder" placeholder="Enter address...">
+      </div>
+      <div class="form-group">
+        <label for="mapZoom" data-i18n="mapZoom">Zoom Level:</label>
+        <input type="number" id="mapZoom" value="15" min="1" max="20" dir="ltr">
+      </div>
+      <div class="form-group">
+        <label for="mapWidth" data-i18n="mapWidth">Width (pixels):</label>
+        <input type="number" id="mapWidth" value="400" dir="ltr">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelMap" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmMap" data-i18n="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Social Buttons -->
+  <div id="socialModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="addSocialTitle">Add Social Buttons</h3>
+      <!-- Social Links Inputs -->
+      <div class="social-links-inputs" id="socialLinksInputs">
+        <div class="form-group social-link-group" data-social="facebook">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </label>
+          <input type="url" class="social-link-input" placeholder="https://facebook.com/yourpage" dir="ltr">
+        </div>
+        <div class="form-group social-link-group" data-social="twitter">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#000"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </label>
+          <input type="url" class="social-link-input" placeholder="https://x.com/username" dir="ltr">
+        </div>
+        <div class="form-group social-link-group" data-social="instagram">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </label>
+          <input type="url" class="social-link-input" placeholder="https://instagram.com/username" dir="ltr">
+        </div>
+        <div class="form-group social-link-group" data-social="linkedin">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </label>
+          <input type="url" class="social-link-input" placeholder="https://linkedin.com/in/username" dir="ltr">
+        </div>
+        <div class="form-group social-link-group" data-social="whatsapp">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </label>
+          <input type="text" class="social-link-input" placeholder="972501234567" dir="ltr">
+        </div>
+        <div class="form-group social-link-group" data-social="youtube">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube
+          </label>
+          <input type="url" class="social-link-input" placeholder="https://youtube.com/@channel" dir="ltr">
+        </div>
+        <div class="form-group social-link-group" data-social="telegram">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088CC"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Telegram
+          </label>
+          <input type="url" class="social-link-input" placeholder="https://t.me/username" dir="ltr">
+        </div>
+        <div class="form-group social-link-group" data-social="tiktok">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#000"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            TikTok
+          </label>
+          <input type="url" class="social-link-input" placeholder="https://tiktok.com/@username" dir="ltr">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="socialStyle" data-i18n="socialStyle">Button Style:</label>
+        <select id="socialStyle" class="tool-select" style="width:100%; height:36px;">
+          <option value="colored" data-i18n="socialStyleColored">Colored</option>
+          <option value="rounded" data-i18n="socialStyleRounded">Rounded</option>
+          <option value="minimal" data-i18n="socialStyleMinimal">Minimal</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelSocial" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmSocial" data-i18n="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Signature Manager -->
+  <div id="signatureModal" class="modal">
+    <div class="modal-content" style="max-width: 450px;">
+      <h3 data-i18n="signatureManager">Signature Manager</h3>
+      <div class="signatures-list" id="signaturesList">
+        <div class="template-empty" id="noSignatures" style="padding: 16px;">
+          <p data-i18n="noSignatures">No saved signatures</p>
+        </div>
+      </div>
+      <button class="btn btn-secondary" id="createSignatureBtn" style="width: 100%; margin-bottom: 16px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        <span data-i18n="createSignature">Create New Signature</span>
+      </button>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="closeSignatureModal" data-i18n="close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Create/Edit Signature -->
+  <div id="editSignatureModal" class="modal">
+    <div class="modal-content" style="max-width: 450px;">
+      <h3 id="signatureModalTitle" data-i18n="createSignature">Create Signature</h3>
+      <div class="form-group">
+        <label for="signatureName" data-i18n="signatureName">Signature Name:</label>
+        <input type="text" id="signatureName" data-i18n-placeholder="signatureNamePlaceholder" placeholder="Personal / Work">
+      </div>
+      <div class="form-group">
+        <label data-i18n="signatureContent">Signature Content:</label>
+        <div id="signatureEditor" contenteditable="true" style="min-height: 120px; padding: 12px; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: var(--text-primary);">
+        </div>
+      </div>
+      <div class="variables-panel">
+        <span class="variable-chip" data-var="{{name}}" data-i18n="varName">{{name}}</span>
+        <span class="variable-chip" data-var="{{email}}" data-i18n="varEmail">{{email}}</span>
+        <span class="variable-chip" data-var="{{phone}}" data-i18n="varPhone">{{phone}}</span>
+        <span class="variable-chip" data-var="{{company}}" data-i18n="varCompany">{{company}}</span>
+        <span class="variable-chip" data-var="{{title}}" data-i18n="varTitle">{{title}}</span>
+        <span class="variable-chip" data-var="{{date}}" data-i18n="varDate">{{date}}</span>
+      </div>
+      <input type="hidden" id="editSignatureId">
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelEditSignature" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="saveSignature" data-i18n="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Advanced Table Editor -->
+  <div id="tableEditorModal" class="modal">
+    <div class="modal-content" style="max-width: 500px;">
+      <h3 data-i18n="editTableTitle">Edit Table</h3>
+      <div class="table-editor-toolbar">
+        <button class="table-editor-btn" id="tableAddRow" data-i18n="addRow">+ Row</button>
+        <button class="table-editor-btn" id="tableAddCol" data-i18n="addColumn">+ Column</button>
+        <button class="table-editor-btn" id="tableDeleteRow" data-i18n="deleteRow">- Row</button>
+        <button class="table-editor-btn" id="tableDeleteCol" data-i18n="deleteColumn">- Column</button>
+        <button class="table-editor-btn" id="tableMergeCells" data-i18n="mergeCells">Merge</button>
+      </div>
+      <div class="form-group">
+        <label for="tableCellBg" data-i18n="cellBackground">Cell Background:</label>
+        <input type="color" id="tableCellBg" value="#ffffff">
+      </div>
+      <div class="form-group">
+        <label for="tableHeaderBg" data-i18n="headerBackground">Header Background:</label>
+        <input type="color" id="tableHeaderBg" value="#f3f4f6">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelTableEditor" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="applyTableChanges" data-i18n="apply">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for AI Settings -->
+  <div id="aiSettingsModal" class="modal">
+    <div class="modal-content" style="max-width: 450px;">
+      <h3 data-i18n="enterApiKey">Enter API Key</h3>
+      <div class="form-group">
+        <label for="geminiApiKey" data-i18n="geminiApiKey">Gemini API Key:</label>
+        <div class="api-key-input-wrapper">
+          <input type="password" id="geminiApiKey" placeholder="AIza..." dir="ltr">
+          <button type="button" class="toggle-password-btn" id="toggleApiKeyVisibility">
+            <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            <svg class="eye-off-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+              <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+              <line x1="1" y1="1" x2="23" y2="23"/>
+            </svg>
+          </button>
+        </div>
+        <small class="form-hint">
+          <a href="https://aistudio.google.com/apikey" target="_blank" data-i18n="getApiKeyLink">Get your free API key from Google AI Studio →</a>
+        </small>
+      </div>
+      <div class="api-error-message hidden" id="apiErrorMessage">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        <span data-i18n="apiKeyInvalid">API key is invalid</span>
+      </div>
+      <div class="api-loading hidden" id="apiKeyLoading">
+        <div class="ai-spinner"></div>
+        <span data-i18n="testingApi">Testing API key...</span>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelApiKey" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="saveApiKey" data-i18n="saveAndContinue">Save & Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for AI Write -->
+  <div id="aiWriteModal" class="modal">
+    <div class="modal-content" style="max-width: 500px;">
+      <div class="ai-modal-header">
+        <h3 data-i18n="aiWriteTitle">Write Email with AI</h3>
+        <button class="change-api-key-btn" id="changeApiKeyBtn" data-i18n-title="changeApiKey">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+          </svg>
+        </button>
+      </div>
+      <div class="form-group">
+        <label for="aiInstructions" data-i18n="aiInstructions">Describe the email you want to write:</label>
+        <textarea id="aiInstructions" rows="4" data-i18n-placeholder="aiInstructionsPlaceholder" placeholder="e.g., A formal thank you email to a client for their recent purchase"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="aiTone" data-i18n="aiTone">Tone:</label>
+        <select id="aiTone" class="tool-select" style="width:100%; height:36px;">
+          <option value="professional" data-i18n="toneProfessional">Professional</option>
+          <option value="friendly" data-i18n="toneFriendly">Friendly</option>
+          <option value="formal" data-i18n="toneFormal">Formal</option>
+          <option value="casual" data-i18n="toneCasual">Casual</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="aiLanguage" data-i18n="aiLanguageLabel">Email Language:</label>
+        <select id="aiLanguage" class="tool-select" style="width:100%; height:36px;">
+          <option value="he">עברית</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="ru">Русский</option>
+          <option value="ar">العربية</option>
+          <option value="pt">Português</option>
+          <option value="zh_CN">中文</option>
+        </select>
+      </div>
+      <div class="ai-loading hidden" id="aiLoading">
+        <div class="ai-spinner"></div>
+        <span data-i18n="aiGenerating">Generating email...</span>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelAiWrite" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="generateAiEmail" data-i18n="generate">Generate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Variables -->
+  <div id="variablesModal" class="modal">
+    <div class="modal-content" style="max-width: 450px;">
+      <div class="variables-modal-header">
+        <h3 data-i18n="insertVariable">Insert Variable</h3>
+        <button class="variables-settings-btn" id="openVariablesSettings" data-i18n-title="variablesSettings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="variables-list" id="variablesList">
+        <!-- Variables will be populated here -->
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="closeVariablesModal" data-i18n="close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Variables Settings -->
+  <div id="variablesSettingsModal" class="modal">
+    <div class="modal-content" style="max-width: 500px;">
+      <h3 data-i18n="variablesSettings">Variables Settings</h3>
+      
+      <div class="variables-section">
+        <h4 data-i18n="personalInfo">Personal Information</h4>
+        <div class="form-group">
+          <label for="varNameValue">{{name}}</label>
+          <input type="text" id="varNameValue" data-i18n-placeholder="yourName" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="varEmailValue">{{email}}</label>
+          <input type="email" id="varEmailValue" data-i18n-placeholder="yourEmail" placeholder="your@email.com" dir="ltr">
+        </div>
+        <div class="form-group">
+          <label for="varPhoneValue">{{phone}}</label>
+          <input type="tel" id="varPhoneValue" data-i18n-placeholder="yourPhone" placeholder="+972-50-1234567" dir="ltr">
+        </div>
+        <div class="form-group">
+          <label for="varCompanyValue">{{company}}</label>
+          <input type="text" id="varCompanyValue" data-i18n-placeholder="yourCompany" placeholder="Company name">
+        </div>
+        <div class="form-group">
+          <label for="varTitleValue">{{title}}</label>
+          <input type="text" id="varTitleValue" data-i18n-placeholder="yourTitle" placeholder="Your title">
+        </div>
+      </div>
+      
+      <div class="variables-section">
+        <div class="section-header">
+          <h4 data-i18n="customVariables">Custom Variables</h4>
+          <button class="btn btn-small" id="addCustomVariable">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span data-i18n="addVariable">Add</span>
+          </button>
+        </div>
+        <div class="custom-variables-list" id="customVariablesList">
+          <!-- Custom variables will be populated here -->
+        </div>
+      </div>
+      
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelVariablesSettings" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="saveVariablesSettings" data-i18n="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

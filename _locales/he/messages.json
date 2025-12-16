@@ -1,0 +1,768 @@
+{
+  "appName": {
+    "message": "עורך HTML למייל",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "צור וערוך מיילים מעוצבים ב-HTML ישירות ב-Gmail, Outlook, Yahoo ו-ProtonMail",
+    "description": "Extension description"
+  },
+  "tabVisual": {
+    "message": "עורך ויזואלי"
+  },
+  "tabHtml": {
+    "message": "קוד HTML"
+  },
+  "tabPreview": {
+    "message": "תצוגה מקדימה"
+  },
+  "tabTemplates": {
+    "message": "תבניות"
+  },
+  "subjectLabel": {
+    "message": "נושא:"
+  },
+  "subjectPlaceholder": {
+    "message": "הזן נושא להודעה..."
+  },
+  "bold": {
+    "message": "מודגש (Ctrl+B)"
+  },
+  "italic": {
+    "message": "נטוי (Ctrl+I)"
+  },
+  "underline": {
+    "message": "קו תחתון (Ctrl+U)"
+  },
+  "fontSize": {
+    "message": "גודל"
+  },
+  "fontSizeVerySmall": {
+    "message": "קטן מאוד"
+  },
+  "fontSizeSmall": {
+    "message": "קטן"
+  },
+  "fontSizeNormal": {
+    "message": "רגיל"
+  },
+  "fontSizeMedium": {
+    "message": "בינוני"
+  },
+  "fontSizeLarge": {
+    "message": "גדול"
+  },
+  "fontSizeVeryLarge": {
+    "message": "גדול מאוד"
+  },
+  "fontSizeHuge": {
+    "message": "ענק"
+  },
+  "textColor": {
+    "message": "צבע טקסט"
+  },
+  "bgColor": {
+    "message": "צבע רקע"
+  },
+  "customColor": {
+    "message": "מותאם:"
+  },
+  "alignRight": {
+    "message": "יישור לימין"
+  },
+  "alignCenter": {
+    "message": "יישור למרכז"
+  },
+  "alignLeft": {
+    "message": "יישור לשמאל"
+  },
+  "insertLink": {
+    "message": "הוסף קישור"
+  },
+  "insertImage": {
+    "message": "הוסף תמונה"
+  },
+  "insertVideo": {
+    "message": "הוסף סרטון"
+  },
+  "insertFile": {
+    "message": "הוסף קובץ"
+  },
+  "advancedTools": {
+    "message": "כלים מתקדמים"
+  },
+  "strikethrough": {
+    "message": "קו חוצה"
+  },
+  "subscript": {
+    "message": "כתב תחתי"
+  },
+  "superscript": {
+    "message": "כתב עילי"
+  },
+  "fontFamily": {
+    "message": "גופן"
+  },
+  "bulletList": {
+    "message": "רשימת תבליטים"
+  },
+  "numberedList": {
+    "message": "רשימה ממוספרת"
+  },
+  "insertTable": {
+    "message": "הוסף טבלה"
+  },
+  "insertDivider": {
+    "message": "קו מפריד"
+  },
+  "insertQuote": {
+    "message": "ציטוט"
+  },
+  "insertCode": {
+    "message": "קוד"
+  },
+  "insertButton": {
+    "message": "כפתור"
+  },
+  "clearFormat": {
+    "message": "נקה עיצוב"
+  },
+  "undo": {
+    "message": "בטל"
+  },
+  "redo": {
+    "message": "בצע שוב"
+  },
+  "clearAll": {
+    "message": "נקה הכל"
+  },
+  "editorPlaceholder": {
+    "message": "התחל לכתוב את ההודעה שלך כאן..."
+  },
+  "htmlPlaceholder": {
+    "message": "<p>כתוב כאן קוד HTML...</p>"
+  },
+  "builtinTemplates": {
+    "message": "תבניות מובנות"
+  },
+  "myTemplates": {
+    "message": "התבניות שלי"
+  },
+  "importTemplate": {
+    "message": "ייבא תבנית"
+  },
+  "exportAll": {
+    "message": "ייצא הכל"
+  },
+  "noTemplates": {
+    "message": "אין תבניות שמורות"
+  },
+  "saveTemplateHint": {
+    "message": "שמור תבנית מהעורך"
+  },
+  "tplNewsletter": {
+    "message": "ניוזלטר"
+  },
+  "tplAnnouncement": {
+    "message": "הודעה"
+  },
+  "tplInvitation": {
+    "message": "הזמנה"
+  },
+  "tplSimple": {
+    "message": "פשוט"
+  },
+  "tplPromo": {
+    "message": "מבצע"
+  },
+  "tplWelcome": {
+    "message": "ברוכים הבאים"
+  },
+  "tplThankyou": {
+    "message": "תודה"
+  },
+  "tplReminder": {
+    "message": "תזכורת"
+  },
+  "tplFeedback": {
+    "message": "משוב"
+  },
+  "tplAlert": {
+    "message": "התראה"
+  },
+  "saveTemplate": {
+    "message": "שמור תבנית"
+  },
+  "copyHtml": {
+    "message": "העתק HTML"
+  },
+  "insertToEmail": {
+    "message": "הכנס למייל"
+  },
+  "addLinkTitle": {
+    "message": "הוסף קישור"
+  },
+  "linkText": {
+    "message": "טקסט הקישור:"
+  },
+  "linkTextPlaceholder": {
+    "message": "לחץ כאן"
+  },
+  "linkUrl": {
+    "message": "כתובת URL:"
+  },
+  "cancel": {
+    "message": "ביטול"
+  },
+  "add": {
+    "message": "הוסף"
+  },
+  "addImageTitle": {
+    "message": "הוסף תמונה"
+  },
+  "selectFile": {
+    "message": "בחר קובץ"
+  },
+  "urlAddress": {
+    "message": "כתובת URL"
+  },
+  "dragImageHere": {
+    "message": "גרור תמונה לכאן או לחץ לבחירה"
+  },
+  "imageUrl": {
+    "message": "כתובת התמונה:"
+  },
+  "imageAlt": {
+    "message": "תיאור (alt):"
+  },
+  "imageAltPlaceholder": {
+    "message": "תיאור התמונה"
+  },
+  "imageWidth": {
+    "message": "רוחב (פיקסלים):"
+  },
+  "remove": {
+    "message": "הסר"
+  },
+  "addVideoTitle": {
+    "message": "הוסף סרטון"
+  },
+  "dragVideoHere": {
+    "message": "גרור סרטון לכאן או לחץ לבחירה"
+  },
+  "videoSizeLimit": {
+    "message": "MP4, WebM (עד 10MB)"
+  },
+  "videoUrl": {
+    "message": "כתובת הסרטון:"
+  },
+  "youtubeVimeo": {
+    "message": "YouTube/Vimeo"
+  },
+  "embedLink": {
+    "message": "קישור YouTube או Vimeo:"
+  },
+  "videoWidth": {
+    "message": "רוחב (פיקסלים):"
+  },
+  "addFileTitle": {
+    "message": "הוסף קובץ"
+  },
+  "dragFileHere": {
+    "message": "גרור קובץ לכאן או לחץ לבחירה"
+  },
+  "fileTypes": {
+    "message": "PDF, DOC, DOCX, XLS, XLSX, TXT"
+  },
+  "fileName": {
+    "message": "שם הקובץ"
+  },
+  "fileSize": {
+    "message": "גודל הקובץ"
+  },
+  "fileLinkText": {
+    "message": "טקסט הקישור:"
+  },
+  "fileLinkPlaceholder": {
+    "message": "לחץ להורדה"
+  },
+  "addFileLink": {
+    "message": "הוסף קישור"
+  },
+  "addTableTitle": {
+    "message": "הוסף טבלה"
+  },
+  "rows": {
+    "message": "שורות:"
+  },
+  "columns": {
+    "message": "עמודות:"
+  },
+  "addButtonTitle": {
+    "message": "הוסף כפתור"
+  },
+  "buttonText": {
+    "message": "טקסט הכפתור:"
+  },
+  "buttonTextPlaceholder": {
+    "message": "לחץ כאן"
+  },
+  "buttonUrl": {
+    "message": "כתובת URL:"
+  },
+  "buttonColor": {
+    "message": "צבע הכפתור:"
+  },
+  "saveTemplateTitle": {
+    "message": "שמור תבנית"
+  },
+  "templateName": {
+    "message": "שם התבנית:"
+  },
+  "templateNamePlaceholder": {
+    "message": "התבנית שלי"
+  },
+  "save": {
+    "message": "שמור"
+  },
+  "editTemplateTitle": {
+    "message": "עריכת תבנית"
+  },
+  "codeCopied": {
+    "message": "הקוד הועתק ללוח!"
+  },
+  "templateSaved": {
+    "message": "התבנית נשמרה!"
+  },
+  "templateLoaded": {
+    "message": "התבנית נטענה בהצלחה"
+  },
+  "templateDeleted": {
+    "message": "התבנית נמחקה"
+  },
+  "templateUpdated": {
+    "message": "התבנית עודכנה"
+  },
+  "templateExported": {
+    "message": "התבנית יוצאה"
+  },
+  "templatesImported": {
+    "message": "התבניות יובאו בהצלחה"
+  },
+  "exportingTemplates": {
+    "message": "מייצא $COUNT$ תבניות...",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noTemplatesToExport": {
+    "message": "אין תבניות לייצוא"
+  },
+  "enterTemplateName": {
+    "message": "יש להזין שם לתבנית"
+  },
+  "contentInsertedTo": {
+    "message": "התוכן הוכנס ל-$SERVICE$!",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "openEmailFirst": {
+    "message": "פתח חלון הודעה חדשה ב-$SERVICE$ תחילה",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "refreshAndRetry": {
+    "message": "רענן את $SERVICE$ ונסה שוב",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorInserting": {
+    "message": "שגיאה בהכנסת התוכן"
+  },
+  "openEmailService": {
+    "message": "יש לפתוח Gmail, Outlook, Yahoo או ProtonMail"
+  },
+  "selectFileFirst": {
+    "message": "יש לבחור קובץ"
+  },
+  "selectImageFirst": {
+    "message": "יש לבחור תמונה או להזין כתובת URL"
+  },
+  "selectVideoFirst": {
+    "message": "יש לבחור סרטון או להזין כתובת"
+  },
+  "fileLoaded": {
+    "message": "הקובץ נטען בהצלחה"
+  },
+  "imageLoaded": {
+    "message": "התמונה נטענה בהצלחה"
+  },
+  "videoLoaded": {
+    "message": "הסרטון נטען בהצלחה"
+  },
+  "fileAdded": {
+    "message": "הקובץ הוסף בהצלחה"
+  },
+  "fileTooLarge": {
+    "message": "הקובץ גדול מדי (מקסימום 5MB)"
+  },
+  "imageTooLarge": {
+    "message": "התמונה גדולה מדי (מקסימום 5MB)"
+  },
+  "videoTooLarge": {
+    "message": "הסרטון גדול מדי (מקסימום 10MB)"
+  },
+  "fileLoadError": {
+    "message": "שגיאה בטעינת הקובץ"
+  },
+  "selectImageFile": {
+    "message": "יש לבחור קובץ תמונה"
+  },
+  "selectVideoFile": {
+    "message": "יש לבחור קובץ וידאו"
+  },
+  "contentCleared": {
+    "message": "התוכן נמחק"
+  },
+  "confirmClearAll": {
+    "message": "האם אתה בטוח שברצונך למחוק את כל התוכן?"
+  },
+  "confirmDeleteTemplate": {
+    "message": "למחוק את התבנית \"$NAME$\"?",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "insertEmoji": {
+    "message": "הוסף אמוג'י"
+  },
+  "emojiSmileys": {
+    "message": "פרצופים"
+  },
+  "emojiGestures": {
+    "message": "מחוות"
+  },
+  "emojiSymbols": {
+    "message": "סמלים"
+  },
+  "emojiObjects": {
+    "message": "אובייקטים"
+  },
+  "previewDesktop": {
+    "message": "מחשב"
+  },
+  "previewMobile": {
+    "message": "נייד"
+  },
+  "words": {
+    "message": "מילים"
+  },
+  "chars": {
+    "message": "תווים"
+  },
+  "insertQrCode": {
+    "message": "הוסף קוד QR"
+  },
+  "addQrCodeTitle": {
+    "message": "הוסף קוד QR"
+  },
+  "qrContent": {
+    "message": "תוכן (קישור או טקסט):"
+  },
+  "qrSize": {
+    "message": "גודל (פיקסלים):"
+  },
+  "qrPreviewHint": {
+    "message": "תצוגה מקדימה תופיע כאן"
+  },
+  "insertMap": {
+    "message": "הוסף מפה"
+  },
+  "addMapTitle": {
+    "message": "הוסף מפה"
+  },
+  "mapAddress": {
+    "message": "כתובת:"
+  },
+  "mapAddressPlaceholder": {
+    "message": "הזן כתובת..."
+  },
+  "mapZoom": {
+    "message": "רמת זום:"
+  },
+  "mapWidth": {
+    "message": "רוחב (פיקסלים):"
+  },
+  "insertSocial": {
+    "message": "כפתורי רשתות"
+  },
+  "addSocialTitle": {
+    "message": "הוסף כפתורי רשתות חברתיות"
+  },
+  "socialStyle": {
+    "message": "סגנון כפתור:"
+  },
+  "socialStyleColored": {
+    "message": "צבעוני"
+  },
+  "socialStyleRounded": {
+    "message": "עגול"
+  },
+  "socialStyleMinimal": {
+    "message": "מינימלי"
+  },
+  "insertSignature": {
+    "message": "הוסף חתימה"
+  },
+  "signatureManager": {
+    "message": "מנהל חתימות"
+  },
+  "noSignatures": {
+    "message": "אין חתימות שמורות"
+  },
+  "createSignature": {
+    "message": "צור חתימה חדשה"
+  },
+  "signatureName": {
+    "message": "שם החתימה:"
+  },
+  "signatureNamePlaceholder": {
+    "message": "אישי / עבודה"
+  },
+  "signatureContent": {
+    "message": "תוכן החתימה:"
+  },
+  "editSignature": {
+    "message": "ערוך חתימה"
+  },
+  "close": {
+    "message": "סגור"
+  },
+  "varName": {
+    "message": "{{שם}}"
+  },
+  "varEmail": {
+    "message": "{{אימייל}}"
+  },
+  "varPhone": {
+    "message": "{{טלפון}}"
+  },
+  "varCompany": {
+    "message": "{{חברה}}"
+  },
+  "varTitle": {
+    "message": "{{תפקיד}}"
+  },
+  "varDate": {
+    "message": "{{תאריך}}"
+  },
+  "categoryAll": {
+    "message": "הכל"
+  },
+  "addCategoryTitle": {
+    "message": "הוסף קטגוריה"
+  },
+  "categoryName": {
+    "message": "שם הקטגוריה:"
+  },
+  "categoryNamePlaceholder": {
+    "message": "עבודה / אישי"
+  },
+  "editTableTitle": {
+    "message": "עריכת טבלה"
+  },
+  "addRow": {
+    "message": "+ שורה"
+  },
+  "addColumn": {
+    "message": "+ עמודה"
+  },
+  "deleteRow": {
+    "message": "- שורה"
+  },
+  "deleteColumn": {
+    "message": "- עמודה"
+  },
+  "mergeCells": {
+    "message": "מזג"
+  },
+  "cellBackground": {
+    "message": "צבע רקע תא:"
+  },
+  "headerBackground": {
+    "message": "צבע רקע כותרת:"
+  },
+  "apply": {
+    "message": "החל"
+  },
+  "enterAtLeastOneLink": {
+    "message": "הזן לפחות קישור אחד"
+  },
+  "socialButtonsAdded": {
+    "message": "כפתורי הרשתות נוספו!"
+  },
+  "aiSettings": {
+    "message": "הגדרות AI"
+  },
+  "aiSettingsTitle": {
+    "message": "הגדרות AI"
+  },
+  "geminiApiKey": {
+    "message": "מפתח API של Gemini"
+  },
+  "apiKeyHint": {
+    "message": "קבל מפתח API בחינם מ-Google AI Studio"
+  },
+  "apiNotConfigured": {
+    "message": "API לא מוגדר"
+  },
+  "apiConfigured": {
+    "message": "API מוגדר ופעיל"
+  },
+  "apiInvalid": {
+    "message": "מפתח API לא תקין"
+  },
+  "testingApi": {
+    "message": "בודק את המפתח..."
+  },
+  "testApiKey": {
+    "message": "בדוק מפתח"
+  },
+  "enterApiKey": {
+    "message": "הזן מפתח API"
+  },
+  "getApiKeyLink": {
+    "message": "קבל מפתח API בחינם מ-Google AI Studio ←"
+  },
+  "saveAndContinue": {
+    "message": "שמור והמשך"
+  },
+  "changeApiKey": {
+    "message": "שנה מפתח API"
+  },
+  "apiKeyValid": {
+    "message": "מפתח ה-API תקין!"
+  },
+  "apiKeyInvalid": {
+    "message": "מפתח ה-API לא תקין"
+  },
+  "apiKeyError": {
+    "message": "שגיאה בבדיקת המפתח"
+  },
+  "apiKeySaved": {
+    "message": "מפתח ה-API נשמר!"
+  },
+  "aiWrite": {
+    "message": "כתוב עם AI"
+  },
+  "aiWriteTitle": {
+    "message": "כתיבת מייל עם AI"
+  },
+  "aiInstructions": {
+    "message": "תאר את המייל שברצונך לכתוב:"
+  },
+  "aiInstructionsPlaceholder": {
+    "message": "לדוגמה: מייל תודה רשמי ללקוח על הרכישה האחרונה שלו"
+  },
+  "aiTone": {
+    "message": "טון"
+  },
+  "toneProfessional": {
+    "message": "מקצועי"
+  },
+  "toneFriendly": {
+    "message": "ידידותי"
+  },
+  "toneFormal": {
+    "message": "רשמי"
+  },
+  "toneCasual": {
+    "message": "לא פורמלי"
+  },
+  "aiLanguageLabel": {
+    "message": "שפת המייל"
+  },
+  "aiGenerating": {
+    "message": "מייצר מייל..."
+  },
+  "generate": {
+    "message": "צור"
+  },
+  "configureApiFirst": {
+    "message": "יש להגדיר מפתח API קודם"
+  },
+  "enterInstructions": {
+    "message": "הזן הוראות לכתיבת המייל"
+  },
+  "emailGenerated": {
+    "message": "המייל נוצר בהצלחה!"
+  },
+  "aiGenerationError": {
+    "message": "שגיאה ביצירת המייל"
+  },
+  "rateLimitError": {
+    "message": "יותר מדי בקשות. נסה שוב בעוד דקה"
+  },
+  "insertVariable": {
+    "message": "הכנס משתנה"
+  },
+  "variablesSettings": {
+    "message": "הגדרות משתנים"
+  },
+  "personalInfo": {
+    "message": "פרטים אישיים"
+  },
+  "customVariables": {
+    "message": "משתנים מותאמים אישית"
+  },
+  "addVariable": {
+    "message": "הוסף"
+  },
+  "yourName": {
+    "message": "השם שלך"
+  },
+  "yourEmail": {
+    "message": "your@email.com"
+  },
+  "yourPhone": {
+    "message": "050-1234567"
+  },
+  "yourCompany": {
+    "message": "שם החברה"
+  },
+  "yourTitle": {
+    "message": "התפקיד שלך"
+  },
+  "variableName": {
+    "message": "שם משתנה"
+  },
+  "variableValue": {
+    "message": "ערך"
+  },
+  "noCustomVariables": {
+    "message": "אין משתנים מותאמים אישית"
+  },
+  "variablesSaved": {
+    "message": "המשתנים נשמרו!"
+  },
+  "notSet": {
+    "message": "לא הוגדר"
+  },
+  "signatureInserted": {
+    "message": "החתימה הוכנסה!"
+  }
+}
+

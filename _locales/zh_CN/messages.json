@@ -1,0 +1,748 @@
+{
+  "appName": {
+    "message": "邮件HTML编辑器"
+  },
+  "appDescription": {
+    "message": "在Gmail、Outlook、Yahoo和ProtonMail中创建和编辑精美的HTML邮件"
+  },
+  "tabVisual": {
+    "message": "可视化编辑器"
+  },
+  "tabHtml": {
+    "message": "HTML代码"
+  },
+  "tabPreview": {
+    "message": "预览"
+  },
+  "tabTemplates": {
+    "message": "模板"
+  },
+  "subjectLabel": {
+    "message": "主题："
+  },
+  "subjectPlaceholder": {
+    "message": "输入邮件主题..."
+  },
+  "bold": {
+    "message": "粗体 (Ctrl+B)"
+  },
+  "italic": {
+    "message": "斜体 (Ctrl+I)"
+  },
+  "underline": {
+    "message": "下划线 (Ctrl+U)"
+  },
+  "fontSize": {
+    "message": "大小"
+  },
+  "fontSizeVerySmall": {
+    "message": "极小"
+  },
+  "fontSizeSmall": {
+    "message": "小"
+  },
+  "fontSizeNormal": {
+    "message": "正常"
+  },
+  "fontSizeMedium": {
+    "message": "中等"
+  },
+  "fontSizeLarge": {
+    "message": "大"
+  },
+  "fontSizeVeryLarge": {
+    "message": "很大"
+  },
+  "fontSizeHuge": {
+    "message": "极大"
+  },
+  "textColor": {
+    "message": "文字颜色"
+  },
+  "bgColor": {
+    "message": "背景颜色"
+  },
+  "customColor": {
+    "message": "自定义："
+  },
+  "alignRight": {
+    "message": "右对齐"
+  },
+  "alignCenter": {
+    "message": "居中"
+  },
+  "alignLeft": {
+    "message": "左对齐"
+  },
+  "insertLink": {
+    "message": "插入链接"
+  },
+  "insertImage": {
+    "message": "插入图片"
+  },
+  "insertVideo": {
+    "message": "插入视频"
+  },
+  "insertFile": {
+    "message": "插入文件"
+  },
+  "advancedTools": {
+    "message": "高级工具"
+  },
+  "strikethrough": {
+    "message": "删除线"
+  },
+  "subscript": {
+    "message": "下标"
+  },
+  "superscript": {
+    "message": "上标"
+  },
+  "fontFamily": {
+    "message": "字体"
+  },
+  "bulletList": {
+    "message": "项目符号列表"
+  },
+  "numberedList": {
+    "message": "编号列表"
+  },
+  "insertTable": {
+    "message": "插入表格"
+  },
+  "insertDivider": {
+    "message": "分隔线"
+  },
+  "insertQuote": {
+    "message": "引用"
+  },
+  "insertCode": {
+    "message": "代码"
+  },
+  "insertButton": {
+    "message": "按钮"
+  },
+  "clearFormat": {
+    "message": "清除格式"
+  },
+  "undo": {
+    "message": "撤销"
+  },
+  "redo": {
+    "message": "重做"
+  },
+  "clearAll": {
+    "message": "清除全部"
+  },
+  "editorPlaceholder": {
+    "message": "在此输入您的消息..."
+  },
+  "htmlPlaceholder": {
+    "message": "<p>在此编写HTML代码...</p>"
+  },
+  "builtinTemplates": {
+    "message": "内置模板"
+  },
+  "myTemplates": {
+    "message": "我的模板"
+  },
+  "importTemplate": {
+    "message": "导入模板"
+  },
+  "exportAll": {
+    "message": "全部导出"
+  },
+  "noTemplates": {
+    "message": "没有保存的模板"
+  },
+  "saveTemplateHint": {
+    "message": "从编辑器保存模板"
+  },
+  "tplNewsletter": {
+    "message": "新闻通讯"
+  },
+  "tplAnnouncement": {
+    "message": "公告"
+  },
+  "tplInvitation": {
+    "message": "邀请"
+  },
+  "tplSimple": {
+    "message": "简单"
+  },
+  "tplPromo": {
+    "message": "促销"
+  },
+  "tplWelcome": {
+    "message": "欢迎"
+  },
+  "tplThankyou": {
+    "message": "感谢"
+  },
+  "tplReminder": {
+    "message": "提醒"
+  },
+  "tplFeedback": {
+    "message": "反馈"
+  },
+  "tplAlert": {
+    "message": "警报"
+  },
+  "saveTemplate": {
+    "message": "保存模板"
+  },
+  "copyHtml": {
+    "message": "复制HTML"
+  },
+  "insertToEmail": {
+    "message": "插入到邮件"
+  },
+  "addLinkTitle": {
+    "message": "添加链接"
+  },
+  "linkText": {
+    "message": "链接文字："
+  },
+  "linkTextPlaceholder": {
+    "message": "点击这里"
+  },
+  "linkUrl": {
+    "message": "网址："
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "add": {
+    "message": "添加"
+  },
+  "addImageTitle": {
+    "message": "添加图片"
+  },
+  "selectFile": {
+    "message": "选择文件"
+  },
+  "urlAddress": {
+    "message": "网址"
+  },
+  "dragImageHere": {
+    "message": "拖动图片到这里或点击选择"
+  },
+  "imageUrl": {
+    "message": "图片网址："
+  },
+  "imageAlt": {
+    "message": "描述 (alt)："
+  },
+  "imageAltPlaceholder": {
+    "message": "图片描述"
+  },
+  "imageWidth": {
+    "message": "宽度（像素）："
+  },
+  "remove": {
+    "message": "移除"
+  },
+  "addVideoTitle": {
+    "message": "添加视频"
+  },
+  "dragVideoHere": {
+    "message": "拖动视频到这里或点击选择"
+  },
+  "videoSizeLimit": {
+    "message": "MP4, WebM（最大10MB）"
+  },
+  "videoUrl": {
+    "message": "视频网址："
+  },
+  "youtubeVimeo": {
+    "message": "YouTube/Vimeo"
+  },
+  "embedLink": {
+    "message": "YouTube或Vimeo链接："
+  },
+  "videoWidth": {
+    "message": "宽度（像素）："
+  },
+  "addFileTitle": {
+    "message": "添加文件"
+  },
+  "dragFileHere": {
+    "message": "拖动文件到这里或点击选择"
+  },
+  "fileTypes": {
+    "message": "PDF, DOC, DOCX, XLS, XLSX, TXT"
+  },
+  "fileName": {
+    "message": "文件名"
+  },
+  "fileSize": {
+    "message": "文件大小"
+  },
+  "fileLinkText": {
+    "message": "链接文字："
+  },
+  "fileLinkPlaceholder": {
+    "message": "点击下载"
+  },
+  "addFileLink": {
+    "message": "添加链接"
+  },
+  "addTableTitle": {
+    "message": "添加表格"
+  },
+  "rows": {
+    "message": "行数："
+  },
+  "columns": {
+    "message": "列数："
+  },
+  "addButtonTitle": {
+    "message": "添加按钮"
+  },
+  "buttonText": {
+    "message": "按钮文字："
+  },
+  "buttonTextPlaceholder": {
+    "message": "点击这里"
+  },
+  "buttonUrl": {
+    "message": "网址："
+  },
+  "buttonColor": {
+    "message": "按钮颜色："
+  },
+  "saveTemplateTitle": {
+    "message": "保存模板"
+  },
+  "templateName": {
+    "message": "模板名称："
+  },
+  "templateNamePlaceholder": {
+    "message": "我的模板"
+  },
+  "save": {
+    "message": "保存"
+  },
+  "editTemplateTitle": {
+    "message": "编辑模板"
+  },
+  "codeCopied": {
+    "message": "代码已复制到剪贴板！"
+  },
+  "templateSaved": {
+    "message": "模板已保存！"
+  },
+  "templateLoaded": {
+    "message": "模板加载成功"
+  },
+  "templateDeleted": {
+    "message": "模板已删除"
+  },
+  "templateUpdated": {
+    "message": "模板已更新"
+  },
+  "templateExported": {
+    "message": "模板已导出"
+  },
+  "templatesImported": {
+    "message": "模板导入成功"
+  },
+  "exportingTemplates": {
+    "message": "正在导出 $COUNT$ 个模板...",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noTemplatesToExport": {
+    "message": "没有可导出的模板"
+  },
+  "enterTemplateName": {
+    "message": "请输入模板名称"
+  },
+  "contentInsertedTo": {
+    "message": "内容已插入到 $SERVICE$！",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "openEmailFirst": {
+    "message": "请先在 $SERVICE$ 中打开新邮件窗口",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "refreshAndRetry": {
+    "message": "刷新 $SERVICE$ 后重试",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorInserting": {
+    "message": "插入内容时出错"
+  },
+  "openEmailService": {
+    "message": "请打开Gmail、Outlook、Yahoo或ProtonMail"
+  },
+  "selectFileFirst": {
+    "message": "请选择文件"
+  },
+  "selectImageFirst": {
+    "message": "请选择图片或输入网址"
+  },
+  "selectVideoFirst": {
+    "message": "请选择视频或输入网址"
+  },
+  "fileLoaded": {
+    "message": "文件加载成功"
+  },
+  "imageLoaded": {
+    "message": "图片加载成功"
+  },
+  "videoLoaded": {
+    "message": "视频加载成功"
+  },
+  "fileAdded": {
+    "message": "文件添加成功"
+  },
+  "fileTooLarge": {
+    "message": "文件太大（最大5MB）"
+  },
+  "imageTooLarge": {
+    "message": "图片太大（最大5MB）"
+  },
+  "videoTooLarge": {
+    "message": "视频太大（最大10MB）"
+  },
+  "fileLoadError": {
+    "message": "加载文件时出错"
+  },
+  "selectImageFile": {
+    "message": "请选择图片文件"
+  },
+  "selectVideoFile": {
+    "message": "请选择视频文件"
+  },
+  "contentCleared": {
+    "message": "内容已清除"
+  },
+  "confirmClearAll": {
+    "message": "确定要清除所有内容吗？"
+  },
+  "confirmDeleteTemplate": {
+    "message": "删除模板 \"$NAME$\"？",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "insertEmoji": {
+    "message": "插入表情"
+  },
+  "emojiSmileys": {
+    "message": "表情"
+  },
+  "emojiGestures": {
+    "message": "手势"
+  },
+  "emojiSymbols": {
+    "message": "符号"
+  },
+  "emojiObjects": {
+    "message": "物品"
+  },
+  "previewDesktop": {
+    "message": "电脑"
+  },
+  "previewMobile": {
+    "message": "手机"
+  },
+  "words": {
+    "message": "字数"
+  },
+  "chars": {
+    "message": "字符"
+  },
+  "insertQrCode": {
+    "message": "插入二维码"
+  },
+  "addQrCodeTitle": {
+    "message": "添加二维码"
+  },
+  "qrContent": {
+    "message": "内容（网址或文字）："
+  },
+  "qrSize": {
+    "message": "尺寸（像素）："
+  },
+  "qrPreviewHint": {
+    "message": "预览将在此显示"
+  },
+  "insertMap": {
+    "message": "插入地图"
+  },
+  "addMapTitle": {
+    "message": "添加地图"
+  },
+  "mapAddress": {
+    "message": "地址："
+  },
+  "mapAddressPlaceholder": {
+    "message": "输入地址..."
+  },
+  "mapZoom": {
+    "message": "缩放级别："
+  },
+  "mapWidth": {
+    "message": "宽度（像素）："
+  },
+  "insertSocial": {
+    "message": "社交按钮"
+  },
+  "addSocialTitle": {
+    "message": "添加社交媒体按钮"
+  },
+  "socialStyle": {
+    "message": "按钮样式："
+  },
+  "socialStyleColored": {
+    "message": "彩色"
+  },
+  "socialStyleRounded": {
+    "message": "圆形"
+  },
+  "socialStyleMinimal": {
+    "message": "简约"
+  },
+  "insertSignature": {
+    "message": "插入签名"
+  },
+  "signatureManager": {
+    "message": "签名管理"
+  },
+  "noSignatures": {
+    "message": "没有保存的签名"
+  },
+  "createSignature": {
+    "message": "创建新签名"
+  },
+  "signatureName": {
+    "message": "签名名称："
+  },
+  "signatureNamePlaceholder": {
+    "message": "个人 / 工作"
+  },
+  "signatureContent": {
+    "message": "签名内容："
+  },
+  "editSignature": {
+    "message": "编辑签名"
+  },
+  "close": {
+    "message": "关闭"
+  },
+  "categoryAll": {
+    "message": "全部"
+  },
+  "addCategoryTitle": {
+    "message": "添加分类"
+  },
+  "categoryName": {
+    "message": "分类名称："
+  },
+  "categoryNamePlaceholder": {
+    "message": "工作 / 个人"
+  },
+  "editTableTitle": {
+    "message": "编辑表格"
+  },
+  "addRow": {
+    "message": "+ 行"
+  },
+  "addColumn": {
+    "message": "+ 列"
+  },
+  "deleteRow": {
+    "message": "- 行"
+  },
+  "deleteColumn": {
+    "message": "- 列"
+  },
+  "mergeCells": {
+    "message": "合并"
+  },
+  "cellBackground": {
+    "message": "单元格背景："
+  },
+  "headerBackground": {
+    "message": "标题背景："
+  },
+  "apply": {
+    "message": "应用"
+  },
+  "enterAtLeastOneLink": {
+    "message": "请至少输入一个链接"
+  },
+  "socialButtonsAdded": {
+    "message": "社交按钮已添加！"
+  },
+  "aiSettings": {
+    "message": "AI设置"
+  },
+  "aiSettingsTitle": {
+    "message": "AI设置"
+  },
+  "geminiApiKey": {
+    "message": "Gemini API密钥"
+  },
+  "apiKeyHint": {
+    "message": "从Google AI Studio获取免费API密钥"
+  },
+  "apiNotConfigured": {
+    "message": "API未配置"
+  },
+  "apiConfigured": {
+    "message": "API已配置并激活"
+  },
+  "apiInvalid": {
+    "message": "API密钥无效"
+  },
+  "testingApi": {
+    "message": "正在测试API密钥..."
+  },
+  "testApiKey": {
+    "message": "测试密钥"
+  },
+  "enterApiKey": {
+    "message": "请输入API密钥"
+  },
+  "getApiKeyLink": {
+    "message": "从Google AI Studio获取免费API密钥 →"
+  },
+  "saveAndContinue": {
+    "message": "保存并继续"
+  },
+  "changeApiKey": {
+    "message": "更改API密钥"
+  },
+  "apiKeyValid": {
+    "message": "API密钥有效！"
+  },
+  "apiKeyInvalid": {
+    "message": "API密钥无效"
+  },
+  "apiKeyError": {
+    "message": "测试密钥时出错"
+  },
+  "apiKeySaved": {
+    "message": "API密钥已保存！"
+  },
+  "aiWrite": {
+    "message": "AI写作"
+  },
+  "aiWriteTitle": {
+    "message": "用AI写邮件"
+  },
+  "aiInstructions": {
+    "message": "描述您想写的邮件："
+  },
+  "aiInstructionsPlaceholder": {
+    "message": "例如：给客户的正式感谢信，感谢他们最近的购买"
+  },
+  "aiTone": {
+    "message": "语气"
+  },
+  "toneProfessional": {
+    "message": "专业"
+  },
+  "toneFriendly": {
+    "message": "友好"
+  },
+  "toneFormal": {
+    "message": "正式"
+  },
+  "toneCasual": {
+    "message": "随意"
+  },
+  "aiLanguageLabel": {
+    "message": "邮件语言"
+  },
+  "aiGenerating": {
+    "message": "正在生成邮件..."
+  },
+  "generate": {
+    "message": "生成"
+  },
+  "configureApiFirst": {
+    "message": "请先配置API密钥"
+  },
+  "enterInstructions": {
+    "message": "请输入邮件说明"
+  },
+  "emailGenerated": {
+    "message": "邮件生成成功！"
+  },
+  "aiGenerationError": {
+    "message": "生成邮件时出错"
+  },
+  "rateLimitError": {
+    "message": "请求过多，请稍后再试"
+  },
+  "insertVariable": {
+    "message": "插入变量"
+  },
+  "variablesSettings": {
+    "message": "变量设置"
+  },
+  "personalInfo": {
+    "message": "个人信息"
+  },
+  "customVariables": {
+    "message": "自定义变量"
+  },
+  "addVariable": {
+    "message": "添加"
+  },
+  "yourName": {
+    "message": "您的姓名"
+  },
+  "yourEmail": {
+    "message": "your@email.com"
+  },
+  "yourPhone": {
+    "message": "+86-138-0000-0000"
+  },
+  "yourCompany": {
+    "message": "公司名称"
+  },
+  "yourTitle": {
+    "message": "您的职位"
+  },
+  "variableName": {
+    "message": "变量名"
+  },
+  "variableValue": {
+    "message": "值"
+  },
+  "noCustomVariables": {
+    "message": "没有自定义变量"
+  },
+  "variablesSaved": {
+    "message": "变量已保存！"
+  },
+  "notSet": {
+    "message": "未设置"
+  },
+  "signatureInserted": {
+    "message": "签名已插入！"
+  }
+}
+

@@ -1,0 +1,748 @@
+{
+  "appName": {
+    "message": "HTML Редактор Email"
+  },
+  "appDescription": {
+    "message": "Создавайте и редактируйте красивые HTML письма в Gmail, Outlook, Yahoo и ProtonMail"
+  },
+  "tabVisual": {
+    "message": "Визуальный Редактор"
+  },
+  "tabHtml": {
+    "message": "HTML Код"
+  },
+  "tabPreview": {
+    "message": "Предпросмотр"
+  },
+  "tabTemplates": {
+    "message": "Шаблоны"
+  },
+  "subjectLabel": {
+    "message": "Тема:"
+  },
+  "subjectPlaceholder": {
+    "message": "Введите тему сообщения..."
+  },
+  "bold": {
+    "message": "Жирный (Ctrl+B)"
+  },
+  "italic": {
+    "message": "Курсив (Ctrl+I)"
+  },
+  "underline": {
+    "message": "Подчёркнутый (Ctrl+U)"
+  },
+  "fontSize": {
+    "message": "Размер"
+  },
+  "fontSizeVerySmall": {
+    "message": "Очень Маленький"
+  },
+  "fontSizeSmall": {
+    "message": "Маленький"
+  },
+  "fontSizeNormal": {
+    "message": "Обычный"
+  },
+  "fontSizeMedium": {
+    "message": "Средний"
+  },
+  "fontSizeLarge": {
+    "message": "Большой"
+  },
+  "fontSizeVeryLarge": {
+    "message": "Очень Большой"
+  },
+  "fontSizeHuge": {
+    "message": "Огромный"
+  },
+  "textColor": {
+    "message": "Цвет Текста"
+  },
+  "bgColor": {
+    "message": "Цвет Фона"
+  },
+  "customColor": {
+    "message": "Свой:"
+  },
+  "alignRight": {
+    "message": "По Правому Краю"
+  },
+  "alignCenter": {
+    "message": "По Центру"
+  },
+  "alignLeft": {
+    "message": "По Левому Краю"
+  },
+  "insertLink": {
+    "message": "Вставить Ссылку"
+  },
+  "insertImage": {
+    "message": "Вставить Изображение"
+  },
+  "insertVideo": {
+    "message": "Вставить Видео"
+  },
+  "insertFile": {
+    "message": "Вставить Файл"
+  },
+  "advancedTools": {
+    "message": "Дополнительные Инструменты"
+  },
+  "strikethrough": {
+    "message": "Зачёркнутый"
+  },
+  "subscript": {
+    "message": "Подстрочный"
+  },
+  "superscript": {
+    "message": "Надстрочный"
+  },
+  "fontFamily": {
+    "message": "Шрифт"
+  },
+  "bulletList": {
+    "message": "Маркированный Список"
+  },
+  "numberedList": {
+    "message": "Нумерованный Список"
+  },
+  "insertTable": {
+    "message": "Вставить Таблицу"
+  },
+  "insertDivider": {
+    "message": "Разделитель"
+  },
+  "insertQuote": {
+    "message": "Цитата"
+  },
+  "insertCode": {
+    "message": "Код"
+  },
+  "insertButton": {
+    "message": "Кнопка"
+  },
+  "clearFormat": {
+    "message": "Очистить Формат"
+  },
+  "undo": {
+    "message": "Отменить"
+  },
+  "redo": {
+    "message": "Повторить"
+  },
+  "clearAll": {
+    "message": "Очистить Всё"
+  },
+  "editorPlaceholder": {
+    "message": "Начните вводить сообщение здесь..."
+  },
+  "htmlPlaceholder": {
+    "message": "<p>Напишите HTML код здесь...</p>"
+  },
+  "builtinTemplates": {
+    "message": "Встроенные Шаблоны"
+  },
+  "myTemplates": {
+    "message": "Мои Шаблоны"
+  },
+  "importTemplate": {
+    "message": "Импорт Шаблона"
+  },
+  "exportAll": {
+    "message": "Экспорт Всех"
+  },
+  "noTemplates": {
+    "message": "Нет сохранённых шаблонов"
+  },
+  "saveTemplateHint": {
+    "message": "Сохраните шаблон из редактора"
+  },
+  "tplNewsletter": {
+    "message": "Рассылка"
+  },
+  "tplAnnouncement": {
+    "message": "Объявление"
+  },
+  "tplInvitation": {
+    "message": "Приглашение"
+  },
+  "tplSimple": {
+    "message": "Простой"
+  },
+  "tplPromo": {
+    "message": "Промо"
+  },
+  "tplWelcome": {
+    "message": "Приветствие"
+  },
+  "tplThankyou": {
+    "message": "Благодарность"
+  },
+  "tplReminder": {
+    "message": "Напоминание"
+  },
+  "tplFeedback": {
+    "message": "Отзыв"
+  },
+  "tplAlert": {
+    "message": "Уведомление"
+  },
+  "saveTemplate": {
+    "message": "Сохранить Шаблон"
+  },
+  "copyHtml": {
+    "message": "Копировать HTML"
+  },
+  "insertToEmail": {
+    "message": "Вставить в Email"
+  },
+  "addLinkTitle": {
+    "message": "Добавить Ссылку"
+  },
+  "linkText": {
+    "message": "Текст Ссылки:"
+  },
+  "linkTextPlaceholder": {
+    "message": "Нажмите здесь"
+  },
+  "linkUrl": {
+    "message": "URL:"
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "add": {
+    "message": "Добавить"
+  },
+  "addImageTitle": {
+    "message": "Добавить Изображение"
+  },
+  "selectFile": {
+    "message": "Выбрать Файл"
+  },
+  "urlAddress": {
+    "message": "URL Адрес"
+  },
+  "dragImageHere": {
+    "message": "Перетащите изображение сюда или нажмите для выбора"
+  },
+  "imageUrl": {
+    "message": "URL Изображения:"
+  },
+  "imageAlt": {
+    "message": "Описание (alt):"
+  },
+  "imageAltPlaceholder": {
+    "message": "Описание изображения"
+  },
+  "imageWidth": {
+    "message": "Ширина (пиксели):"
+  },
+  "remove": {
+    "message": "Удалить"
+  },
+  "addVideoTitle": {
+    "message": "Добавить Видео"
+  },
+  "dragVideoHere": {
+    "message": "Перетащите видео сюда или нажмите для выбора"
+  },
+  "videoSizeLimit": {
+    "message": "MP4, WebM (до 10MB)"
+  },
+  "videoUrl": {
+    "message": "URL Видео:"
+  },
+  "youtubeVimeo": {
+    "message": "YouTube/Vimeo"
+  },
+  "embedLink": {
+    "message": "Ссылка YouTube или Vimeo:"
+  },
+  "videoWidth": {
+    "message": "Ширина (пиксели):"
+  },
+  "addFileTitle": {
+    "message": "Добавить Файл"
+  },
+  "dragFileHere": {
+    "message": "Перетащите файл сюда или нажмите для выбора"
+  },
+  "fileTypes": {
+    "message": "PDF, DOC, DOCX, XLS, XLSX, TXT"
+  },
+  "fileName": {
+    "message": "Имя файла"
+  },
+  "fileSize": {
+    "message": "Размер файла"
+  },
+  "fileLinkText": {
+    "message": "Текст ссылки:"
+  },
+  "fileLinkPlaceholder": {
+    "message": "Нажмите для скачивания"
+  },
+  "addFileLink": {
+    "message": "Добавить Ссылку"
+  },
+  "addTableTitle": {
+    "message": "Добавить Таблицу"
+  },
+  "rows": {
+    "message": "Строки:"
+  },
+  "columns": {
+    "message": "Столбцы:"
+  },
+  "addButtonTitle": {
+    "message": "Добавить Кнопку"
+  },
+  "buttonText": {
+    "message": "Текст Кнопки:"
+  },
+  "buttonTextPlaceholder": {
+    "message": "Нажмите здесь"
+  },
+  "buttonUrl": {
+    "message": "URL:"
+  },
+  "buttonColor": {
+    "message": "Цвет Кнопки:"
+  },
+  "saveTemplateTitle": {
+    "message": "Сохранить Шаблон"
+  },
+  "templateName": {
+    "message": "Название Шаблона:"
+  },
+  "templateNamePlaceholder": {
+    "message": "Мой Шаблон"
+  },
+  "save": {
+    "message": "Сохранить"
+  },
+  "editTemplateTitle": {
+    "message": "Редактировать Шаблон"
+  },
+  "codeCopied": {
+    "message": "Код скопирован в буфер обмена!"
+  },
+  "templateSaved": {
+    "message": "Шаблон сохранён!"
+  },
+  "templateLoaded": {
+    "message": "Шаблон успешно загружен"
+  },
+  "templateDeleted": {
+    "message": "Шаблон удалён"
+  },
+  "templateUpdated": {
+    "message": "Шаблон обновлён"
+  },
+  "templateExported": {
+    "message": "Шаблон экспортирован"
+  },
+  "templatesImported": {
+    "message": "Шаблоны успешно импортированы"
+  },
+  "exportingTemplates": {
+    "message": "Экспорт $COUNT$ шаблонов...",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noTemplatesToExport": {
+    "message": "Нет шаблонов для экспорта"
+  },
+  "enterTemplateName": {
+    "message": "Пожалуйста, введите название шаблона"
+  },
+  "contentInsertedTo": {
+    "message": "Содержимое вставлено в $SERVICE$!",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "openEmailFirst": {
+    "message": "Сначала откройте окно нового сообщения в $SERVICE$",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "refreshAndRetry": {
+    "message": "Обновите $SERVICE$ и попробуйте снова",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorInserting": {
+    "message": "Ошибка при вставке содержимого"
+  },
+  "openEmailService": {
+    "message": "Пожалуйста, откройте Gmail, Outlook, Yahoo или ProtonMail"
+  },
+  "selectFileFirst": {
+    "message": "Пожалуйста, выберите файл"
+  },
+  "selectImageFirst": {
+    "message": "Пожалуйста, выберите изображение или введите URL"
+  },
+  "selectVideoFirst": {
+    "message": "Пожалуйста, выберите видео или введите URL"
+  },
+  "fileLoaded": {
+    "message": "Файл успешно загружен"
+  },
+  "imageLoaded": {
+    "message": "Изображение успешно загружено"
+  },
+  "videoLoaded": {
+    "message": "Видео успешно загружено"
+  },
+  "fileAdded": {
+    "message": "Файл успешно добавлен"
+  },
+  "fileTooLarge": {
+    "message": "Файл слишком большой (макс 5MB)"
+  },
+  "imageTooLarge": {
+    "message": "Изображение слишком большое (макс 5MB)"
+  },
+  "videoTooLarge": {
+    "message": "Видео слишком большое (макс 10MB)"
+  },
+  "fileLoadError": {
+    "message": "Ошибка загрузки файла"
+  },
+  "selectImageFile": {
+    "message": "Пожалуйста, выберите файл изображения"
+  },
+  "selectVideoFile": {
+    "message": "Пожалуйста, выберите видеофайл"
+  },
+  "contentCleared": {
+    "message": "Содержимое очищено"
+  },
+  "confirmClearAll": {
+    "message": "Вы уверены, что хотите очистить всё содержимое?"
+  },
+  "confirmDeleteTemplate": {
+    "message": "Удалить шаблон \"$NAME$\"?",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "insertEmoji": {
+    "message": "Вставить Эмодзи"
+  },
+  "emojiSmileys": {
+    "message": "Смайлики"
+  },
+  "emojiGestures": {
+    "message": "Жесты"
+  },
+  "emojiSymbols": {
+    "message": "Символы"
+  },
+  "emojiObjects": {
+    "message": "Объекты"
+  },
+  "previewDesktop": {
+    "message": "Компьютер"
+  },
+  "previewMobile": {
+    "message": "Мобильный"
+  },
+  "words": {
+    "message": "Слов"
+  },
+  "chars": {
+    "message": "Символов"
+  },
+  "insertQrCode": {
+    "message": "Вставить QR-код"
+  },
+  "addQrCodeTitle": {
+    "message": "Добавить QR-код"
+  },
+  "qrContent": {
+    "message": "Содержимое (URL или текст):"
+  },
+  "qrSize": {
+    "message": "Размер (пиксели):"
+  },
+  "qrPreviewHint": {
+    "message": "Предпросмотр появится здесь"
+  },
+  "insertMap": {
+    "message": "Вставить Карту"
+  },
+  "addMapTitle": {
+    "message": "Добавить Карту"
+  },
+  "mapAddress": {
+    "message": "Адрес:"
+  },
+  "mapAddressPlaceholder": {
+    "message": "Введите адрес..."
+  },
+  "mapZoom": {
+    "message": "Уровень масштаба:"
+  },
+  "mapWidth": {
+    "message": "Ширина (пиксели):"
+  },
+  "insertSocial": {
+    "message": "Соц. кнопки"
+  },
+  "addSocialTitle": {
+    "message": "Добавить Кнопки Соцсетей"
+  },
+  "socialStyle": {
+    "message": "Стиль кнопки:"
+  },
+  "socialStyleColored": {
+    "message": "Цветной"
+  },
+  "socialStyleRounded": {
+    "message": "Круглый"
+  },
+  "socialStyleMinimal": {
+    "message": "Минимальный"
+  },
+  "insertSignature": {
+    "message": "Вставить Подпись"
+  },
+  "signatureManager": {
+    "message": "Менеджер Подписей"
+  },
+  "noSignatures": {
+    "message": "Нет сохранённых подписей"
+  },
+  "createSignature": {
+    "message": "Создать Новую Подпись"
+  },
+  "signatureName": {
+    "message": "Название подписи:"
+  },
+  "signatureNamePlaceholder": {
+    "message": "Личная / Рабочая"
+  },
+  "signatureContent": {
+    "message": "Содержимое подписи:"
+  },
+  "editSignature": {
+    "message": "Редактировать Подпись"
+  },
+  "close": {
+    "message": "Закрыть"
+  },
+  "categoryAll": {
+    "message": "Все"
+  },
+  "addCategoryTitle": {
+    "message": "Добавить Категорию"
+  },
+  "categoryName": {
+    "message": "Название категории:"
+  },
+  "categoryNamePlaceholder": {
+    "message": "Работа / Личное"
+  },
+  "editTableTitle": {
+    "message": "Редактировать Таблицу"
+  },
+  "addRow": {
+    "message": "+ Строка"
+  },
+  "addColumn": {
+    "message": "+ Столбец"
+  },
+  "deleteRow": {
+    "message": "- Строка"
+  },
+  "deleteColumn": {
+    "message": "- Столбец"
+  },
+  "mergeCells": {
+    "message": "Объединить"
+  },
+  "cellBackground": {
+    "message": "Фон ячейки:"
+  },
+  "headerBackground": {
+    "message": "Фон заголовка:"
+  },
+  "apply": {
+    "message": "Применить"
+  },
+  "enterAtLeastOneLink": {
+    "message": "Введите хотя бы одну ссылку"
+  },
+  "socialButtonsAdded": {
+    "message": "Социальные кнопки добавлены!"
+  },
+  "aiSettings": {
+    "message": "Настройки ИИ"
+  },
+  "aiSettingsTitle": {
+    "message": "Настройки ИИ"
+  },
+  "geminiApiKey": {
+    "message": "API-ключ Gemini"
+  },
+  "apiKeyHint": {
+    "message": "Получите бесплатный API-ключ в Google AI Studio"
+  },
+  "apiNotConfigured": {
+    "message": "API не настроен"
+  },
+  "apiConfigured": {
+    "message": "API настроен и активен"
+  },
+  "apiInvalid": {
+    "message": "Недействительный API-ключ"
+  },
+  "testingApi": {
+    "message": "Проверка API-ключа..."
+  },
+  "testApiKey": {
+    "message": "Проверить ключ"
+  },
+  "enterApiKey": {
+    "message": "Введите API-ключ"
+  },
+  "getApiKeyLink": {
+    "message": "Получите бесплатный API-ключ в Google AI Studio →"
+  },
+  "saveAndContinue": {
+    "message": "Сохранить и продолжить"
+  },
+  "changeApiKey": {
+    "message": "Изменить API-ключ"
+  },
+  "apiKeyValid": {
+    "message": "API-ключ действителен!"
+  },
+  "apiKeyInvalid": {
+    "message": "API-ключ недействителен"
+  },
+  "apiKeyError": {
+    "message": "Ошибка при проверке ключа"
+  },
+  "apiKeySaved": {
+    "message": "API-ключ сохранён!"
+  },
+  "aiWrite": {
+    "message": "Написать с ИИ"
+  },
+  "aiWriteTitle": {
+    "message": "Написать письмо с ИИ"
+  },
+  "aiInstructions": {
+    "message": "Опишите письмо, которое хотите написать:"
+  },
+  "aiInstructionsPlaceholder": {
+    "message": "Например: Официальное благодарственное письмо клиенту за недавнюю покупку"
+  },
+  "aiTone": {
+    "message": "Тон"
+  },
+  "toneProfessional": {
+    "message": "Профессиональный"
+  },
+  "toneFriendly": {
+    "message": "Дружелюбный"
+  },
+  "toneFormal": {
+    "message": "Формальный"
+  },
+  "toneCasual": {
+    "message": "Непринуждённый"
+  },
+  "aiLanguageLabel": {
+    "message": "Язык письма"
+  },
+  "aiGenerating": {
+    "message": "Генерация письма..."
+  },
+  "generate": {
+    "message": "Сгенерировать"
+  },
+  "configureApiFirst": {
+    "message": "Сначала настройте API-ключ"
+  },
+  "enterInstructions": {
+    "message": "Введите инструкции для письма"
+  },
+  "emailGenerated": {
+    "message": "Письмо успешно создано!"
+  },
+  "aiGenerationError": {
+    "message": "Ошибка при создании письма"
+  },
+  "rateLimitError": {
+    "message": "Слишком много запросов. Попробуйте через минуту"
+  },
+  "insertVariable": {
+    "message": "Вставить Переменную"
+  },
+  "variablesSettings": {
+    "message": "Настройки Переменных"
+  },
+  "personalInfo": {
+    "message": "Личная Информация"
+  },
+  "customVariables": {
+    "message": "Пользовательские Переменные"
+  },
+  "addVariable": {
+    "message": "Добавить"
+  },
+  "yourName": {
+    "message": "Ваше имя"
+  },
+  "yourEmail": {
+    "message": "ваш@email.ru"
+  },
+  "yourPhone": {
+    "message": "+7-999-123-45-67"
+  },
+  "yourCompany": {
+    "message": "Название компании"
+  },
+  "yourTitle": {
+    "message": "Ваша должность"
+  },
+  "variableName": {
+    "message": "Имя переменной"
+  },
+  "variableValue": {
+    "message": "Значение"
+  },
+  "noCustomVariables": {
+    "message": "Нет пользовательских переменных"
+  },
+  "variablesSaved": {
+    "message": "Переменные сохранены!"
+  },
+  "notSet": {
+    "message": "Не задано"
+  },
+  "signatureInserted": {
+    "message": "Подпись вставлена!"
+  }
+}
+

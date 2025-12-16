@@ -1,0 +1,748 @@
+{
+  "appName": {
+    "message": "محرر HTML للبريد"
+  },
+  "appDescription": {
+    "message": "أنشئ وحرر رسائل HTML جميلة في Gmail و Outlook و Yahoo و ProtonMail"
+  },
+  "tabVisual": {
+    "message": "المحرر المرئي"
+  },
+  "tabHtml": {
+    "message": "كود HTML"
+  },
+  "tabPreview": {
+    "message": "معاينة"
+  },
+  "tabTemplates": {
+    "message": "القوالب"
+  },
+  "subjectLabel": {
+    "message": "الموضوع:"
+  },
+  "subjectPlaceholder": {
+    "message": "أدخل موضوع الرسالة..."
+  },
+  "bold": {
+    "message": "غامق (Ctrl+B)"
+  },
+  "italic": {
+    "message": "مائل (Ctrl+I)"
+  },
+  "underline": {
+    "message": "تحته خط (Ctrl+U)"
+  },
+  "fontSize": {
+    "message": "الحجم"
+  },
+  "fontSizeVerySmall": {
+    "message": "صغير جداً"
+  },
+  "fontSizeSmall": {
+    "message": "صغير"
+  },
+  "fontSizeNormal": {
+    "message": "عادي"
+  },
+  "fontSizeMedium": {
+    "message": "متوسط"
+  },
+  "fontSizeLarge": {
+    "message": "كبير"
+  },
+  "fontSizeVeryLarge": {
+    "message": "كبير جداً"
+  },
+  "fontSizeHuge": {
+    "message": "ضخم"
+  },
+  "textColor": {
+    "message": "لون النص"
+  },
+  "bgColor": {
+    "message": "لون الخلفية"
+  },
+  "customColor": {
+    "message": "مخصص:"
+  },
+  "alignRight": {
+    "message": "محاذاة لليمين"
+  },
+  "alignCenter": {
+    "message": "توسيط"
+  },
+  "alignLeft": {
+    "message": "محاذاة لليسار"
+  },
+  "insertLink": {
+    "message": "إدراج رابط"
+  },
+  "insertImage": {
+    "message": "إدراج صورة"
+  },
+  "insertVideo": {
+    "message": "إدراج فيديو"
+  },
+  "insertFile": {
+    "message": "إدراج ملف"
+  },
+  "advancedTools": {
+    "message": "أدوات متقدمة"
+  },
+  "strikethrough": {
+    "message": "يتوسطه خط"
+  },
+  "subscript": {
+    "message": "منخفض"
+  },
+  "superscript": {
+    "message": "مرتفع"
+  },
+  "fontFamily": {
+    "message": "الخط"
+  },
+  "bulletList": {
+    "message": "قائمة نقطية"
+  },
+  "numberedList": {
+    "message": "قائمة مرقمة"
+  },
+  "insertTable": {
+    "message": "إدراج جدول"
+  },
+  "insertDivider": {
+    "message": "فاصل"
+  },
+  "insertQuote": {
+    "message": "اقتباس"
+  },
+  "insertCode": {
+    "message": "كود"
+  },
+  "insertButton": {
+    "message": "زر"
+  },
+  "clearFormat": {
+    "message": "مسح التنسيق"
+  },
+  "undo": {
+    "message": "تراجع"
+  },
+  "redo": {
+    "message": "إعادة"
+  },
+  "clearAll": {
+    "message": "مسح الكل"
+  },
+  "editorPlaceholder": {
+    "message": "ابدأ بكتابة رسالتك هنا..."
+  },
+  "htmlPlaceholder": {
+    "message": "<p>اكتب كود HTML هنا...</p>"
+  },
+  "builtinTemplates": {
+    "message": "القوالب المضمنة"
+  },
+  "myTemplates": {
+    "message": "قوالبي"
+  },
+  "importTemplate": {
+    "message": "استيراد قالب"
+  },
+  "exportAll": {
+    "message": "تصدير الكل"
+  },
+  "noTemplates": {
+    "message": "لا توجد قوالب محفوظة"
+  },
+  "saveTemplateHint": {
+    "message": "احفظ قالباً من المحرر"
+  },
+  "tplNewsletter": {
+    "message": "نشرة إخبارية"
+  },
+  "tplAnnouncement": {
+    "message": "إعلان"
+  },
+  "tplInvitation": {
+    "message": "دعوة"
+  },
+  "tplSimple": {
+    "message": "بسيط"
+  },
+  "tplPromo": {
+    "message": "ترويج"
+  },
+  "tplWelcome": {
+    "message": "ترحيب"
+  },
+  "tplThankyou": {
+    "message": "شكر"
+  },
+  "tplReminder": {
+    "message": "تذكير"
+  },
+  "tplFeedback": {
+    "message": "ملاحظات"
+  },
+  "tplAlert": {
+    "message": "تنبيه"
+  },
+  "saveTemplate": {
+    "message": "حفظ القالب"
+  },
+  "copyHtml": {
+    "message": "نسخ HTML"
+  },
+  "insertToEmail": {
+    "message": "إدراج في البريد"
+  },
+  "addLinkTitle": {
+    "message": "إضافة رابط"
+  },
+  "linkText": {
+    "message": "نص الرابط:"
+  },
+  "linkTextPlaceholder": {
+    "message": "انقر هنا"
+  },
+  "linkUrl": {
+    "message": "الرابط:"
+  },
+  "cancel": {
+    "message": "إلغاء"
+  },
+  "add": {
+    "message": "إضافة"
+  },
+  "addImageTitle": {
+    "message": "إضافة صورة"
+  },
+  "selectFile": {
+    "message": "اختر ملف"
+  },
+  "urlAddress": {
+    "message": "عنوان URL"
+  },
+  "dragImageHere": {
+    "message": "اسحب الصورة هنا أو انقر للاختيار"
+  },
+  "imageUrl": {
+    "message": "رابط الصورة:"
+  },
+  "imageAlt": {
+    "message": "الوصف (alt):"
+  },
+  "imageAltPlaceholder": {
+    "message": "وصف الصورة"
+  },
+  "imageWidth": {
+    "message": "العرض (بكسل):"
+  },
+  "remove": {
+    "message": "إزالة"
+  },
+  "addVideoTitle": {
+    "message": "إضافة فيديو"
+  },
+  "dragVideoHere": {
+    "message": "اسحب الفيديو هنا أو انقر للاختيار"
+  },
+  "videoSizeLimit": {
+    "message": "MP4, WebM (حتى 10MB)"
+  },
+  "videoUrl": {
+    "message": "رابط الفيديو:"
+  },
+  "youtubeVimeo": {
+    "message": "YouTube/Vimeo"
+  },
+  "embedLink": {
+    "message": "رابط YouTube أو Vimeo:"
+  },
+  "videoWidth": {
+    "message": "العرض (بكسل):"
+  },
+  "addFileTitle": {
+    "message": "إضافة ملف"
+  },
+  "dragFileHere": {
+    "message": "اسحب الملف هنا أو انقر للاختيار"
+  },
+  "fileTypes": {
+    "message": "PDF, DOC, DOCX, XLS, XLSX, TXT"
+  },
+  "fileName": {
+    "message": "اسم الملف"
+  },
+  "fileSize": {
+    "message": "حجم الملف"
+  },
+  "fileLinkText": {
+    "message": "نص الرابط:"
+  },
+  "fileLinkPlaceholder": {
+    "message": "انقر للتحميل"
+  },
+  "addFileLink": {
+    "message": "إضافة رابط"
+  },
+  "addTableTitle": {
+    "message": "إضافة جدول"
+  },
+  "rows": {
+    "message": "الصفوف:"
+  },
+  "columns": {
+    "message": "الأعمدة:"
+  },
+  "addButtonTitle": {
+    "message": "إضافة زر"
+  },
+  "buttonText": {
+    "message": "نص الزر:"
+  },
+  "buttonTextPlaceholder": {
+    "message": "انقر هنا"
+  },
+  "buttonUrl": {
+    "message": "الرابط:"
+  },
+  "buttonColor": {
+    "message": "لون الزر:"
+  },
+  "saveTemplateTitle": {
+    "message": "حفظ القالب"
+  },
+  "templateName": {
+    "message": "اسم القالب:"
+  },
+  "templateNamePlaceholder": {
+    "message": "قالبي"
+  },
+  "save": {
+    "message": "حفظ"
+  },
+  "editTemplateTitle": {
+    "message": "تحرير القالب"
+  },
+  "codeCopied": {
+    "message": "تم نسخ الكود إلى الحافظة!"
+  },
+  "templateSaved": {
+    "message": "تم حفظ القالب!"
+  },
+  "templateLoaded": {
+    "message": "تم تحميل القالب بنجاح"
+  },
+  "templateDeleted": {
+    "message": "تم حذف القالب"
+  },
+  "templateUpdated": {
+    "message": "تم تحديث القالب"
+  },
+  "templateExported": {
+    "message": "تم تصدير القالب"
+  },
+  "templatesImported": {
+    "message": "تم استيراد القوالب بنجاح"
+  },
+  "exportingTemplates": {
+    "message": "جاري تصدير $COUNT$ قوالب...",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noTemplatesToExport": {
+    "message": "لا توجد قوالب للتصدير"
+  },
+  "enterTemplateName": {
+    "message": "الرجاء إدخال اسم القالب"
+  },
+  "contentInsertedTo": {
+    "message": "تم إدراج المحتوى في $SERVICE$!",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "openEmailFirst": {
+    "message": "افتح نافذة رسالة جديدة في $SERVICE$ أولاً",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "refreshAndRetry": {
+    "message": "حدث $SERVICE$ وحاول مرة أخرى",
+    "placeholders": {
+      "service": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorInserting": {
+    "message": "خطأ في إدراج المحتوى"
+  },
+  "openEmailService": {
+    "message": "الرجاء فتح Gmail أو Outlook أو Yahoo أو ProtonMail"
+  },
+  "selectFileFirst": {
+    "message": "الرجاء اختيار ملف"
+  },
+  "selectImageFirst": {
+    "message": "الرجاء اختيار صورة أو إدخال رابط"
+  },
+  "selectVideoFirst": {
+    "message": "الرجاء اختيار فيديو أو إدخال رابط"
+  },
+  "fileLoaded": {
+    "message": "تم تحميل الملف بنجاح"
+  },
+  "imageLoaded": {
+    "message": "تم تحميل الصورة بنجاح"
+  },
+  "videoLoaded": {
+    "message": "تم تحميل الفيديو بنجاح"
+  },
+  "fileAdded": {
+    "message": "تمت إضافة الملف بنجاح"
+  },
+  "fileTooLarge": {
+    "message": "الملف كبير جداً (الحد الأقصى 5MB)"
+  },
+  "imageTooLarge": {
+    "message": "الصورة كبيرة جداً (الحد الأقصى 5MB)"
+  },
+  "videoTooLarge": {
+    "message": "الفيديو كبير جداً (الحد الأقصى 10MB)"
+  },
+  "fileLoadError": {
+    "message": "خطأ في تحميل الملف"
+  },
+  "selectImageFile": {
+    "message": "الرجاء اختيار ملف صورة"
+  },
+  "selectVideoFile": {
+    "message": "الرجاء اختيار ملف فيديو"
+  },
+  "contentCleared": {
+    "message": "تم مسح المحتوى"
+  },
+  "confirmClearAll": {
+    "message": "هل أنت متأكد أنك تريد مسح كل المحتوى؟"
+  },
+  "confirmDeleteTemplate": {
+    "message": "حذف القالب \"$NAME$\"؟",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "insertEmoji": {
+    "message": "إضافة إيموجي"
+  },
+  "emojiSmileys": {
+    "message": "الوجوه"
+  },
+  "emojiGestures": {
+    "message": "الإيماءات"
+  },
+  "emojiSymbols": {
+    "message": "الرموز"
+  },
+  "emojiObjects": {
+    "message": "الأشياء"
+  },
+  "previewDesktop": {
+    "message": "سطح المكتب"
+  },
+  "previewMobile": {
+    "message": "الجوال"
+  },
+  "words": {
+    "message": "كلمات"
+  },
+  "chars": {
+    "message": "أحرف"
+  },
+  "insertQrCode": {
+    "message": "إضافة رمز QR"
+  },
+  "addQrCodeTitle": {
+    "message": "إضافة رمز QR"
+  },
+  "qrContent": {
+    "message": "المحتوى (رابط أو نص):"
+  },
+  "qrSize": {
+    "message": "الحجم (بكسل):"
+  },
+  "qrPreviewHint": {
+    "message": "ستظهر المعاينة هنا"
+  },
+  "insertMap": {
+    "message": "إضافة خريطة"
+  },
+  "addMapTitle": {
+    "message": "إضافة خريطة"
+  },
+  "mapAddress": {
+    "message": "العنوان:"
+  },
+  "mapAddressPlaceholder": {
+    "message": "أدخل العنوان..."
+  },
+  "mapZoom": {
+    "message": "مستوى التكبير:"
+  },
+  "mapWidth": {
+    "message": "العرض (بكسل):"
+  },
+  "insertSocial": {
+    "message": "أزرار التواصل"
+  },
+  "addSocialTitle": {
+    "message": "إضافة أزرار التواصل الاجتماعي"
+  },
+  "socialStyle": {
+    "message": "نمط الزر:"
+  },
+  "socialStyleColored": {
+    "message": "ملون"
+  },
+  "socialStyleRounded": {
+    "message": "دائري"
+  },
+  "socialStyleMinimal": {
+    "message": "بسيط"
+  },
+  "insertSignature": {
+    "message": "إضافة توقيع"
+  },
+  "signatureManager": {
+    "message": "مدير التوقيعات"
+  },
+  "noSignatures": {
+    "message": "لا توجد توقيعات محفوظة"
+  },
+  "createSignature": {
+    "message": "إنشاء توقيع جديد"
+  },
+  "signatureName": {
+    "message": "اسم التوقيع:"
+  },
+  "signatureNamePlaceholder": {
+    "message": "شخصي / عمل"
+  },
+  "signatureContent": {
+    "message": "محتوى التوقيع:"
+  },
+  "editSignature": {
+    "message": "تعديل التوقيع"
+  },
+  "close": {
+    "message": "إغلاق"
+  },
+  "categoryAll": {
+    "message": "الكل"
+  },
+  "addCategoryTitle": {
+    "message": "إضافة فئة"
+  },
+  "categoryName": {
+    "message": "اسم الفئة:"
+  },
+  "categoryNamePlaceholder": {
+    "message": "عمل / شخصي"
+  },
+  "editTableTitle": {
+    "message": "تعديل الجدول"
+  },
+  "addRow": {
+    "message": "+ صف"
+  },
+  "addColumn": {
+    "message": "+ عمود"
+  },
+  "deleteRow": {
+    "message": "- صف"
+  },
+  "deleteColumn": {
+    "message": "- عمود"
+  },
+  "mergeCells": {
+    "message": "دمج"
+  },
+  "cellBackground": {
+    "message": "خلفية الخلية:"
+  },
+  "headerBackground": {
+    "message": "خلفية العنوان:"
+  },
+  "apply": {
+    "message": "تطبيق"
+  },
+  "enterAtLeastOneLink": {
+    "message": "أدخل رابطًا واحدًا على الأقل"
+  },
+  "socialButtonsAdded": {
+    "message": "تمت إضافة أزرار الشبكات!"
+  },
+  "aiSettings": {
+    "message": "إعدادات AI"
+  },
+  "aiSettingsTitle": {
+    "message": "إعدادات AI"
+  },
+  "geminiApiKey": {
+    "message": "مفتاح API لـ Gemini"
+  },
+  "apiKeyHint": {
+    "message": "احصل على مفتاح API مجاني من Google AI Studio"
+  },
+  "apiNotConfigured": {
+    "message": "API غير مكوّن"
+  },
+  "apiConfigured": {
+    "message": "API مكوّن ونشط"
+  },
+  "apiInvalid": {
+    "message": "مفتاح API غير صالح"
+  },
+  "testingApi": {
+    "message": "جارٍ اختبار المفتاح..."
+  },
+  "testApiKey": {
+    "message": "اختبار المفتاح"
+  },
+  "enterApiKey": {
+    "message": "أدخل مفتاح API"
+  },
+  "getApiKeyLink": {
+    "message": "احصل على مفتاح API مجاني من Google AI Studio ←"
+  },
+  "saveAndContinue": {
+    "message": "حفظ ومتابعة"
+  },
+  "changeApiKey": {
+    "message": "تغيير مفتاح API"
+  },
+  "apiKeyValid": {
+    "message": "مفتاح API صالح!"
+  },
+  "apiKeyInvalid": {
+    "message": "مفتاح API غير صالح"
+  },
+  "apiKeyError": {
+    "message": "خطأ في اختبار المفتاح"
+  },
+  "apiKeySaved": {
+    "message": "تم حفظ مفتاح API!"
+  },
+  "aiWrite": {
+    "message": "اكتب مع AI"
+  },
+  "aiWriteTitle": {
+    "message": "كتابة بريد مع AI"
+  },
+  "aiInstructions": {
+    "message": "صف البريد الذي تريد كتابته:"
+  },
+  "aiInstructionsPlaceholder": {
+    "message": "مثال: رسالة شكر رسمية لعميل على مشترياته الأخيرة"
+  },
+  "aiTone": {
+    "message": "النبرة"
+  },
+  "toneProfessional": {
+    "message": "مهني"
+  },
+  "toneFriendly": {
+    "message": "ودي"
+  },
+  "toneFormal": {
+    "message": "رسمي"
+  },
+  "toneCasual": {
+    "message": "غير رسمي"
+  },
+  "aiLanguageLabel": {
+    "message": "لغة البريد"
+  },
+  "aiGenerating": {
+    "message": "جارٍ إنشاء البريد..."
+  },
+  "generate": {
+    "message": "إنشاء"
+  },
+  "configureApiFirst": {
+    "message": "يرجى تكوين مفتاح API أولاً"
+  },
+  "enterInstructions": {
+    "message": "أدخل تعليمات للبريد"
+  },
+  "emailGenerated": {
+    "message": "تم إنشاء البريد بنجاح!"
+  },
+  "aiGenerationError": {
+    "message": "خطأ في إنشاء البريد"
+  },
+  "rateLimitError": {
+    "message": "طلبات كثيرة جداً. حاول مرة أخرى بعد دقيقة"
+  },
+  "insertVariable": {
+    "message": "إدراج متغير"
+  },
+  "variablesSettings": {
+    "message": "إعدادات المتغيرات"
+  },
+  "personalInfo": {
+    "message": "المعلومات الشخصية"
+  },
+  "customVariables": {
+    "message": "متغيرات مخصصة"
+  },
+  "addVariable": {
+    "message": "إضافة"
+  },
+  "yourName": {
+    "message": "اسمك"
+  },
+  "yourEmail": {
+    "message": "your@email.com"
+  },
+  "yourPhone": {
+    "message": "+966-50-123-4567"
+  },
+  "yourCompany": {
+    "message": "اسم الشركة"
+  },
+  "yourTitle": {
+    "message": "منصبك"
+  },
+  "variableName": {
+    "message": "اسم المتغير"
+  },
+  "variableValue": {
+    "message": "القيمة"
+  },
+  "noCustomVariables": {
+    "message": "لا توجد متغيرات مخصصة"
+  },
+  "variablesSaved": {
+    "message": "تم حفظ المتغيرات!"
+  },
+  "notSet": {
+    "message": "غير محدد"
+  },
+  "signatureInserted": {
+    "message": "تم إدراج التوقيع!"
+  }
+}
+
