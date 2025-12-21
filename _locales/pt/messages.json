@@ -1,9 +1,11 @@
 {
   "appName": {
-    "message": "Editor HTML de Email"
+    "message": "Designer de Email com IA",
+    "description": "Extension name"
   },
   "appDescription": {
-    "message": "Crie e edite emails HTML bonitos no Gmail, Outlook, Yahoo e ProtonMail"
+    "message": "Crie e edite emails projetados diretamente no Gmail, Outlook, Yahoo e ProtonMail com IA",
+    "description": "Extension description"
   },
   "tabVisual": {
     "message": "Editor Visual"

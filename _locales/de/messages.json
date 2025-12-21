@@ -1,9 +1,11 @@
 {
   "appName": {
-    "message": "E-Mail HTML Editor"
+    "message": "E-Mail-Designer mit KI",
+    "description": "Extension name"
   },
   "appDescription": {
-    "message": "Erstellen und bearbeiten Sie schöne HTML-E-Mails in Gmail, Outlook, Yahoo und ProtonMail"
+    "message": "Erstellen und bearbeiten Sie gestaltete E-Mails direkt in Gmail, Outlook, Yahoo und ProtonMail mit KI",
+    "description": "Extension description"
   },
   "tabVisual": {
     "message": "Visueller Editor"

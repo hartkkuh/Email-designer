@@ -1,9 +1,11 @@
 {
   "appName": {
-    "message": "HTML Редактор Email"
+    "message": "Дизайнер Email с ИИ",
+    "description": "Extension name"
   },
   "appDescription": {
-    "message": "Создавайте и редактируйте красивые HTML письма в Gmail, Outlook, Yahoo и ProtonMail"
+    "message": "Создавайте и редактируйте оформленные письма напрямую в Gmail, Outlook, Yahoo и ProtonMail с ИИ",
+    "description": "Extension description"
   },
   "tabVisual": {
     "message": "Визуальный Редактор"
