@@ -161,6 +161,9 @@
   "tplNewsletter": {
     "message": "نشرة إخبارية"
   },
+  "tplAnnouncement": {
+    "message": "إعلان"
+  },
   "tplInvitation": {
     "message": "دعوة"
   },
@@ -173,38 +176,17 @@
   "tplWelcome": {
     "message": "ترحيب"
   },
+  "tplThankyou": {
+    "message": "شكر"
+  },
   "tplReminder": {
     "message": "تذكير"
   },
+  "tplFeedback": {
+    "message": "ملاحظات"
+  },
   "tplAlert": {
     "message": "تنبيه"
-  },
-  "tplBirthday": {
-    "message": "عيد ميلاد"
-  },
-  "tplJob": {
-    "message": "عرض وظيفة"
-  },
-  "tplSurvey": {
-    "message": "استبيان"
-  },
-  "tplReceipt": {
-    "message": "إيصال"
-  },
-  "tplSocial": {
-    "message": "وسائل التواصل"
-  },
-  "tplWebinar": {
-    "message": "ندوة عبر الإنترنت"
-  },
-  "tplEvent": {
-    "message": "حدث"
-  },
-  "tplShipping": {
-    "message": "تحديث الشحن"
-  },
-  "tplReferral": {
-    "message": "إحالة صديق"
   },
   "saveTemplate": {
     "message": "حفظ القالب"
@@ -567,66 +549,6 @@
   "close": {
     "message": "إغلاق"
   },
-  "keyboardShortcuts": {
-    "message": "اختصارات لوحة المفاتيح"
-  },
-  "shortcutsFormatting": {
-    "message": "التنسيق"
-  },
-  "shortcutsAlignment": {
-    "message": "المحاذاة"
-  },
-  "shortcutsLists": {
-    "message": "القوائم"
-  },
-  "shortcutsOther": {
-    "message": "أخرى"
-  },
-  "shortcutBold": {
-    "message": "عريض"
-  },
-  "shortcutItalic": {
-    "message": "مائل"
-  },
-  "shortcutUnderline": {
-    "message": "تسطير"
-  },
-  "shortcutStrikethrough": {
-    "message": "يتوسطه خط"
-  },
-  "shortcutAlignLeft": {
-    "message": "محاذاة لليسار"
-  },
-  "shortcutAlignCenter": {
-    "message": "توسيط"
-  },
-  "shortcutAlignRight": {
-    "message": "محاذاة لليمين"
-  },
-  "shortcutJustify": {
-    "message": "ضبط"
-  },
-  "shortcutBulletList": {
-    "message": "قائمة نقطية"
-  },
-  "shortcutNumberedList": {
-    "message": "قائمة مرقمة"
-  },
-  "shortcutInsertLink": {
-    "message": "إدراج رابط"
-  },
-  "shortcutSaveTemplate": {
-    "message": "حفظ القالب"
-  },
-  "shortcutUndo": {
-    "message": "تراجع"
-  },
-  "shortcutRedo": {
-    "message": "إعادة"
-  },
-  "shortcutCloseModal": {
-    "message": "إغلاق النافذة"
-  },
   "categoryAll": {
     "message": "الكل"
   },
@@ -680,18 +602,6 @@
   },
   "geminiApiKey": {
     "message": "مفتاح API لـ Gemini"
-  },
-  "openaiApiKey": {
-    "message": "مفتاح API لـ OpenAI"
-  },
-  "selectAiProvider": {
-    "message": "اختر مزود الذكاء الاصطناعي:"
-  },
-  "getGeminiKeyLink": {
-    "message": "احصل على مفتاح API مجاني من Google AI Studio ←"
-  },
-  "getOpenaiKeyLink": {
-    "message": "احصل على مفتاح API من OpenAI Platform ←"
   },
   "apiKeyHint": {
     "message": "احصل على مفتاح API مجاني من Google AI Studio"

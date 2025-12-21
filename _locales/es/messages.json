@@ -161,6 +161,9 @@
   "tplNewsletter": {
     "message": "Boletín"
   },
+  "tplAnnouncement": {
+    "message": "Anuncio"
+  },
   "tplInvitation": {
     "message": "Invitación"
   },
@@ -173,38 +176,17 @@
   "tplWelcome": {
     "message": "Bienvenida"
   },
+  "tplThankyou": {
+    "message": "Agradecimiento"
+  },
   "tplReminder": {
     "message": "Recordatorio"
   },
+  "tplFeedback": {
+    "message": "Comentarios"
+  },
   "tplAlert": {
     "message": "Alerta"
-  },
-  "tplBirthday": {
-    "message": "Cumpleaños"
-  },
-  "tplJob": {
-    "message": "Oferta de empleo"
-  },
-  "tplSurvey": {
-    "message": "Encuesta"
-  },
-  "tplReceipt": {
-    "message": "Recibo"
-  },
-  "tplSocial": {
-    "message": "Redes sociales"
-  },
-  "tplWebinar": {
-    "message": "Webinar"
-  },
-  "tplEvent": {
-    "message": "Evento"
-  },
-  "tplShipping": {
-    "message": "Actualización de envío"
-  },
-  "tplReferral": {
-    "message": "Referir amigos"
   },
   "saveTemplate": {
     "message": "Guardar Plantilla"
@@ -567,66 +549,6 @@
   "close": {
     "message": "Cerrar"
   },
-  "keyboardShortcuts": {
-    "message": "Atajos de teclado"
-  },
-  "shortcutsFormatting": {
-    "message": "Formato"
-  },
-  "shortcutsAlignment": {
-    "message": "Alineación"
-  },
-  "shortcutsLists": {
-    "message": "Listas"
-  },
-  "shortcutsOther": {
-    "message": "Otros"
-  },
-  "shortcutBold": {
-    "message": "Negrita"
-  },
-  "shortcutItalic": {
-    "message": "Cursiva"
-  },
-  "shortcutUnderline": {
-    "message": "Subrayado"
-  },
-  "shortcutStrikethrough": {
-    "message": "Tachado"
-  },
-  "shortcutAlignLeft": {
-    "message": "Alinear izquierda"
-  },
-  "shortcutAlignCenter": {
-    "message": "Centrar"
-  },
-  "shortcutAlignRight": {
-    "message": "Alinear derecha"
-  },
-  "shortcutJustify": {
-    "message": "Justificar"
-  },
-  "shortcutBulletList": {
-    "message": "Lista con viñetas"
-  },
-  "shortcutNumberedList": {
-    "message": "Lista numerada"
-  },
-  "shortcutInsertLink": {
-    "message": "Insertar enlace"
-  },
-  "shortcutSaveTemplate": {
-    "message": "Guardar plantilla"
-  },
-  "shortcutUndo": {
-    "message": "Deshacer"
-  },
-  "shortcutRedo": {
-    "message": "Rehacer"
-  },
-  "shortcutCloseModal": {
-    "message": "Cerrar ventana"
-  },
   "categoryAll": {
     "message": "Todos"
   },
@@ -680,18 +602,6 @@
   },
   "geminiApiKey": {
     "message": "Clave API de Gemini"
-  },
-  "openaiApiKey": {
-    "message": "Clave API de OpenAI"
-  },
-  "selectAiProvider": {
-    "message": "Seleccionar proveedor de IA:"
-  },
-  "getGeminiKeyLink": {
-    "message": "Obtén clave API gratis de Google AI Studio →"
-  },
-  "getOpenaiKeyLink": {
-    "message": "Obtén clave API de OpenAI Platform →"
   },
   "apiKeyHint": {
     "message": "Obtén tu clave API gratuita de Google AI Studio"

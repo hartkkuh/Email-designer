@@ -193,6 +193,17 @@ const templates = {
     <p style="color: #6b7280; font-size: 13px; margin: 0;">© 2024 השם שלכם. כל הזכויות שמורות.</p>
   </div>
 </div>`,
+  announcement: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 50px 30px; text-align: center; border-radius: 12px;">
+    <div style="background: white; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 40px;">✓</span>
+    </div>
+    <h1 style="color: white; margin: 0; font-size: 32px;">הודעה חשובה!</h1>
+    <p style="color: rgba(255,255,255,0.95); font-size: 18px; margin: 20px 0 0; line-height: 1.6;">כאן תוכלו לכתוב את ההודעה החשובה שלכם. תוכן זה יבלוט ויתפוס את תשומת הלב של הקוראים.</p>
+    <a href="#" style="display: inline-block; background: white; color: #059669; padding: 14px 32px; border-radius: 8px; text-decoration: none; margin-top: 25px; font-weight: 600;">לפרטים נוספים</a>
+  </div>
+</div>`,
   invitation: `
 <div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
   <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 40px 30px; text-align: center; border-radius: 12px; border: 2px solid #f59e0b;">
@@ -260,6 +271,20 @@ const templates = {
     <p style="color: #6b7280; font-size: 13px; margin: 0;">יש שאלות? אנחנו כאן בשבילכם!</p>
   </div>
 </div>`,
+  thankyou: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); padding: 50px 30px; text-align: center; border-radius: 12px;">
+    <div style="background: white; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 40px;">❤️</span>
+    </div>
+    <h1 style="color: white; margin: 0; font-size: 32px;">תודה רבה!</h1>
+    <p style="color: rgba(255,255,255,0.95); font-size: 18px; margin: 20px 0 0; line-height: 1.6;">אנחנו מעריכים את האמון שלכם בנו. ההזמנה שלכם התקבלה בהצלחה!</p>
+    <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 8px; margin: 25px 0;">
+      <p style="color: white; font-size: 14px; margin: 0;">מספר הזמנה: <strong>#12345</strong></p>
+    </div>
+    <a href="#" style="display: inline-block; background: white; color: #0d9488; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">צפייה בהזמנה</a>
+  </div>
+</div>`,
   reminder: `
 <div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
   <div style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 30px; border-radius: 12px 12px 0 0;">
@@ -280,6 +305,29 @@ const templates = {
     </div>
   </div>
 </div>`,
+  feedback: `
+<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+  <div style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
+    <h1 style="color: white; margin: 0; font-size: 28px;">נשמח לשמוע מכם!</h1>
+    <p style="color: rgba(255,255,255,0.9); margin: 15px 0 0;">דעתכם חשובה לנו</p>
+  </div>
+  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
+    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; text-align: center;">איך הייתה החוויה שלכם?</p>
+    <div style="text-align: center; margin: 25px 0; font-size: 40px;">
+      <span style="cursor: pointer; margin: 0 5px;">😞</span>
+      <span style="cursor: pointer; margin: 0 5px;">😐</span>
+      <span style="cursor: pointer; margin: 0 5px;">🙂</span>
+      <span style="cursor: pointer; margin: 0 5px;">😊</span>
+      <span style="cursor: pointer; margin: 0 5px;">🤩</span>
+    </div>
+    <div style="text-align: center;">
+      <a href="#" style="display: inline-block; background: #06b6d4; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">שלחו משוב</a>
+    </div>
+  </div>
+  <div style="background: #f9fafb; padding: 15px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
+    <p style="color: #6b7280; font-size: 13px; margin: 0;">המשוב שלכם עוזר לנו להשתפר</p>
+  </div>
+</div>`,
   alert: `
 <div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
   <div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 30px; border-radius: 12px;">
@@ -292,259 +340,6 @@ const templates = {
       </div>
       <a href="#" style="display: inline-block; background: white; color: #dc2626; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">לפעולה מיידית</a>
     </div>
-  </div>
-</div>`,
-  birthday: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #f472b6 0%, #db2777 50%, #9333ea 100%); padding: 50px 30px; text-align: center; border-radius: 12px;">
-    <div style="font-size: 70px; margin-bottom: 15px;">🎂</div>
-    <h1 style="color: white; margin: 0; font-size: 36px;">יום הולדת שמח!</h1>
-    <p style="color: rgba(255,255,255,0.95); font-size: 20px; margin: 20px 0; line-height: 1.6;">מאחלים לך יום מלא באושר, שמחה והפתעות נעימות!</p>
-    <div style="font-size: 40px; margin: 20px 0;">🎈🎁🎉</div>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 0;">שיהיה לך יום נפלא!</p>
-  </div>
-</div>`,
-  job: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <h1 style="color: white; margin: 0; font-size: 28px;">🚀 הזדמנות קריירה מרגשת!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">אנחנו מחפשים אותך!</p>
-  </div>
-  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <h2 style="color: #0369a1; font-size: 22px; margin-top: 0;">שם המשרה</h2>
-    <div style="background: #f0f9ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-      <p style="color: #0c4a6e; margin: 0;">📍 מיקום: תל אביב | ⏰ היקף: משרה מלאה | 💰 שכר: תחרותי</p>
-    </div>
-    <h3 style="color: #1e293b; font-size: 16px;">דרישות התפקיד:</h3>
-    <ul style="color: #475569; line-height: 2; padding-right: 20px;">
-      <li>ניסיון של X שנים בתחום</li>
-      <li>יכולת עבודה בצוות</li>
-      <li>אנגלית ברמה גבוהה</li>
-    </ul>
-    <h3 style="color: #1e293b; font-size: 16px;">מה אנחנו מציעים:</h3>
-    <ul style="color: #475569; line-height: 2; padding-right: 20px;">
-      <li>סביבת עבודה דינמית</li>
-      <li>אפשרויות קידום</li>
-      <li>הטבות מעולות</li>
-    </ul>
-    <div style="text-align: center; margin-top: 25px;">
-      <a href="#" style="display: inline-block; background: #0ea5e9; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">שלח קורות חיים</a>
-    </div>
-  </div>
-</div>`,
-  survey: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <span style="font-size: 50px;">📋</span>
-    <h1 style="color: white; margin: 15px 0 0; font-size: 28px;">דעתכם חשובה לנו!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 10px 0 0;">סקר קצר בן 2 דקות</p>
-  </div>
-  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; text-align: center;">עזרו לנו להשתפר! מלאו את הסקר הקצר וקבלו <strong style="color: #7c3aed;">10% הנחה</strong> על הרכישה הבאה.</p>
-    <div style="background: #faf5ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
-      <p style="color: #6b21a8; margin: 0 0 10px; font-size: 14px;">⏱️ זמן מילוי משוער: 2 דקות</p>
-      <p style="color: #6b21a8; margin: 0; font-size: 14px;">🎁 תקבלו קוד הנחה בסיום</p>
-    </div>
-    <div style="text-align: center;">
-      <a href="#" style="display: inline-block; background: #a855f7; color: white; padding: 16px 50px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">למילוי הסקר</a>
-    </div>
-    <p style="color: #9ca3af; font-size: 12px; text-align: center; margin: 20px 0 0;">*ההנחה תקפה ל-30 יום מיום קבלת הקוד</p>
-  </div>
-</div>`,
-  receipt: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: #1f2937; padding: 30px; border-radius: 12px 12px 0 0;">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <h1 style="color: white; margin: 0; font-size: 24px;">אישור הזמנה</h1>
-      <span style="color: #10b981; font-size: 14px; background: rgba(16,185,129,0.15); padding: 6px 12px; border-radius: 20px;">שולם ✓</span>
-    </div>
-    <p style="color: #9ca3af; margin: 10px 0 0;">מספר הזמנה: #12345678</p>
-  </div>
-  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr style="border-bottom: 1px solid #e5e7eb;">
-        <th style="text-align: right; padding: 12px 0; color: #6b7280; font-weight: 500;">פריט</th>
-        <th style="text-align: center; padding: 12px 0; color: #6b7280; font-weight: 500;">כמות</th>
-        <th style="text-align: left; padding: 12px 0; color: #6b7280; font-weight: 500;">מחיר</th>
-      </tr>
-      <tr style="border-bottom: 1px solid #e5e7eb;">
-        <td style="padding: 15px 0; color: #1f2937;">שם המוצר הראשון</td>
-        <td style="padding: 15px 0; color: #6b7280; text-align: center;">1</td>
-        <td style="padding: 15px 0; color: #1f2937; text-align: left;">₪199</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #e5e7eb;">
-        <td style="padding: 15px 0; color: #1f2937;">שם המוצר השני</td>
-        <td style="padding: 15px 0; color: #6b7280; text-align: center;">2</td>
-        <td style="padding: 15px 0; color: #1f2937; text-align: left;">₪298</td>
-      </tr>
-    </table>
-    <div style="border-top: 2px solid #e5e7eb; margin-top: 15px; padding-top: 15px;">
-      <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-        <span style="color: #6b7280;">סכום ביניים:</span>
-        <span style="color: #1f2937;">₪497</span>
-      </div>
-      <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-        <span style="color: #6b7280;">משלוח:</span>
-        <span style="color: #1f2937;">₪30</span>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: 600;">
-        <span style="color: #1f2937;">סה״כ:</span>
-        <span style="color: #1f2937;">₪527</span>
-      </div>
-    </div>
-  </div>
-  <div style="background: #f9fafb; padding: 20px 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #6b7280; font-size: 13px; margin: 0; text-align: center;">שאלות? צרו קשר: support@example.com</p>
-  </div>
-</div>`,
-  social: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #ec4899 0%, #f43f5e 50%, #f97316 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <h1 style="color: white; margin: 0; font-size: 28px;">הצטרפו לקהילה שלנו!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">עקבו אחרינו ברשתות החברתיות</p>
-  </div>
-  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; text-align: center;">
-    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; margin-bottom: 25px;">הישארו מעודכנים בכל החדשות, הטיפים והמבצעים המיוחדים!</p>
-    <div style="margin: 25px 0;">
-      <a href="#" style="display: inline-block; background: #1877F2; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">Facebook</a>
-      <a href="#" style="display: inline-block; background: #1DA1F2; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">Twitter</a>
-      <a href="#" style="display: inline-block; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">Instagram</a>
-      <a href="#" style="display: inline-block; background: #0A66C2; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">LinkedIn</a>
-      <a href="#" style="display: inline-block; background: #FF0000; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">YouTube</a>
-    </div>
-    <p style="color: #9ca3af; font-size: 14px;">כבר יותר מ-10,000 עוקבים!</p>
-  </div>
-  <div style="background: #f9fafb; padding: 20px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #6b7280; font-size: 13px; margin: 0;">שתפו את הניוזלטר הזה עם חברים!</p>
-  </div>
-</div>`,
-  webinar: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <span style="background: #fbbf24; color: #0e7490; padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">וובינר חינמי</span>
-    <h1 style="color: white; margin: 20px 0 10px; font-size: 28px;">שם הוובינר</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 0;">למדו איך להצליח ב...</p>
-  </div>
-  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
-      <div style="flex: 1; min-width: 140px; background: #ecfeff; padding: 15px; border-radius: 8px; text-align: center;">
-        <span style="font-size: 24px;">📅</span>
-        <p style="color: #0e7490; margin: 8px 0 0; font-weight: 600;">יום רביעי</p>
-        <p style="color: #0e7490; margin: 5px 0 0; font-size: 14px;">15/01/2025</p>
-      </div>
-      <div style="flex: 1; min-width: 140px; background: #ecfeff; padding: 15px; border-radius: 8px; text-align: center;">
-        <span style="font-size: 24px;">⏰</span>
-        <p style="color: #0e7490; margin: 8px 0 0; font-weight: 600;">20:00</p>
-        <p style="color: #0e7490; margin: 5px 0 0; font-size: 14px;">שעון ישראל</p>
-      </div>
-    </div>
-    <h3 style="color: #1f2937; font-size: 16px;">מה תלמדו:</h3>
-    <ul style="color: #4b5563; line-height: 2; padding-right: 20px;">
-      <li>נושא ראשון חשוב</li>
-      <li>נושא שני מעניין</li>
-      <li>טיפים מעשיים</li>
-    </ul>
-    <div style="text-align: center; margin-top: 25px;">
-      <a href="#" style="display: inline-block; background: #0891b2; color: white; padding: 16px 50px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">הרשמה חינם</a>
-    </div>
-    <p style="color: #9ca3af; font-size: 13px; text-align: center; margin-top: 15px;">מקומות מוגבלים - הירשמו עכשיו!</p>
-  </div>
-</div>`,
-  event: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 50px 30px; text-align: center; border-radius: 12px 12px 0 0; position: relative;">
-    <div style="position: absolute; top: 20px; right: 20px; background: #fbbf24; color: #1a1a2e; padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">VIP</div>
-    <div style="font-size: 50px; margin-bottom: 15px;">🎪</div>
-    <h1 style="color: #fbbf24; margin: 0; font-size: 32px;">אירוע השנה!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin: 15px 0 0;">הזמנה בלעדית</p>
-  </div>
-  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-right: 4px solid #fbbf24;">
-      <p style="color: #92400e; margin: 0; line-height: 1.8;">
-        <strong>📍 מיקום:</strong> שם המקום<br>
-        <strong>📅 תאריך:</strong> יום שישי, 20/01/2025<br>
-        <strong>⏰ שעה:</strong> 20:00
-      </p>
-    </div>
-    <p style="color: #4b5563; line-height: 1.8; text-align: center;">הצטרפו אלינו לערב בלתי נשכח של נטוורקינג, תוכן מקצועי וכיף!</p>
-    <div style="text-align: center; margin-top: 25px;">
-      <a href="#" style="display: inline-block; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #1a1a2e; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">שריינו מקום</a>
-    </div>
-  </div>
-  <div style="background: #1a1a2e; padding: 15px 30px; text-align: center; border-radius: 0 0 12px 12px;">
-    <p style="color: #fbbf24; font-size: 13px; margin: 0;">מספר המקומות מוגבל!</p>
-  </div>
-</div>`,
-  shipping: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); padding: 30px; border-radius: 12px 12px 0 0;">
-    <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
-      <span style="font-size: 40px;">📦</span>
-      <div>
-        <h1 style="color: white; margin: 0; font-size: 24px;">ההזמנה שלך בדרך!</h1>
-        <p style="color: rgba(255,255,255,0.9); margin: 5px 0 0; font-size: 14px;">מספר מעקב: #TRK123456789</p>
-      </div>
-    </div>
-  </div>
-  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
-      <div style="text-align: center; flex: 1;">
-        <div style="width: 30px; height: 30px; background: #22c55e; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white;">✓</div>
-        <p style="color: #22c55e; font-size: 12px; margin: 0;">הוזמן</p>
-      </div>
-      <div style="flex: 1; height: 2px; background: #22c55e;"></div>
-      <div style="text-align: center; flex: 1;">
-        <div style="width: 30px; height: 30px; background: #22c55e; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white;">✓</div>
-        <p style="color: #22c55e; font-size: 12px; margin: 0;">נארז</p>
-      </div>
-      <div style="flex: 1; height: 2px; background: #22c55e;"></div>
-      <div style="text-align: center; flex: 1;">
-        <div style="width: 30px; height: 30px; background: #fbbf24; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center;">🚚</div>
-        <p style="color: #fbbf24; font-size: 12px; margin: 0; font-weight: 600;">בדרך</p>
-      </div>
-      <div style="flex: 1; height: 2px; background: #e5e7eb;"></div>
-      <div style="text-align: center; flex: 1;">
-        <div style="width: 30px; height: 30px; background: #e5e7eb; border-radius: 50%; margin: 0 auto 8px;"></div>
-        <p style="color: #9ca3af; font-size: 12px; margin: 0;">נמסר</p>
-      </div>
-    </div>
-    <div style="background: #f0fdf4; padding: 15px; border-radius: 8px;">
-      <p style="color: #166534; margin: 0; font-size: 14px;"><strong>זמן הגעה משוער:</strong> יום שני, 22/01/2025</p>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-      <a href="#" style="display: inline-block; background: #22c55e; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 500;">מעקב משלוח</a>
-    </div>
-  </div>
-</div>`,
-  referral: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
-  <div style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <div style="font-size: 50px; margin-bottom: 15px;">🎁</div>
-    <h1 style="color: white; margin: 0; font-size: 28px;">הזמינו חברים וקבלו הטבות!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">שתפו את הקוד שלכם והרוויחו</p>
-  </div>
-  <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <div style="background: #fff7ed; border: 2px dashed #f97316; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
-      <p style="color: #9a3412; margin: 0 0 10px; font-size: 14px;">הקוד האישי שלכם:</p>
-      <p style="color: #ea580c; font-size: 28px; font-weight: 700; margin: 0; letter-spacing: 3px;">FRIEND50</p>
-    </div>
-    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-      <div style="flex: 1; background: #fef3c7; padding: 15px; border-radius: 8px; text-align: center;">
-        <p style="color: #92400e; font-size: 24px; font-weight: 700; margin: 0;">₪50</p>
-        <p style="color: #92400e; font-size: 12px; margin: 5px 0 0;">לכם</p>
-      </div>
-      <div style="flex: 1; background: #fef3c7; padding: 15px; border-radius: 8px; text-align: center;">
-        <p style="color: #92400e; font-size: 24px; font-weight: 700; margin: 0;">₪50</p>
-        <p style="color: #92400e; font-size: 12px; margin: 5px 0 0;">לחברים</p>
-      </div>
-    </div>
-    <p style="color: #4b5563; line-height: 1.8; text-align: center;">על כל חבר שנרשם עם הקוד שלכם, שניכם מקבלים ₪50 הנחה!</p>
-    <div style="text-align: center; margin-top: 20px;">
-      <a href="#" style="display: inline-block; background: #f97316; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600;">שתפו עכשיו</a>
-    </div>
-  </div>
-  <div style="background: #fff7ed; padding: 15px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #9a3412; font-size: 13px; margin: 0;">כבר הזמנתם 3 חברים והרווחתם ₪150!</p>
   </div>
 </div>`
 };
@@ -580,7 +375,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   initAdvancedTableEditor();
   initAIFeatures();
   initVariables();
-  initShortcutsHelp();
 });
 
 // Tab Navigation
@@ -1025,7 +819,7 @@ function clearModalInputs(modalId) {
         input.value = '';
       }
     } catch (e) {
-      console.warn('Error clearing input:', e);
+      // Error clearing input
     }
   });
 }
@@ -1416,7 +1210,6 @@ function initFooterActions() {
         }, (response) => {
           // Check for runtime errors
           if (chrome.runtime.lastError) {
-            console.log('Runtime error:', chrome.runtime.lastError.message);
             showToast(`רענן את ${detectedService} ונסה שוב`, 'error');
             return;
           }
@@ -1430,7 +1223,6 @@ function initFooterActions() {
       }, 100);
       
     } catch (err) {
-      console.error(err);
       showToast('שגיאה בהכנסת התוכן', 'error');
     }
     });
@@ -1506,97 +1298,12 @@ function showToast(message, type = 'info') {
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
-  // Only apply shortcuts when editor is focused or in popup
-  const isEditorFocused = document.activeElement === editor || editor?.contains(document.activeElement);
-  
   if (e.ctrlKey || e.metaKey) {
     switch(e.key.toLowerCase()) {
       case 's':
         e.preventDefault();
         document.getElementById('saveTemplate').click();
         break;
-      case 'b':
-        if (isEditorFocused) {
-          e.preventDefault();
-          document.execCommand('bold', false, null);
-        }
-        break;
-      case 'i':
-        if (isEditorFocused) {
-          e.preventDefault();
-          document.execCommand('italic', false, null);
-        }
-        break;
-      case 'u':
-        if (isEditorFocused) {
-          e.preventDefault();
-          document.execCommand('underline', false, null);
-        }
-        break;
-      case 'k':
-        if (isEditorFocused) {
-          e.preventDefault();
-          openModal('linkModal');
-        }
-        break;
-      case 'l':
-        if (isEditorFocused && e.shiftKey) {
-          e.preventDefault();
-          document.execCommand('insertUnorderedList', false, null);
-        } else if (isEditorFocused) {
-          e.preventDefault();
-          document.execCommand('justifyLeft', false, null);
-        }
-        break;
-      case 'e':
-        if (isEditorFocused) {
-          e.preventDefault();
-          document.execCommand('justifyCenter', false, null);
-        }
-        break;
-      case 'r':
-        if (isEditorFocused) {
-          e.preventDefault();
-          document.execCommand('justifyRight', false, null);
-        }
-        break;
-      case 'j':
-        if (isEditorFocused) {
-          e.preventDefault();
-          document.execCommand('justifyFull', false, null);
-        }
-        break;
-      case 'o':
-        if (isEditorFocused && e.shiftKey) {
-          e.preventDefault();
-          document.execCommand('insertOrderedList', false, null);
-        }
-        break;
-      case 'z':
-        if (isEditorFocused) {
-          e.preventDefault();
-          document.execCommand('undo', false, null);
-        }
-        break;
-      case 'y':
-        if (isEditorFocused) {
-          e.preventDefault();
-          document.execCommand('redo', false, null);
-        }
-        break;
-    }
-    // Strikethrough: Ctrl+Shift+X
-    if (e.shiftKey && e.key.toLowerCase() === 'x' && isEditorFocused) {
-      e.preventDefault();
-      document.execCommand('strikeThrough', false, null);
-    }
-  }
-  
-  // Escape to close modals
-  if (e.key === 'Escape') {
-    const openModal = document.querySelector('.modal.show');
-    if (openModal) {
-      openModal.classList.remove('show');
     }
   }
 });
@@ -1886,9 +1593,7 @@ function saveContent() {
     lastSaved: Date.now()
   };
   
-  chrome.storage.local.set({ editorData: data }, () => {
-    console.log('Content auto-saved');
-  });
+  chrome.storage.local.set({ editorData: data });
 }
 
 // Load saved content
@@ -1913,30 +1618,11 @@ function loadSavedContent() {
       
       // Show last saved time
       if (data.lastSaved) {
-        const savedDate = new Date(data.lastSaved);
-        const timeStr = savedDate.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' });
-        console.log(`Last saved: ${timeStr}`);
+        // Content loaded from saved data
       }
     } else if (editor) {
       editor.innerHTML = '<p>התחל לכתוב את ההודעה שלך כאן...</p>';
     }
-  });
-}
-
-// ===========================================
-// KEYBOARD SHORTCUTS HELP
-// ===========================================
-function initShortcutsHelp() {
-  const shortcutsBtn = document.getElementById('shortcutsHelp');
-  if (!shortcutsBtn) return;
-  
-  shortcutsBtn.addEventListener('click', () => {
-    openModal('shortcutsModal');
-  });
-  
-  // Close button
-  document.getElementById('closeShortcutsModal')?.addEventListener('click', () => {
-    closeModal('shortcutsModal');
   });
 }
 
@@ -2487,87 +2173,51 @@ function initAdvancedTableEditor() {
 }
 
 // ===========================================
-// AI FEATURES - Gemini & OpenAI Integration
+// AI FEATURES - Gemini Integration
 // ===========================================
 let geminiApiKey = '';
-let openaiApiKey = '';
-let currentAiProvider = 'gemini'; // 'gemini' or 'openai'
 let apiKeyValidated = false;
 
 async function initAIFeatures() {
-  // Load saved API keys and provider
-  const result = await chrome.storage.local.get(['geminiApiKey', 'openaiApiKey', 'aiProvider']);
-  
+  // Load saved API key and validate it
+  const result = await chrome.storage.local.get('geminiApiKey');
   if (result.geminiApiKey) {
     geminiApiKey = result.geminiApiKey;
-    document.getElementById('geminiApiKey').value = geminiApiKey;
-  }
-  
-  if (result.openaiApiKey) {
-    openaiApiKey = result.openaiApiKey;
-    document.getElementById('openaiApiKey').value = openaiApiKey;
-  }
-  
-  if (result.aiProvider) {
-    currentAiProvider = result.aiProvider;
-  }
-  
-  // Validate the saved key for current provider
-  await validateCurrentProvider();
-  
-  // AI Provider tabs
-  document.querySelectorAll('.ai-provider-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const provider = tab.dataset.provider;
-      
-      // Update tabs UI
-      document.querySelectorAll('.ai-provider-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      
-      // Show/hide key sections
-      document.getElementById('geminiKeySection').classList.toggle('hidden', provider !== 'gemini');
-      document.getElementById('openaiKeySection').classList.toggle('hidden', provider !== 'openai');
-      
-      // Update current provider
-      currentAiProvider = provider;
-      
-      // Hide error
-      document.getElementById('apiErrorMessage')?.classList.add('hidden');
-    });
-  });
-  
-  // Set initial tab state
-  updateProviderTabUI();
-  
-  // Toggle password visibility for both inputs
-  document.querySelectorAll('.toggle-password-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.dataset.target;
-      const input = document.getElementById(targetId);
-      const eyeIcon = btn.querySelector('.eye-icon');
-      const eyeOffIcon = btn.querySelector('.eye-off-icon');
-      
-      if (input.type === 'password') {
-        input.type = 'text';
-        eyeIcon.style.display = 'none';
-        eyeOffIcon.style.display = 'block';
-      } else {
-        input.type = 'password';
-        eyeIcon.style.display = 'block';
-        eyeOffIcon.style.display = 'none';
+    // Validate the saved key in background
+    try {
+      apiKeyValidated = await testGeminiApiKey(geminiApiKey);
+      if (!apiKeyValidated) {
+        geminiApiKey = '';
       }
-    });
+    } catch (e) {
+      apiKeyValidated = false;
+      geminiApiKey = '';
+    }
+  }
+  
+  // Toggle password visibility
+  document.getElementById('toggleApiKeyVisibility')?.addEventListener('click', () => {
+    const input = document.getElementById('geminiApiKey');
+    const eyeIcon = document.querySelector('.eye-icon');
+    const eyeOffIcon = document.querySelector('.eye-off-icon');
+    
+    if (input.type === 'password') {
+      input.type = 'text';
+      eyeIcon.style.display = 'none';
+      eyeOffIcon.style.display = 'block';
+    } else {
+      input.type = 'password';
+      eyeIcon.style.display = 'block';
+      eyeOffIcon.style.display = 'none';
+    }
   });
   
   // Save API Key - validates before saving
   document.getElementById('saveApiKey')?.addEventListener('click', async () => {
+    const apiKey = document.getElementById('geminiApiKey').value.trim();
     const errorMessage = document.getElementById('apiErrorMessage');
     const loading = document.getElementById('apiKeyLoading');
     const saveBtn = document.getElementById('saveApiKey');
-    
-    const apiKey = currentAiProvider === 'gemini' 
-      ? document.getElementById('geminiApiKey').value.trim()
-      : document.getElementById('openaiApiKey').value.trim();
     
     if (!apiKey) {
       errorMessage.classList.remove('hidden');
@@ -2580,21 +2230,13 @@ async function initAIFeatures() {
     saveBtn.disabled = true;
     
     try {
-      const isValid = currentAiProvider === 'gemini' 
-        ? await testGeminiApiKey(apiKey)
-        : await testOpenAIApiKey(apiKey);
+      const isValid = await testGeminiApiKey(apiKey);
       
       if (isValid) {
-        // Save the key and provider
-        if (currentAiProvider === 'gemini') {
-          geminiApiKey = apiKey;
-          await chrome.storage.local.set({ geminiApiKey: apiKey, aiProvider: 'gemini' });
-        } else {
-          openaiApiKey = apiKey;
-          await chrome.storage.local.set({ openaiApiKey: apiKey, aiProvider: 'openai' });
-        }
-        
+        // Save and continue to AI Write modal
+        geminiApiKey = apiKey;
         apiKeyValidated = true;
+        await chrome.storage.local.set({ geminiApiKey: apiKey });
         
         loading.classList.add('hidden');
         saveBtn.disabled = false;
@@ -2633,12 +2275,9 @@ async function initAIFeatures() {
     
     saveSelection();
     
-    const hasValidKey = (currentAiProvider === 'gemini' && geminiApiKey) || 
-                        (currentAiProvider === 'openai' && openaiApiKey);
-    
-    if (!hasValidKey || !apiKeyValidated) {
+    if (!geminiApiKey || !apiKeyValidated) {
       // No valid API key - open settings modal
-      updateProviderTabUI();
+      document.getElementById('geminiApiKey').value = '';
       document.getElementById('apiErrorMessage')?.classList.add('hidden');
       openModal('aiSettingsModal');
     } else {
@@ -2650,7 +2289,7 @@ async function initAIFeatures() {
   // Change API Key button (in AI Write modal)
   document.getElementById('changeApiKeyBtn')?.addEventListener('click', () => {
     closeModal('aiWriteModal');
-    updateProviderTabUI();
+    document.getElementById('geminiApiKey').value = geminiApiKey;
     document.getElementById('apiErrorMessage')?.classList.add('hidden');
     openModal('aiSettingsModal');
   });
@@ -2666,10 +2305,7 @@ async function initAIFeatures() {
       return;
     }
     
-    const hasKey = (currentAiProvider === 'gemini' && geminiApiKey) || 
-                   (currentAiProvider === 'openai' && openaiApiKey);
-    
-    if (!hasKey) {
+    if (!geminiApiKey) {
       showToast(msg('configureApiFirst') || 'יש להגדיר מפתח API קודם', 'error');
       return;
     }
@@ -2679,9 +2315,7 @@ async function initAIFeatures() {
     document.getElementById('generateAiEmail').disabled = true;
     
     try {
-      const emailContent = currentAiProvider === 'gemini'
-        ? await generateEmailWithGemini(instructions, tone, language)
-        : await generateEmailWithOpenAI(instructions, tone, language);
+      const emailContent = await generateEmailWithGemini(instructions, tone, language);
       
       if (emailContent) {
         // Insert into editor
@@ -2716,41 +2350,6 @@ async function initAIFeatures() {
   document.getElementById('cancelAiWrite')?.addEventListener('click', () => {
     closeModal('aiWriteModal');
   });
-}
-
-function updateProviderTabUI() {
-  // Update tabs
-  document.querySelectorAll('.ai-provider-tab').forEach(tab => {
-    tab.classList.toggle('active', tab.dataset.provider === currentAiProvider);
-  });
-  
-  // Show/hide sections
-  document.getElementById('geminiKeySection')?.classList.toggle('hidden', currentAiProvider !== 'gemini');
-  document.getElementById('openaiKeySection')?.classList.toggle('hidden', currentAiProvider !== 'openai');
-  
-  // Fill in saved keys
-  if (geminiApiKey) {
-    document.getElementById('geminiApiKey').value = geminiApiKey;
-  }
-  if (openaiApiKey) {
-    document.getElementById('openaiApiKey').value = openaiApiKey;
-  }
-}
-
-async function validateCurrentProvider() {
-  try {
-    if (currentAiProvider === 'gemini' && geminiApiKey) {
-      apiKeyValidated = await testGeminiApiKey(geminiApiKey);
-      if (!apiKeyValidated) geminiApiKey = '';
-    } else if (currentAiProvider === 'openai' && openaiApiKey) {
-      apiKeyValidated = await testOpenAIApiKey(openaiApiKey);
-      if (!apiKeyValidated) openaiApiKey = '';
-    } else {
-      apiKeyValidated = false;
-    }
-  } catch (e) {
-    apiKeyValidated = false;
-  }
 }
 
 
@@ -2846,101 +2445,6 @@ if (!response.ok) {
     
     const data = await response.json();
     let content = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-    
-    // Clean up markdown code blocks if present
-    content = content.replace(/```html\n?/gi, '').replace(/```\n?/g, '');
-    
-    // Wrap in a div if needed
-    if (!content.startsWith('<')) {
-      content = `<div>${content.replace(/\n/g, '<br>')}</div>`;
-    }
-    
-    return content;
-  } catch (error) {
-    throw error;
-  }
-}
-
-// OpenAI API Functions
-async function testOpenAIApiKey(apiKey) {
-  try {
-    const response = await fetch('https://api.openai.com/v1/models', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json'
-      }
-    });
-    
-    return response.ok;
-  } catch (error) {
-    return false;
-  }
-}
-
-async function generateEmailWithOpenAI(instructions, tone, language) {
-  const languageNames = {
-    'he': 'Hebrew',
-    'en': 'English',
-    'es': 'Spanish',
-    'fr': 'French',
-    'de': 'German',
-    'ru': 'Russian',
-    'ar': 'Arabic',
-    'pt': 'Portuguese',
-    'zh_CN': 'Chinese'
-  };
-  
-  const toneDescriptions = {
-    'professional': 'professional and business-appropriate',
-    'friendly': 'warm and friendly',
-    'formal': 'very formal and respectful',
-    'casual': 'casual and relaxed'
-  };
-  
-  const systemPrompt = `You are an expert email writer. Write a well-structured email based on the user's instructions.
-
-IMPORTANT RULES:
-1. Write the email ONLY in ${languageNames[language] || 'English'}
-2. Use a ${toneDescriptions[tone] || 'professional'} tone
-3. Format the email with proper HTML for email clients:
-   - Use <p> tags for paragraphs
-   - Use <br> for line breaks where needed
-   - Use proper greeting and closing
-4. Return ONLY the email body HTML, no explanations
-5. Do NOT include subject line in the output
-6. Make sure the email is complete and ready to send
-7. If the language is RTL (Hebrew, Arabic), add dir="rtl" to the main container`;
-
-  const userPrompt = `Write an email based on these instructions: ${instructions}`;
-  
-  try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${openaiApiKey}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: 'gpt-3.5-turbo',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt }
-        ],
-        temperature: 0.7,
-        max_tokens: 1024
-      })
-    });
-    
-    if (!response.ok) {
-      if (response.status === 429) {
-        throw new Error('RATE_LIMIT');
-      }
-      throw new Error(`API request failed: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    let content = data.choices?.[0]?.message?.content || '';
     
     // Clean up markdown code blocks if present
     content = content.replace(/```html\n?/gi, '').replace(/```\n?/g, '');
