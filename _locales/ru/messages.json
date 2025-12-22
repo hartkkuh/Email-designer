@@ -1,11 +1,9 @@
 {
   "appName": {
-    "message": "Дизайнер Email с ИИ",
-    "description": "Extension name"
+    "message": "HTML Редактор Email"
   },
   "appDescription": {
-    "message": "Создавайте и редактируйте оформленные письма напрямую в Gmail, Outlook, Yahoo и ProtonMail с ИИ",
-    "description": "Extension description"
+    "message": "Создавайте и редактируйте красивые HTML письма в Gmail, Outlook, Yahoo и ProtonMail"
   },
   "tabVisual": {
     "message": "Визуальный Редактор"
@@ -163,9 +161,6 @@
   "tplNewsletter": {
     "message": "Рассылка"
   },
-  "tplAnnouncement": {
-    "message": "Объявление"
-  },
   "tplInvitation": {
     "message": "Приглашение"
   },
@@ -178,17 +173,38 @@
   "tplWelcome": {
     "message": "Приветствие"
   },
-  "tplThankyou": {
-    "message": "Благодарность"
-  },
   "tplReminder": {
     "message": "Напоминание"
   },
-  "tplFeedback": {
-    "message": "Отзыв"
-  },
   "tplAlert": {
     "message": "Уведомление"
+  },
+  "tplBirthday": {
+    "message": "День рождения"
+  },
+  "tplJob": {
+    "message": "Вакансия"
+  },
+  "tplSurvey": {
+    "message": "Опрос"
+  },
+  "tplReceipt": {
+    "message": "Квитанция"
+  },
+  "tplSocial": {
+    "message": "Социальные сети"
+  },
+  "tplWebinar": {
+    "message": "Вебинар"
+  },
+  "tplEvent": {
+    "message": "Мероприятие"
+  },
+  "tplShipping": {
+    "message": "Статус доставки"
+  },
+  "tplReferral": {
+    "message": "Пригласить друзей"
   },
   "saveTemplate": {
     "message": "Сохранить Шаблон"
@@ -551,6 +567,66 @@
   "close": {
     "message": "Закрыть"
   },
+  "keyboardShortcuts": {
+    "message": "Горячие клавиши"
+  },
+  "shortcutsFormatting": {
+    "message": "Форматирование"
+  },
+  "shortcutsAlignment": {
+    "message": "Выравнивание"
+  },
+  "shortcutsLists": {
+    "message": "Списки"
+  },
+  "shortcutsOther": {
+    "message": "Прочее"
+  },
+  "shortcutBold": {
+    "message": "Жирный"
+  },
+  "shortcutItalic": {
+    "message": "Курсив"
+  },
+  "shortcutUnderline": {
+    "message": "Подчеркнутый"
+  },
+  "shortcutStrikethrough": {
+    "message": "Зачеркнутый"
+  },
+  "shortcutAlignLeft": {
+    "message": "По левому краю"
+  },
+  "shortcutAlignCenter": {
+    "message": "По центру"
+  },
+  "shortcutAlignRight": {
+    "message": "По правому краю"
+  },
+  "shortcutJustify": {
+    "message": "По ширине"
+  },
+  "shortcutBulletList": {
+    "message": "Маркированный список"
+  },
+  "shortcutNumberedList": {
+    "message": "Нумерованный список"
+  },
+  "shortcutInsertLink": {
+    "message": "Вставить ссылку"
+  },
+  "shortcutSaveTemplate": {
+    "message": "Сохранить шаблон"
+  },
+  "shortcutUndo": {
+    "message": "Отменить"
+  },
+  "shortcutRedo": {
+    "message": "Повторить"
+  },
+  "shortcutCloseModal": {
+    "message": "Закрыть окно"
+  },
   "categoryAll": {
     "message": "Все"
   },
@@ -604,6 +680,18 @@
   },
   "geminiApiKey": {
     "message": "API-ключ Gemini"
+  },
+  "openaiApiKey": {
+    "message": "API-ключ OpenAI"
+  },
+  "selectAiProvider": {
+    "message": "Выберите провайдера ИИ:"
+  },
+  "getGeminiKeyLink": {
+    "message": "Получить бесплатный API-ключ в Google AI Studio →"
+  },
+  "getOpenaiKeyLink": {
+    "message": "Получить API-ключ на OpenAI Platform →"
   },
   "apiKeyHint": {
     "message": "Получите бесплатный API-ключ в Google AI Studio"

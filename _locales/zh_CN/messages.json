@@ -1,11 +1,9 @@
 {
   "appName": {
-    "message": "AI邮件设计师",
-    "description": "Extension name"
+    "message": "邮件HTML编辑器"
   },
   "appDescription": {
-    "message": "直接在Gmail、Outlook、Yahoo和ProtonMail中使用AI创建和编辑设计的邮件",
-    "description": "Extension description"
+    "message": "在Gmail、Outlook、Yahoo和ProtonMail中创建和编辑精美的HTML邮件"
   },
   "tabVisual": {
     "message": "可视化编辑器"
@@ -163,9 +161,6 @@
   "tplNewsletter": {
     "message": "新闻通讯"
   },
-  "tplAnnouncement": {
-    "message": "公告"
-  },
   "tplInvitation": {
     "message": "邀请"
   },
@@ -178,17 +173,38 @@
   "tplWelcome": {
     "message": "欢迎"
   },
-  "tplThankyou": {
-    "message": "感谢"
-  },
   "tplReminder": {
     "message": "提醒"
   },
-  "tplFeedback": {
-    "message": "反馈"
-  },
   "tplAlert": {
     "message": "警报"
+  },
+  "tplBirthday": {
+    "message": "生日"
+  },
+  "tplJob": {
+    "message": "职位招聘"
+  },
+  "tplSurvey": {
+    "message": "问卷调查"
+  },
+  "tplReceipt": {
+    "message": "收据"
+  },
+  "tplSocial": {
+    "message": "社交媒体"
+  },
+  "tplWebinar": {
+    "message": "网络研讨会"
+  },
+  "tplEvent": {
+    "message": "活动"
+  },
+  "tplShipping": {
+    "message": "物流更新"
+  },
+  "tplReferral": {
+    "message": "推荐好友"
   },
   "saveTemplate": {
     "message": "保存模板"
@@ -551,6 +567,66 @@
   "close": {
     "message": "关闭"
   },
+  "keyboardShortcuts": {
+    "message": "键盘快捷键"
+  },
+  "shortcutsFormatting": {
+    "message": "格式"
+  },
+  "shortcutsAlignment": {
+    "message": "对齐"
+  },
+  "shortcutsLists": {
+    "message": "列表"
+  },
+  "shortcutsOther": {
+    "message": "其他"
+  },
+  "shortcutBold": {
+    "message": "粗体"
+  },
+  "shortcutItalic": {
+    "message": "斜体"
+  },
+  "shortcutUnderline": {
+    "message": "下划线"
+  },
+  "shortcutStrikethrough": {
+    "message": "删除线"
+  },
+  "shortcutAlignLeft": {
+    "message": "左对齐"
+  },
+  "shortcutAlignCenter": {
+    "message": "居中"
+  },
+  "shortcutAlignRight": {
+    "message": "右对齐"
+  },
+  "shortcutJustify": {
+    "message": "两端对齐"
+  },
+  "shortcutBulletList": {
+    "message": "项目符号列表"
+  },
+  "shortcutNumberedList": {
+    "message": "编号列表"
+  },
+  "shortcutInsertLink": {
+    "message": "插入链接"
+  },
+  "shortcutSaveTemplate": {
+    "message": "保存模板"
+  },
+  "shortcutUndo": {
+    "message": "撤销"
+  },
+  "shortcutRedo": {
+    "message": "重做"
+  },
+  "shortcutCloseModal": {
+    "message": "关闭窗口"
+  },
   "categoryAll": {
     "message": "全部"
   },
@@ -604,6 +680,18 @@
   },
   "geminiApiKey": {
     "message": "Gemini API密钥"
+  },
+  "openaiApiKey": {
+    "message": "OpenAI API密钥"
+  },
+  "selectAiProvider": {
+    "message": "选择AI提供商:"
+  },
+  "getGeminiKeyLink": {
+    "message": "从Google AI Studio获取免费API密钥 →"
+  },
+  "getOpenaiKeyLink": {
+    "message": "从OpenAI Platform获取API密钥 →"
   },
   "apiKeyHint": {
     "message": "从Google AI Studio获取免费API密钥"

@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "מעצב מיילים עם AI",
+    "message": "עורך HTML למייל",
     "description": "Extension name"
   },
   "appDescription": {
-    "message": "צור וערוך מיילים מעוצבים ישירות ב-Gmail, Outlook, Yahoo ו-ProtonMail עם AI",
+    "message": "צור וערוך מיילים מעוצבים ב-HTML ישירות ב-Gmail, Outlook, Yahoo ו-ProtonMail",
     "description": "Extension description"
   },
   "tabVisual": {
@@ -163,9 +163,6 @@
   "tplNewsletter": {
     "message": "ניוזלטר"
   },
-  "tplAnnouncement": {
-    "message": "הודעה"
-  },
   "tplInvitation": {
     "message": "הזמנה"
   },
@@ -178,17 +175,38 @@
   "tplWelcome": {
     "message": "ברוכים הבאים"
   },
-  "tplThankyou": {
-    "message": "תודה"
-  },
   "tplReminder": {
     "message": "תזכורת"
   },
-  "tplFeedback": {
-    "message": "משוב"
-  },
   "tplAlert": {
     "message": "התראה"
+  },
+  "tplBirthday": {
+    "message": "יום הולדת"
+  },
+  "tplJob": {
+    "message": "הצעת עבודה"
+  },
+  "tplSurvey": {
+    "message": "סקר"
+  },
+  "tplReceipt": {
+    "message": "קבלה/חשבונית"
+  },
+  "tplSocial": {
+    "message": "רשתות חברתיות"
+  },
+  "tplWebinar": {
+    "message": "וובינר"
+  },
+  "tplEvent": {
+    "message": "אירוע"
+  },
+  "tplShipping": {
+    "message": "עדכון משלוח"
+  },
+  "tplReferral": {
+    "message": "הפניית חברים"
   },
   "saveTemplate": {
     "message": "שמור תבנית"
@@ -551,6 +569,66 @@
   "close": {
     "message": "סגור"
   },
+  "keyboardShortcuts": {
+    "message": "קיצורי מקלדת"
+  },
+  "shortcutsFormatting": {
+    "message": "עיצוב טקסט"
+  },
+  "shortcutsAlignment": {
+    "message": "יישור"
+  },
+  "shortcutsLists": {
+    "message": "רשימות"
+  },
+  "shortcutsOther": {
+    "message": "אחר"
+  },
+  "shortcutBold": {
+    "message": "מודגש"
+  },
+  "shortcutItalic": {
+    "message": "נטוי"
+  },
+  "shortcutUnderline": {
+    "message": "קו תחתון"
+  },
+  "shortcutStrikethrough": {
+    "message": "קו חוצה"
+  },
+  "shortcutAlignLeft": {
+    "message": "יישור לשמאל"
+  },
+  "shortcutAlignCenter": {
+    "message": "יישור למרכז"
+  },
+  "shortcutAlignRight": {
+    "message": "יישור לימין"
+  },
+  "shortcutJustify": {
+    "message": "יישור לשני הצדדים"
+  },
+  "shortcutBulletList": {
+    "message": "רשימה עם תבליטים"
+  },
+  "shortcutNumberedList": {
+    "message": "רשימה ממוספרת"
+  },
+  "shortcutInsertLink": {
+    "message": "הוסף קישור"
+  },
+  "shortcutSaveTemplate": {
+    "message": "שמור תבנית"
+  },
+  "shortcutUndo": {
+    "message": "בטל"
+  },
+  "shortcutRedo": {
+    "message": "בצע שוב"
+  },
+  "shortcutCloseModal": {
+    "message": "סגור חלון"
+  },
   "varName": {
     "message": "{{שם}}"
   },
@@ -622,6 +700,18 @@
   },
   "geminiApiKey": {
     "message": "מפתח API של Gemini"
+  },
+  "openaiApiKey": {
+    "message": "מפתח API של OpenAI"
+  },
+  "selectAiProvider": {
+    "message": "בחר ספק AI:"
+  },
+  "getGeminiKeyLink": {
+    "message": "קבל מפתח API בחינם מ-Google AI Studio →"
+  },
+  "getOpenaiKeyLink": {
+    "message": "קבל מפתח API מ-OpenAI Platform →"
   },
   "apiKeyHint": {
     "message": "קבל מפתח API בחינם מ-Google AI Studio"

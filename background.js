@@ -3,6 +3,8 @@
 // Listen for extension installation
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === 'install') {
+    console.log('Gmail HTML Editor installed');
+    
     // Set default settings
     chrome.storage.local.set({
       savedTemplates: {},
@@ -12,6 +14,8 @@ chrome.runtime.onInstalled.addListener((details) => {
         defaultFontSize: '14px'
       }
     });
+  } else if (details.reason === 'update') {
+    console.log('Gmail HTML Editor updated to version', chrome.runtime.getManifest().version);
   }
 });
 

@@ -6,6 +6,7 @@
 
   // Prevent multiple initializations
   if (window._emailHtmlEditorLoaded) {
+    console.log('Email HTML Editor: Already loaded, skipping...');
     return;
   }
   window._emailHtmlEditorLoaded = true;
@@ -31,6 +32,7 @@
   }
 
   const emailService = detectEmailService();
+  console.log(`Email HTML Editor: Detected service - ${emailService}`);
 
   // Selectors for each email service
   const serviceSelectors = {
@@ -187,9 +189,11 @@
         // Ignore if native setter fails
       }
       
+      console.log(`Email HTML Editor: Subject inserted successfully (${emailService})`);
       return true;
     }
     
+    console.log(`Email HTML Editor: Could not find subject field (${emailService})`);
     return false;
   }
 
@@ -232,6 +236,7 @@
     }
 
     if (!composeBody) {
+      console.log(`Email HTML Editor: Could not find compose body (${emailService})`);
       return false;
     }
 
@@ -277,8 +282,10 @@
         // Ignore if InputEvent fails
       }
       
+      console.log(`Email HTML Editor: Content inserted successfully (${emailService})`);
       return true;
     } catch (error) {
+      console.error(`Email HTML Editor: Error inserting content (${emailService})`, error);
       return false;
     }
   }
@@ -339,4 +346,7 @@
     }
     return html;
   }
+
+  // Initialize
+  console.log('Email HTML Editor: Content script loaded');
 })();
