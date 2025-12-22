@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "Email HTML Editor",
+    "message": "Email Designer",
     "description": "Extension name"
   },
   "appDescription": {
-    "message": "Create and edit beautiful HTML emails directly in Gmail, Outlook, Yahoo and ProtonMail",
+    "message": "Create and design beautiful emails directly in Gmail, Outlook, Yahoo and ProtonMail",
     "description": "Extension description"
   },
   "tabVisual": {

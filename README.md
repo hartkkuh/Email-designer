@@ -1,8 +1,8 @@
-# 📧 Email HTML Editor Pro
+# 📧 Email Designer Pro
 
-A powerful Chrome extension for creating beautiful, professional HTML emails with AI writing assistance.
+A powerful Chrome extension for creating and designing beautiful, professional emails with AI writing assistance.
 
-![Version](https://img.shields.io/badge/version-2.0.0-blue)
+![Version](https://img.shields.io/badge/version-2.0.4-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Chrome](https://img.shields.io/badge/chrome-extension-yellow)
 
@@ -26,7 +26,8 @@ A powerful Chrome extension for creating beautiful, professional HTML emails wit
 - Social media buttons (Facebook, X, Instagram, LinkedIn, WhatsApp, YouTube, Telegram, TikTok)
 
 ### 🤖 AI-Powered Writing
-- Write emails using Google Gemini AI
+- Write emails using **OpenAI GPT** or **Google Gemini AI**
+- Switch between AI providers easily
 - Multiple tone options: Professional, Friendly, Formal, Casual
 - Generate emails in 9 languages
 - Just describe what you want - AI does the rest!
@@ -87,10 +88,13 @@ A powerful Chrome extension for creating beautiful, professional HTML emails wit
 
 ### Using AI Writing
 1. Click the purple "AI" button in the toolbar
-2. If first time, enter your Gemini API key (free from [Google AI Studio](https://aistudio.google.com/apikey))
-3. Describe the email you want to write
-4. Choose tone and language
-5. Click "Generate" - your email is ready!
+2. Choose your AI provider (OpenAI or Gemini)
+3. If first time, enter your API key:
+   - **OpenAI**: Get your API key from [OpenAI Platform](https://platform.openai.com/api-keys)
+   - **Gemini**: Get your API key from [Google AI Studio](https://aistudio.google.com/apikey)
+4. Describe the email you want to write
+5. Choose tone and language
+6. Click "Generate" - your email is ready!
 
 ### Using Variables
 1. Click the variables button (T icon) in the toolbar
@@ -110,10 +114,11 @@ All data is stored locally on your device using Chrome's built-in storage API:
 - Custom email templates
 - Signatures
 - Variable settings
-- Gemini API key (if you choose to use AI features)
+- OpenAI or Gemini API key (if you choose to use AI features)
 
 ### Third-Party Services
-- **Google Gemini API**: Only used when you explicitly use the AI writing feature. Requires your own API key. We do not store or have access to your conversations with the AI.
+- **OpenAI API**: Only used when you explicitly use the AI writing feature with OpenAI. Requires your own API key. We do not store or have access to your conversations with the AI.
+- **Google Gemini API**: Only used when you explicitly use the AI writing feature with Gemini. Requires your own API key. We do not store or have access to your conversations with the AI.
 
 ### Permissions Explained
 | Permission | Why It's Needed |
@@ -122,7 +127,7 @@ All data is stored locally on your device using Chrome's built-in storage API:
 | `storage` | To save your preferences, templates, and signatures locally |
 | `clipboardWrite` | To copy HTML to your clipboard |
 | `scripting` | To insert formatted content into email compose windows |
-| Host permissions | To interact with Gmail, Outlook, Yahoo Mail, ProtonMail, and Gemini API |
+| Host permissions | To interact with Gmail, Outlook, Yahoo Mail, ProtonMail, OpenAI API, and Gemini API |
 
 ### Data Security
 All your data remains on your local device. We have no servers and no way to access your information.
@@ -159,6 +164,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 Changelog
 
+### Version 2.0.4
+- ✨ Added OpenAI GPT support (in addition to Gemini)
+- ✨ Users can now choose between OpenAI and Gemini AI providers
+- 🧹 Removed unnecessary console logging for cleaner output
+- 🔧 Improved code quality and performance
+
 ### Version 2.0.0
 - ✨ Added AI writing with Google Gemini
 - ✨ Added smart variables system
@@ -175,7 +186,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ### Version 1.0.0
 - Initial release
-- Basic HTML email editor
+- Basic email designer
 - Gmail integration
 
 ## 📄 License
@@ -188,7 +199,7 @@ Created with ❤️ for better email communication.
 
 ## 🙏 Acknowledgments
 
-- Google Gemini AI for powering the AI writing feature
+- OpenAI and Google Gemini AI for powering the AI writing features
 - All the open-source libraries and tools that made this possible
 
 ---

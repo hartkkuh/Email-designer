@@ -1,9 +1,9 @@
 {
   "appName": {
-    "message": "Editor HTML para Email"
+    "message": "Diseñador de Email"
   },
   "appDescription": {
-    "message": "Crea y edita correos HTML hermosos en Gmail, Outlook, Yahoo y ProtonMail"
+    "message": "Crea y diseña correos hermosos en Gmail, Outlook, Yahoo y ProtonMail"
   },
   "tabVisual": {
     "message": "Editor Visual"

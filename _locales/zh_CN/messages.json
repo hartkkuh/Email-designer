@@ -1,9 +1,9 @@
 {
   "appName": {
-    "message": "邮件HTML编辑器"
+    "message": "邮件设计师"
   },
   "appDescription": {
-    "message": "在Gmail、Outlook、Yahoo和ProtonMail中创建和编辑精美的HTML邮件"
+    "message": "在Gmail、Outlook、Yahoo和ProtonMail中创建和设计精美的邮件"
   },
   "tabVisual": {
     "message": "可视化编辑器"

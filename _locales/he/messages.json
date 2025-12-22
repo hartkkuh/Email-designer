@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "עורך HTML למייל",
+    "message": "מעצב מיילים",
     "description": "Extension name"
   },
   "appDescription": {
-    "message": "צור וערוך מיילים מעוצבים ב-HTML ישירות ב-Gmail, Outlook, Yahoo ו-ProtonMail",
+    "message": "צור וערוך מיילים מעוצבים ישירות ב-Gmail, Outlook, Yahoo ו-ProtonMail",
     "description": "Extension description"
   },
   "tabVisual": {

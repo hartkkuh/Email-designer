@@ -1,4 +1,4 @@
-// Gmail HTML Editor - Main Script
+// Email Designer - Main Script
 
 // ===========================================
 // INTERNATIONALIZATION (i18n)
@@ -1416,7 +1416,6 @@ function initFooterActions() {
         }, (response) => {
           // Check for runtime errors
           if (chrome.runtime.lastError) {
-            console.log('Runtime error:', chrome.runtime.lastError.message);
             showToast(`רענן את ${detectedService} ונסה שוב`, 'error');
             return;
           }
@@ -1886,9 +1885,7 @@ function saveContent() {
     lastSaved: Date.now()
   };
   
-  chrome.storage.local.set({ editorData: data }, () => {
-    console.log('Content auto-saved');
-  });
+  chrome.storage.local.set({ editorData: data });
 }
 
 // Load saved content
@@ -1913,9 +1910,7 @@ function loadSavedContent() {
       
       // Show last saved time
       if (data.lastSaved) {
-        const savedDate = new Date(data.lastSaved);
-        const timeStr = savedDate.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' });
-        console.log(`Last saved: ${timeStr}`);
+        // Content loaded from saved state
       }
     } else if (editor) {
       editor.innerHTML = '<p>התחל לכתוב את ההודעה שלך כאן...</p>';

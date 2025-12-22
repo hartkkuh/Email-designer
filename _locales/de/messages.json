@@ -1,9 +1,9 @@
 {
   "appName": {
-    "message": "E-Mail HTML Editor"
+    "message": "E-Mail Designer"
   },
   "appDescription": {
-    "message": "Erstellen und bearbeiten Sie schöne HTML-E-Mails in Gmail, Outlook, Yahoo und ProtonMail"
+    "message": "Erstellen und gestalten Sie schöne E-Mails in Gmail, Outlook, Yahoo und ProtonMail"
   },
   "tabVisual": {
     "message": "Visueller Editor"

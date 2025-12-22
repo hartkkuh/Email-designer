@@ -1,10 +1,8 @@
-// Gmail HTML Editor - Background Service Worker
+// Email Designer - Background Service Worker
 
 // Listen for extension installation
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === 'install') {
-    console.log('Gmail HTML Editor installed');
-    
     // Set default settings
     chrome.storage.local.set({
       savedTemplates: {},
@@ -14,8 +12,6 @@ chrome.runtime.onInstalled.addListener((details) => {
         defaultFontSize: '14px'
       }
     });
-  } else if (details.reason === 'update') {
-    console.log('Gmail HTML Editor updated to version', chrome.runtime.getManifest().version);
   }
 });
 
@@ -69,8 +65,8 @@ chrome.action.onClicked.addListener((tab) => {
 
 // Context menu (optional - for future features)
 // chrome.contextMenus.create({
-//   id: 'gmail-html-editor',
-//   title: 'Edit with HTML Editor',
+//   id: 'email-designer',
+//   title: 'Edit with Email Designer',
 //   contexts: ['editable'],
 //   documentUrlPatterns: ['https://mail.google.com/*']
 // });
