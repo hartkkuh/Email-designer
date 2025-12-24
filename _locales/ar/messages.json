@@ -59,8 +59,47 @@
   "textColor": {
     "message": "لون النص"
   },
+  "textColorLetter": {
+    "message": "أ"
+  },
+  "addUnsubscribe": {
+    "message": "إضافة رابط إلغاء الاشتراك"
+  },
   "bgColor": {
     "message": "لون الخلفية"
+  },
+  "emailBackgroundColor": {
+    "message": "لون خلفية البريد الإلكتروني"
+  },
+  "emailBackgroundImage": {
+    "message": "صورة خلفية البريد الإلكتروني"
+  },
+  "backgroundRepeat": {
+    "message": "التكرار"
+  },
+  "backgroundSize": {
+    "message": "الحجم"
+  },
+  "noRepeat": {
+    "message": "بدون تكرار"
+  },
+  "repeat": {
+    "message": "تكرار"
+  },
+  "repeatX": {
+    "message": "تكرار أفقي"
+  },
+  "repeatY": {
+    "message": "تكرار عمودي"
+  },
+  "cover": {
+    "message": "تغطية"
+  },
+  "contain": {
+    "message": "احتواء"
+  },
+  "auto": {
+    "message": "تلقائي"
   },
   "customColor": {
     "message": "مخصص:"
@@ -73,6 +112,12 @@
   },
   "alignLeft": {
     "message": "محاذاة لليسار"
+  },
+  "toggleDirection": {
+    "message": "تبديل اتجاه النص (RTL/LTR)"
+  },
+  "selectLanguage": {
+    "message": "اختر لغة الرسالة"
   },
   "insertLink": {
     "message": "إدراج رابط"
@@ -118,6 +163,12 @@
   },
   "insertCode": {
     "message": "كود"
+  },
+  "insertTextBox": {
+    "message": "صندوق نص"
+  },
+  "textBoxPlaceholder": {
+    "message": "أدخل النص هنا"
   },
   "insertButton": {
     "message": "زر"
@@ -211,6 +262,15 @@
   },
   "copyHtml": {
     "message": "نسخ HTML"
+  },
+  "copyHtmlOptions": {
+    "message": "خيارات النسخ"
+  },
+  "copyHtmlBody": {
+    "message": "نسخ محتوى Body فقط"
+  },
+  "copyHtmlFull": {
+    "message": "نسخ HTML كامل"
   },
   "insertToEmail": {
     "message": "إدراج في البريد"

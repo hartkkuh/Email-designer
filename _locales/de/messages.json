@@ -59,8 +59,47 @@
   "textColor": {
     "message": "Textfarbe"
   },
+  "textColorLetter": {
+    "message": "A"
+  },
+  "addUnsubscribe": {
+    "message": "Abmeldelink hinzufügen"
+  },
   "bgColor": {
     "message": "Hintergrundfarbe"
+  },
+  "emailBackgroundColor": {
+    "message": "E-Mail-Hintergrundfarbe"
+  },
+  "emailBackgroundImage": {
+    "message": "E-Mail-Hintergrundbild"
+  },
+  "backgroundRepeat": {
+    "message": "Wiederholung"
+  },
+  "backgroundSize": {
+    "message": "Größe"
+  },
+  "noRepeat": {
+    "message": "Keine Wiederholung"
+  },
+  "repeat": {
+    "message": "Wiederholen"
+  },
+  "repeatX": {
+    "message": "Wiederholen X"
+  },
+  "repeatY": {
+    "message": "Wiederholen Y"
+  },
+  "cover": {
+    "message": "Abdecken"
+  },
+  "contain": {
+    "message": "Enthalten"
+  },
+  "auto": {
+    "message": "Automatisch"
   },
   "customColor": {
     "message": "Benutzerdefiniert:"
@@ -73,6 +112,12 @@
   },
   "alignLeft": {
     "message": "Links Ausrichten"
+  },
+  "toggleDirection": {
+    "message": "Textrichtung Umschalten (RTL/LTR)"
+  },
+  "selectLanguage": {
+    "message": "Nachrichtensprache Auswählen"
   },
   "insertLink": {
     "message": "Link Einfügen"
@@ -118,6 +163,12 @@
   },
   "insertCode": {
     "message": "Code"
+  },
+  "insertTextBox": {
+    "message": "Textfeld"
+  },
+  "textBoxPlaceholder": {
+    "message": "Text hier eingeben"
   },
   "insertButton": {
     "message": "Schaltfläche"
@@ -211,6 +262,15 @@
   },
   "copyHtml": {
     "message": "HTML Kopieren"
+  },
+  "copyHtmlOptions": {
+    "message": "Kopieroptionen"
+  },
+  "copyHtmlBody": {
+    "message": "Nur Body-Inhalt Kopieren"
+  },
+  "copyHtmlFull": {
+    "message": "Vollständiges HTML Kopieren"
   },
   "insertToEmail": {
     "message": "In E-Mail Einfügen"

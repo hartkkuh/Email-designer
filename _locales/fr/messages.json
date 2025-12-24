@@ -59,8 +59,47 @@
   "textColor": {
     "message": "Couleur du Texte"
   },
+  "textColorLetter": {
+    "message": "A"
+  },
+  "addUnsubscribe": {
+    "message": "Ajouter un Lien de Désabonnement"
+  },
   "bgColor": {
     "message": "Couleur de Fond"
+  },
+  "emailBackgroundColor": {
+    "message": "Couleur de Fond de l'Email"
+  },
+  "emailBackgroundImage": {
+    "message": "Image de Fond de l'Email"
+  },
+  "backgroundRepeat": {
+    "message": "Répéter"
+  },
+  "backgroundSize": {
+    "message": "Taille"
+  },
+  "noRepeat": {
+    "message": "Ne Pas Répéter"
+  },
+  "repeat": {
+    "message": "Répéter"
+  },
+  "repeatX": {
+    "message": "Répéter X"
+  },
+  "repeatY": {
+    "message": "Répéter Y"
+  },
+  "cover": {
+    "message": "Couvrir"
+  },
+  "contain": {
+    "message": "Contenir"
+  },
+  "auto": {
+    "message": "Automatique"
   },
   "customColor": {
     "message": "Personnalisé:"
@@ -73,6 +112,12 @@
   },
   "alignLeft": {
     "message": "Aligner à Gauche"
+  },
+  "toggleDirection": {
+    "message": "Basculer la Direction du Texte (RTL/LTR)"
+  },
+  "selectLanguage": {
+    "message": "Sélectionner la Langue du Message"
   },
   "insertLink": {
     "message": "Insérer Lien"
@@ -118,6 +163,12 @@
   },
   "insertCode": {
     "message": "Code"
+  },
+  "insertTextBox": {
+    "message": "Boîte de Texte"
+  },
+  "textBoxPlaceholder": {
+    "message": "Entrez le texte ici"
   },
   "insertButton": {
     "message": "Bouton"
@@ -211,6 +262,15 @@
   },
   "copyHtml": {
     "message": "Copier HTML"
+  },
+  "copyHtmlOptions": {
+    "message": "Options de Copie"
+  },
+  "copyHtmlBody": {
+    "message": "Copier Seulement le Contenu du Body"
+  },
+  "copyHtmlFull": {
+    "message": "Copier HTML Complet"
   },
   "insertToEmail": {
     "message": "Insérer dans Email"

@@ -61,11 +61,56 @@
   "textColor": {
     "message": "צבע טקסט"
   },
+  "textColorLetter": {
+    "message": "א"
+  },
+  "addUnsubscribe": {
+    "message": "הוסף שורת הסר"
+  },
   "bgColor": {
     "message": "צבע רקע"
   },
+  "emailBackgroundColor": {
+    "message": "צבע רקע להודעה"
+  },
+  "emailBackgroundImage": {
+    "message": "תמונת רקע להודעה"
+  },
+  "backgroundRepeat": {
+    "message": "חזרה"
+  },
+  "backgroundSize": {
+    "message": "גודל"
+  },
+  "noRepeat": {
+    "message": "ללא חזרה"
+  },
+  "repeat": {
+    "message": "חזרה"
+  },
+  "repeatX": {
+    "message": "חזרה אופקית"
+  },
+  "repeatY": {
+    "message": "חזרה אנכית"
+  },
+  "cover": {
+    "message": "כיסוי"
+  },
+  "contain": {
+    "message": "התאמה"
+  },
+  "auto": {
+    "message": "אוטומטי"
+  },
   "customColor": {
     "message": "מותאם:"
+  },
+  "toggleDirection": {
+    "message": "שנה כיוון קריאה (RTL/LTR)"
+  },
+  "selectLanguage": {
+    "message": "בחר שפת ההודעה"
   },
   "alignRight": {
     "message": "יישור לימין"
@@ -120,6 +165,12 @@
   },
   "insertCode": {
     "message": "קוד"
+  },
+  "insertTextBox": {
+    "message": "תיבת טקסט"
+  },
+  "textBoxPlaceholder": {
+    "message": "הזן טקסט כאן"
   },
   "insertButton": {
     "message": "כפתור"
@@ -213,6 +264,15 @@
   },
   "copyHtml": {
     "message": "העתק HTML"
+  },
+  "copyHtmlOptions": {
+    "message": "אפשרויות העתקה"
+  },
+  "copyHtmlBody": {
+    "message": "העתק תוכן Body בלבד"
+  },
+  "copyHtmlFull": {
+    "message": "העתק HTML מלא"
   },
   "insertToEmail": {
     "message": "הכנס למייל"

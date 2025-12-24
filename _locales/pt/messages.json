@@ -59,8 +59,47 @@
   "textColor": {
     "message": "Cor do Texto"
   },
+  "textColorLetter": {
+    "message": "A"
+  },
+  "addUnsubscribe": {
+    "message": "Adicionar Link de Cancelamento"
+  },
   "bgColor": {
     "message": "Cor de Fundo"
+  },
+  "emailBackgroundColor": {
+    "message": "Cor de Fundo do Email"
+  },
+  "emailBackgroundImage": {
+    "message": "Imagem de Fundo do Email"
+  },
+  "backgroundRepeat": {
+    "message": "Repetir"
+  },
+  "backgroundSize": {
+    "message": "Tamanho"
+  },
+  "noRepeat": {
+    "message": "Não Repetir"
+  },
+  "repeat": {
+    "message": "Repetir"
+  },
+  "repeatX": {
+    "message": "Repetir X"
+  },
+  "repeatY": {
+    "message": "Repetir Y"
+  },
+  "cover": {
+    "message": "Cobrir"
+  },
+  "contain": {
+    "message": "Conter"
+  },
+  "auto": {
+    "message": "Automático"
   },
   "customColor": {
     "message": "Personalizado:"
@@ -73,6 +112,12 @@
   },
   "alignLeft": {
     "message": "Alinhar à Esquerda"
+  },
+  "toggleDirection": {
+    "message": "Alternar Direção do Texto (RTL/LTR)"
+  },
+  "selectLanguage": {
+    "message": "Selecionar Idioma da Mensagem"
   },
   "insertLink": {
     "message": "Inserir Link"
@@ -118,6 +163,12 @@
   },
   "insertCode": {
     "message": "Código"
+  },
+  "insertTextBox": {
+    "message": "Caixa de Texto"
+  },
+  "textBoxPlaceholder": {
+    "message": "Digite o texto aqui"
   },
   "insertButton": {
     "message": "Botão"
@@ -211,6 +262,15 @@
   },
   "copyHtml": {
     "message": "Copiar HTML"
+  },
+  "copyHtmlOptions": {
+    "message": "Opções de Cópia"
+  },
+  "copyHtmlBody": {
+    "message": "Copiar Apenas Conteúdo do Body"
+  },
+  "copyHtmlFull": {
+    "message": "Copiar HTML Completo"
   },
   "insertToEmail": {
     "message": "Inserir no Email"

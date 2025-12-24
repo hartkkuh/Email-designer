@@ -59,8 +59,47 @@
   "textColor": {
     "message": "文字颜色"
   },
+  "textColorLetter": {
+    "message": "A"
+  },
+  "addUnsubscribe": {
+    "message": "添加取消订阅链接"
+  },
   "bgColor": {
     "message": "背景颜色"
+  },
+  "emailBackgroundColor": {
+    "message": "邮件背景颜色"
+  },
+  "emailBackgroundImage": {
+    "message": "邮件背景图片"
+  },
+  "backgroundRepeat": {
+    "message": "重复"
+  },
+  "backgroundSize": {
+    "message": "大小"
+  },
+  "noRepeat": {
+    "message": "不重复"
+  },
+  "repeat": {
+    "message": "重复"
+  },
+  "repeatX": {
+    "message": "水平重复"
+  },
+  "repeatY": {
+    "message": "垂直重复"
+  },
+  "cover": {
+    "message": "覆盖"
+  },
+  "contain": {
+    "message": "包含"
+  },
+  "auto": {
+    "message": "自动"
   },
   "customColor": {
     "message": "自定义："
@@ -73,6 +112,12 @@
   },
   "alignLeft": {
     "message": "左对齐"
+  },
+  "toggleDirection": {
+    "message": "切换文本方向 (RTL/LTR)"
+  },
+  "selectLanguage": {
+    "message": "选择消息语言"
   },
   "insertLink": {
     "message": "插入链接"
@@ -118,6 +163,12 @@
   },
   "insertCode": {
     "message": "代码"
+  },
+  "insertTextBox": {
+    "message": "文本框"
+  },
+  "textBoxPlaceholder": {
+    "message": "在此输入文本"
   },
   "insertButton": {
     "message": "按钮"
@@ -211,6 +262,15 @@
   },
   "copyHtml": {
     "message": "复制HTML"
+  },
+  "copyHtmlOptions": {
+    "message": "复制选项"
+  },
+  "copyHtmlBody": {
+    "message": "仅复制 Body 内容"
+  },
+  "copyHtmlFull": {
+    "message": "复制完整 HTML"
   },
   "insertToEmail": {
     "message": "插入到邮件"

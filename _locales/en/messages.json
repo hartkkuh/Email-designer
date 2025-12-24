@@ -61,11 +61,56 @@
   "textColor": {
     "message": "Text Color"
   },
+  "textColorLetter": {
+    "message": "A"
+  },
+  "addUnsubscribe": {
+    "message": "Add Unsubscribe Link"
+  },
   "bgColor": {
     "message": "Background Color"
   },
+  "emailBackgroundColor": {
+    "message": "Email Background Color"
+  },
+  "emailBackgroundImage": {
+    "message": "Email Background Image"
+  },
+  "backgroundRepeat": {
+    "message": "Repeat"
+  },
+  "backgroundSize": {
+    "message": "Size"
+  },
+  "noRepeat": {
+    "message": "No Repeat"
+  },
+  "repeat": {
+    "message": "Repeat"
+  },
+  "repeatX": {
+    "message": "Repeat X"
+  },
+  "repeatY": {
+    "message": "Repeat Y"
+  },
+  "cover": {
+    "message": "Cover"
+  },
+  "contain": {
+    "message": "Contain"
+  },
+  "auto": {
+    "message": "Auto"
+  },
   "customColor": {
     "message": "Custom:"
+  },
+  "toggleDirection": {
+    "message": "Toggle Text Direction (RTL/LTR)"
+  },
+  "selectLanguage": {
+    "message": "Select Message Language"
   },
   "alignRight": {
     "message": "Align Right"
@@ -120,6 +165,12 @@
   },
   "insertCode": {
     "message": "Code"
+  },
+  "insertTextBox": {
+    "message": "Text Box"
+  },
+  "textBoxPlaceholder": {
+    "message": "Enter text here"
   },
   "insertButton": {
     "message": "Button"
@@ -213,6 +264,15 @@
   },
   "copyHtml": {
     "message": "Copy HTML"
+  },
+  "copyHtmlOptions": {
+    "message": "Copy Options"
+  },
+  "copyHtmlBody": {
+    "message": "Copy Body Content Only"
+  },
+  "copyHtmlFull": {
+    "message": "Copy Full HTML"
   },
   "insertToEmail": {
     "message": "Insert to Email"

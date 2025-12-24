@@ -239,9 +239,33 @@
       // Focus the compose area
       composeBody.focus();
 
+      // Extract body style, content, and HTML attributes
+      const { bodyStyle, bodyContent, htmlDir, htmlLang } = extractBodyContent(html);
+      
       // Insert the HTML content
       const wrapper = document.createElement('div');
-      wrapper.innerHTML = extractBodyContent(html);
+      
+      // Apply HTML attributes to wrapper if they exist
+      if (htmlDir) {
+        wrapper.setAttribute('dir', htmlDir);
+      }
+      if (htmlLang) {
+        wrapper.setAttribute('lang', htmlLang);
+      }
+      
+      // Apply body style directly to wrapper if it exists
+      if (bodyStyle && bodyStyle.trim()) {
+        // Add additional CSS to ensure background displays correctly in email
+        const enhancedStyle = bodyStyle + 
+          '; min-height: 100%; width: 100%; box-sizing: border-box;' +
+          (bodyStyle.includes('background') ? ' background-attachment: scroll;' : '');
+        wrapper.setAttribute('style', enhancedStyle);
+      } else {
+        // Even if no style, ensure wrapper has proper dimensions
+        wrapper.setAttribute('style', 'min-height: 100%; width: 100%; box-sizing: border-box;');
+      }
+      
+      wrapper.innerHTML = bodyContent;
       
       // Insert at cursor position or append
       const selection = window.getSelection();
@@ -332,13 +356,64 @@
     return true; // Generic fallback
   }
 
-  // Extract body content from full HTML document
+  // Extract body style, content, and HTML attributes from full HTML document
   function extractBodyContent(html) {
-    const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
-    if (bodyMatch) {
-      return bodyMatch[1];
+    let bodyStyle = '';
+    let bodyContent = '';
+    let htmlDir = '';
+    let htmlLang = '';
+    
+    // Extract HTML tag attributes (dir, lang)
+    const htmlTagMatch = html.match(/<html([^>]*)>/i);
+    if (htmlTagMatch) {
+      const htmlAttributes = htmlTagMatch[1];
+      const dirMatch = htmlAttributes.match(/dir\s*=\s*["']([^"']*)["']/i);
+      const langMatch = htmlAttributes.match(/lang\s*=\s*["']([^"']*)["']/i);
+      
+      if (dirMatch) {
+        htmlDir = dirMatch[1].trim();
+      }
+      if (langMatch) {
+        htmlLang = langMatch[1].trim();
+      }
     }
-    return html;
+    
+    // Parse HTML to extract body tag attributes and content
+    const bodyTagMatch = html.match(/<body([^>]*)>([\s\S]*)<\/body>/i);
+    
+    if (bodyTagMatch) {
+      const bodyAttributes = bodyTagMatch[1];
+      bodyContent = bodyTagMatch[2];
+      
+      // Extract style attribute value - handle both single and double quotes
+      const styleMatchDouble = bodyAttributes.match(/style\s*=\s*"([^"]*(?:\\.[^"]*)*)"/i);
+      const styleMatchSingle = bodyAttributes.match(/style\s*=\s*'([^']*(?:\\.[^']*)*)'/i);
+      
+      if (styleMatchDouble) {
+        // Unescape the style value for double quotes
+        bodyStyle = styleMatchDouble[1]
+          .replace(/\\"/g, '"')
+          .replace(/\\'/g, "'")
+          .replace(/\\n/g, ' ')
+          .replace(/\\t/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      } else if (styleMatchSingle) {
+        // Unescape the style value for single quotes
+        bodyStyle = styleMatchSingle[1]
+          .replace(/\\'/g, "'")
+          .replace(/\\"/g, '"')
+          .replace(/\\n/g, ' ')
+          .replace(/\\t/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+    } else {
+      // Fallback: if no body tag found, use entire HTML as content
+      bodyContent = html;
+    }
+    
+    return { bodyStyle, bodyContent, htmlDir, htmlLang };
   }
 
   // Initialize

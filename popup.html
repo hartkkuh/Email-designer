@@ -111,7 +111,7 @@
           <!-- Text Color Button -->
           <div class="color-dropdown">
             <button class="tool-btn" id="colorPaletteBtn" data-i18n-title="textColor">
-              <span class="color-icon" id="currentColorIcon">A</span>
+              <span class="color-icon" id="currentColorIcon" data-i18n="textColorLetter">A</span>
             </button>
             <div class="color-dropdown-menu" id="colorDropdownMenu">
               <div class="color-grid">
@@ -135,37 +135,62 @@
             </div>
           </div>
           
-          <!-- Background Color Button -->
+          <!-- Email Background Color Button -->
           <div class="color-dropdown">
-            <button class="tool-btn" id="bgColorPaletteBtn" data-i18n-title="bgColor">
-              <span class="bg-color-icon" id="currentBgColorIcon">▀</span>
+            <button class="tool-btn" id="emailBgColorBtn" data-i18n-title="emailBackgroundColor">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <path d="M9 9h6v6H9z"/>
+              </svg>
             </button>
-            <div class="color-dropdown-menu" id="bgColorDropdownMenu">
-              <div class="color-grid">
-                <button class="bg-color-swatch" data-color="#ffff00" style="background:#ffff00"></button>
-                <button class="bg-color-swatch" data-color="#00ffff" style="background:#00ffff"></button>
-                <button class="bg-color-swatch" data-color="#00ff00" style="background:#00ff00"></button>
-                <button class="bg-color-swatch" data-color="#ff9999" style="background:#ff9999"></button>
-                <button class="bg-color-swatch" data-color="#99ccff" style="background:#99ccff"></button>
-                <button class="bg-color-swatch" data-color="#ffcdd2" style="background:#ffcdd2"></button>
-                <button class="bg-color-swatch" data-color="#fff9c4" style="background:#fff9c4"></button>
-                <button class="bg-color-swatch" data-color="#c8e6c9" style="background:#c8e6c9"></button>
-                <button class="bg-color-swatch" data-color="#bbdefb" style="background:#bbdefb"></button>
-                <button class="bg-color-swatch" data-color="#e1bee7" style="background:#e1bee7"></button>
-                <button class="bg-color-swatch" data-color="#ffffff" style="background:#ffffff; border:1px solid #555"></button>
-                <button class="bg-color-swatch" data-color="transparent" style="background:linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%); background-size: 6px 6px;"></button>
-              </div>
+            <div class="color-dropdown-menu" id="emailBgColorDropdownMenu">
               <div class="color-custom">
                 <label data-i18n="customColor">Custom:</label>
-                <input type="color" id="bgColor" value="#ffff00">
+                <input type="color" id="emailBgColor" value="#ffffff">
               </div>
             </div>
           </div>
+          
+          <!-- Email Background Image Button -->
+          <button class="tool-btn" id="emailBgImageBtn" data-i18n-title="emailBackgroundImage">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </button>
         </div>
         
         <div class="toolbar-divider"></div>
-        
+
         <div class="toolbar-group">
+          <button class="tool-btn" id="toggleDirection" data-i18n-title="toggleDirection">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" id="directionIcon">
+              <path d="M9 10v5h2v-2h2v-2h-2V9H9v1zm6-1v2h-2v2h2v2h2V9h-2zm-4 8H3v-2h8v2zm0-4H3v-2h8v2zm0-4H3V7h8v2zm10-4v2h-4V6h4zm0 4v2h-4v-2h4zm0 4v2h-4v-2h4z"/>
+            </svg>
+          </button>
+          <div class="language-dropdown">
+            <button class="tool-btn" id="languageBtn" data-i18n-title="selectLanguage">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span id="currentLanguageCode">he</span>
+            </button>
+            <div class="language-dropdown-menu" id="languageDropdownMenu">
+              <button class="language-option" data-lang="he">עברית</button>
+              <button class="language-option" data-lang="en">English</button>
+              <button class="language-option" data-lang="ar">العربية</button>
+              <button class="language-option" data-lang="es">Español</button>
+              <button class="language-option" data-lang="fr">Français</button>
+              <button class="language-option" data-lang="de">Deutsch</button>
+              <button class="language-option" data-lang="ru">Русский</button>
+              <button class="language-option" data-lang="zh">中文</button>
+              <button class="language-option" data-lang="ja">日本語</button>
+              <button class="language-option" data-lang="pt">Português</button>
+            </div>
+          </div>
           <button class="tool-btn" data-command="justifyRight" data-i18n-title="alignRight">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M3 21h18v-2H3v2zm6-4h12v-2H9v2zm-6-4h18v-2H3v2zm6-4h12V7H9v2zM3 3v2h18V3H3z"/>
@@ -239,13 +264,33 @@
             </svg>
             <span class="ai-label">AI</span>
           </button>
-          <!-- Variables Button -->
-          <button class="tool-btn" id="insertVariableBtn" data-i18n-title="insertVariable">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 7V4h16v3"/>
-              <path d="M9 20h6"/>
-              <path d="M12 4v16"/>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+          <button class="tool-btn" data-command="removeFormat" data-i18n-title="clearFormat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.27 5L2 6.27l6.97 6.97L6.5 19h3l1.57-3.66L16.73 21 18 19.73 3.27 5zM6 5v.18L8.82 8h2.4l-.72 1.68 2.1 2.1L14.21 8H20V5H6z"/>
             </svg>
+          </button>
+          <button class="tool-btn" data-command="undo" data-i18n-title="undo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" data-command="redo" data-i18n-title="redo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" id="clearAll" data-i18n-title="clearAll">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </button>
+          <button class="tool-btn unsubscribe-btn" id="addUnsubscribeLink" data-i18n-title="addUnsubscribe">
+            <span data-i18n="remove">הסר</span>
           </button>
         </div>
         
@@ -326,6 +371,14 @@
               <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
             </svg>
           </button>
+          <button class="tool-btn" id="insertTextBox" data-i18n-title="insertTextBox">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="7" y1="7" x2="17" y2="7"/>
+              <line x1="7" y1="12" x2="17" y2="12"/>
+              <line x1="7" y1="17" x2="14" y2="17"/>
+            </svg>
+          </button>
           <button class="tool-btn" id="insertButton" data-i18n-title="insertButton">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M19 7H5c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm0 8H5V9h14v6z"/>
@@ -346,34 +399,17 @@
               <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
             </svg>
           </button>
+          <!-- Variables Button -->
+          <button class="tool-btn" id="insertVariableBtn" data-i18n-title="insertVariable">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7V4h16v3"/>
+              <path d="M9 20h6"/>
+              <path d="M12 4v16"/>
+            </svg>
+          </button>
           <button class="tool-btn" id="insertSignature" data-i18n-title="insertSignature">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
-            </svg>
-          </button>
-        </div>
-        
-        <div class="toolbar-divider"></div>
-        
-        <div class="toolbar-group">
-          <button class="tool-btn" data-command="removeFormat" data-i18n-title="clearFormat">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3.27 5L2 6.27l6.97 6.97L6.5 19h3l1.57-3.66L16.73 21 18 19.73 3.27 5zM6 5v.18L8.82 8h2.4l-.72 1.68 2.1 2.1L14.21 8H20V5H6z"/>
-            </svg>
-          </button>
-          <button class="tool-btn" data-command="undo" data-i18n-title="undo">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/>
-            </svg>
-          </button>
-          <button class="tool-btn" data-command="redo" data-i18n-title="redo">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"/>
-            </svg>
-          </button>
-          <button class="tool-btn" id="clearAll" data-i18n-title="clearAll">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
             </svg>
           </button>
         </div>
@@ -543,13 +579,24 @@
         </button>
       </div>
       <div class="footer-right">
-        <button id="copyHtml" class="btn btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-          </svg>
-          <span data-i18n="copyHtml">Copy HTML</span>
-        </button>
+        <div class="copy-html-dropdown">
+          <button id="copyHtml" class="btn btn-secondary copy-html-main">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+            <span data-i18n="copyHtml">Copy HTML</span>
+            <button id="copyHtmlDropdown" class="copy-html-arrow" data-i18n-title="copyHtmlOptions">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+          </button>
+          <div class="copy-html-dropdown-menu" id="copyHtmlDropdownMenu">
+            <button class="copy-html-option" id="copyHtmlBody" data-i18n="copyHtmlBody">Copy Body Content</button>
+            <button class="copy-html-option" id="copyHtmlFull" data-i18n="copyHtmlFull">Copy Full HTML</button>
+          </div>
+        </div>
         <button id="insertToGmail" class="btn btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="22" y1="2" x2="11" y2="13"/>
@@ -559,6 +606,18 @@
         </button>
       </div>
     </footer>
+
+    <!-- Footer Credit Bar -->
+    <div class="footer-credit">
+      <a href="https://israel-schweitzer.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer-credit-link">
+        <span class="footer-credit-text">פותח באהבה על ידי ישראל</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
   </div>
 
   <!-- Modal for Link -->
@@ -576,6 +635,32 @@
       <div class="modal-actions">
         <button class="btn btn-secondary" id="cancelLink" data-i18n="cancel">Cancel</button>
         <button class="btn btn-primary" id="confirmLink" data-i18n="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Email Background Image -->
+  <div id="emailBgImageModal" class="modal">
+    <div class="modal-content">
+      <h3 data-i18n="emailBackgroundImage">Email Background Image</h3>
+      <div class="form-group">
+        <label for="emailBgImageUrl" data-i18n="imageUrl">Image URL:</label>
+        <input type="url" id="emailBgImageUrl" placeholder="https://example.com/image.jpg" dir="ltr">
+      </div>
+      <div class="form-group">
+        <label for="emailBgImageSize" data-i18n="backgroundSize">Size:</label>
+        <div class="size-select-wrapper">
+          <select id="emailBgImageSize" class="size-select">
+            <option value="cover" data-i18n="cover">Cover</option>
+            <option value="contain" data-i18n="contain">Contain</option>
+            <option value="auto" data-i18n="auto">Auto</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelEmailBgImage" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmEmailBgImage" data-i18n="apply">Apply</button>
+        <button class="btn btn-secondary" id="removeEmailBgImage" data-i18n="remove">Remove</button>
       </div>
     </div>
   </div>

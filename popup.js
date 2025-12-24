@@ -58,6 +58,19 @@ function applyI18n() {
     el.textContent = msg(key);
   });
   
+  // Update color icon letter based on language
+  const currentColorIcon = document.getElementById('currentColorIcon');
+  if (currentColorIcon && currentColorIcon.hasAttribute('data-i18n')) {
+    const letterKey = currentColorIcon.getAttribute('data-i18n');
+    const letter = msg(letterKey);
+    if (letter) {
+      // Preserve the current color
+      const currentColor = currentColorIcon.style.color || '#000000';
+      currentColorIcon.textContent = letter;
+      currentColorIcon.style.color = currentColor;
+    }
+  }
+  
   // Update elements with data-i18n-placeholder attribute
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
@@ -175,6 +188,16 @@ const emailSubject = document.getElementById('emailSubject');
 
 // Auto-save timer
 let autoSaveTimer = null;
+
+// Email background settings
+let emailBgColor = '';
+let emailBgImage = '';
+let emailBgImageRepeat = 'no-repeat';
+let emailBgImageSize = 'cover';
+
+// Email document settings
+let emailDirection = 'rtl'; // 'rtl' or 'ltr'
+let emailLanguage = 'he'; // Language code (he, en, ar, etc.)
 
 // Templates
 const templates = {
@@ -559,6 +582,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   initToolbar();
   initColorPickers();
   initColorSwatches();
+  initDirectionToggle();
+  initLanguageSelector();
   initModals();
   initTemplates();
   initFooterActions();
@@ -613,16 +638,19 @@ function initTabs() {
       
       // Sync content between editors
       if (tabId === 'html') {
-        // Moving TO html - copy from visual editor
+        // Moving TO html - show only body content (not full HTML document)
+        // The full HTML structure is maintained in the background via getFullHtml()
         htmlEditor.value = editor.innerHTML;
       } else if (tabId === 'visual') {
         // Moving TO visual - copy from html editor (if coming from html)
         if (previousTabId === 'html') {
+          // User edited only the body content in HTML editor
           editor.innerHTML = htmlEditor.value;
         }
       } else if (tabId === 'preview') {
         // Update preview with current content
         if (previousTabId === 'html') {
+          // Sync HTML editor changes to visual editor before preview
           editor.innerHTML = htmlEditor.value;
         }
         updatePreview();
@@ -741,6 +769,9 @@ function initModals() {
   // Video Modal
   initVideoModal();
   
+  // Email Background Image Modal
+  initEmailBgImageModal();
+  
   // File Modal
   initFileModal();
   
@@ -826,6 +857,64 @@ function initImageModal() {
 
 function resetImageModal() {
   clearModalInputs('imageModal');
+}
+
+// Email Background Image Modal
+function initEmailBgImageModal() {
+  const modal = document.getElementById('emailBgImageModal');
+  if (!modal) return;
+  
+  const emailBgImageBtn = document.getElementById('emailBgImageBtn');
+  const confirmBtn = document.getElementById('confirmEmailBgImage');
+  const cancelBtn = document.getElementById('cancelEmailBgImage');
+  const removeBtn = document.getElementById('removeEmailBgImage');
+  const urlInput = document.getElementById('emailBgImageUrl');
+  const sizeSelect = document.getElementById('emailBgImageSize');
+  
+  if (emailBgImageBtn) {
+    emailBgImageBtn.addEventListener('click', () => {
+      // Load current values
+      if (urlInput) urlInput.value = emailBgImage || '';
+      if (sizeSelect) sizeSelect.value = emailBgImageSize;
+      openModal('emailBgImageModal');
+    });
+  }
+  
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', () => {
+      if (urlInput && urlInput.value.trim()) {
+        emailBgImage = urlInput.value.trim();
+        emailBgImageRepeat = 'no-repeat'; // Always no-repeat
+        emailBgImageSize = sizeSelect ? sizeSelect.value : 'cover';
+        updatePreview();
+        saveContent(); // Save background image change
+        showToast('תמונת רקע נוספה', 'success');
+      } else {
+        showToast('יש להזין כתובת תמונה', 'error');
+        return;
+      }
+      closeModal('emailBgImageModal');
+    });
+  }
+  
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', () => {
+      closeModal('emailBgImageModal');
+    });
+  }
+  
+  if (removeBtn) {
+    removeBtn.addEventListener('click', () => {
+      emailBgImage = '';
+      emailBgImageRepeat = 'no-repeat';
+      emailBgImageSize = 'cover';
+      if (urlInput) urlInput.value = '';
+      updatePreview();
+      saveContent(); // Save background image removal
+      showToast('תמונת רקע הוסרה', 'success');
+      closeModal('emailBgImageModal');
+    });
+  }
 }
 
 // Video Modal Initialization
@@ -1291,25 +1380,104 @@ function exportAllTemplates() {
 
 // Footer Actions
 function initFooterActions() {
-  // Copy HTML
-  const copyHtmlBtn = document.getElementById('copyHtml');
-  if (copyHtmlBtn) {
-    copyHtmlBtn.addEventListener('click', async () => {
-      const html = getFullHtml();
+  // Add Unsubscribe Link
+  const addUnsubscribeBtn = document.getElementById('addUnsubscribeLink');
+  if (addUnsubscribeBtn) {
+    addUnsubscribeBtn.addEventListener('click', () => {
+      // Save current selection
+      saveSelection();
+      
+      // Focus editor
+      editor.focus();
+      restoreSelection();
+      
+      // Create unsubscribe link HTML with proper styling
+      const unsubscribeHtml = '<p style="text-align: center; margin-top: 20px; margin-bottom: 10px; font-size: 12px; color: #666;"><a href="mailto:?subject=הסר" style="color: #666; text-decoration: underline;">הסר</a></p>';
+      
+      // Insert at cursor position
       try {
-        await navigator.clipboard.writeText(html);
-        showToast('הקוד הועתק ללוח!', 'success');
-      } catch (err) {
-        // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = html;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        showToast('הקוד הועתק ללוח!', 'success');
+        document.execCommand('insertHTML', false, unsubscribeHtml);
+      } catch (e) {
+        // Fallback: append to end if insert fails
+        editor.innerHTML += unsubscribeHtml;
+      }
+      
+      showToast('שורת הסר נוספה', 'success');
+      updatePreview();
+    });
+  }
+  
+  // Copy HTML dropdown
+  const copyHtmlBtn = document.getElementById('copyHtml');
+  const copyHtmlDropdownBtn = document.getElementById('copyHtmlDropdown');
+  const copyHtmlDropdownMenu = document.getElementById('copyHtmlDropdownMenu');
+  const copyHtmlBodyBtn = document.getElementById('copyHtmlBody');
+  const copyHtmlFullBtn = document.getElementById('copyHtmlFull');
+  
+  // Toggle dropdown on arrow click
+  if (copyHtmlDropdownBtn && copyHtmlDropdownMenu) {
+    copyHtmlDropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      copyHtmlDropdownMenu.classList.toggle('show');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!copyHtmlBtn.contains(e.target) && !copyHtmlDropdownMenu.contains(e.target)) {
+        copyHtmlDropdownMenu.classList.remove('show');
       }
     });
+  }
+  
+  // Copy body content (default action - when clicking main button, not arrow)
+  if (copyHtmlBtn) {
+    copyHtmlBtn.addEventListener('click', async (e) => {
+      // Don't trigger if clicking the arrow
+      if (e.target.closest('.copy-html-arrow')) {
+        return;
+      }
+      
+      // Copy only the visible body content, not the full HTML structure
+      const html = editor ? editor.innerHTML : '';
+      await copyToClipboard(html);
+      copyHtmlDropdownMenu?.classList.remove('show');
+    });
+  }
+  
+  // Copy body content option
+  if (copyHtmlBodyBtn) {
+    copyHtmlBodyBtn.addEventListener('click', async () => {
+      const html = editor ? editor.innerHTML : '';
+      await copyToClipboard(html);
+      copyHtmlDropdownMenu?.classList.remove('show');
+    });
+  }
+  
+  // Copy full HTML option
+  if (copyHtmlFullBtn) {
+    copyHtmlFullBtn.addEventListener('click', async () => {
+      const html = getFullHtml();
+      await copyToClipboard(html);
+      copyHtmlDropdownMenu?.classList.remove('show');
+    });
+  }
+  
+  // Helper function to copy to clipboard
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast('הקוד הועתק ללוח!', 'success');
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      showToast('הקוד הועתק ללוח!', 'success');
+    }
   }
   
   // Save Template - Open modal
@@ -1462,22 +1630,59 @@ function getCleanHtml() {
   return editor.innerHTML;
 }
 
-// Get full HTML with wrapper
+// Extract body content from full HTML document (for HTML editor sync)
+function extractBodyContentFromHtml(html) {
+  // Check if it's a full HTML document
+  if (html.includes('<body') && html.includes('</body>')) {
+    const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+    if (bodyMatch) {
+      return bodyMatch[1].trim();
+    }
+  }
+  // If not a full document, return as is
+  return html;
+}
+
+// Get full HTML - always returns complete HTML document
 function getFullHtml(withVariableReplacement = true) {
   let content = editor.innerHTML;
+  
+  // If content is empty or only contains empty paragraph, use empty string
+  // This ensures we always have a proper body structure
+  if (!content || content.trim() === '' || content.trim() === '<p></p>' || content.trim() === '<br>') {
+    content = '';
+  }
   
   // Replace variables if requested
   if (withVariableReplacement && typeof replaceVariables === 'function') {
     content = replaceVariables(content);
   }
   
+  // Build body style - includes background and base styles
+  let bodyStyle = "margin: 0; padding: 20px; font-family: 'Heebo', Arial, sans-serif; min-height: 100%;";
+  
+  // Add background color
+  if (emailBgColor) {
+    bodyStyle += ` background-color: ${emailBgColor};`;
+  }
+  
+  // Add background image (if both exist, image will overlay color)
+  if (emailBgImage) {
+    bodyStyle += ` background-image: url('${emailBgImage}');`;
+    bodyStyle += ` background-repeat: ${emailBgImageRepeat};`;
+    bodyStyle += ` background-size: ${emailBgImageSize};`;
+    bodyStyle += ` background-position: center;`;
+    bodyStyle += ` background-attachment: scroll;`;
+  }
+  
+  // Always return complete HTML document structure
   return `<!DOCTYPE html>
-<html dir="rtl" lang="he">
+<html dir="${emailDirection}" lang="${emailLanguage}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="margin: 0; padding: 20px; font-family: 'Heebo', Arial, sans-serif;">
+<body style="${bodyStyle}">
 ${content}
 </body>
 </html>`;
@@ -1631,7 +1836,7 @@ function applyTextColor(color) {
   // If no text is selected, insert a colored span for next typing
   if (range.collapsed) {
     const colorSpan = document.createElement('span');
-    colorSpan.style.color = color;
+    colorSpan.setAttribute('style', `color: ${color} !important;`);
     colorSpan.innerHTML = '&#8203;'; // Zero-width space
     range.insertNode(colorSpan);
     
@@ -1640,15 +1845,16 @@ function applyTextColor(color) {
     range.collapse(true);
     selection.removeAllRanges();
     selection.addRange(range);
+    updatePreview();
     return;
   }
   
   // Get the selected content
   const fragment = range.extractContents();
   
-  // Create a span with the color
+  // Create a span with the color - use !important to override CSS
   const colorSpan = document.createElement('span');
-  colorSpan.style.color = color;
+  colorSpan.setAttribute('style', `color: ${color} !important;`);
   colorSpan.appendChild(fragment);
   
   // Insert the colored span
@@ -1661,18 +1867,18 @@ function applyTextColor(color) {
   
   // Save for next operation
   saveSelection();
+  updatePreview();
 }
 
 function initColorSwatches() {
   const colorPaletteBtn = document.getElementById('colorPaletteBtn');
   const colorDropdownMenu = document.getElementById('colorDropdownMenu');
-  const bgColorPaletteBtn = document.getElementById('bgColorPaletteBtn');
-  const bgColorDropdownMenu = document.getElementById('bgColorDropdownMenu');
+  const emailBgColorBtn = document.getElementById('emailBgColorBtn');
+  const emailBgColorDropdownMenu = document.getElementById('emailBgColorDropdownMenu');
   const currentColorIcon = document.getElementById('currentColorIcon');
-  const currentBgColorIcon = document.getElementById('currentBgColorIcon');
   
   // Exit if elements don't exist
-  if (!colorPaletteBtn || !colorDropdownMenu || !bgColorPaletteBtn || !bgColorDropdownMenu) {
+  if (!colorPaletteBtn || !colorDropdownMenu || !currentColorIcon) {
     return;
   }
   
@@ -1683,32 +1889,35 @@ function initColorSwatches() {
   });
   colorPaletteBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    bgColorDropdownMenu.classList.remove('show');
+    if (emailBgColorDropdownMenu) emailBgColorDropdownMenu.classList.remove('show');
     colorDropdownMenu.classList.toggle('show');
   });
   
-  // Toggle background color dropdown
-  bgColorPaletteBtn.addEventListener('mousedown', (e) => {
-    e.preventDefault();
-    saveSelection();
-  });
-  bgColorPaletteBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    colorDropdownMenu.classList.remove('show');
-    bgColorDropdownMenu.classList.toggle('show');
-  });
+  // Toggle email background color dropdown
+  if (emailBgColorBtn && emailBgColorDropdownMenu) {
+    emailBgColorBtn.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+    });
+    emailBgColorBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      colorDropdownMenu.classList.remove('show');
+      emailBgColorDropdownMenu.classList.toggle('show');
+    });
+  }
   
   // Close dropdowns when clicking outside
   document.addEventListener('click', () => {
     colorDropdownMenu.classList.remove('show');
-    bgColorDropdownMenu.classList.remove('show');
+    if (emailBgColorDropdownMenu) emailBgColorDropdownMenu.classList.remove('show');
   });
   
   // Prevent closing when clicking inside dropdown
   colorDropdownMenu.addEventListener('mousedown', (e) => e.preventDefault());
   colorDropdownMenu.addEventListener('click', (e) => e.stopPropagation());
-  bgColorDropdownMenu.addEventListener('mousedown', (e) => e.preventDefault());
-  bgColorDropdownMenu.addEventListener('click', (e) => e.stopPropagation());
+  if (emailBgColorDropdownMenu) {
+    emailBgColorDropdownMenu.addEventListener('mousedown', (e) => e.preventDefault());
+    emailBgColorDropdownMenu.addEventListener('click', (e) => e.stopPropagation());
+  }
   
   // Text color swatches
   document.querySelectorAll('.color-swatch').forEach(swatch => {
@@ -1718,48 +1927,151 @@ function initColorSwatches() {
       
       applyTextColor(color);
       
-      if (currentColorIcon) currentColorIcon.style.borderBottomColor = color;
-    });
-  });
-  
-  // Background color swatches
-  document.querySelectorAll('.bg-color-swatch').forEach(swatch => {
-    swatch.addEventListener('click', () => {
-      const color = swatch.dataset.color;
-      restoreSelection();
-      editor.focus();
-      if (color === 'transparent') {
-        document.execCommand('hiliteColor', false, 'transparent');
-      } else {
-        document.execCommand('hiliteColor', false, color);
+      // Update icon color
+      if (currentColorIcon) {
+        currentColorIcon.style.color = color;
       }
-      currentBgColorIcon.style.color = color === 'transparent' ? 'var(--text-muted)' : color;
-      bgColorDropdownMenu.classList.remove('show');
     });
   });
   
   // Custom color pickers
   const textColor = document.getElementById('textColor');
-  const bgColor = document.getElementById('bgColor');
+  const emailBgColorInput = document.getElementById('emailBgColor');
   
   if (textColor) {
     textColor.addEventListener('focus', () => saveSelection());
     textColor.addEventListener('input', (e) => {
       const color = e.target.value;
       applyTextColor(color);
-      if (currentColorIcon) currentColorIcon.style.borderBottomColor = color;
+      // Update icon color
+      if (currentColorIcon) {
+        currentColorIcon.style.color = color;
+      }
     });
   }
   
-  if (bgColor) {
-    bgColor.addEventListener('focus', () => saveSelection());
-    bgColor.addEventListener('input', (e) => {
-      restoreSelection();
-      editor.focus();
-      document.execCommand('hiliteColor', false, e.target.value);
-      if (currentBgColorIcon) currentBgColorIcon.style.color = e.target.value;
+  if (emailBgColorInput) {
+    emailBgColorInput.addEventListener('input', (e) => {
+      emailBgColor = e.target.value;
+      updatePreview();
+      saveContent(); // Save background color change
+      showToast('צבע רקע עודכן', 'success');
     });
   }
+}
+
+// Toggle text direction (RTL/LTR)
+function initDirectionToggle() {
+  const toggleDirectionBtn = document.getElementById('toggleDirection');
+  const directionIcon = document.getElementById('directionIcon');
+  
+  if (!toggleDirectionBtn || !directionIcon) return;
+  
+  // Update icon based on current direction
+  function updateDirectionIcon() {
+    if (emailDirection === 'rtl') {
+      // RTL icon - arrows pointing right
+      directionIcon.innerHTML = '<path d="M9 10v5h2v-2h2v-2h-2V9H9v1zm6-1v2h-2v2h2v2h2V9h-2zm-4 8H3v-2h8v2zm0-4H3v-2h8v2zm0-4H3V7h8v2zm10-4v2h-4V6h4zm0 4v2h-4v-2h4zm0 4v2h-4v-2h4z"/>';
+    } else {
+      // LTR icon - arrows pointing left
+      directionIcon.innerHTML = '<path d="M15 10v5h-2v-2h-2v-2h2V9h2v1zm-6-1v2h2v2h-2v2H7V9h2zm4 8h8v-2h-8v2zm0-4h8v-2h-8v2zm0-4h8V7h-8v2zm-10-4v2h4V6H3zm0 4v2h4v-2H3zm0 4v2h4v-2H3z"/>';
+    }
+  }
+  
+  // Initialize icon
+  updateDirectionIcon();
+  
+  // Toggle direction on click
+  toggleDirectionBtn.addEventListener('click', () => {
+    emailDirection = emailDirection === 'rtl' ? 'ltr' : 'rtl';
+    
+    // Update editor direction
+    if (editor) {
+      editor.setAttribute('dir', emailDirection);
+    }
+    
+    // Update preview
+    updatePreview();
+    
+    // Save changes
+    saveContent();
+    
+    // Update icon
+    updateDirectionIcon();
+    
+    // Show toast
+    const directionText = emailDirection === 'rtl' ? 'ימין לשמאל' : 'שמאל לימין';
+    showToast(`כיוון קריאה: ${directionText}`, 'success');
+  });
+}
+
+// Language Selection
+function initLanguageSelector() {
+  const languageBtn = document.getElementById('languageBtn');
+  const languageDropdownMenu = document.getElementById('languageDropdownMenu');
+  const currentLanguageCode = document.getElementById('currentLanguageCode');
+  
+  if (!languageBtn || !languageDropdownMenu || !currentLanguageCode) return;
+  
+  // Language names mapping
+  const languageNames = {
+    'he': 'עברית',
+    'en': 'English',
+    'ar': 'العربية',
+    'es': 'Español',
+    'fr': 'Français',
+    'de': 'Deutsch',
+    'ru': 'Русский',
+    'zh': '中文',
+    'ja': '日本語',
+    'pt': 'Português'
+  };
+  
+  // Update current language display
+  function updateLanguageDisplay() {
+    currentLanguageCode.textContent = emailLanguage;
+  }
+  
+  // Initialize display
+  updateLanguageDisplay();
+  
+  // Toggle dropdown
+  languageBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    languageDropdownMenu.classList.toggle('show');
+  });
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!languageBtn.contains(e.target) && !languageDropdownMenu.contains(e.target)) {
+      languageDropdownMenu.classList.remove('show');
+    }
+  });
+  
+  // Handle language selection
+  const languageOptions = languageDropdownMenu.querySelectorAll('.language-option');
+  languageOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const lang = option.dataset.lang;
+      emailLanguage = lang;
+      
+      // Update display
+      updateLanguageDisplay();
+      
+      // Update preview
+      updatePreview();
+      
+      // Save changes
+      saveContent();
+      
+      // Close dropdown
+      languageDropdownMenu.classList.remove('show');
+      
+      // Show toast
+      const langName = languageNames[lang] || lang;
+      showToast(`שפת ההודעה: ${langName}`, 'success');
+    });
+  });
 }
 
 // New Tools - Quote, Code, Button, Heading, Clear
@@ -1783,6 +2095,51 @@ function initNewTools() {
       editor.focus();
     });
   }
+  
+  // Insert Text Box (Word-style - draggable and resizable)
+  const insertTextBox = document.getElementById('insertTextBox');
+  if (insertTextBox) {
+    insertTextBox.addEventListener('click', () => {
+      saveSelection();
+      editor.focus();
+      restoreSelection();
+      
+      // Word-style text box: draggable and resizable (very small initial size)
+      const textBoxId = 'textbox-' + Date.now();
+      const placeholderText = msg('textBoxPlaceholder') || 'הזן טקסט כאן';
+      const textBoxHtml = `<div class="word-textbox" data-textbox-id="${textBoxId}" style="position: relative; display: inline-block; width: 60px; height: 30px; padding: 4px; margin: 10px 0; cursor: move;">
+  <div class="textbox-content" contenteditable="true" style="min-height: 22px; outline: none;">
+    <p style="margin: 0; font-size: 11px;">${placeholderText}</p>
+  </div>
+  <div class="textbox-handles">
+    <div class="textbox-handle textbox-handle-nw" data-handle="nw"></div>
+    <div class="textbox-handle textbox-handle-n" data-handle="n"></div>
+    <div class="textbox-handle textbox-handle-ne" data-handle="ne"></div>
+    <div class="textbox-handle textbox-handle-e" data-handle="e"></div>
+    <div class="textbox-handle textbox-handle-se" data-handle="se"></div>
+    <div class="textbox-handle textbox-handle-s" data-handle="s"></div>
+    <div class="textbox-handle textbox-handle-sw" data-handle="sw"></div>
+    <div class="textbox-handle textbox-handle-w" data-handle="w"></div>
+  </div>
+</div>`;
+      document.execCommand('insertHTML', false, textBoxHtml);
+      
+      // Initialize text box after insertion
+      setTimeout(() => {
+        initAllWordTextBoxes();
+      }, 100);
+      
+      editor.focus();
+      updatePreview();
+    });
+  }
+  
+  // Initialize all text boxes when editor content changes
+  editor.addEventListener('input', () => {
+    setTimeout(() => {
+      initAllWordTextBoxes();
+    }, 100);
+  });
   
   // Insert Button
   const insertButton = document.getElementById('insertButton');
@@ -1829,6 +2186,322 @@ function initNewTools() {
       }
     });
   }
+}
+
+// Initialize Word-style text box (draggable and resizable)
+function initWordTextBox(textBox) {
+  if (!textBox || textBox.dataset.initialized === 'true') return;
+  textBox.dataset.initialized = 'true';
+  
+  const content = textBox.querySelector('.textbox-content');
+  const handles = textBox.querySelectorAll('.textbox-handle');
+  
+  // Make handles non-editable and non-selectable
+  handles.forEach(handle => {
+    handle.setAttribute('contenteditable', 'false');
+    handle.setAttribute('draggable', 'false');
+  });
+  
+  // Make text box container non-editable (only content is editable)
+  textBox.setAttribute('contenteditable', 'false');
+  
+  let isDragging = false;
+  let isResizing = false;
+  let resizeHandle = null;
+  let startX, startY, startWidth, startHeight, startLeft, startTop;
+  
+  // Prevent deletion of handles - make them non-editable
+  handles.forEach(handle => {
+    handle.setAttribute('contenteditable', 'false');
+    handle.setAttribute('draggable', 'false');
+  });
+  
+  // Make text box container and handles container non-editable
+  textBox.setAttribute('contenteditable', 'false');
+  const handlesContainer = textBox.querySelector('.textbox-handles');
+  if (handlesContainer) {
+    handlesContainer.setAttribute('contenteditable', 'false');
+  }
+  
+  // Ensure content is editable and separate from text box deletion
+  if (content) {
+    content.setAttribute('contenteditable', 'true');
+    // Prevent content clicks from selecting text box
+    content.addEventListener('click', (e) => {
+      e.stopPropagation(); // Don't trigger text box selection when clicking content
+    });
+    // Prevent content mousedown from triggering drag
+    content.addEventListener('mousedown', (e) => {
+      e.stopPropagation(); // Don't trigger text box drag when clicking content
+    });
+  }
+  
+  // Handle deletion of entire text box when selected (but not when editing content)
+  const handleKeyDown = (e) => {
+    // Only handle if text box is selected
+    if (!textBox.classList.contains('selected')) return;
+    
+    if (e.key === 'Backspace' || e.key === 'Delete') {
+      const selection = window.getSelection();
+      
+      // Check if user is editing content (selection is inside content)
+      if (selection.rangeCount > 0) {
+        const range = selection.getRangeAt(0);
+        const commonAncestor = range.commonAncestorContainer;
+        
+        // If selection is inside content, allow normal text editing
+        if (content && (content.contains(commonAncestor) || commonAncestor === content)) {
+          // Check if trying to delete a handle (prevent)
+          const isHandle = (commonAncestor.nodeType === Node.ELEMENT_NODE && 
+                           (commonAncestor.classList?.contains('textbox-handle') ||
+                            commonAncestor.closest('.textbox-handle'))) ||
+                          (range.startContainer.nodeType === Node.ELEMENT_NODE && 
+                           range.startContainer.classList?.contains('textbox-handle')) ||
+                          (range.endContainer.nodeType === Node.ELEMENT_NODE && 
+                           range.endContainer.classList?.contains('textbox-handle'));
+          
+          if (isHandle) {
+            // Prevent deletion of handles
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          // Otherwise, allow normal text editing
+          return;
+        }
+        
+        // Check if trying to delete a handle (prevent)
+        const isHandle = (commonAncestor.nodeType === Node.ELEMENT_NODE && 
+                         (commonAncestor.classList?.contains('textbox-handle') ||
+                          commonAncestor.closest('.textbox-handle'))) ||
+                        (range.startContainer.nodeType === Node.ELEMENT_NODE && 
+                         range.startContainer.classList?.contains('textbox-handle')) ||
+                        (range.endContainer.nodeType === Node.ELEMENT_NODE && 
+                         range.endContainer.classList?.contains('textbox-handle'));
+        
+        if (isHandle) {
+          // Prevent deletion of handles
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+      }
+      
+      // If not editing content and text box is selected, delete entire text box
+      // But only if selection is not inside content
+      if (selection.rangeCount > 0) {
+        const range = selection.getRangeAt(0);
+        const commonAncestor = range.commonAncestorContainer;
+        if (content && !content.contains(commonAncestor) && commonAncestor !== content) {
+          e.preventDefault();
+          e.stopPropagation();
+          textBox.remove();
+          updatePreview();
+          saveContent();
+        }
+      } else {
+        // No selection, but text box is selected - delete it
+        e.preventDefault();
+        e.stopPropagation();
+        textBox.remove();
+        updatePreview();
+        saveContent();
+      }
+    }
+  };
+  
+  // Add event listener to editor (capture phase to catch before contenteditable handles it)
+  editor.addEventListener('keydown', handleKeyDown, true);
+  
+  // Click to select text box
+  textBox.addEventListener('click', (e) => {
+    if (e.target.classList.contains('textbox-handle')) return;
+    
+    // Deselect all other text boxes
+    editor.querySelectorAll('.word-textbox').forEach(tb => {
+      tb.classList.remove('selected');
+    });
+    
+    // Select this text box
+    textBox.classList.add('selected');
+    e.stopPropagation();
+  });
+  
+  // Deselect when clicking outside
+  editor.addEventListener('click', (e) => {
+    if (!e.target.closest('.word-textbox')) {
+      editor.querySelectorAll('.word-textbox').forEach(tb => {
+        tb.classList.remove('selected');
+      });
+    }
+  });
+  
+  // Drag functionality
+  textBox.addEventListener('mousedown', (e) => {
+    if (e.target.classList.contains('textbox-handle')) return;
+    
+    isDragging = true;
+    const rect = textBox.getBoundingClientRect();
+    const editorRect = editor.getBoundingClientRect();
+    
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = rect.left - editorRect.left + editor.scrollLeft;
+    startTop = rect.top - editorRect.top + editor.scrollTop;
+    
+    textBox.style.position = 'absolute';
+    textBox.style.left = startLeft + 'px';
+    textBox.style.top = startTop + 'px';
+    textBox.style.margin = '0';
+    
+    e.preventDefault();
+  });
+  
+  // Resize functionality
+  handles.forEach(handle => {
+    handle.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      resizeHandle = handle.dataset.handle;
+      
+      const rect = textBox.getBoundingClientRect();
+      const editorRect = editor.getBoundingClientRect();
+      
+      startX = e.clientX;
+      startY = e.clientY;
+      startWidth = rect.width;
+      startHeight = rect.height;
+      // Calculate position relative to editor
+      startLeft = rect.left - editorRect.left + editor.scrollLeft;
+      startTop = rect.top - editorRect.top + editor.scrollTop;
+      
+      // Ensure text box is positioned absolutely
+      if (textBox.style.position !== 'absolute') {
+        textBox.style.position = 'absolute';
+        textBox.style.left = startLeft + 'px';
+        textBox.style.top = startTop + 'px';
+        textBox.style.margin = '0';
+      }
+      
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  });
+  
+  // Mouse move handler
+  const handleMouseMove = (e) => {
+    if (isResizing && resizeHandle) {
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
+      
+      let newWidth = startWidth;
+      let newHeight = startHeight;
+      let newLeft = startLeft;
+      let newTop = startTop;
+      
+      // Get editor bounds
+      const editorRect = editor.getBoundingClientRect();
+      const editorWidth = editor.scrollWidth;
+      const editorHeight = editor.scrollHeight;
+      
+      // Handle resize based on handle position
+      if (resizeHandle.includes('e')) {
+        // Resize from east (right)
+        const maxWidth = editorWidth - startLeft;
+        newWidth = Math.max(60, Math.min(startWidth + deltaX, maxWidth));
+      }
+      if (resizeHandle.includes('w')) {
+        // Resize from west (left)
+        const maxWidth = startLeft + startWidth;
+        newWidth = Math.max(60, Math.min(startWidth - deltaX, maxWidth));
+        newLeft = startLeft + (startWidth - newWidth);
+        // Ensure left doesn't go below 0
+        if (newLeft < 0) {
+          newWidth = startLeft + startWidth;
+          newLeft = 0;
+        }
+      }
+      if (resizeHandle.includes('s')) {
+        // Resize from south (bottom)
+        const maxHeight = editorHeight - startTop;
+        newHeight = Math.max(30, Math.min(startHeight + deltaY, maxHeight));
+      }
+      if (resizeHandle.includes('n')) {
+        // Resize from north (top)
+        const maxHeight = startTop + startHeight;
+        newHeight = Math.max(30, Math.min(startHeight - deltaY, maxHeight));
+        newTop = startTop + (startHeight - newHeight);
+        // Ensure top doesn't go below 0
+        if (newTop < 0) {
+          newHeight = startTop + startHeight;
+          newTop = 0;
+        }
+      }
+      
+      // Final bounds check - ensure text box stays within editor
+      const finalMaxLeft = editorWidth - newWidth;
+      const finalMaxTop = editorHeight - newHeight;
+      newLeft = Math.max(0, Math.min(newLeft, finalMaxLeft));
+      newTop = Math.max(0, Math.min(newTop, finalMaxTop));
+      
+      // Adjust width/height if position was constrained
+      if (newLeft === 0 && resizeHandle.includes('w')) {
+        newWidth = Math.min(newWidth, startLeft + startWidth);
+      }
+      if (newTop === 0 && resizeHandle.includes('n')) {
+        newHeight = Math.min(newHeight, startTop + startHeight);
+      }
+      if (newLeft + newWidth > editorWidth) {
+        newWidth = editorWidth - newLeft;
+      }
+      if (newTop + newHeight > editorHeight) {
+        newHeight = editorHeight - newTop;
+      }
+      
+      // Ensure minimum size
+      newWidth = Math.max(60, newWidth);
+      newHeight = Math.max(30, newHeight);
+      
+      textBox.style.width = newWidth + 'px';
+      textBox.style.height = newHeight + 'px';
+      textBox.style.left = newLeft + 'px';
+      textBox.style.top = newTop + 'px';
+      
+      updatePreview();
+    } else if (isDragging) {
+      const editorRect = editor.getBoundingClientRect();
+      const newLeft = startLeft + (e.clientX - startX);
+      const newTop = startTop + (e.clientY - startY);
+      
+      // Keep text box within editor bounds (optional - can be removed if not needed)
+      const maxLeft = editor.scrollWidth - parseFloat(textBox.style.width || textBox.offsetWidth);
+      const maxTop = editor.scrollHeight - parseFloat(textBox.style.height || textBox.offsetHeight);
+      
+      textBox.style.left = Math.max(0, Math.min(newLeft, maxLeft)) + 'px';
+      textBox.style.top = Math.max(0, Math.min(newTop, maxTop)) + 'px';
+      
+      updatePreview();
+    }
+  };
+  
+  // Mouse up handler
+  const handleMouseUp = (e) => {
+    if (isDragging || isResizing) {
+      isDragging = false;
+      isResizing = false;
+      resizeHandle = null;
+      saveContent(); // Save position and size
+    }
+  };
+  
+  // Add event listeners to document (will be cleaned up when text box is removed)
+  document.addEventListener('mousemove', handleMouseMove);
+  document.addEventListener('mouseup', handleMouseUp);
+}
+
+// Initialize all text boxes in editor
+function initAllWordTextBoxes() {
+  editor.querySelectorAll('.word-textbox:not([data-initialized="true"])').forEach(textBox => {
+    initWordTextBox(textBox);
+  });
 }
 
 // Advanced Toolbar Toggle
@@ -1882,7 +2555,14 @@ function saveContent() {
   const data = {
     subject: emailSubject ? emailSubject.value : '',
     content: editor ? editor.innerHTML : '',
-    lastSaved: Date.now()
+    lastSaved: Date.now(),
+    // Save email background and document settings
+    emailBgColor: emailBgColor,
+    emailBgImage: emailBgImage,
+    emailBgImageRepeat: emailBgImageRepeat,
+    emailBgImageSize: emailBgImageSize,
+    emailDirection: emailDirection,
+    emailLanguage: emailLanguage
   };
   
   chrome.storage.local.set({ editorData: data });
@@ -1907,6 +2587,55 @@ function loadSavedContent() {
           editor.innerHTML = '<p>התחל לכתוב את ההודעה שלך כאן...</p>';
         }
       }
+      
+      // Load email background and document settings
+      if (data.emailBgColor !== undefined) {
+        emailBgColor = data.emailBgColor;
+      }
+      if (data.emailBgImage !== undefined) {
+        emailBgImage = data.emailBgImage;
+      }
+      if (data.emailBgImageRepeat !== undefined) {
+        emailBgImageRepeat = data.emailBgImageRepeat;
+      }
+      if (data.emailBgImageSize !== undefined) {
+        emailBgImageSize = data.emailBgImageSize;
+      }
+      if (data.emailDirection !== undefined) {
+        emailDirection = data.emailDirection;
+      }
+      if (data.emailLanguage !== undefined) {
+        emailLanguage = data.emailLanguage;
+      }
+      
+      // Update editor direction
+      if (editor) {
+        editor.setAttribute('dir', emailDirection);
+      }
+      
+      // Update direction icon if button exists
+      const directionIcon = document.getElementById('directionIcon');
+      if (directionIcon) {
+        if (emailDirection === 'rtl') {
+          directionIcon.innerHTML = '<path d="M9 10v5h2v-2h2v-2h-2V9H9v1zm6-1v2h-2v2h2v2h2V9h-2zm-4 8H3v-2h8v2zm0-4H3v-2h8v2zm0-4H3V7h8v2zm10-4v2h-4V6h4zm0 4v2h-4v-2h4zm0 4v2h-4v-2h4z"/>';
+        } else {
+          directionIcon.innerHTML = '<path d="M15 10v5h-2v-2h-2v-2h2V9h2v1zm-6-1v2h2v2h-2v2H7V9h2zm4 8h8v-2h-8v2zm0-4h8v-2h-8v2zm0-4h8V7h-8v2zm-10-4v2h4V6H3zm0 4v2h4v-2H3zm0 4v2h4v-2H3z"/>';
+        }
+      }
+      
+      // Update language display if button exists
+      const currentLanguageCode = document.getElementById('currentLanguageCode');
+      if (currentLanguageCode) {
+        currentLanguageCode.textContent = emailLanguage;
+      }
+      
+      // Update preview with loaded settings
+      updatePreview();
+      
+      // Initialize text boxes after loading
+      setTimeout(() => {
+        initAllWordTextBoxes();
+      }, 100);
       
       // Show last saved time
       if (data.lastSaved) {

@@ -59,8 +59,47 @@
   "textColor": {
     "message": "Цвет Текста"
   },
+  "textColorLetter": {
+    "message": "А"
+  },
+  "addUnsubscribe": {
+    "message": "Добавить Ссылку Отписки"
+  },
   "bgColor": {
     "message": "Цвет Фона"
+  },
+  "emailBackgroundColor": {
+    "message": "Цвет Фона Письма"
+  },
+  "emailBackgroundImage": {
+    "message": "Фоновое Изображение Письма"
+  },
+  "backgroundRepeat": {
+    "message": "Повтор"
+  },
+  "backgroundSize": {
+    "message": "Размер"
+  },
+  "noRepeat": {
+    "message": "Без Повтора"
+  },
+  "repeat": {
+    "message": "Повтор"
+  },
+  "repeatX": {
+    "message": "Повтор X"
+  },
+  "repeatY": {
+    "message": "Повтор Y"
+  },
+  "cover": {
+    "message": "Покрытие"
+  },
+  "contain": {
+    "message": "Содержать"
+  },
+  "auto": {
+    "message": "Автоматически"
   },
   "customColor": {
     "message": "Свой:"
@@ -73,6 +112,12 @@
   },
   "alignLeft": {
     "message": "По Левому Краю"
+  },
+  "toggleDirection": {
+    "message": "Переключить Направление Текста (RTL/LTR)"
+  },
+  "selectLanguage": {
+    "message": "Выбрать Язык Сообщения"
   },
   "insertLink": {
     "message": "Вставить Ссылку"
@@ -118,6 +163,12 @@
   },
   "insertCode": {
     "message": "Код"
+  },
+  "insertTextBox": {
+    "message": "Текстовое Поле"
+  },
+  "textBoxPlaceholder": {
+    "message": "Введите текст здесь"
   },
   "insertButton": {
     "message": "Кнопка"
@@ -211,6 +262,15 @@
   },
   "copyHtml": {
     "message": "Копировать HTML"
+  },
+  "copyHtmlOptions": {
+    "message": "Параметры Копирования"
+  },
+  "copyHtmlBody": {
+    "message": "Копировать Только Содержимое Body"
+  },
+  "copyHtmlFull": {
+    "message": "Копировать Полный HTML"
   },
   "insertToEmail": {
     "message": "Вставить в Email"
