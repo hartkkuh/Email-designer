@@ -913,6 +913,435 @@
   },
   "signatureInserted": {
     "message": "Signature inserted!"
+  },
+  "tplNewsletter_title": {
+    "message": "Weekly Newsletter"
+  },
+  "tplNewsletter_subtitle": {
+    "message": "Updates and exciting news"
+  },
+  "tplNewsletter_heading": {
+    "message": "Main Heading"
+  },
+  "tplNewsletter_content": {
+    "message": "Here you can write the main content of your newsletter. Tell your readers about news, updates, and interesting content."
+  },
+  "tplNewsletter_readMore": {
+    "message": "Read More"
+  },
+  "tplNewsletter_yourName": {
+    "message": "Your Name"
+  },
+  "tplNewsletter_allRights": {
+    "message": "All rights reserved."
+  },
+  "tplInvitation_special": {
+    "message": "SPECIAL INVITATION"
+  },
+  "tplInvitation_title": {
+    "message": "You're Invited!"
+  },
+  "tplInvitation_event": {
+    "message": "Event"
+  },
+  "tplInvitation_eventName": {
+    "message": "Event Name"
+  },
+  "tplInvitation_date": {
+    "message": "Date"
+  },
+  "tplInvitation_dateValue": {
+    "message": "Sunday, January 1, 2025"
+  },
+  "tplInvitation_time": {
+    "message": "Time"
+  },
+  "tplInvitation_timeValue": {
+    "message": "7:00 PM"
+  },
+  "tplInvitation_location": {
+    "message": "Location"
+  },
+  "tplInvitation_locationValue": {
+    "message": "Full Address"
+  },
+  "tplInvitation_confirm": {
+    "message": "Confirm Attendance"
+  },
+  "tplInvitation_closing": {
+    "message": "We'd love to see you!"
+  },
+  "tplSimple_greeting": {
+    "message": "Hello,"
+  },
+  "tplSimple_content": {
+    "message": "Here you can write your message content. This is a simple and clean template suitable for everyday messages."
+  },
+  "tplSimple_closing": {
+    "message": "Best regards,"
+  },
+  "tplSimple_yourName": {
+    "message": "Your Name"
+  },
+  "tplPromo_special": {
+    "message": "Special Offer"
+  },
+  "tplPromo_discount": {
+    "message": "50% OFF!"
+  },
+  "tplPromo_limited": {
+    "message": "For a limited time only"
+  },
+  "tplPromo_heading": {
+    "message": "Our Hottest Products"
+  },
+  "tplPromo_content": {
+    "message": "Don't miss out! The offer ends soon."
+  },
+  "tplPromo_buyNow": {
+    "message": "Buy Now"
+  },
+  "tplPromo_terms": {
+    "message": "Offer valid while supplies last"
+  },
+  "tplWelcome_title": {
+    "message": "Welcome!"
+  },
+  "tplWelcome_subtitle": {
+    "message": "We're glad you joined us"
+  },
+  "tplWelcome_greeting": {
+    "message": "Hello and welcome,"
+  },
+  "tplWelcome_content": {
+    "message": "We're excited that you've chosen to join our family! Here you'll find everything you need to get started."
+  },
+  "tplWelcome_nextSteps": {
+    "message": "Next Steps:"
+  },
+  "tplWelcome_step1": {
+    "message": "Complete your profile"
+  },
+  "tplWelcome_step2": {
+    "message": "Discover our features"
+  },
+  "tplWelcome_step3": {
+    "message": "Start creating!"
+  },
+  "tplWelcome_getStarted": {
+    "message": "Get Started"
+  },
+  "tplWelcome_questions": {
+    "message": "Have questions? We're here for you!"
+  },
+  "tplReminder_title": {
+    "message": "Important Reminder"
+  },
+  "tplReminder_dontForget": {
+    "message": "Don't forget!"
+  },
+  "tplReminder_meeting": {
+    "message": "Your meeting is scheduled for:"
+  },
+  "tplReminder_dateTime": {
+    "message": "Monday, January 15, 2025 at 10:00 AM"
+  },
+  "tplReminder_confirm": {
+    "message": "Please confirm your attendance as soon as possible."
+  },
+  "tplReminder_confirmBtn": {
+    "message": "Confirm Attendance"
+  },
+  "tplReminder_reschedule": {
+    "message": "Reschedule"
+  },
+  "tplAlert_title": {
+    "message": "Attention!"
+  },
+  "tplAlert_message": {
+    "message": "This is an important message that requires your immediate attention."
+  },
+  "tplAlert_deadline": {
+    "message": "Action required by: 12/31/2024"
+  },
+  "tplAlert_action": {
+    "message": "Take Action Now"
+  },
+  "tplBirthday_title": {
+    "message": "Happy Birthday!"
+  },
+  "tplBirthday_message": {
+    "message": "Wishing you a day full of happiness, joy, and pleasant surprises!"
+  },
+  "tplBirthday_closing": {
+    "message": "Have a wonderful day!"
+  },
+  "tplJob_title": {
+    "message": "Exciting Career Opportunity!"
+  },
+  "tplJob_subtitle": {
+    "message": "We're looking for you!"
+  },
+  "tplJob_position": {
+    "message": "Job Title"
+  },
+  "tplJob_location": {
+    "message": "Location"
+  },
+  "tplJob_locationValue": {
+    "message": "Tel Aviv"
+  },
+  "tplJob_scope": {
+    "message": "Scope"
+  },
+  "tplJob_scopeValue": {
+    "message": "Full-time"
+  },
+  "tplJob_salary": {
+    "message": "Salary"
+  },
+  "tplJob_salaryValue": {
+    "message": "Competitive"
+  },
+  "tplJob_requirements": {
+    "message": "Job Requirements:"
+  },
+  "tplJob_req1": {
+    "message": "X years of experience in the field"
+  },
+  "tplJob_req2": {
+    "message": "Teamwork skills"
+  },
+  "tplJob_req3": {
+    "message": "High level of English"
+  },
+  "tplJob_offers": {
+    "message": "What we offer:"
+  },
+  "tplJob_offer1": {
+    "message": "Dynamic work environment"
+  },
+  "tplJob_offer2": {
+    "message": "Career advancement opportunities"
+  },
+  "tplJob_offer3": {
+    "message": "Excellent benefits"
+  },
+  "tplJob_apply": {
+    "message": "Send Resume"
+  },
+  "tplSurvey_title": {
+    "message": "Your Opinion Matters!"
+  },
+  "tplSurvey_subtitle": {
+    "message": "Quick 2-minute survey"
+  },
+  "tplSurvey_content": {
+    "message": "Help us improve! Fill out the short survey and get 10% off your next purchase."
+  },
+  "tplSurvey_time": {
+    "message": "Estimated time: 2 minutes"
+  },
+  "tplSurvey_reward": {
+    "message": "You'll receive a discount code upon completion"
+  },
+  "tplSurvey_button": {
+    "message": "Take Survey"
+  },
+  "tplSurvey_terms": {
+    "message": "Discount valid for 30 days from code receipt"
+  },
+  "tplReceipt_title": {
+    "message": "Order Confirmation"
+  },
+  "tplReceipt_paid": {
+    "message": "Paid"
+  },
+  "tplReceipt_orderNumber": {
+    "message": "Order Number"
+  },
+  "tplReceipt_item": {
+    "message": "Item"
+  },
+  "tplReceipt_quantity": {
+    "message": "Quantity"
+  },
+  "tplReceipt_price": {
+    "message": "Price"
+  },
+  "tplReceipt_product1": {
+    "message": "First Product Name"
+  },
+  "tplReceipt_price1": {
+    "message": "$199"
+  },
+  "tplReceipt_product2": {
+    "message": "Second Product Name"
+  },
+  "tplReceipt_price2": {
+    "message": "$298"
+  },
+  "tplReceipt_subtotal": {
+    "message": "Subtotal:"
+  },
+  "tplReceipt_subtotalValue": {
+    "message": "$497"
+  },
+  "tplReceipt_shipping": {
+    "message": "Shipping:"
+  },
+  "tplReceipt_shippingValue": {
+    "message": "$30"
+  },
+  "tplReceipt_total": {
+    "message": "Total:"
+  },
+  "tplReceipt_totalValue": {
+    "message": "$527"
+  },
+  "tplReceipt_contact": {
+    "message": "Questions? Contact us: support@example.com"
+  },
+  "tplSocial_title": {
+    "message": "Join Our Community!"
+  },
+  "tplSocial_subtitle": {
+    "message": "Follow us on social media"
+  },
+  "tplSocial_content": {
+    "message": "Stay updated with all the news, tips, and special offers!"
+  },
+  "tplSocial_followers": {
+    "message": "Already over 10,000 followers!"
+  },
+  "tplSocial_share": {
+    "message": "Share this newsletter with friends!"
+  },
+  "tplWebinar_free": {
+    "message": "Free Webinar"
+  },
+  "tplWebinar_title": {
+    "message": "Webinar Name"
+  },
+  "tplWebinar_subtitle": {
+    "message": "Learn how to succeed in..."
+  },
+  "tplWebinar_day": {
+    "message": "Wednesday"
+  },
+  "tplWebinar_date": {
+    "message": "01/15/2025"
+  },
+  "tplWebinar_time": {
+    "message": "8:00 PM"
+  },
+  "tplWebinar_timezone": {
+    "message": "Israel Time"
+  },
+  "tplWebinar_learn": {
+    "message": "What you'll learn:"
+  },
+  "tplWebinar_topic1": {
+    "message": "First important topic"
+  },
+  "tplWebinar_topic2": {
+    "message": "Second interesting topic"
+  },
+  "tplWebinar_topic3": {
+    "message": "Practical tips"
+  },
+  "tplWebinar_register": {
+    "message": "Register Free"
+  },
+  "tplWebinar_limited": {
+    "message": "Limited spots - register now!"
+  },
+  "tplEvent_title": {
+    "message": "Event of the Year!"
+  },
+  "tplEvent_subtitle": {
+    "message": "Exclusive Invitation"
+  },
+  "tplEvent_location": {
+    "message": "Location"
+  },
+  "tplEvent_locationValue": {
+    "message": "Venue Name"
+  },
+  "tplEvent_date": {
+    "message": "Date"
+  },
+  "tplEvent_dateValue": {
+    "message": "Friday, 01/20/2025"
+  },
+  "tplEvent_time": {
+    "message": "Time"
+  },
+  "tplEvent_timeValue": {
+    "message": "8:00 PM"
+  },
+  "tplEvent_content": {
+    "message": "Join us for an unforgettable evening of networking, professional content, and fun!"
+  },
+  "tplEvent_reserve": {
+    "message": "Reserve Your Spot"
+  },
+  "tplEvent_limited": {
+    "message": "Limited seating!"
+  },
+  "tplShipping_title": {
+    "message": "Your Order is on the Way!"
+  },
+  "tplShipping_tracking": {
+    "message": "Tracking Number"
+  },
+  "tplShipping_ordered": {
+    "message": "Ordered"
+  },
+  "tplShipping_packed": {
+    "message": "Packed"
+  },
+  "tplShipping_shipping": {
+    "message": "Shipping"
+  },
+  "tplShipping_delivered": {
+    "message": "Delivered"
+  },
+  "tplShipping_eta": {
+    "message": "Estimated Arrival:"
+  },
+  "tplShipping_etaValue": {
+    "message": "Monday, 01/22/2025"
+  },
+  "tplShipping_track": {
+    "message": "Track Shipment"
+  },
+  "tplReferral_title": {
+    "message": "Invite Friends & Get Rewards!"
+  },
+  "tplReferral_subtitle": {
+    "message": "Share your code and earn"
+  },
+  "tplReferral_yourCode": {
+    "message": "Your Personal Code:"
+  },
+  "tplReferral_amount": {
+    "message": "$50"
+  },
+  "tplReferral_forYou": {
+    "message": "For You"
+  },
+  "tplReferral_forFriends": {
+    "message": "For Friends"
+  },
+  "tplReferral_description": {
+    "message": "For every friend who signs up with your code, you both get $50 off!"
+  },
+  "tplReferral_share": {
+    "message": "Share Now"
+  },
+  "tplReferral_stats": {
+    "message": "You've already invited 3 friends and earned $150!"
   }
 }
 

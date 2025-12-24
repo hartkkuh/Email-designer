@@ -130,6 +130,14 @@ function setLanguage(lang) {
   // Apply translations
   applyI18n();
   
+  // If a template is currently loaded, reload it in the new language
+  if (currentTemplateName) {
+    const template = getTemplate(currentTemplateName);
+    if (template) {
+      loadTemplateToEditor(template, currentTemplateName);
+    }
+  }
+  
   // Save preference
   chrome.storage.local.set({ language: currentLang });
 }
@@ -199,235 +207,251 @@ let emailBgImageSize = 'cover';
 let emailDirection = 'rtl'; // 'rtl' or 'ltr'
 let emailLanguage = 'he'; // Language code (he, en, ar, etc.)
 
-// Templates
-const templates = {
+// Track currently loaded template
+let currentTemplateName = null;
+
+// Templates - Language-aware function
+function getTemplate(templateName) {
+  const lang = currentLang;
+  const isRTL = rtlLanguages.includes(lang);
+  const dir = isRTL ? 'rtl' : 'ltr';
+  const fontFamily = isRTL ? "'Heebo', Arial, sans-serif" : "Arial, sans-serif";
+  
+  // Helper to get template translations
+  const t = (key) => {
+    const fullKey = `tpl${templateName.charAt(0).toUpperCase() + templateName.slice(1)}_${key}`;
+    return msg(fullKey) || key;
+  };
+  
+  // Template definitions with language-aware content
+  const templates = {
   newsletter: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <h1 style="color: white; margin: 0; font-size: 28px;">הניוזלטר השבועי</h1>
-    <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0;">עדכונים וחדשות מרתקות</p>
+    <h1 style="color: white; margin: 0; font-size: 28px;">${msg('tplNewsletter_title')}</h1>
+    <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0;">${msg('tplNewsletter_subtitle')}</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <h2 style="color: #1f2937; font-size: 20px; margin-top: 0;">כותרת ראשית</h2>
-    <p style="color: #4b5563; line-height: 1.8;">כאן תוכלו לכתוב את התוכן העיקרי של הניוזלטר. ספרו לקוראים שלכם על חדשות, עדכונים ותוכן מעניין.</p>
-    <a href="#" style="display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 15px;">קראו עוד</a>
+    <h2 style="color: #1f2937; font-size: 20px; margin-top: 0;">${msg('tplNewsletter_heading')}</h2>
+    <p style="color: #4b5563; line-height: 1.8;">${msg('tplNewsletter_content')}</p>
+    <a href="#" style="display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 15px;">${msg('tplNewsletter_readMore')}</a>
   </div>
   <div style="background: #f9fafb; padding: 20px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #6b7280; font-size: 13px; margin: 0;">© 2024 השם שלכם. כל הזכויות שמורות.</p>
+    <p style="color: #6b7280; font-size: 13px; margin: 0;">© 2024 ${msg('tplNewsletter_yourName')}. ${msg('tplNewsletter_allRights')}</p>
   </div>
 </div>`,
   invitation: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 40px 30px; text-align: center; border-radius: 12px; border: 2px solid #f59e0b;">
-    <p style="color: #92400e; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin: 0;">הזמנה מיוחדת</p>
-    <h1 style="color: #78350f; margin: 20px 0; font-size: 36px;">הנכם מוזמנים!</h1>
+    <p style="color: #92400e; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin: 0;">${msg('tplInvitation_special')}</p>
+    <h1 style="color: #78350f; margin: 20px 0; font-size: 36px;">${msg('tplInvitation_title')}</h1>
     <div style="background: white; padding: 25px; border-radius: 8px; margin: 20px 0;">
       <p style="color: #92400e; font-size: 18px; margin: 0; line-height: 1.8;">
-        <strong>אירוע:</strong> שם האירוע<br>
-        <strong>תאריך:</strong> יום ראשון, 1 בינואר 2025<br>
-        <strong>שעה:</strong> 19:00<br>
-        <strong>מיקום:</strong> הכתובת המלאה
+        <strong>${msg('tplInvitation_event')}:</strong> ${msg('tplInvitation_eventName')}<br>
+        <strong>${msg('tplInvitation_date')}:</strong> ${msg('tplInvitation_dateValue')}<br>
+        <strong>${msg('tplInvitation_time')}:</strong> ${msg('tplInvitation_timeValue')}<br>
+        <strong>${msg('tplInvitation_location')}:</strong> ${msg('tplInvitation_locationValue')}
       </p>
     </div>
-    <a href="#" style="display: inline-block; background: #f59e0b; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">אישור הגעה</a>
-    <p style="color: #92400e; font-size: 13px; margin-top: 20px;">נשמח לראותכם!</p>
+    <a href="#" style="display: inline-block; background: #f59e0b; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">${msg('tplInvitation_confirm')}</a>
+    <p style="color: #92400e; font-size: 13px; margin-top: 20px;">${msg('tplInvitation_closing')}</p>
   </div>
 </div>`,
   simple: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl; padding: 20px;">
-  <p style="color: #374151; font-size: 16px; line-height: 1.8;">שלום רב,</p>
-  <p style="color: #374151; font-size: 16px; line-height: 1.8;">כאן תוכלו לכתוב את תוכן ההודעה שלכם. זוהי תבנית פשוטה ונקייה המתאימה להודעות יומיומיות.</p>
-  <p style="color: #374151; font-size: 16px; line-height: 1.8;">בברכה,<br><strong>השם שלכם</strong></p>
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir}; padding: 20px;">
+  <p style="color: #374151; font-size: 16px; line-height: 1.8;">${msg('tplSimple_greeting')}</p>
+  <p style="color: #374151; font-size: 16px; line-height: 1.8;">${msg('tplSimple_content')}</p>
+  <p style="color: #374151; font-size: 16px; line-height: 1.8;">${msg('tplSimple_closing')}<br><strong>${msg('tplSimple_yourName')}</strong></p>
 </div>`,
   promo: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin: 0;">🔥 מבצע מיוחד</p>
-    <h1 style="color: white; margin: 15px 0; font-size: 42px;">50% הנחה!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin: 0;">לזמן מוגבל בלבד</p>
+    <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin: 0;">🔥 ${msg('tplPromo_special')}</p>
+    <h1 style="color: white; margin: 15px 0; font-size: 42px;">${msg('tplPromo_discount')}</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin: 0;">${msg('tplPromo_limited')}</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <h2 style="color: #1f2937; font-size: 20px; margin-top: 0; text-align: center;">המוצרים הכי חמים שלנו</h2>
-    <p style="color: #4b5563; line-height: 1.8; text-align: center;">אל תפספסו את ההזדמנות! המבצע מסתיים בקרוב.</p>
+    <h2 style="color: #1f2937; font-size: 20px; margin-top: 0; text-align: center;">${msg('tplPromo_heading')}</h2>
+    <p style="color: #4b5563; line-height: 1.8; text-align: center;">${msg('tplPromo_content')}</p>
     <div style="text-align: center; margin-top: 20px;">
-      <a href="#" style="display: inline-block; background: #ec4899; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">לקנייה עכשיו</a>
+      <a href="#" style="display: inline-block; background: #ec4899; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">${msg('tplPromo_buyNow')}</a>
     </div>
   </div>
   <div style="background: #fdf2f8; padding: 15px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #9d174d; font-size: 12px; margin: 0;">*המבצע בתוקף עד גמר המלאי</p>
+    <p style="color: #9d174d; font-size: 12px; margin: 0;">*${msg('tplPromo_terms')}</p>
   </div>
 </div>`,
   welcome: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%); padding: 50px 30px; text-align: center; border-radius: 12px 12px 0 0;">
     <div style="font-size: 60px; margin-bottom: 20px;">👋</div>
-    <h1 style="color: white; margin: 0; font-size: 32px;">ברוכים הבאים!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin: 15px 0 0;">שמחים שהצטרפתם אלינו</p>
+    <h1 style="color: white; margin: 0; font-size: 32px;">${msg('tplWelcome_title')}</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin: 15px 0 0;">${msg('tplWelcome_subtitle')}</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <p style="color: #4b5563; font-size: 16px; line-height: 1.8;">שלום וברכה,</p>
-    <p style="color: #4b5563; font-size: 16px; line-height: 1.8;">אנחנו נרגשים שבחרתם להצטרף למשפחה שלנו! כאן תמצאו את כל מה שצריך כדי להתחיל.</p>
+    <p style="color: #4b5563; font-size: 16px; line-height: 1.8;">${msg('tplWelcome_greeting')}</p>
+    <p style="color: #4b5563; font-size: 16px; line-height: 1.8;">${msg('tplWelcome_content')}</p>
     <div style="background: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-      <h3 style="color: #1f2937; margin: 0 0 10px;">הצעדים הבאים:</h3>
-      <ul style="color: #4b5563; margin: 0; padding-right: 20px; line-height: 2;">
-        <li>השלימו את הפרופיל שלכם</li>
-        <li>גלו את התכונות שלנו</li>
-        <li>התחילו ליצור!</li>
+      <h3 style="color: #1f2937; margin: 0 0 10px;">${msg('tplWelcome_nextSteps')}</h3>
+      <ul style="color: #4b5563; margin: 0; ${isRTL ? 'padding-right' : 'padding-left'}: 20px; line-height: 2;">
+        <li>${msg('tplWelcome_step1')}</li>
+        <li>${msg('tplWelcome_step2')}</li>
+        <li>${msg('tplWelcome_step3')}</li>
       </ul>
     </div>
     <div style="text-align: center;">
-      <a href="#" style="display: inline-block; background: #8b5cf6; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">התחילו עכשיו</a>
+      <a href="#" style="display: inline-block; background: #8b5cf6; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">${msg('tplWelcome_getStarted')}</a>
     </div>
   </div>
   <div style="background: #f9fafb; padding: 20px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #6b7280; font-size: 13px; margin: 0;">יש שאלות? אנחנו כאן בשבילכם!</p>
+    <p style="color: #6b7280; font-size: 13px; margin: 0;">${msg('tplWelcome_questions')}</p>
   </div>
 </div>`,
   reminder: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 30px; border-radius: 12px 12px 0 0;">
     <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
       <span style="font-size: 40px;">⏰</span>
-      <h1 style="color: white; margin: 0; font-size: 28px;">תזכורת חשובה</h1>
+      <h1 style="color: white; margin: 0; font-size: 28px;">${msg('tplReminder_title')}</h1>
     </div>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <div style="background: #fff7ed; padding: 20px; border-radius: 8px; border-right: 4px solid #f97316; margin-bottom: 20px;">
-      <h3 style="color: #c2410c; margin: 0 0 10px;">אל תשכחו!</h3>
-      <p style="color: #9a3412; margin: 0; line-height: 1.6;">הפגישה שלכם מתוכננת ל:<br><strong>יום שני, 15 בינואר 2025 בשעה 10:00</strong></p>
+    <div style="background: #fff7ed; padding: 20px; border-radius: 8px; ${isRTL ? 'border-right' : 'border-left'}: 4px solid #f97316; margin-bottom: 20px;">
+      <h3 style="color: #c2410c; margin: 0 0 10px;">${msg('tplReminder_dontForget')}</h3>
+      <p style="color: #9a3412; margin: 0; line-height: 1.6;">${msg('tplReminder_meeting')}<br><strong>${msg('tplReminder_dateTime')}</strong></p>
     </div>
-    <p style="color: #4b5563; line-height: 1.8;">אנא אשרו את הגעתכם בהקדם האפשרי.</p>
+    <p style="color: #4b5563; line-height: 1.8;">${msg('tplReminder_confirm')}</p>
     <div style="text-align: center; margin-top: 20px;">
-      <a href="#" style="display: inline-block; background: #f97316; color: white; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 500; margin: 0 5px;">אישור הגעה</a>
-      <a href="#" style="display: inline-block; background: #e5e7eb; color: #374151; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 500; margin: 0 5px;">שינוי מועד</a>
+      <a href="#" style="display: inline-block; background: #f97316; color: white; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 500; margin: 0 5px;">${msg('tplReminder_confirmBtn')}</a>
+      <a href="#" style="display: inline-block; background: #e5e7eb; color: #374151; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 500; margin: 0 5px;">${msg('tplReminder_reschedule')}</a>
     </div>
   </div>
 </div>`,
   alert: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 30px; border-radius: 12px;">
     <div style="text-align: center;">
       <span style="font-size: 50px;">⚠️</span>
-      <h1 style="color: white; margin: 15px 0; font-size: 28px;">שימו לב!</h1>
-      <p style="color: rgba(255,255,255,0.95); font-size: 16px; line-height: 1.8; margin: 0;">זוהי הודעה חשובה שדורשת את תשומת לבכם המיידית.</p>
+      <h1 style="color: white; margin: 15px 0; font-size: 28px;">${msg('tplAlert_title')}</h1>
+      <p style="color: rgba(255,255,255,0.95); font-size: 16px; line-height: 1.8; margin: 0;">${msg('tplAlert_message')}</p>
       <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin: 20px 0;">
-        <p style="color: white; margin: 0; font-weight: 600;">פעולה נדרשת עד: 31/12/2024</p>
+        <p style="color: white; margin: 0; font-weight: 600;">${msg('tplAlert_deadline')}</p>
       </div>
-      <a href="#" style="display: inline-block; background: white; color: #dc2626; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">לפעולה מיידית</a>
+      <a href="#" style="display: inline-block; background: white; color: #dc2626; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">${msg('tplAlert_action')}</a>
     </div>
   </div>
 </div>`,
   birthday: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #f472b6 0%, #db2777 50%, #9333ea 100%); padding: 50px 30px; text-align: center; border-radius: 12px;">
     <div style="font-size: 70px; margin-bottom: 15px;">🎂</div>
-    <h1 style="color: white; margin: 0; font-size: 36px;">יום הולדת שמח!</h1>
-    <p style="color: rgba(255,255,255,0.95); font-size: 20px; margin: 20px 0; line-height: 1.6;">מאחלים לך יום מלא באושר, שמחה והפתעות נעימות!</p>
+    <h1 style="color: white; margin: 0; font-size: 36px;">${msg('tplBirthday_title')}</h1>
+    <p style="color: rgba(255,255,255,0.95); font-size: 20px; margin: 20px 0; line-height: 1.6;">${msg('tplBirthday_message')}</p>
     <div style="font-size: 40px; margin: 20px 0;">🎈🎁🎉</div>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 0;">שיהיה לך יום נפלא!</p>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 0;">${msg('tplBirthday_closing')}</p>
   </div>
 </div>`,
   job: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <h1 style="color: white; margin: 0; font-size: 28px;">🚀 הזדמנות קריירה מרגשת!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">אנחנו מחפשים אותך!</p>
+    <h1 style="color: white; margin: 0; font-size: 28px;">🚀 ${msg('tplJob_title')}</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">${msg('tplJob_subtitle')}</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <h2 style="color: #0369a1; font-size: 22px; margin-top: 0;">שם המשרה</h2>
+    <h2 style="color: #0369a1; font-size: 22px; margin-top: 0;">${msg('tplJob_position')}</h2>
     <div style="background: #f0f9ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-      <p style="color: #0c4a6e; margin: 0;">📍 מיקום: תל אביב | ⏰ היקף: משרה מלאה | 💰 שכר: תחרותי</p>
+      <p style="color: #0c4a6e; margin: 0;">📍 ${msg('tplJob_location')}: ${msg('tplJob_locationValue')} | ⏰ ${msg('tplJob_scope')}: ${msg('tplJob_scopeValue')} | 💰 ${msg('tplJob_salary')}: ${msg('tplJob_salaryValue')}</p>
     </div>
-    <h3 style="color: #1e293b; font-size: 16px;">דרישות התפקיד:</h3>
-    <ul style="color: #475569; line-height: 2; padding-right: 20px;">
-      <li>ניסיון של X שנים בתחום</li>
-      <li>יכולת עבודה בצוות</li>
-      <li>אנגלית ברמה גבוהה</li>
+    <h3 style="color: #1e293b; font-size: 16px;">${msg('tplJob_requirements')}</h3>
+    <ul style="color: #475569; line-height: 2; ${isRTL ? 'padding-right' : 'padding-left'}: 20px;">
+      <li>${msg('tplJob_req1')}</li>
+      <li>${msg('tplJob_req2')}</li>
+      <li>${msg('tplJob_req3')}</li>
     </ul>
-    <h3 style="color: #1e293b; font-size: 16px;">מה אנחנו מציעים:</h3>
-    <ul style="color: #475569; line-height: 2; padding-right: 20px;">
-      <li>סביבת עבודה דינמית</li>
-      <li>אפשרויות קידום</li>
-      <li>הטבות מעולות</li>
+    <h3 style="color: #1e293b; font-size: 16px;">${msg('tplJob_offers')}</h3>
+    <ul style="color: #475569; line-height: 2; ${isRTL ? 'padding-right' : 'padding-left'}: 20px;">
+      <li>${msg('tplJob_offer1')}</li>
+      <li>${msg('tplJob_offer2')}</li>
+      <li>${msg('tplJob_offer3')}</li>
     </ul>
     <div style="text-align: center; margin-top: 25px;">
-      <a href="#" style="display: inline-block; background: #0ea5e9; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">שלח קורות חיים</a>
+      <a href="#" style="display: inline-block; background: #0ea5e9; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">${msg('tplJob_apply')}</a>
     </div>
   </div>
 </div>`,
   survey: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
     <span style="font-size: 50px;">📋</span>
-    <h1 style="color: white; margin: 15px 0 0; font-size: 28px;">דעתכם חשובה לנו!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 10px 0 0;">סקר קצר בן 2 דקות</p>
+    <h1 style="color: white; margin: 15px 0 0; font-size: 28px;">${msg('tplSurvey_title')}</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 10px 0 0;">${msg('tplSurvey_subtitle')}</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; text-align: center;">עזרו לנו להשתפר! מלאו את הסקר הקצר וקבלו <strong style="color: #7c3aed;">10% הנחה</strong> על הרכישה הבאה.</p>
+    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; text-align: center;">${msg('tplSurvey_content')}</p>
     <div style="background: #faf5ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
-      <p style="color: #6b21a8; margin: 0 0 10px; font-size: 14px;">⏱️ זמן מילוי משוער: 2 דקות</p>
-      <p style="color: #6b21a8; margin: 0; font-size: 14px;">🎁 תקבלו קוד הנחה בסיום</p>
+      <p style="color: #6b21a8; margin: 0 0 10px; font-size: 14px;">⏱️ ${msg('tplSurvey_time')}</p>
+      <p style="color: #6b21a8; margin: 0; font-size: 14px;">🎁 ${msg('tplSurvey_reward')}</p>
     </div>
     <div style="text-align: center;">
-      <a href="#" style="display: inline-block; background: #a855f7; color: white; padding: 16px 50px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">למילוי הסקר</a>
+      <a href="#" style="display: inline-block; background: #a855f7; color: white; padding: 16px 50px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">${msg('tplSurvey_button')}</a>
     </div>
-    <p style="color: #9ca3af; font-size: 12px; text-align: center; margin: 20px 0 0;">*ההנחה תקפה ל-30 יום מיום קבלת הקוד</p>
+    <p style="color: #9ca3af; font-size: 12px; text-align: center; margin: 20px 0 0;">*${msg('tplSurvey_terms')}</p>
   </div>
 </div>`,
   receipt: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: #1f2937; padding: 30px; border-radius: 12px 12px 0 0;">
     <div style="display: flex; justify-content: space-between; align-items: center;">
-      <h1 style="color: white; margin: 0; font-size: 24px;">אישור הזמנה</h1>
-      <span style="color: #10b981; font-size: 14px; background: rgba(16,185,129,0.15); padding: 6px 12px; border-radius: 20px;">שולם ✓</span>
+      <h1 style="color: white; margin: 0; font-size: 24px;">${msg('tplReceipt_title')}</h1>
+      <span style="color: #10b981; font-size: 14px; background: rgba(16,185,129,0.15); padding: 6px 12px; border-radius: 20px;">${msg('tplReceipt_paid')} ✓</span>
     </div>
-    <p style="color: #9ca3af; margin: 10px 0 0;">מספר הזמנה: #12345678</p>
+    <p style="color: #9ca3af; margin: 10px 0 0;">${msg('tplReceipt_orderNumber')}: #12345678</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
     <table style="width: 100%; border-collapse: collapse;">
       <tr style="border-bottom: 1px solid #e5e7eb;">
-        <th style="text-align: right; padding: 12px 0; color: #6b7280; font-weight: 500;">פריט</th>
-        <th style="text-align: center; padding: 12px 0; color: #6b7280; font-weight: 500;">כמות</th>
-        <th style="text-align: left; padding: 12px 0; color: #6b7280; font-weight: 500;">מחיר</th>
+        <th style="text-align: ${isRTL ? 'right' : 'left'}; padding: 12px 0; color: #6b7280; font-weight: 500;">${msg('tplReceipt_item')}</th>
+        <th style="text-align: center; padding: 12px 0; color: #6b7280; font-weight: 500;">${msg('tplReceipt_quantity')}</th>
+        <th style="text-align: ${isRTL ? 'left' : 'right'}; padding: 12px 0; color: #6b7280; font-weight: 500;">${msg('tplReceipt_price')}</th>
       </tr>
       <tr style="border-bottom: 1px solid #e5e7eb;">
-        <td style="padding: 15px 0; color: #1f2937;">שם המוצר הראשון</td>
+        <td style="padding: 15px 0; color: #1f2937;">${msg('tplReceipt_product1')}</td>
         <td style="padding: 15px 0; color: #6b7280; text-align: center;">1</td>
-        <td style="padding: 15px 0; color: #1f2937; text-align: left;">₪199</td>
+        <td style="padding: 15px 0; color: #1f2937; text-align: ${isRTL ? 'left' : 'right'};">${msg('tplReceipt_price1')}</td>
       </tr>
       <tr style="border-bottom: 1px solid #e5e7eb;">
-        <td style="padding: 15px 0; color: #1f2937;">שם המוצר השני</td>
+        <td style="padding: 15px 0; color: #1f2937;">${msg('tplReceipt_product2')}</td>
         <td style="padding: 15px 0; color: #6b7280; text-align: center;">2</td>
-        <td style="padding: 15px 0; color: #1f2937; text-align: left;">₪298</td>
+        <td style="padding: 15px 0; color: #1f2937; text-align: ${isRTL ? 'left' : 'right'};">${msg('tplReceipt_price2')}</td>
       </tr>
     </table>
     <div style="border-top: 2px solid #e5e7eb; margin-top: 15px; padding-top: 15px;">
       <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-        <span style="color: #6b7280;">סכום ביניים:</span>
-        <span style="color: #1f2937;">₪497</span>
+        <span style="color: #6b7280;">${msg('tplReceipt_subtotal')}</span>
+        <span style="color: #1f2937;">${msg('tplReceipt_subtotalValue')}</span>
       </div>
       <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-        <span style="color: #6b7280;">משלוח:</span>
-        <span style="color: #1f2937;">₪30</span>
+        <span style="color: #6b7280;">${msg('tplReceipt_shipping')}</span>
+        <span style="color: #1f2937;">${msg('tplReceipt_shippingValue')}</span>
       </div>
       <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: 600;">
-        <span style="color: #1f2937;">סה״כ:</span>
-        <span style="color: #1f2937;">₪527</span>
+        <span style="color: #1f2937;">${msg('tplReceipt_total')}</span>
+        <span style="color: #1f2937;">${msg('tplReceipt_totalValue')}</span>
       </div>
     </div>
   </div>
   <div style="background: #f9fafb; padding: 20px 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #6b7280; font-size: 13px; margin: 0; text-align: center;">שאלות? צרו קשר: support@example.com</p>
+    <p style="color: #6b7280; font-size: 13px; margin: 0; text-align: center;">${msg('tplReceipt_contact')}</p>
   </div>
 </div>`,
   social: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #ec4899 0%, #f43f5e 50%, #f97316 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <h1 style="color: white; margin: 0; font-size: 28px;">הצטרפו לקהילה שלנו!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">עקבו אחרינו ברשתות החברתיות</p>
+    <h1 style="color: white; margin: 0; font-size: 28px;">${msg('tplSocial_title')}</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">${msg('tplSocial_subtitle')}</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; text-align: center;">
-    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; margin-bottom: 25px;">הישארו מעודכנים בכל החדשות, הטיפים והמבצעים המיוחדים!</p>
+    <p style="color: #4b5563; font-size: 16px; line-height: 1.8; margin-bottom: 25px;">${msg('tplSocial_content')}</p>
     <div style="margin: 25px 0;">
       <a href="#" style="display: inline-block; background: #1877F2; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">Facebook</a>
       <a href="#" style="display: inline-block; background: #1DA1F2; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">Twitter</a>
@@ -435,77 +459,77 @@ const templates = {
       <a href="#" style="display: inline-block; background: #0A66C2; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">LinkedIn</a>
       <a href="#" style="display: inline-block; background: #FF0000; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; margin: 5px;">YouTube</a>
     </div>
-    <p style="color: #9ca3af; font-size: 14px;">כבר יותר מ-10,000 עוקבים!</p>
+    <p style="color: #9ca3af; font-size: 14px;">${msg('tplSocial_followers')}</p>
   </div>
   <div style="background: #f9fafb; padding: 20px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #6b7280; font-size: 13px; margin: 0;">שתפו את הניוזלטר הזה עם חברים!</p>
+    <p style="color: #6b7280; font-size: 13px; margin: 0;">${msg('tplSocial_share')}</p>
   </div>
 </div>`,
   webinar: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
-    <span style="background: #fbbf24; color: #0e7490; padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">וובינר חינמי</span>
-    <h1 style="color: white; margin: 20px 0 10px; font-size: 28px;">שם הוובינר</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 0;">למדו איך להצליח ב...</p>
+    <span style="background: #fbbf24; color: #0e7490; padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">${msg('tplWebinar_free')}</span>
+    <h1 style="color: white; margin: 20px 0 10px; font-size: 28px;">${msg('tplWebinar_title')}</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 0;">${msg('tplWebinar_subtitle')}</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
     <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
       <div style="flex: 1; min-width: 140px; background: #ecfeff; padding: 15px; border-radius: 8px; text-align: center;">
         <span style="font-size: 24px;">📅</span>
-        <p style="color: #0e7490; margin: 8px 0 0; font-weight: 600;">יום רביעי</p>
-        <p style="color: #0e7490; margin: 5px 0 0; font-size: 14px;">15/01/2025</p>
+        <p style="color: #0e7490; margin: 8px 0 0; font-weight: 600;">${msg('tplWebinar_day')}</p>
+        <p style="color: #0e7490; margin: 5px 0 0; font-size: 14px;">${msg('tplWebinar_date')}</p>
       </div>
       <div style="flex: 1; min-width: 140px; background: #ecfeff; padding: 15px; border-radius: 8px; text-align: center;">
         <span style="font-size: 24px;">⏰</span>
-        <p style="color: #0e7490; margin: 8px 0 0; font-weight: 600;">20:00</p>
-        <p style="color: #0e7490; margin: 5px 0 0; font-size: 14px;">שעון ישראל</p>
+        <p style="color: #0e7490; margin: 8px 0 0; font-weight: 600;">${msg('tplWebinar_time')}</p>
+        <p style="color: #0e7490; margin: 5px 0 0; font-size: 14px;">${msg('tplWebinar_timezone')}</p>
       </div>
     </div>
-    <h3 style="color: #1f2937; font-size: 16px;">מה תלמדו:</h3>
-    <ul style="color: #4b5563; line-height: 2; padding-right: 20px;">
-      <li>נושא ראשון חשוב</li>
-      <li>נושא שני מעניין</li>
-      <li>טיפים מעשיים</li>
+    <h3 style="color: #1f2937; font-size: 16px;">${msg('tplWebinar_learn')}</h3>
+    <ul style="color: #4b5563; line-height: 2; ${isRTL ? 'padding-right' : 'padding-left'}: 20px;">
+      <li>${msg('tplWebinar_topic1')}</li>
+      <li>${msg('tplWebinar_topic2')}</li>
+      <li>${msg('tplWebinar_topic3')}</li>
     </ul>
     <div style="text-align: center; margin-top: 25px;">
-      <a href="#" style="display: inline-block; background: #0891b2; color: white; padding: 16px 50px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">הרשמה חינם</a>
+      <a href="#" style="display: inline-block; background: #0891b2; color: white; padding: 16px 50px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 18px;">${msg('tplWebinar_register')}</a>
     </div>
-    <p style="color: #9ca3af; font-size: 13px; text-align: center; margin-top: 15px;">מקומות מוגבלים - הירשמו עכשיו!</p>
+    <p style="color: #9ca3af; font-size: 13px; text-align: center; margin-top: 15px;">${msg('tplWebinar_limited')}</p>
   </div>
 </div>`,
   event: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 50px 30px; text-align: center; border-radius: 12px 12px 0 0; position: relative;">
-    <div style="position: absolute; top: 20px; right: 20px; background: #fbbf24; color: #1a1a2e; padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">VIP</div>
+    <div style="position: absolute; ${isRTL ? 'right' : 'left'}: 20px; top: 20px; background: #fbbf24; color: #1a1a2e; padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">VIP</div>
     <div style="font-size: 50px; margin-bottom: 15px;">🎪</div>
-    <h1 style="color: #fbbf24; margin: 0; font-size: 32px;">אירוע השנה!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin: 15px 0 0;">הזמנה בלעדית</p>
+    <h1 style="color: #fbbf24; margin: 0; font-size: 32px;">${msg('tplEvent_title')}</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin: 15px 0 0;">${msg('tplEvent_subtitle')}</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-right: 4px solid #fbbf24;">
+    <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin-bottom: 20px; ${isRTL ? 'border-right' : 'border-left'}: 4px solid #fbbf24;">
       <p style="color: #92400e; margin: 0; line-height: 1.8;">
-        <strong>📍 מיקום:</strong> שם המקום<br>
-        <strong>📅 תאריך:</strong> יום שישי, 20/01/2025<br>
-        <strong>⏰ שעה:</strong> 20:00
+        <strong>📍 ${msg('tplEvent_location')}:</strong> ${msg('tplEvent_locationValue')}<br>
+        <strong>📅 ${msg('tplEvent_date')}:</strong> ${msg('tplEvent_dateValue')}<br>
+        <strong>⏰ ${msg('tplEvent_time')}:</strong> ${msg('tplEvent_timeValue')}
       </p>
     </div>
-    <p style="color: #4b5563; line-height: 1.8; text-align: center;">הצטרפו אלינו לערב בלתי נשכח של נטוורקינג, תוכן מקצועי וכיף!</p>
+    <p style="color: #4b5563; line-height: 1.8; text-align: center;">${msg('tplEvent_content')}</p>
     <div style="text-align: center; margin-top: 25px;">
-      <a href="#" style="display: inline-block; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #1a1a2e; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">שריינו מקום</a>
+      <a href="#" style="display: inline-block; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #1a1a2e; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">${msg('tplEvent_reserve')}</a>
     </div>
   </div>
   <div style="background: #1a1a2e; padding: 15px 30px; text-align: center; border-radius: 0 0 12px 12px;">
-    <p style="color: #fbbf24; font-size: 13px; margin: 0;">מספר המקומות מוגבל!</p>
+    <p style="color: #fbbf24; font-size: 13px; margin: 0;">${msg('tplEvent_limited')}</p>
   </div>
 </div>`,
   shipping: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); padding: 30px; border-radius: 12px 12px 0 0;">
     <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
       <span style="font-size: 40px;">📦</span>
       <div>
-        <h1 style="color: white; margin: 0; font-size: 24px;">ההזמנה שלך בדרך!</h1>
-        <p style="color: rgba(255,255,255,0.9); margin: 5px 0 0; font-size: 14px;">מספר מעקב: #TRK123456789</p>
+        <h1 style="color: white; margin: 0; font-size: 24px;">${msg('tplShipping_title')}</h1>
+        <p style="color: rgba(255,255,255,0.9); margin: 5px 0 0; font-size: 14px;">${msg('tplShipping_tracking')}: #TRK123456789</p>
       </div>
     </div>
   </div>
@@ -513,64 +537,67 @@ const templates = {
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
       <div style="text-align: center; flex: 1;">
         <div style="width: 30px; height: 30px; background: #22c55e; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white;">✓</div>
-        <p style="color: #22c55e; font-size: 12px; margin: 0;">הוזמן</p>
+        <p style="color: #22c55e; font-size: 12px; margin: 0;">${msg('tplShipping_ordered')}</p>
       </div>
       <div style="flex: 1; height: 2px; background: #22c55e;"></div>
       <div style="text-align: center; flex: 1;">
         <div style="width: 30px; height: 30px; background: #22c55e; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white;">✓</div>
-        <p style="color: #22c55e; font-size: 12px; margin: 0;">נארז</p>
+        <p style="color: #22c55e; font-size: 12px; margin: 0;">${msg('tplShipping_packed')}</p>
       </div>
       <div style="flex: 1; height: 2px; background: #22c55e;"></div>
       <div style="text-align: center; flex: 1;">
         <div style="width: 30px; height: 30px; background: #fbbf24; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center;">🚚</div>
-        <p style="color: #fbbf24; font-size: 12px; margin: 0; font-weight: 600;">בדרך</p>
+        <p style="color: #fbbf24; font-size: 12px; margin: 0; font-weight: 600;">${msg('tplShipping_shipping')}</p>
       </div>
       <div style="flex: 1; height: 2px; background: #e5e7eb;"></div>
       <div style="text-align: center; flex: 1;">
         <div style="width: 30px; height: 30px; background: #e5e7eb; border-radius: 50%; margin: 0 auto 8px;"></div>
-        <p style="color: #9ca3af; font-size: 12px; margin: 0;">נמסר</p>
+        <p style="color: #9ca3af; font-size: 12px; margin: 0;">${msg('tplShipping_delivered')}</p>
       </div>
     </div>
     <div style="background: #f0fdf4; padding: 15px; border-radius: 8px;">
-      <p style="color: #166534; margin: 0; font-size: 14px;"><strong>זמן הגעה משוער:</strong> יום שני, 22/01/2025</p>
+      <p style="color: #166534; margin: 0; font-size: 14px;"><strong>${msg('tplShipping_eta')}</strong> ${msg('tplShipping_etaValue')}</p>
     </div>
     <div style="text-align: center; margin-top: 20px;">
-      <a href="#" style="display: inline-block; background: #22c55e; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 500;">מעקב משלוח</a>
+      <a href="#" style="display: inline-block; background: #22c55e; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 500;">${msg('tplShipping_track')}</a>
     </div>
   </div>
 </div>`,
   referral: `
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Heebo', Arial, sans-serif; direction: rtl;">
+<div style="max-width: 600px; margin: 0 auto; font-family: ${fontFamily}; direction: ${dir};">
   <div style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
     <div style="font-size: 50px; margin-bottom: 15px;">🎁</div>
-    <h1 style="color: white; margin: 0; font-size: 28px;">הזמינו חברים וקבלו הטבות!</h1>
-    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">שתפו את הקוד שלכם והרוויחו</p>
+    <h1 style="color: white; margin: 0; font-size: 28px;">${msg('tplReferral_title')}</h1>
+    <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin: 15px 0 0;">${msg('tplReferral_subtitle')}</p>
   </div>
   <div style="background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
     <div style="background: #fff7ed; border: 2px dashed #f97316; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
-      <p style="color: #9a3412; margin: 0 0 10px; font-size: 14px;">הקוד האישי שלכם:</p>
+      <p style="color: #9a3412; margin: 0 0 10px; font-size: 14px;">${msg('tplReferral_yourCode')}</p>
       <p style="color: #ea580c; font-size: 28px; font-weight: 700; margin: 0; letter-spacing: 3px;">FRIEND50</p>
     </div>
     <div style="display: flex; gap: 15px; margin-bottom: 20px;">
       <div style="flex: 1; background: #fef3c7; padding: 15px; border-radius: 8px; text-align: center;">
-        <p style="color: #92400e; font-size: 24px; font-weight: 700; margin: 0;">₪50</p>
-        <p style="color: #92400e; font-size: 12px; margin: 5px 0 0;">לכם</p>
+        <p style="color: #92400e; font-size: 24px; font-weight: 700; margin: 0;">${msg('tplReferral_amount')}</p>
+        <p style="color: #92400e; font-size: 12px; margin: 5px 0 0;">${msg('tplReferral_forYou')}</p>
       </div>
       <div style="flex: 1; background: #fef3c7; padding: 15px; border-radius: 8px; text-align: center;">
-        <p style="color: #92400e; font-size: 24px; font-weight: 700; margin: 0;">₪50</p>
-        <p style="color: #92400e; font-size: 12px; margin: 5px 0 0;">לחברים</p>
+        <p style="color: #92400e; font-size: 24px; font-weight: 700; margin: 0;">${msg('tplReferral_amount')}</p>
+        <p style="color: #92400e; font-size: 12px; margin: 5px 0 0;">${msg('tplReferral_forFriends')}</p>
       </div>
     </div>
-    <p style="color: #4b5563; line-height: 1.8; text-align: center;">על כל חבר שנרשם עם הקוד שלכם, שניכם מקבלים ₪50 הנחה!</p>
+    <p style="color: #4b5563; line-height: 1.8; text-align: center;">${msg('tplReferral_description')}</p>
     <div style="text-align: center; margin-top: 20px;">
-      <a href="#" style="display: inline-block; background: #f97316; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600;">שתפו עכשיו</a>
+      <a href="#" style="display: inline-block; background: #f97316; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600;">${msg('tplReferral_share')}</a>
     </div>
   </div>
   <div style="background: #fff7ed; padding: 15px 30px; text-align: center; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
-    <p style="color: #9a3412; font-size: 13px; margin: 0;">כבר הזמנתם 3 חברים והרווחתם ₪150!</p>
+    <p style="color: #9a3412; font-size: 13px; margin: 0;">${msg('tplReferral_stats')}</p>
   </div>
 </div>`
-};
+  };
+  
+  return templates[templateName] || null;
+}
 
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
@@ -1125,8 +1152,9 @@ function initTemplates() {
   document.querySelectorAll('#builtinTemplates .template-card').forEach(card => {
     card.addEventListener('click', () => {
       const templateName = card.dataset.template;
-      if (templates[templateName]) {
-        loadTemplateToEditor(templates[templateName]);
+      const template = getTemplate(templateName);
+      if (template) {
+        loadTemplateToEditor(template, templateName);
       }
     });
   });
@@ -1218,8 +1246,13 @@ function initTemplates() {
   }
 }
 
-function loadTemplateToEditor(html) {
+function loadTemplateToEditor(html, templateName = null) {
   editor.innerHTML = html;
+  
+  // Save the template name if provided
+  if (templateName) {
+    currentTemplateName = templateName;
+  }
   
   // Switch to visual tab
   tabs.forEach(t => t.classList.remove('active'));
@@ -1232,7 +1265,7 @@ function loadTemplateToEditor(html) {
   // Save the loaded template so it persists
   saveContent();
   
-  showToast('התבנית נטענה בהצלחה', 'success');
+  showToast(msg('templateLoaded') || 'התבנית נטענה בהצלחה', 'success');
 }
 
 function loadPersonalTemplates() {
@@ -1296,7 +1329,7 @@ function createPersonalTemplateCard(id, template) {
   // Click to load
   card.addEventListener('click', (e) => {
     if (e.target.closest('.template-card-actions')) return;
-    loadTemplateToEditor(template.html);
+    loadTemplateToEditor(template.html, null); // Personal templates don't have template names
   });
   
   // Edit button
@@ -2178,6 +2211,7 @@ function initNewTools() {
   if (clearAll) {
     clearAll.addEventListener('click', () => {
       if (confirm('האם אתה בטוח שברצונך למחוק את כל התוכן?')) {
+        currentTemplateName = null; // Reset template tracking when clearing
         editor.innerHTML = '<p></p>';
         emailSubject.value = '';
         saveContent();

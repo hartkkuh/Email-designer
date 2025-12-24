@@ -913,6 +913,435 @@
   },
   "signatureInserted": {
     "message": "החתימה הוכנסה!"
+  },
+  "tplNewsletter_title": {
+    "message": "הניוזלטר השבועי"
+  },
+  "tplNewsletter_subtitle": {
+    "message": "עדכונים וחדשות מרתקות"
+  },
+  "tplNewsletter_heading": {
+    "message": "כותרת ראשית"
+  },
+  "tplNewsletter_content": {
+    "message": "כאן תוכלו לכתוב את התוכן העיקרי של הניוזלטר. ספרו לקוראים שלכם על חדשות, עדכונים ותוכן מעניין."
+  },
+  "tplNewsletter_readMore": {
+    "message": "קראו עוד"
+  },
+  "tplNewsletter_yourName": {
+    "message": "השם שלכם"
+  },
+  "tplNewsletter_allRights": {
+    "message": "כל הזכויות שמורות."
+  },
+  "tplInvitation_special": {
+    "message": "הזמנה מיוחדת"
+  },
+  "tplInvitation_title": {
+    "message": "הנכם מוזמנים!"
+  },
+  "tplInvitation_event": {
+    "message": "אירוע"
+  },
+  "tplInvitation_eventName": {
+    "message": "שם האירוע"
+  },
+  "tplInvitation_date": {
+    "message": "תאריך"
+  },
+  "tplInvitation_dateValue": {
+    "message": "יום ראשון, 1 בינואר 2025"
+  },
+  "tplInvitation_time": {
+    "message": "שעה"
+  },
+  "tplInvitation_timeValue": {
+    "message": "19:00"
+  },
+  "tplInvitation_location": {
+    "message": "מיקום"
+  },
+  "tplInvitation_locationValue": {
+    "message": "הכתובת המלאה"
+  },
+  "tplInvitation_confirm": {
+    "message": "אישור הגעה"
+  },
+  "tplInvitation_closing": {
+    "message": "נשמח לראותכם!"
+  },
+  "tplSimple_greeting": {
+    "message": "שלום רב,"
+  },
+  "tplSimple_content": {
+    "message": "כאן תוכלו לכתוב את תוכן ההודעה שלכם. זוהי תבנית פשוטה ונקייה המתאימה להודעות יומיומיות."
+  },
+  "tplSimple_closing": {
+    "message": "בברכה,"
+  },
+  "tplSimple_yourName": {
+    "message": "השם שלכם"
+  },
+  "tplPromo_special": {
+    "message": "מבצע מיוחד"
+  },
+  "tplPromo_discount": {
+    "message": "50% הנחה!"
+  },
+  "tplPromo_limited": {
+    "message": "לזמן מוגבל בלבד"
+  },
+  "tplPromo_heading": {
+    "message": "המוצרים הכי חמים שלנו"
+  },
+  "tplPromo_content": {
+    "message": "אל תפספסו את ההזדמנות! המבצע מסתיים בקרוב."
+  },
+  "tplPromo_buyNow": {
+    "message": "לקנייה עכשיו"
+  },
+  "tplPromo_terms": {
+    "message": "המבצע בתוקף עד גמר המלאי"
+  },
+  "tplWelcome_title": {
+    "message": "ברוכים הבאים!"
+  },
+  "tplWelcome_subtitle": {
+    "message": "שמחים שהצטרפתם אלינו"
+  },
+  "tplWelcome_greeting": {
+    "message": "שלום וברכה,"
+  },
+  "tplWelcome_content": {
+    "message": "אנחנו נרגשים שבחרתם להצטרף למשפחה שלנו! כאן תמצאו את כל מה שצריך כדי להתחיל."
+  },
+  "tplWelcome_nextSteps": {
+    "message": "הצעדים הבאים:"
+  },
+  "tplWelcome_step1": {
+    "message": "השלימו את הפרופיל שלכם"
+  },
+  "tplWelcome_step2": {
+    "message": "גלו את התכונות שלנו"
+  },
+  "tplWelcome_step3": {
+    "message": "התחילו ליצור!"
+  },
+  "tplWelcome_getStarted": {
+    "message": "התחילו עכשיו"
+  },
+  "tplWelcome_questions": {
+    "message": "יש שאלות? אנחנו כאן בשבילכם!"
+  },
+  "tplReminder_title": {
+    "message": "תזכורת חשובה"
+  },
+  "tplReminder_dontForget": {
+    "message": "אל תשכחו!"
+  },
+  "tplReminder_meeting": {
+    "message": "הפגישה שלכם מתוכננת ל:"
+  },
+  "tplReminder_dateTime": {
+    "message": "יום שני, 15 בינואר 2025 בשעה 10:00"
+  },
+  "tplReminder_confirm": {
+    "message": "אנא אשרו את הגעתכם בהקדם האפשרי."
+  },
+  "tplReminder_confirmBtn": {
+    "message": "אישור הגעה"
+  },
+  "tplReminder_reschedule": {
+    "message": "שינוי מועד"
+  },
+  "tplAlert_title": {
+    "message": "שימו לב!"
+  },
+  "tplAlert_message": {
+    "message": "זוהי הודעה חשובה שדורשת את תשומת לבכם המיידית."
+  },
+  "tplAlert_deadline": {
+    "message": "פעולה נדרשת עד: 31/12/2024"
+  },
+  "tplAlert_action": {
+    "message": "לפעולה מיידית"
+  },
+  "tplBirthday_title": {
+    "message": "יום הולדת שמח!"
+  },
+  "tplBirthday_message": {
+    "message": "מאחלים לך יום מלא באושר, שמחה והפתעות נעימות!"
+  },
+  "tplBirthday_closing": {
+    "message": "שיהיה לך יום נפלא!"
+  },
+  "tplJob_title": {
+    "message": "הזדמנות קריירה מרגשת!"
+  },
+  "tplJob_subtitle": {
+    "message": "אנחנו מחפשים אותך!"
+  },
+  "tplJob_position": {
+    "message": "שם המשרה"
+  },
+  "tplJob_location": {
+    "message": "מיקום"
+  },
+  "tplJob_locationValue": {
+    "message": "תל אביב"
+  },
+  "tplJob_scope": {
+    "message": "היקף"
+  },
+  "tplJob_scopeValue": {
+    "message": "משרה מלאה"
+  },
+  "tplJob_salary": {
+    "message": "שכר"
+  },
+  "tplJob_salaryValue": {
+    "message": "תחרותי"
+  },
+  "tplJob_requirements": {
+    "message": "דרישות התפקיד:"
+  },
+  "tplJob_req1": {
+    "message": "ניסיון של X שנים בתחום"
+  },
+  "tplJob_req2": {
+    "message": "יכולת עבודה בצוות"
+  },
+  "tplJob_req3": {
+    "message": "אנגלית ברמה גבוהה"
+  },
+  "tplJob_offers": {
+    "message": "מה אנחנו מציעים:"
+  },
+  "tplJob_offer1": {
+    "message": "סביבת עבודה דינמית"
+  },
+  "tplJob_offer2": {
+    "message": "אפשרויות קידום"
+  },
+  "tplJob_offer3": {
+    "message": "הטבות מעולות"
+  },
+  "tplJob_apply": {
+    "message": "שלח קורות חיים"
+  },
+  "tplSurvey_title": {
+    "message": "דעתכם חשובה לנו!"
+  },
+  "tplSurvey_subtitle": {
+    "message": "סקר קצר בן 2 דקות"
+  },
+  "tplSurvey_content": {
+    "message": "עזרו לנו להשתפר! מלאו את הסקר הקצר וקבלו 10% הנחה על הרכישה הבאה."
+  },
+  "tplSurvey_time": {
+    "message": "זמן מילוי משוער: 2 דקות"
+  },
+  "tplSurvey_reward": {
+    "message": "תקבלו קוד הנחה בסיום"
+  },
+  "tplSurvey_button": {
+    "message": "למילוי הסקר"
+  },
+  "tplSurvey_terms": {
+    "message": "ההנחה תקפה ל-30 יום מיום קבלת הקוד"
+  },
+  "tplReceipt_title": {
+    "message": "אישור הזמנה"
+  },
+  "tplReceipt_paid": {
+    "message": "שולם"
+  },
+  "tplReceipt_orderNumber": {
+    "message": "מספר הזמנה"
+  },
+  "tplReceipt_item": {
+    "message": "פריט"
+  },
+  "tplReceipt_quantity": {
+    "message": "כמות"
+  },
+  "tplReceipt_price": {
+    "message": "מחיר"
+  },
+  "tplReceipt_product1": {
+    "message": "שם המוצר הראשון"
+  },
+  "tplReceipt_price1": {
+    "message": "₪199"
+  },
+  "tplReceipt_product2": {
+    "message": "שם המוצר השני"
+  },
+  "tplReceipt_price2": {
+    "message": "₪298"
+  },
+  "tplReceipt_subtotal": {
+    "message": "סכום ביניים:"
+  },
+  "tplReceipt_subtotalValue": {
+    "message": "₪497"
+  },
+  "tplReceipt_shipping": {
+    "message": "משלוח:"
+  },
+  "tplReceipt_shippingValue": {
+    "message": "₪30"
+  },
+  "tplReceipt_total": {
+    "message": "סה״כ:"
+  },
+  "tplReceipt_totalValue": {
+    "message": "₪527"
+  },
+  "tplReceipt_contact": {
+    "message": "שאלות? צרו קשר: support@example.com"
+  },
+  "tplSocial_title": {
+    "message": "הצטרפו לקהילה שלנו!"
+  },
+  "tplSocial_subtitle": {
+    "message": "עקבו אחרינו ברשתות החברתיות"
+  },
+  "tplSocial_content": {
+    "message": "הישארו מעודכנים בכל החדשות, הטיפים והמבצעים המיוחדים!"
+  },
+  "tplSocial_followers": {
+    "message": "כבר יותר מ-10,000 עוקבים!"
+  },
+  "tplSocial_share": {
+    "message": "שתפו את הניוזלטר הזה עם חברים!"
+  },
+  "tplWebinar_free": {
+    "message": "וובינר חינמי"
+  },
+  "tplWebinar_title": {
+    "message": "שם הוובינר"
+  },
+  "tplWebinar_subtitle": {
+    "message": "למדו איך להצליח ב..."
+  },
+  "tplWebinar_day": {
+    "message": "יום רביעי"
+  },
+  "tplWebinar_date": {
+    "message": "15/01/2025"
+  },
+  "tplWebinar_time": {
+    "message": "20:00"
+  },
+  "tplWebinar_timezone": {
+    "message": "שעון ישראל"
+  },
+  "tplWebinar_learn": {
+    "message": "מה תלמדו:"
+  },
+  "tplWebinar_topic1": {
+    "message": "נושא ראשון חשוב"
+  },
+  "tplWebinar_topic2": {
+    "message": "נושא שני מעניין"
+  },
+  "tplWebinar_topic3": {
+    "message": "טיפים מעשיים"
+  },
+  "tplWebinar_register": {
+    "message": "הרשמה חינם"
+  },
+  "tplWebinar_limited": {
+    "message": "מקומות מוגבלים - הירשמו עכשיו!"
+  },
+  "tplEvent_title": {
+    "message": "אירוע השנה!"
+  },
+  "tplEvent_subtitle": {
+    "message": "הזמנה בלעדית"
+  },
+  "tplEvent_location": {
+    "message": "מיקום"
+  },
+  "tplEvent_locationValue": {
+    "message": "שם המקום"
+  },
+  "tplEvent_date": {
+    "message": "תאריך"
+  },
+  "tplEvent_dateValue": {
+    "message": "יום שישי, 20/01/2025"
+  },
+  "tplEvent_time": {
+    "message": "שעה"
+  },
+  "tplEvent_timeValue": {
+    "message": "20:00"
+  },
+  "tplEvent_content": {
+    "message": "הצטרפו אלינו לערב בלתי נשכח של נטוורקינג, תוכן מקצועי וכיף!"
+  },
+  "tplEvent_reserve": {
+    "message": "שריינו מקום"
+  },
+  "tplEvent_limited": {
+    "message": "מספר המקומות מוגבל!"
+  },
+  "tplShipping_title": {
+    "message": "ההזמנה שלך בדרך!"
+  },
+  "tplShipping_tracking": {
+    "message": "מספר מעקב"
+  },
+  "tplShipping_ordered": {
+    "message": "הוזמן"
+  },
+  "tplShipping_packed": {
+    "message": "נארז"
+  },
+  "tplShipping_shipping": {
+    "message": "בדרך"
+  },
+  "tplShipping_delivered": {
+    "message": "נמסר"
+  },
+  "tplShipping_eta": {
+    "message": "זמן הגעה משוער:"
+  },
+  "tplShipping_etaValue": {
+    "message": "יום שני, 22/01/2025"
+  },
+  "tplShipping_track": {
+    "message": "מעקב משלוח"
+  },
+  "tplReferral_title": {
+    "message": "הזמינו חברים וקבלו הטבות!"
+  },
+  "tplReferral_subtitle": {
+    "message": "שתפו את הקוד שלכם והרוויחו"
+  },
+  "tplReferral_yourCode": {
+    "message": "הקוד האישי שלכם:"
+  },
+  "tplReferral_amount": {
+    "message": "₪50"
+  },
+  "tplReferral_forYou": {
+    "message": "לכם"
+  },
+  "tplReferral_forFriends": {
+    "message": "לחברים"
+  },
+  "tplReferral_description": {
+    "message": "על כל חבר שנרשם עם הקוד שלכם, שניכם מקבלים ₪50 הנחה!"
+  },
+  "tplReferral_share": {
+    "message": "שתפו עכשיו"
+  },
+  "tplReferral_stats": {
+    "message": "כבר הזמנתם 3 חברים והרווחתם ₪150!"
   }
 }
 
