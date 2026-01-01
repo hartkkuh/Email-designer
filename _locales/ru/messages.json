@@ -537,6 +537,12 @@
   "emojiObjects": {
     "message": "Объекты"
   },
+  "emojiSearchPlaceholder": {
+    "message": "Поиск эмодзи..."
+  },
+  "searchResults": {
+    "message": "Результаты поиска"
+  },
   "previewDesktop": {
     "message": "Компьютер"
   },
@@ -912,148 +918,433 @@
   "signatureInserted": {
     "message": "Подпись вставлена!"
   },
-  "tplNewsletter_title": {"message": "Еженедельная Рассылка"},
-  "tplNewsletter_subtitle": {"message": "Обновления и интересные новости"},
-  "tplNewsletter_heading": {"message": "Главный Заголовок"},
-  "tplNewsletter_content": {"message": "Здесь вы можете написать основной контент вашей рассылки. Расскажите читателям о новостях, обновлениях и интересном контенте."},
-  "tplNewsletter_readMore": {"message": "Читать Далее"},
-  "tplNewsletter_yourName": {"message": "Ваше Имя"},
-  "tplNewsletter_allRights": {"message": "Все права защищены."},
-  "tplInvitation_special": {"message": "ОСОБОЕ ПРИГЛАШЕНИЕ"},
-  "tplInvitation_title": {"message": "Вы Приглашены!"},
-  "tplInvitation_event": {"message": "Событие"},
-  "tplInvitation_eventName": {"message": "Название События"},
-  "tplInvitation_date": {"message": "Дата"},
-  "tplInvitation_dateValue": {"message": "Воскресенье, 1 Января 2025"},
-  "tplInvitation_time": {"message": "Время"},
-  "tplInvitation_timeValue": {"message": "19:00"},
-  "tplInvitation_location": {"message": "Место"},
-  "tplInvitation_locationValue": {"message": "Полный Адрес"},
-  "tplInvitation_confirm": {"message": "Подтвердить Присутствие"},
-  "tplInvitation_closing": {"message": "Мы будем рады вас видеть!"},
-  "tplSimple_greeting": {"message": "Здравствуйте,"},
-  "tplSimple_content": {"message": "Здесь вы можете написать содержание вашего сообщения. Это простой и чистый шаблон, подходящий для повседневных сообщений."},
-  "tplSimple_closing": {"message": "С уважением,"},
-  "tplSimple_yourName": {"message": "Ваше Имя"},
-  "tplPromo_special": {"message": "Специальное Предложение"},
-  "tplPromo_discount": {"message": "СКИДКА 50%!"},
-  "tplPromo_limited": {"message": "На ограниченное время"},
-  "tplPromo_heading": {"message": "Наши Самые Популярные Товары"},
-  "tplPromo_content": {"message": "Не упустите возможность! Предложение скоро закончится."},
-  "tplPromo_buyNow": {"message": "Купить Сейчас"},
-  "tplPromo_terms": {"message": "Предложение действует до окончания товара"},
-  "tplWelcome_title": {"message": "Добро Пожаловать!"},
-  "tplWelcome_subtitle": {"message": "Мы рады, что вы присоединились к нам"},
-  "tplWelcome_greeting": {"message": "Здравствуйте и добро пожаловать,"},
-  "tplWelcome_content": {"message": "Мы рады, что вы выбрали присоединиться к нашей семье! Здесь вы найдете все необходимое для начала."},
-  "tplWelcome_nextSteps": {"message": "Следующие Шаги:"},
-  "tplWelcome_step1": {"message": "Заполните свой профиль"},
-  "tplWelcome_step2": {"message": "Откройте для себя наши функции"},
-  "tplWelcome_step3": {"message": "Начните создавать!"},
-  "tplWelcome_getStarted": {"message": "Начать"},
-  "tplWelcome_questions": {"message": "Есть вопросы? Мы здесь для вас!"},
-  "tplReminder_title": {"message": "Важное Напоминание"},
-  "tplReminder_dontForget": {"message": "Не забудьте!"},
-  "tplReminder_meeting": {"message": "Ваша встреча запланирована на:"},
-  "tplReminder_dateTime": {"message": "Понедельник, 15 Января 2025 в 10:00"},
-  "tplReminder_confirm": {"message": "Пожалуйста, подтвердите свое присутствие как можно скорее."},
-  "tplReminder_confirmBtn": {"message": "Подтвердить Присутствие"},
-  "tplReminder_reschedule": {"message": "Перенести"},
-  "tplAlert_title": {"message": "Внимание!"},
-  "tplAlert_message": {"message": "Это важное сообщение, требующее вашего немедленного внимания."},
-  "tplAlert_deadline": {"message": "Требуется действие до: 31.12.2024"},
-  "tplAlert_action": {"message": "Действовать Сейчас"},
-  "tplBirthday_title": {"message": "С Днем Рождения!"},
-  "tplBirthday_message": {"message": "Желаем вам дня, полного счастья, радости и приятных сюрпризов!"},
-  "tplBirthday_closing": {"message": "Желаем вам прекрасного дня!"},
-  "tplJob_title": {"message": "Увлекательная Карьерная Возможность!"},
-  "tplJob_subtitle": {"message": "Мы ищем вас!"},
-  "tplJob_position": {"message": "Название Должности"},
-  "tplJob_location": {"message": "Местоположение"},
-  "tplJob_locationValue": {"message": "Тель-Авив"},
-  "tplJob_scope": {"message": "Объем"},
-  "tplJob_scopeValue": {"message": "Полная занятость"},
-  "tplJob_salary": {"message": "Зарплата"},
-  "tplJob_salaryValue": {"message": "Конкурентоспособная"},
-  "tplJob_requirements": {"message": "Требования к Должности:"},
-  "tplJob_req1": {"message": "X лет опыта в области"},
-  "tplJob_req2": {"message": "Способность работать в команде"},
-  "tplJob_req3": {"message": "Высокий уровень английского"},
-  "tplJob_offers": {"message": "Что мы предлагаем:"},
-  "tplJob_offer1": {"message": "Динамичная рабочая среда"},
-  "tplJob_offer2": {"message": "Возможности карьерного роста"},
-  "tplJob_offer3": {"message": "Отличные льготы"},
-  "tplJob_apply": {"message": "Отправить Резюме"},
-  "tplSurvey_title": {"message": "Ваше Мнение Важно!"},
-  "tplSurvey_subtitle": {"message": "Быстрый опрос на 2 минуты"},
-  "tplSurvey_content": {"message": "Помогите нам улучшиться! Заполните короткий опрос и получите 10% скидку на следующую покупку."},
-  "tplSurvey_time": {"message": "Примерное время: 2 минуты"},
-  "tplSurvey_reward": {"message": "Вы получите код скидки по завершении"},
-  "tplSurvey_button": {"message": "Пройти Опрос"},
-  "tplSurvey_terms": {"message": "Скидка действительна 30 дней с момента получения кода"},
-  "tplReceipt_title": {"message": "Подтверждение Заказа"},
-  "tplReceipt_paid": {"message": "Оплачено"},
-  "tplReceipt_orderNumber": {"message": "Номер Заказа"},
-  "tplReceipt_item": {"message": "Товар"},
-  "tplReceipt_quantity": {"message": "Количество"},
-  "tplReceipt_price": {"message": "Цена"},
-  "tplReceipt_product1": {"message": "Название Первого Товара"},
-  "tplReceipt_price1": {"message": "₽199"},
-  "tplReceipt_product2": {"message": "Название Второго Товара"},
-  "tplReceipt_price2": {"message": "₽298"},
-  "tplReceipt_subtotal": {"message": "Промежуточная Сумма:"},
-  "tplReceipt_subtotalValue": {"message": "₽497"},
-  "tplReceipt_shipping": {"message": "Доставка:"},
-  "tplReceipt_shippingValue": {"message": "₽30"},
-  "tplReceipt_total": {"message": "Итого:"},
-  "tplReceipt_totalValue": {"message": "₽527"},
-  "tplReceipt_contact": {"message": "Вопросы? Свяжитесь с нами: support@example.com"},
-  "tplSocial_title": {"message": "Присоединяйтесь к Нашему Сообществу!"},
-  "tplSocial_subtitle": {"message": "Следите за нами в социальных сетях"},
-  "tplSocial_content": {"message": "Оставайтесь в курсе всех новостей, советов и специальных предложений!"},
-  "tplSocial_followers": {"message": "Уже более 10 000 подписчиков!"},
-  "tplSocial_share": {"message": "Поделитесь этой рассылкой с друзьями!"},
-  "tplWebinar_free": {"message": "Бесплатный Вебинар"},
-  "tplWebinar_title": {"message": "Название Вебинара"},
-  "tplWebinar_subtitle": {"message": "Узнайте, как добиться успеха в..."},
-  "tplWebinar_day": {"message": "Среда"},
-  "tplWebinar_date": {"message": "15.01.2025"},
-  "tplWebinar_time": {"message": "20:00"},
-  "tplWebinar_timezone": {"message": "Время Израиля"},
-  "tplWebinar_learn": {"message": "Что вы узнаете:"},
-  "tplWebinar_topic1": {"message": "Первая важная тема"},
-  "tplWebinar_topic2": {"message": "Вторая интересная тема"},
-  "tplWebinar_topic3": {"message": "Практические советы"},
-  "tplWebinar_register": {"message": "Бесплатная Регистрация"},
-  "tplWebinar_limited": {"message": "Ограниченное количество мест - зарегистрируйтесь сейчас!"},
-  "tplEvent_title": {"message": "Событие Года!"},
-  "tplEvent_subtitle": {"message": "Эксклюзивное Приглашение"},
-  "tplEvent_location": {"message": "Место"},
-  "tplEvent_locationValue": {"message": "Название Места"},
-  "tplEvent_date": {"message": "Дата"},
-  "tplEvent_dateValue": {"message": "Пятница, 20.01.2025"},
-  "tplEvent_time": {"message": "Время"},
-  "tplEvent_timeValue": {"message": "20:00"},
-  "tplEvent_content": {"message": "Присоединяйтесь к нам на незабываемый вечер нетворкинга, профессионального контента и веселья!"},
-  "tplEvent_reserve": {"message": "Забронировать Место"},
-  "tplEvent_limited": {"message": "Ограниченное количество мест!"},
-  "tplShipping_title": {"message": "Ваш Заказ в Пути!"},
-  "tplShipping_tracking": {"message": "Номер Отслеживания"},
-  "tplShipping_ordered": {"message": "Заказано"},
-  "tplShipping_packed": {"message": "Упаковано"},
-  "tplShipping_shipping": {"message": "В Пути"},
-  "tplShipping_delivered": {"message": "Доставлено"},
-  "tplShipping_eta": {"message": "Примерное Время Прибытия:"},
-  "tplShipping_etaValue": {"message": "Понедельник, 22.01.2025"},
-  "tplShipping_track": {"message": "Отследить Отправление"},
-  "tplReferral_title": {"message": "Пригласите Друзей и Получите Награды!"},
-  "tplReferral_subtitle": {"message": "Поделитесь своим кодом и заработайте"},
-  "tplReferral_yourCode": {"message": "Ваш Персональный Код:"},
-  "tplReferral_amount": {"message": "₽50"},
-  "tplReferral_forYou": {"message": "Для Вас"},
-  "tplReferral_forFriends": {"message": "Для Друзей"},
-  "tplReferral_description": {"message": "За каждого друга, который зарегистрируется с вашим кодом, вы оба получите скидку ₽50!"},
-  "tplReferral_share": {"message": "Поделиться Сейчас"},
-  "tplReferral_stats": {"message": "Вы уже пригласили 3 друзей и заработали ₽150!"}
+  "tplNewsletter_title": {
+    "message": "Еженедельная Рассылка"
+  },
+  "tplNewsletter_subtitle": {
+    "message": "Обновления и интересные новости"
+  },
+  "tplNewsletter_heading": {
+    "message": "Главный Заголовок"
+  },
+  "tplNewsletter_content": {
+    "message": "Здесь вы можете написать основной контент вашей рассылки. Расскажите читателям о новостях, обновлениях и интересном контенте."
+  },
+  "tplNewsletter_readMore": {
+    "message": "Читать Далее"
+  },
+  "tplNewsletter_yourName": {
+    "message": "Ваше Имя"
+  },
+  "tplNewsletter_allRights": {
+    "message": "Все права защищены."
+  },
+  "tplInvitation_special": {
+    "message": "ОСОБОЕ ПРИГЛАШЕНИЕ"
+  },
+  "tplInvitation_title": {
+    "message": "Вы Приглашены!"
+  },
+  "tplInvitation_event": {
+    "message": "Событие"
+  },
+  "tplInvitation_eventName": {
+    "message": "Название События"
+  },
+  "tplInvitation_date": {
+    "message": "Дата"
+  },
+  "tplInvitation_dateValue": {
+    "message": "Воскресенье, 1 Января 2025"
+  },
+  "tplInvitation_time": {
+    "message": "Время"
+  },
+  "tplInvitation_timeValue": {
+    "message": "19:00"
+  },
+  "tplInvitation_location": {
+    "message": "Место"
+  },
+  "tplInvitation_locationValue": {
+    "message": "Полный Адрес"
+  },
+  "tplInvitation_confirm": {
+    "message": "Подтвердить Присутствие"
+  },
+  "tplInvitation_closing": {
+    "message": "Мы будем рады вас видеть!"
+  },
+  "tplSimple_greeting": {
+    "message": "Здравствуйте,"
+  },
+  "tplSimple_content": {
+    "message": "Здесь вы можете написать содержание вашего сообщения. Это простой и чистый шаблон, подходящий для повседневных сообщений."
+  },
+  "tplSimple_closing": {
+    "message": "С уважением,"
+  },
+  "tplSimple_yourName": {
+    "message": "Ваше Имя"
+  },
+  "tplPromo_special": {
+    "message": "Специальное Предложение"
+  },
+  "tplPromo_discount": {
+    "message": "СКИДКА 50%!"
+  },
+  "tplPromo_limited": {
+    "message": "На ограниченное время"
+  },
+  "tplPromo_heading": {
+    "message": "Наши Самые Популярные Товары"
+  },
+  "tplPromo_content": {
+    "message": "Не упустите возможность! Предложение скоро закончится."
+  },
+  "tplPromo_buyNow": {
+    "message": "Купить Сейчас"
+  },
+  "tplPromo_terms": {
+    "message": "Предложение действует до окончания товара"
+  },
+  "tplWelcome_title": {
+    "message": "Добро Пожаловать!"
+  },
+  "tplWelcome_subtitle": {
+    "message": "Мы рады, что вы присоединились к нам"
+  },
+  "tplWelcome_greeting": {
+    "message": "Здравствуйте и добро пожаловать,"
+  },
+  "tplWelcome_content": {
+    "message": "Мы рады, что вы выбрали присоединиться к нашей семье! Здесь вы найдете все необходимое для начала."
+  },
+  "tplWelcome_nextSteps": {
+    "message": "Следующие Шаги:"
+  },
+  "tplWelcome_step1": {
+    "message": "Заполните свой профиль"
+  },
+  "tplWelcome_step2": {
+    "message": "Откройте для себя наши функции"
+  },
+  "tplWelcome_step3": {
+    "message": "Начните создавать!"
+  },
+  "tplWelcome_getStarted": {
+    "message": "Начать"
+  },
+  "tplWelcome_questions": {
+    "message": "Есть вопросы? Мы здесь для вас!"
+  },
+  "tplReminder_title": {
+    "message": "Важное Напоминание"
+  },
+  "tplReminder_dontForget": {
+    "message": "Не забудьте!"
+  },
+  "tplReminder_meeting": {
+    "message": "Ваша встреча запланирована на:"
+  },
+  "tplReminder_dateTime": {
+    "message": "Понедельник, 15 Января 2025 в 10:00"
+  },
+  "tplReminder_confirm": {
+    "message": "Пожалуйста, подтвердите свое присутствие как можно скорее."
+  },
+  "tplReminder_confirmBtn": {
+    "message": "Подтвердить Присутствие"
+  },
+  "tplReminder_reschedule": {
+    "message": "Перенести"
+  },
+  "tplAlert_title": {
+    "message": "Внимание!"
+  },
+  "tplAlert_message": {
+    "message": "Это важное сообщение, требующее вашего немедленного внимания."
+  },
+  "tplAlert_deadline": {
+    "message": "Требуется действие до: 31.12.2024"
+  },
+  "tplAlert_action": {
+    "message": "Действовать Сейчас"
+  },
+  "tplBirthday_title": {
+    "message": "С Днем Рождения!"
+  },
+  "tplBirthday_message": {
+    "message": "Желаем вам дня, полного счастья, радости и приятных сюрпризов!"
+  },
+  "tplBirthday_closing": {
+    "message": "Желаем вам прекрасного дня!"
+  },
+  "tplJob_title": {
+    "message": "Увлекательная Карьерная Возможность!"
+  },
+  "tplJob_subtitle": {
+    "message": "Мы ищем вас!"
+  },
+  "tplJob_position": {
+    "message": "Название Должности"
+  },
+  "tplJob_location": {
+    "message": "Местоположение"
+  },
+  "tplJob_locationValue": {
+    "message": "Тель-Авив"
+  },
+  "tplJob_scope": {
+    "message": "Объем"
+  },
+  "tplJob_scopeValue": {
+    "message": "Полная занятость"
+  },
+  "tplJob_salary": {
+    "message": "Зарплата"
+  },
+  "tplJob_salaryValue": {
+    "message": "Конкурентоспособная"
+  },
+  "tplJob_requirements": {
+    "message": "Требования к Должности:"
+  },
+  "tplJob_req1": {
+    "message": "X лет опыта в области"
+  },
+  "tplJob_req2": {
+    "message": "Способность работать в команде"
+  },
+  "tplJob_req3": {
+    "message": "Высокий уровень английского"
+  },
+  "tplJob_offers": {
+    "message": "Что мы предлагаем:"
+  },
+  "tplJob_offer1": {
+    "message": "Динамичная рабочая среда"
+  },
+  "tplJob_offer2": {
+    "message": "Возможности карьерного роста"
+  },
+  "tplJob_offer3": {
+    "message": "Отличные льготы"
+  },
+  "tplJob_apply": {
+    "message": "Отправить Резюме"
+  },
+  "tplSurvey_title": {
+    "message": "Ваше Мнение Важно!"
+  },
+  "tplSurvey_subtitle": {
+    "message": "Быстрый опрос на 2 минуты"
+  },
+  "tplSurvey_content": {
+    "message": "Помогите нам улучшиться! Заполните короткий опрос и получите 10% скидку на следующую покупку."
+  },
+  "tplSurvey_time": {
+    "message": "Примерное время: 2 минуты"
+  },
+  "tplSurvey_reward": {
+    "message": "Вы получите код скидки по завершении"
+  },
+  "tplSurvey_button": {
+    "message": "Пройти Опрос"
+  },
+  "tplSurvey_terms": {
+    "message": "Скидка действительна 30 дней с момента получения кода"
+  },
+  "tplReceipt_title": {
+    "message": "Подтверждение Заказа"
+  },
+  "tplReceipt_paid": {
+    "message": "Оплачено"
+  },
+  "tplReceipt_orderNumber": {
+    "message": "Номер Заказа"
+  },
+  "tplReceipt_item": {
+    "message": "Товар"
+  },
+  "tplReceipt_quantity": {
+    "message": "Количество"
+  },
+  "tplReceipt_price": {
+    "message": "Цена"
+  },
+  "tplReceipt_product1": {
+    "message": "Название Первого Товара"
+  },
+  "tplReceipt_price1": {
+    "message": "₽199"
+  },
+  "tplReceipt_product2": {
+    "message": "Название Второго Товара"
+  },
+  "tplReceipt_price2": {
+    "message": "₽298"
+  },
+  "tplReceipt_subtotal": {
+    "message": "Промежуточная Сумма:"
+  },
+  "tplReceipt_subtotalValue": {
+    "message": "₽497"
+  },
+  "tplReceipt_shipping": {
+    "message": "Доставка:"
+  },
+  "tplReceipt_shippingValue": {
+    "message": "₽30"
+  },
+  "tplReceipt_total": {
+    "message": "Итого:"
+  },
+  "tplReceipt_totalValue": {
+    "message": "₽527"
+  },
+  "tplReceipt_contact": {
+    "message": "Вопросы? Свяжитесь с нами: support@example.com"
+  },
+  "tplSocial_title": {
+    "message": "Присоединяйтесь к Нашему Сообществу!"
+  },
+  "tplSocial_subtitle": {
+    "message": "Следите за нами в социальных сетях"
+  },
+  "tplSocial_content": {
+    "message": "Оставайтесь в курсе всех новостей, советов и специальных предложений!"
+  },
+  "tplSocial_followers": {
+    "message": "Уже более 10 000 подписчиков!"
+  },
+  "tplSocial_share": {
+    "message": "Поделитесь этой рассылкой с друзьями!"
+  },
+  "tplWebinar_free": {
+    "message": "Бесплатный Вебинар"
+  },
+  "tplWebinar_title": {
+    "message": "Название Вебинара"
+  },
+  "tplWebinar_subtitle": {
+    "message": "Узнайте, как добиться успеха в..."
+  },
+  "tplWebinar_day": {
+    "message": "Среда"
+  },
+  "tplWebinar_date": {
+    "message": "15.01.2025"
+  },
+  "tplWebinar_time": {
+    "message": "20:00"
+  },
+  "tplWebinar_timezone": {
+    "message": "Время Израиля"
+  },
+  "tplWebinar_learn": {
+    "message": "Что вы узнаете:"
+  },
+  "tplWebinar_topic1": {
+    "message": "Первая важная тема"
+  },
+  "tplWebinar_topic2": {
+    "message": "Вторая интересная тема"
+  },
+  "tplWebinar_topic3": {
+    "message": "Практические советы"
+  },
+  "tplWebinar_register": {
+    "message": "Бесплатная Регистрация"
+  },
+  "tplWebinar_limited": {
+    "message": "Ограниченное количество мест - зарегистрируйтесь сейчас!"
+  },
+  "tplEvent_title": {
+    "message": "Событие Года!"
+  },
+  "tplEvent_subtitle": {
+    "message": "Эксклюзивное Приглашение"
+  },
+  "tplEvent_location": {
+    "message": "Место"
+  },
+  "tplEvent_locationValue": {
+    "message": "Название Места"
+  },
+  "tplEvent_date": {
+    "message": "Дата"
+  },
+  "tplEvent_dateValue": {
+    "message": "Пятница, 20.01.2025"
+  },
+  "tplEvent_time": {
+    "message": "Время"
+  },
+  "tplEvent_timeValue": {
+    "message": "20:00"
+  },
+  "tplEvent_content": {
+    "message": "Присоединяйтесь к нам на незабываемый вечер нетворкинга, профессионального контента и веселья!"
+  },
+  "tplEvent_reserve": {
+    "message": "Забронировать Место"
+  },
+  "tplEvent_limited": {
+    "message": "Ограниченное количество мест!"
+  },
+  "tplShipping_title": {
+    "message": "Ваш Заказ в Пути!"
+  },
+  "tplShipping_tracking": {
+    "message": "Номер Отслеживания"
+  },
+  "tplShipping_ordered": {
+    "message": "Заказано"
+  },
+  "tplShipping_packed": {
+    "message": "Упаковано"
+  },
+  "tplShipping_shipping": {
+    "message": "В Пути"
+  },
+  "tplShipping_delivered": {
+    "message": "Доставлено"
+  },
+  "tplShipping_eta": {
+    "message": "Примерное Время Прибытия:"
+  },
+  "tplShipping_etaValue": {
+    "message": "Понедельник, 22.01.2025"
+  },
+  "tplShipping_track": {
+    "message": "Отследить Отправление"
+  },
+  "tplReferral_title": {
+    "message": "Пригласите Друзей и Получите Награды!"
+  },
+  "tplReferral_subtitle": {
+    "message": "Поделитесь своим кодом и заработайте"
+  },
+  "tplReferral_yourCode": {
+    "message": "Ваш Персональный Код:"
+  },
+  "tplReferral_amount": {
+    "message": "₽50"
+  },
+  "tplReferral_forYou": {
+    "message": "Для Вас"
+  },
+  "tplReferral_forFriends": {
+    "message": "Для Друзей"
+  },
+  "tplReferral_description": {
+    "message": "За каждого друга, который зарегистрируется с вашим кодом, вы оба получите скидку ₽50!"
+  },
+  "tplReferral_share": {
+    "message": "Поделиться Сейчас"
+  },
+  "tplReferral_stats": {
+    "message": "Вы уже пригласили 3 друзей и заработали ₽150!"
+  }
 }
-

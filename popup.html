@@ -231,30 +231,10 @@
               <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
             </svg>
           </button>
-          <!-- Emoji Picker -->
-          <div class="emoji-dropdown">
-            <button class="tool-btn" id="emojiPickerBtn" data-i18n-title="insertEmoji">
-              😊
-            </button>
-            <div class="emoji-dropdown-menu" id="emojiDropdownMenu">
-              <div class="emoji-category">
-                <div class="emoji-category-title" data-i18n="emojiSmileys">Smileys</div>
-                <div class="emoji-grid" id="emojiGridSmileys"></div>
-              </div>
-              <div class="emoji-category">
-                <div class="emoji-category-title" data-i18n="emojiGestures">Gestures</div>
-                <div class="emoji-grid" id="emojiGridGestures"></div>
-              </div>
-              <div class="emoji-category">
-                <div class="emoji-category-title" data-i18n="emojiSymbols">Symbols</div>
-                <div class="emoji-grid" id="emojiGridSymbols"></div>
-              </div>
-              <div class="emoji-category">
-                <div class="emoji-category-title" data-i18n="emojiObjects">Objects</div>
-                <div class="emoji-grid" id="emojiGridObjects"></div>
-              </div>
-            </div>
-          </div>
+          <!-- Emoji Button -->
+          <button class="tool-btn" id="emojiPickerBtn" data-i18n-title="insertEmoji">
+            😊
+          </button>
           <!-- AI Write Button -->
           <button class="tool-btn ai-write-btn" id="aiWriteBtn" data-i18n-title="aiWrite">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -421,7 +401,7 @@
       <!-- Visual Editor -->
       <div class="tab-content active" id="visual-content">
         <div class="editor-wrapper">
-          <div id="editor" contenteditable="true">
+          <div id="editor" contenteditable="true" spellcheck="true">
             <p>Start typing your message here...</p>
           </div>
         </div>
@@ -1277,6 +1257,8 @@
   <!-- Toast Notification -->
   <div id="toast" class="toast"></div>
 
+  <script src="spell-checker.js"></script>
+  <script src="emoji-loader.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

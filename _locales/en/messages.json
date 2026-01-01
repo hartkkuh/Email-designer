@@ -539,6 +539,12 @@
   "emojiObjects": {
     "message": "Objects"
   },
+  "emojiSearchPlaceholder": {
+    "message": "Search emojis..."
+  },
+  "searchResults": {
+    "message": "Search Results"
+  },
   "previewDesktop": {
     "message": "Desktop"
   },
@@ -1344,4 +1350,3 @@
     "message": "You've already invited 3 friends and earned $150!"
   }
 }
-

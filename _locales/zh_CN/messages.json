@@ -537,6 +537,12 @@
   "emojiObjects": {
     "message": "物品"
   },
+  "emojiSearchPlaceholder": {
+    "message": "搜索表情符号..."
+  },
+  "searchResults": {
+    "message": "搜索结果"
+  },
   "previewDesktop": {
     "message": "电脑"
   },
@@ -912,148 +918,433 @@
   "signatureInserted": {
     "message": "签名已插入！"
   },
-  "tplNewsletter_title": {"message": "每周通讯"},
-  "tplNewsletter_subtitle": {"message": "更新和激动人心的新闻"},
-  "tplNewsletter_heading": {"message": "主标题"},
-  "tplNewsletter_content": {"message": "在这里您可以撰写通讯的主要内容。向读者介绍新闻、更新和有趣的内容。"},
-  "tplNewsletter_readMore": {"message": "阅读更多"},
-  "tplNewsletter_yourName": {"message": "您的姓名"},
-  "tplNewsletter_allRights": {"message": "版权所有。"},
-  "tplInvitation_special": {"message": "特别邀请"},
-  "tplInvitation_title": {"message": "您被邀请了！"},
-  "tplInvitation_event": {"message": "活动"},
-  "tplInvitation_eventName": {"message": "活动名称"},
-  "tplInvitation_date": {"message": "日期"},
-  "tplInvitation_dateValue": {"message": "2025年1月1日 星期日"},
-  "tplInvitation_time": {"message": "时间"},
-  "tplInvitation_timeValue": {"message": "晚上7:00"},
-  "tplInvitation_location": {"message": "地点"},
-  "tplInvitation_locationValue": {"message": "完整地址"},
-  "tplInvitation_confirm": {"message": "确认出席"},
-  "tplInvitation_closing": {"message": "我们期待见到您！"},
-  "tplSimple_greeting": {"message": "您好，"},
-  "tplSimple_content": {"message": "在这里您可以撰写消息内容。这是一个简单干净的模板，适合日常消息。"},
-  "tplSimple_closing": {"message": "此致敬礼，"},
-  "tplSimple_yourName": {"message": "您的姓名"},
-  "tplPromo_special": {"message": "特别优惠"},
-  "tplPromo_discount": {"message": "5折优惠！"},
-  "tplPromo_limited": {"message": "限时优惠"},
-  "tplPromo_heading": {"message": "我们的热门产品"},
-  "tplPromo_content": {"message": "不要错过！优惠即将结束。"},
-  "tplPromo_buyNow": {"message": "立即购买"},
-  "tplPromo_terms": {"message": "优惠有效期至库存售完"},
-  "tplWelcome_title": {"message": "欢迎！"},
-  "tplWelcome_subtitle": {"message": "很高兴您加入我们"},
-  "tplWelcome_greeting": {"message": "您好，欢迎，"},
-  "tplWelcome_content": {"message": "我们很高兴您选择加入我们的大家庭！在这里您将找到开始所需的一切。"},
-  "tplWelcome_nextSteps": {"message": "下一步："},
-  "tplWelcome_step1": {"message": "完善您的个人资料"},
-  "tplWelcome_step2": {"message": "探索我们的功能"},
-  "tplWelcome_step3": {"message": "开始创作！"},
-  "tplWelcome_getStarted": {"message": "立即开始"},
-  "tplWelcome_questions": {"message": "有问题？我们随时为您服务！"},
-  "tplReminder_title": {"message": "重要提醒"},
-  "tplReminder_dontForget": {"message": "不要忘记！"},
-  "tplReminder_meeting": {"message": "您的会议安排于："},
-  "tplReminder_dateTime": {"message": "2025年1月15日 星期一 上午10:00"},
-  "tplReminder_confirm": {"message": "请尽快确认您的出席。"},
-  "tplReminder_confirmBtn": {"message": "确认出席"},
-  "tplReminder_reschedule": {"message": "重新安排"},
-  "tplAlert_title": {"message": "注意！"},
-  "tplAlert_message": {"message": "这是一条重要消息，需要您立即关注。"},
-  "tplAlert_deadline": {"message": "需要在以下日期前采取行动：2024年12月31日"},
-  "tplAlert_action": {"message": "立即行动"},
-  "tplBirthday_title": {"message": "生日快乐！"},
-  "tplBirthday_message": {"message": "祝您度过充满幸福、快乐和惊喜的一天！"},
-  "tplBirthday_closing": {"message": "祝您有美好的一天！"},
-  "tplJob_title": {"message": "令人兴奋的职业机会！"},
-  "tplJob_subtitle": {"message": "我们正在寻找您！"},
-  "tplJob_position": {"message": "职位名称"},
-  "tplJob_location": {"message": "地点"},
-  "tplJob_locationValue": {"message": "特拉维夫"},
-  "tplJob_scope": {"message": "范围"},
-  "tplJob_scopeValue": {"message": "全职"},
-  "tplJob_salary": {"message": "薪资"},
-  "tplJob_salaryValue": {"message": "有竞争力"},
-  "tplJob_requirements": {"message": "职位要求："},
-  "tplJob_req1": {"message": "该领域X年经验"},
-  "tplJob_req2": {"message": "团队合作能力"},
-  "tplJob_req3": {"message": "高水平英语"},
-  "tplJob_offers": {"message": "我们提供："},
-  "tplJob_offer1": {"message": "充满活力的工作环境"},
-  "tplJob_offer2": {"message": "职业发展机会"},
-  "tplJob_offer3": {"message": "优厚福利"},
-  "tplJob_apply": {"message": "发送简历"},
-  "tplSurvey_title": {"message": "您的意见很重要！"},
-  "tplSurvey_subtitle": {"message": "快速2分钟调查"},
-  "tplSurvey_content": {"message": "帮助我们改进！填写简短调查，下次购买可享受10%折扣。"},
-  "tplSurvey_time": {"message": "预计时间：2分钟"},
-  "tplSurvey_reward": {"message": "完成后您将收到折扣码"},
-  "tplSurvey_button": {"message": "参与调查"},
-  "tplSurvey_terms": {"message": "折扣自收到代码之日起30天内有效"},
-  "tplReceipt_title": {"message": "订单确认"},
-  "tplReceipt_paid": {"message": "已支付"},
-  "tplReceipt_orderNumber": {"message": "订单号"},
-  "tplReceipt_item": {"message": "商品"},
-  "tplReceipt_quantity": {"message": "数量"},
-  "tplReceipt_price": {"message": "价格"},
-  "tplReceipt_product1": {"message": "第一个商品名称"},
-  "tplReceipt_price1": {"message": "¥199"},
-  "tplReceipt_product2": {"message": "第二个商品名称"},
-  "tplReceipt_price2": {"message": "¥298"},
-  "tplReceipt_subtotal": {"message": "小计："},
-  "tplReceipt_subtotalValue": {"message": "¥497"},
-  "tplReceipt_shipping": {"message": "运费："},
-  "tplReceipt_shippingValue": {"message": "¥30"},
-  "tplReceipt_total": {"message": "总计："},
-  "tplReceipt_totalValue": {"message": "¥527"},
-  "tplReceipt_contact": {"message": "有问题？联系我们：support@example.com"},
-  "tplSocial_title": {"message": "加入我们的社区！"},
-  "tplSocial_subtitle": {"message": "在社交媒体上关注我们"},
-  "tplSocial_content": {"message": "随时了解所有新闻、提示和特别优惠！"},
-  "tplSocial_followers": {"message": "已有超过10,000名关注者！"},
-  "tplSocial_share": {"message": "与朋友分享此通讯！"},
-  "tplWebinar_free": {"message": "免费网络研讨会"},
-  "tplWebinar_title": {"message": "网络研讨会名称"},
-  "tplWebinar_subtitle": {"message": "学习如何在...中取得成功"},
-  "tplWebinar_day": {"message": "星期三"},
-  "tplWebinar_date": {"message": "2025年1月15日"},
-  "tplWebinar_time": {"message": "晚上8:00"},
-  "tplWebinar_timezone": {"message": "以色列时间"},
-  "tplWebinar_learn": {"message": "您将学到："},
-  "tplWebinar_topic1": {"message": "第一个重要主题"},
-  "tplWebinar_topic2": {"message": "第二个有趣主题"},
-  "tplWebinar_topic3": {"message": "实用技巧"},
-  "tplWebinar_register": {"message": "免费注册"},
-  "tplWebinar_limited": {"message": "名额有限 - 立即注册！"},
-  "tplEvent_title": {"message": "年度活动！"},
-  "tplEvent_subtitle": {"message": "独家邀请"},
-  "tplEvent_location": {"message": "地点"},
-  "tplEvent_locationValue": {"message": "场地名称"},
-  "tplEvent_date": {"message": "日期"},
-  "tplEvent_dateValue": {"message": "2025年1月20日 星期五"},
-  "tplEvent_time": {"message": "时间"},
-  "tplEvent_timeValue": {"message": "晚上8:00"},
-  "tplEvent_content": {"message": "加入我们，度过一个难忘的社交、专业内容和乐趣之夜！"},
-  "tplEvent_reserve": {"message": "预订座位"},
-  "tplEvent_limited": {"message": "座位有限！"},
-  "tplShipping_title": {"message": "您的订单正在路上！"},
-  "tplShipping_tracking": {"message": "追踪号码"},
-  "tplShipping_ordered": {"message": "已订购"},
-  "tplShipping_packed": {"message": "已打包"},
-  "tplShipping_shipping": {"message": "运输中"},
-  "tplShipping_delivered": {"message": "已送达"},
-  "tplShipping_eta": {"message": "预计到达时间："},
-  "tplShipping_etaValue": {"message": "2025年1月22日 星期一"},
-  "tplShipping_track": {"message": "追踪货物"},
-  "tplReferral_title": {"message": "邀请朋友并获得奖励！"},
-  "tplReferral_subtitle": {"message": "分享您的代码并赚取"},
-  "tplReferral_yourCode": {"message": "您的个人代码："},
-  "tplReferral_amount": {"message": "¥50"},
-  "tplReferral_forYou": {"message": "为您"},
-  "tplReferral_forFriends": {"message": "为朋友"},
-  "tplReferral_description": {"message": "每个使用您的代码注册的朋友，您们都可以获得¥50折扣！"},
-  "tplReferral_share": {"message": "立即分享"},
-  "tplReferral_stats": {"message": "您已经邀请了3位朋友并赚取了¥150！"}
+  "tplNewsletter_title": {
+    "message": "每周通讯"
+  },
+  "tplNewsletter_subtitle": {
+    "message": "更新和激动人心的新闻"
+  },
+  "tplNewsletter_heading": {
+    "message": "主标题"
+  },
+  "tplNewsletter_content": {
+    "message": "在这里您可以撰写通讯的主要内容。向读者介绍新闻、更新和有趣的内容。"
+  },
+  "tplNewsletter_readMore": {
+    "message": "阅读更多"
+  },
+  "tplNewsletter_yourName": {
+    "message": "您的姓名"
+  },
+  "tplNewsletter_allRights": {
+    "message": "版权所有。"
+  },
+  "tplInvitation_special": {
+    "message": "特别邀请"
+  },
+  "tplInvitation_title": {
+    "message": "您被邀请了！"
+  },
+  "tplInvitation_event": {
+    "message": "活动"
+  },
+  "tplInvitation_eventName": {
+    "message": "活动名称"
+  },
+  "tplInvitation_date": {
+    "message": "日期"
+  },
+  "tplInvitation_dateValue": {
+    "message": "2025年1月1日 星期日"
+  },
+  "tplInvitation_time": {
+    "message": "时间"
+  },
+  "tplInvitation_timeValue": {
+    "message": "晚上7:00"
+  },
+  "tplInvitation_location": {
+    "message": "地点"
+  },
+  "tplInvitation_locationValue": {
+    "message": "完整地址"
+  },
+  "tplInvitation_confirm": {
+    "message": "确认出席"
+  },
+  "tplInvitation_closing": {
+    "message": "我们期待见到您！"
+  },
+  "tplSimple_greeting": {
+    "message": "您好，"
+  },
+  "tplSimple_content": {
+    "message": "在这里您可以撰写消息内容。这是一个简单干净的模板，适合日常消息。"
+  },
+  "tplSimple_closing": {
+    "message": "此致敬礼，"
+  },
+  "tplSimple_yourName": {
+    "message": "您的姓名"
+  },
+  "tplPromo_special": {
+    "message": "特别优惠"
+  },
+  "tplPromo_discount": {
+    "message": "5折优惠！"
+  },
+  "tplPromo_limited": {
+    "message": "限时优惠"
+  },
+  "tplPromo_heading": {
+    "message": "我们的热门产品"
+  },
+  "tplPromo_content": {
+    "message": "不要错过！优惠即将结束。"
+  },
+  "tplPromo_buyNow": {
+    "message": "立即购买"
+  },
+  "tplPromo_terms": {
+    "message": "优惠有效期至库存售完"
+  },
+  "tplWelcome_title": {
+    "message": "欢迎！"
+  },
+  "tplWelcome_subtitle": {
+    "message": "很高兴您加入我们"
+  },
+  "tplWelcome_greeting": {
+    "message": "您好，欢迎，"
+  },
+  "tplWelcome_content": {
+    "message": "我们很高兴您选择加入我们的大家庭！在这里您将找到开始所需的一切。"
+  },
+  "tplWelcome_nextSteps": {
+    "message": "下一步："
+  },
+  "tplWelcome_step1": {
+    "message": "完善您的个人资料"
+  },
+  "tplWelcome_step2": {
+    "message": "探索我们的功能"
+  },
+  "tplWelcome_step3": {
+    "message": "开始创作！"
+  },
+  "tplWelcome_getStarted": {
+    "message": "立即开始"
+  },
+  "tplWelcome_questions": {
+    "message": "有问题？我们随时为您服务！"
+  },
+  "tplReminder_title": {
+    "message": "重要提醒"
+  },
+  "tplReminder_dontForget": {
+    "message": "不要忘记！"
+  },
+  "tplReminder_meeting": {
+    "message": "您的会议安排于："
+  },
+  "tplReminder_dateTime": {
+    "message": "2025年1月15日 星期一 上午10:00"
+  },
+  "tplReminder_confirm": {
+    "message": "请尽快确认您的出席。"
+  },
+  "tplReminder_confirmBtn": {
+    "message": "确认出席"
+  },
+  "tplReminder_reschedule": {
+    "message": "重新安排"
+  },
+  "tplAlert_title": {
+    "message": "注意！"
+  },
+  "tplAlert_message": {
+    "message": "这是一条重要消息，需要您立即关注。"
+  },
+  "tplAlert_deadline": {
+    "message": "需要在以下日期前采取行动：2024年12月31日"
+  },
+  "tplAlert_action": {
+    "message": "立即行动"
+  },
+  "tplBirthday_title": {
+    "message": "生日快乐！"
+  },
+  "tplBirthday_message": {
+    "message": "祝您度过充满幸福、快乐和惊喜的一天！"
+  },
+  "tplBirthday_closing": {
+    "message": "祝您有美好的一天！"
+  },
+  "tplJob_title": {
+    "message": "令人兴奋的职业机会！"
+  },
+  "tplJob_subtitle": {
+    "message": "我们正在寻找您！"
+  },
+  "tplJob_position": {
+    "message": "职位名称"
+  },
+  "tplJob_location": {
+    "message": "地点"
+  },
+  "tplJob_locationValue": {
+    "message": "特拉维夫"
+  },
+  "tplJob_scope": {
+    "message": "范围"
+  },
+  "tplJob_scopeValue": {
+    "message": "全职"
+  },
+  "tplJob_salary": {
+    "message": "薪资"
+  },
+  "tplJob_salaryValue": {
+    "message": "有竞争力"
+  },
+  "tplJob_requirements": {
+    "message": "职位要求："
+  },
+  "tplJob_req1": {
+    "message": "该领域X年经验"
+  },
+  "tplJob_req2": {
+    "message": "团队合作能力"
+  },
+  "tplJob_req3": {
+    "message": "高水平英语"
+  },
+  "tplJob_offers": {
+    "message": "我们提供："
+  },
+  "tplJob_offer1": {
+    "message": "充满活力的工作环境"
+  },
+  "tplJob_offer2": {
+    "message": "职业发展机会"
+  },
+  "tplJob_offer3": {
+    "message": "优厚福利"
+  },
+  "tplJob_apply": {
+    "message": "发送简历"
+  },
+  "tplSurvey_title": {
+    "message": "您的意见很重要！"
+  },
+  "tplSurvey_subtitle": {
+    "message": "快速2分钟调查"
+  },
+  "tplSurvey_content": {
+    "message": "帮助我们改进！填写简短调查，下次购买可享受10%折扣。"
+  },
+  "tplSurvey_time": {
+    "message": "预计时间：2分钟"
+  },
+  "tplSurvey_reward": {
+    "message": "完成后您将收到折扣码"
+  },
+  "tplSurvey_button": {
+    "message": "参与调查"
+  },
+  "tplSurvey_terms": {
+    "message": "折扣自收到代码之日起30天内有效"
+  },
+  "tplReceipt_title": {
+    "message": "订单确认"
+  },
+  "tplReceipt_paid": {
+    "message": "已支付"
+  },
+  "tplReceipt_orderNumber": {
+    "message": "订单号"
+  },
+  "tplReceipt_item": {
+    "message": "商品"
+  },
+  "tplReceipt_quantity": {
+    "message": "数量"
+  },
+  "tplReceipt_price": {
+    "message": "价格"
+  },
+  "tplReceipt_product1": {
+    "message": "第一个商品名称"
+  },
+  "tplReceipt_price1": {
+    "message": "¥199"
+  },
+  "tplReceipt_product2": {
+    "message": "第二个商品名称"
+  },
+  "tplReceipt_price2": {
+    "message": "¥298"
+  },
+  "tplReceipt_subtotal": {
+    "message": "小计："
+  },
+  "tplReceipt_subtotalValue": {
+    "message": "¥497"
+  },
+  "tplReceipt_shipping": {
+    "message": "运费："
+  },
+  "tplReceipt_shippingValue": {
+    "message": "¥30"
+  },
+  "tplReceipt_total": {
+    "message": "总计："
+  },
+  "tplReceipt_totalValue": {
+    "message": "¥527"
+  },
+  "tplReceipt_contact": {
+    "message": "有问题？联系我们：support@example.com"
+  },
+  "tplSocial_title": {
+    "message": "加入我们的社区！"
+  },
+  "tplSocial_subtitle": {
+    "message": "在社交媒体上关注我们"
+  },
+  "tplSocial_content": {
+    "message": "随时了解所有新闻、提示和特别优惠！"
+  },
+  "tplSocial_followers": {
+    "message": "已有超过10,000名关注者！"
+  },
+  "tplSocial_share": {
+    "message": "与朋友分享此通讯！"
+  },
+  "tplWebinar_free": {
+    "message": "免费网络研讨会"
+  },
+  "tplWebinar_title": {
+    "message": "网络研讨会名称"
+  },
+  "tplWebinar_subtitle": {
+    "message": "学习如何在...中取得成功"
+  },
+  "tplWebinar_day": {
+    "message": "星期三"
+  },
+  "tplWebinar_date": {
+    "message": "2025年1月15日"
+  },
+  "tplWebinar_time": {
+    "message": "晚上8:00"
+  },
+  "tplWebinar_timezone": {
+    "message": "以色列时间"
+  },
+  "tplWebinar_learn": {
+    "message": "您将学到："
+  },
+  "tplWebinar_topic1": {
+    "message": "第一个重要主题"
+  },
+  "tplWebinar_topic2": {
+    "message": "第二个有趣主题"
+  },
+  "tplWebinar_topic3": {
+    "message": "实用技巧"
+  },
+  "tplWebinar_register": {
+    "message": "免费注册"
+  },
+  "tplWebinar_limited": {
+    "message": "名额有限 - 立即注册！"
+  },
+  "tplEvent_title": {
+    "message": "年度活动！"
+  },
+  "tplEvent_subtitle": {
+    "message": "独家邀请"
+  },
+  "tplEvent_location": {
+    "message": "地点"
+  },
+  "tplEvent_locationValue": {
+    "message": "场地名称"
+  },
+  "tplEvent_date": {
+    "message": "日期"
+  },
+  "tplEvent_dateValue": {
+    "message": "2025年1月20日 星期五"
+  },
+  "tplEvent_time": {
+    "message": "时间"
+  },
+  "tplEvent_timeValue": {
+    "message": "晚上8:00"
+  },
+  "tplEvent_content": {
+    "message": "加入我们，度过一个难忘的社交、专业内容和乐趣之夜！"
+  },
+  "tplEvent_reserve": {
+    "message": "预订座位"
+  },
+  "tplEvent_limited": {
+    "message": "座位有限！"
+  },
+  "tplShipping_title": {
+    "message": "您的订单正在路上！"
+  },
+  "tplShipping_tracking": {
+    "message": "追踪号码"
+  },
+  "tplShipping_ordered": {
+    "message": "已订购"
+  },
+  "tplShipping_packed": {
+    "message": "已打包"
+  },
+  "tplShipping_shipping": {
+    "message": "运输中"
+  },
+  "tplShipping_delivered": {
+    "message": "已送达"
+  },
+  "tplShipping_eta": {
+    "message": "预计到达时间："
+  },
+  "tplShipping_etaValue": {
+    "message": "2025年1月22日 星期一"
+  },
+  "tplShipping_track": {
+    "message": "追踪货物"
+  },
+  "tplReferral_title": {
+    "message": "邀请朋友并获得奖励！"
+  },
+  "tplReferral_subtitle": {
+    "message": "分享您的代码并赚取"
+  },
+  "tplReferral_yourCode": {
+    "message": "您的个人代码："
+  },
+  "tplReferral_amount": {
+    "message": "¥50"
+  },
+  "tplReferral_forYou": {
+    "message": "为您"
+  },
+  "tplReferral_forFriends": {
+    "message": "为朋友"
+  },
+  "tplReferral_description": {
+    "message": "每个使用您的代码注册的朋友，您们都可以获得¥50折扣！"
+  },
+  "tplReferral_share": {
+    "message": "立即分享"
+  },
+  "tplReferral_stats": {
+    "message": "您已经邀请了3位朋友并赚取了¥150！"
+  }
 }
-

@@ -539,6 +539,12 @@
   "emojiObjects": {
     "message": "אובייקטים"
   },
+  "emojiSearchPlaceholder": {
+    "message": "חפש אמוג'ים..."
+  },
+  "searchResults": {
+    "message": "תוצאות חיפוש"
+  },
   "previewDesktop": {
     "message": "מחשב"
   },
@@ -1344,4 +1350,3 @@
     "message": "כבר הזמנתם 3 חברים והרווחתם ₪150!"
   }
 }
-

@@ -537,6 +537,12 @@
   "emojiObjects": {
     "message": "الأشياء"
   },
+  "emojiSearchPlaceholder": {
+    "message": "البحث عن الرموز التعبيرية..."
+  },
+  "searchResults": {
+    "message": "نتائج البحث"
+  },
   "previewDesktop": {
     "message": "سطح المكتب"
   },
@@ -912,148 +918,433 @@
   "signatureInserted": {
     "message": "تم إدراج التوقيع!"
   },
-  "tplNewsletter_title": {"message": "النشرة الإخبارية الأسبوعية"},
-  "tplNewsletter_subtitle": {"message": "التحديثات والأخبار المثيرة"},
-  "tplNewsletter_heading": {"message": "العنوان الرئيسي"},
-  "tplNewsletter_content": {"message": "هنا يمكنك كتابة المحتوى الرئيسي للنشرة الإخبارية. أخبر قراءك عن الأخبار والتحديثات والمحتوى المثير للاهتمام."},
-  "tplNewsletter_readMore": {"message": "اقرأ المزيد"},
-  "tplNewsletter_yourName": {"message": "اسمك"},
-  "tplNewsletter_allRights": {"message": "جميع الحقوق محفوظة."},
-  "tplInvitation_special": {"message": "دعوة خاصة"},
-  "tplInvitation_title": {"message": "أنت مدعو!"},
-  "tplInvitation_event": {"message": "الحدث"},
-  "tplInvitation_eventName": {"message": "اسم الحدث"},
-  "tplInvitation_date": {"message": "التاريخ"},
-  "tplInvitation_dateValue": {"message": "الأحد، 1 يناير 2025"},
-  "tplInvitation_time": {"message": "الوقت"},
-  "tplInvitation_timeValue": {"message": "7:00 مساءً"},
-  "tplInvitation_location": {"message": "الموقع"},
-  "tplInvitation_locationValue": {"message": "العنوان الكامل"},
-  "tplInvitation_confirm": {"message": "تأكيد الحضور"},
-  "tplInvitation_closing": {"message": "نود أن نراك!"},
-  "tplSimple_greeting": {"message": "مرحباً،"},
-  "tplSimple_content": {"message": "هنا يمكنك كتابة محتوى رسالتك. هذا قالب بسيط ونظيف مناسب للرسائل اليومية."},
-  "tplSimple_closing": {"message": "مع أطيب التحيات،"},
-  "tplSimple_yourName": {"message": "اسمك"},
-  "tplPromo_special": {"message": "عرض خاص"},
-  "tplPromo_discount": {"message": "خصم 50%!"},
-  "tplPromo_limited": {"message": "لفترة محدودة فقط"},
-  "tplPromo_heading": {"message": "أكثر منتجاتنا شعبية"},
-  "tplPromo_content": {"message": "لا تفوت الفرصة! العرض ينتهي قريباً."},
-  "tplPromo_buyNow": {"message": "اشتري الآن"},
-  "tplPromo_terms": {"message": "العرض ساري حتى نفاد المخزون"},
-  "tplWelcome_title": {"message": "مرحباً!"},
-  "tplWelcome_subtitle": {"message": "نحن سعداء بانضمامك إلينا"},
-  "tplWelcome_greeting": {"message": "مرحباً و أهلاً بك،"},
-  "tplWelcome_content": {"message": "نحن متحمسون لأنك اخترت الانضمام إلى عائلتنا! هنا ستجد كل ما تحتاجه للبدء."},
-  "tplWelcome_nextSteps": {"message": "الخطوات التالية:"},
-  "tplWelcome_step1": {"message": "أكمل ملفك الشخصي"},
-  "tplWelcome_step2": {"message": "اكتشف ميزاتنا"},
-  "tplWelcome_step3": {"message": "ابدأ في الإبداع!"},
-  "tplWelcome_getStarted": {"message": "ابدأ الآن"},
-  "tplWelcome_questions": {"message": "لديك أسئلة؟ نحن هنا من أجلك!"},
-  "tplReminder_title": {"message": "تذكير مهم"},
-  "tplReminder_dontForget": {"message": "لا تنس!"},
-  "tplReminder_meeting": {"message": "اجتماعك المقرر في:"},
-  "tplReminder_dateTime": {"message": "الاثنين، 15 يناير 2025 الساعة 10:00 صباحاً"},
-  "tplReminder_confirm": {"message": "يرجى تأكيد حضورك في أقرب وقت ممكن."},
-  "tplReminder_confirmBtn": {"message": "تأكيد الحضور"},
-  "tplReminder_reschedule": {"message": "إعادة الجدولة"},
-  "tplAlert_title": {"message": "انتبه!"},
-  "tplAlert_message": {"message": "هذه رسالة مهمة تتطلب انتباهك الفوري."},
-  "tplAlert_deadline": {"message": "إجراء مطلوب حتى: 31/12/2024"},
-  "tplAlert_action": {"message": "اتخذ إجراء الآن"},
-  "tplBirthday_title": {"message": "عيد ميلاد سعيد!"},
-  "tplBirthday_message": {"message": "نتمنى لك يوماً مليئاً بالسعادة والفرح والمفاجآت السارة!"},
-  "tplBirthday_closing": {"message": "أتمنى لك يوماً رائعاً!"},
-  "tplJob_title": {"message": "فرصة وظيفية مثيرة!"},
-  "tplJob_subtitle": {"message": "نحن نبحث عنك!"},
-  "tplJob_position": {"message": "المسمى الوظيفي"},
-  "tplJob_location": {"message": "الموقع"},
-  "tplJob_locationValue": {"message": "تل أبيب"},
-  "tplJob_scope": {"message": "النطاق"},
-  "tplJob_scopeValue": {"message": "دوام كامل"},
-  "tplJob_salary": {"message": "الراتب"},
-  "tplJob_salaryValue": {"message": "تنافسي"},
-  "tplJob_requirements": {"message": "متطلبات الوظيفة:"},
-  "tplJob_req1": {"message": "X سنوات من الخبرة في المجال"},
-  "tplJob_req2": {"message": "القدرة على العمل ضمن فريق"},
-  "tplJob_req3": {"message": "مستوى عالٍ من الإنجليزية"},
-  "tplJob_offers": {"message": "ما نقدمه:"},
-  "tplJob_offer1": {"message": "بيئة عمل ديناميكية"},
-  "tplJob_offer2": {"message": "فرص التقدم الوظيفي"},
-  "tplJob_offer3": {"message": "مزايا ممتازة"},
-  "tplJob_apply": {"message": "إرسال السيرة الذاتية"},
-  "tplSurvey_title": {"message": "رأيك مهم!"},
-  "tplSurvey_subtitle": {"message": "استطلاع سريع لمدة دقيقتين"},
-  "tplSurvey_content": {"message": "ساعدنا على التحسين! املأ الاستطلاع القصير واحصل على خصم 10% على مشترياتك القادمة."},
-  "tplSurvey_time": {"message": "الوقت المقدر: دقيقتان"},
-  "tplSurvey_reward": {"message": "ستحصل على كود خصم عند الانتهاء"},
-  "tplSurvey_button": {"message": "ملء الاستطلاع"},
-  "tplSurvey_terms": {"message": "الخصم ساري لمدة 30 يوماً من تاريخ استلام الكود"},
-  "tplReceipt_title": {"message": "تأكيد الطلب"},
-  "tplReceipt_paid": {"message": "مدفوع"},
-  "tplReceipt_orderNumber": {"message": "رقم الطلب"},
-  "tplReceipt_item": {"message": "العنصر"},
-  "tplReceipt_quantity": {"message": "الكمية"},
-  "tplReceipt_price": {"message": "السعر"},
-  "tplReceipt_product1": {"message": "اسم المنتج الأول"},
-  "tplReceipt_price1": {"message": "199 ر.س"},
-  "tplReceipt_product2": {"message": "اسم المنتج الثاني"},
-  "tplReceipt_price2": {"message": "298 ر.س"},
-  "tplReceipt_subtotal": {"message": "المجموع الفرعي:"},
-  "tplReceipt_subtotalValue": {"message": "497 ر.س"},
-  "tplReceipt_shipping": {"message": "الشحن:"},
-  "tplReceipt_shippingValue": {"message": "30 ر.س"},
-  "tplReceipt_total": {"message": "الإجمالي:"},
-  "tplReceipt_totalValue": {"message": "527 ر.س"},
-  "tplReceipt_contact": {"message": "أسئلة؟ اتصل بنا: support@example.com"},
-  "tplSocial_title": {"message": "انضم إلى مجتمعنا!"},
-  "tplSocial_subtitle": {"message": "تابعنا على وسائل التواصل الاجتماعي"},
-  "tplSocial_content": {"message": "ابق على اطلاع بجميع الأخبار والنصائح والعروض الخاصة!"},
-  "tplSocial_followers": {"message": "أكثر من 10,000 متابع بالفعل!"},
-  "tplSocial_share": {"message": "شارك هذه النشرة مع الأصدقاء!"},
-  "tplWebinar_free": {"message": "ندوة مجانية"},
-  "tplWebinar_title": {"message": "اسم الندوة"},
-  "tplWebinar_subtitle": {"message": "تعلم كيف تنجح في..."},
-  "tplWebinar_day": {"message": "الأربعاء"},
-  "tplWebinar_date": {"message": "15/01/2025"},
-  "tplWebinar_time": {"message": "8:00 مساءً"},
-  "tplWebinar_timezone": {"message": "توقيت إسرائيل"},
-  "tplWebinar_learn": {"message": "ما سوف تتعلمه:"},
-  "tplWebinar_topic1": {"message": "الموضوع الأول المهم"},
-  "tplWebinar_topic2": {"message": "الموضوع الثاني المثير للاهتمام"},
-  "tplWebinar_topic3": {"message": "نصائح عملية"},
-  "tplWebinar_register": {"message": "التسجيل مجاناً"},
-  "tplWebinar_limited": {"message": "أماكن محدودة - سجل الآن!"},
-  "tplEvent_title": {"message": "حدث العام!"},
-  "tplEvent_subtitle": {"message": "دعوة حصرية"},
-  "tplEvent_location": {"message": "الموقع"},
-  "tplEvent_locationValue": {"message": "اسم المكان"},
-  "tplEvent_date": {"message": "التاريخ"},
-  "tplEvent_dateValue": {"message": "الجمعة، 20/01/2025"},
-  "tplEvent_time": {"message": "الوقت"},
-  "tplEvent_timeValue": {"message": "8:00 مساءً"},
-  "tplEvent_content": {"message": "انضم إلينا في أمسية لا تُنسى من التواصل والمحتوى المهني والمتعة!"},
-  "tplEvent_reserve": {"message": "احجز مكانك"},
-  "tplEvent_limited": {"message": "عدد الأماكن محدود!"},
-  "tplShipping_title": {"message": "طلبك في الطريق!"},
-  "tplShipping_tracking": {"message": "رقم التتبع"},
-  "tplShipping_ordered": {"message": "تم الطلب"},
-  "tplShipping_packed": {"message": "تم التعبئة"},
-  "tplShipping_shipping": {"message": "قيد الشحن"},
-  "tplShipping_delivered": {"message": "تم التسليم"},
-  "tplShipping_eta": {"message": "الوقت المتوقع للوصول:"},
-  "tplShipping_etaValue": {"message": "الاثنين، 22/01/2025"},
-  "tplShipping_track": {"message": "تتبع الشحنة"},
-  "tplReferral_title": {"message": "ادعُ الأصدقاء واحصل على مكافآت!"},
-  "tplReferral_subtitle": {"message": "شارك رمزك واكسب"},
-  "tplReferral_yourCode": {"message": "رمزك الشخصي:"},
-  "tplReferral_amount": {"message": "50 ر.س"},
-  "tplReferral_forYou": {"message": "لك"},
-  "tplReferral_forFriends": {"message": "للأصدقاء"},
-  "tplReferral_description": {"message": "لكل صديق يسجل برمزك، تحصلان أنتما الاثنان على خصم 50 ر.س!"},
-  "tplReferral_share": {"message": "شارك الآن"},
-  "tplReferral_stats": {"message": "لقد دعوت بالفعل 3 أصدقاء وكسبت 150 ر.س!"}
+  "tplNewsletter_title": {
+    "message": "النشرة الإخبارية الأسبوعية"
+  },
+  "tplNewsletter_subtitle": {
+    "message": "التحديثات والأخبار المثيرة"
+  },
+  "tplNewsletter_heading": {
+    "message": "العنوان الرئيسي"
+  },
+  "tplNewsletter_content": {
+    "message": "هنا يمكنك كتابة المحتوى الرئيسي للنشرة الإخبارية. أخبر قراءك عن الأخبار والتحديثات والمحتوى المثير للاهتمام."
+  },
+  "tplNewsletter_readMore": {
+    "message": "اقرأ المزيد"
+  },
+  "tplNewsletter_yourName": {
+    "message": "اسمك"
+  },
+  "tplNewsletter_allRights": {
+    "message": "جميع الحقوق محفوظة."
+  },
+  "tplInvitation_special": {
+    "message": "دعوة خاصة"
+  },
+  "tplInvitation_title": {
+    "message": "أنت مدعو!"
+  },
+  "tplInvitation_event": {
+    "message": "الحدث"
+  },
+  "tplInvitation_eventName": {
+    "message": "اسم الحدث"
+  },
+  "tplInvitation_date": {
+    "message": "التاريخ"
+  },
+  "tplInvitation_dateValue": {
+    "message": "الأحد، 1 يناير 2025"
+  },
+  "tplInvitation_time": {
+    "message": "الوقت"
+  },
+  "tplInvitation_timeValue": {
+    "message": "7:00 مساءً"
+  },
+  "tplInvitation_location": {
+    "message": "الموقع"
+  },
+  "tplInvitation_locationValue": {
+    "message": "العنوان الكامل"
+  },
+  "tplInvitation_confirm": {
+    "message": "تأكيد الحضور"
+  },
+  "tplInvitation_closing": {
+    "message": "نود أن نراك!"
+  },
+  "tplSimple_greeting": {
+    "message": "مرحباً،"
+  },
+  "tplSimple_content": {
+    "message": "هنا يمكنك كتابة محتوى رسالتك. هذا قالب بسيط ونظيف مناسب للرسائل اليومية."
+  },
+  "tplSimple_closing": {
+    "message": "مع أطيب التحيات،"
+  },
+  "tplSimple_yourName": {
+    "message": "اسمك"
+  },
+  "tplPromo_special": {
+    "message": "عرض خاص"
+  },
+  "tplPromo_discount": {
+    "message": "خصم 50%!"
+  },
+  "tplPromo_limited": {
+    "message": "لفترة محدودة فقط"
+  },
+  "tplPromo_heading": {
+    "message": "أكثر منتجاتنا شعبية"
+  },
+  "tplPromo_content": {
+    "message": "لا تفوت الفرصة! العرض ينتهي قريباً."
+  },
+  "tplPromo_buyNow": {
+    "message": "اشتري الآن"
+  },
+  "tplPromo_terms": {
+    "message": "العرض ساري حتى نفاد المخزون"
+  },
+  "tplWelcome_title": {
+    "message": "مرحباً!"
+  },
+  "tplWelcome_subtitle": {
+    "message": "نحن سعداء بانضمامك إلينا"
+  },
+  "tplWelcome_greeting": {
+    "message": "مرحباً و أهلاً بك،"
+  },
+  "tplWelcome_content": {
+    "message": "نحن متحمسون لأنك اخترت الانضمام إلى عائلتنا! هنا ستجد كل ما تحتاجه للبدء."
+  },
+  "tplWelcome_nextSteps": {
+    "message": "الخطوات التالية:"
+  },
+  "tplWelcome_step1": {
+    "message": "أكمل ملفك الشخصي"
+  },
+  "tplWelcome_step2": {
+    "message": "اكتشف ميزاتنا"
+  },
+  "tplWelcome_step3": {
+    "message": "ابدأ في الإبداع!"
+  },
+  "tplWelcome_getStarted": {
+    "message": "ابدأ الآن"
+  },
+  "tplWelcome_questions": {
+    "message": "لديك أسئلة؟ نحن هنا من أجلك!"
+  },
+  "tplReminder_title": {
+    "message": "تذكير مهم"
+  },
+  "tplReminder_dontForget": {
+    "message": "لا تنس!"
+  },
+  "tplReminder_meeting": {
+    "message": "اجتماعك المقرر في:"
+  },
+  "tplReminder_dateTime": {
+    "message": "الاثنين، 15 يناير 2025 الساعة 10:00 صباحاً"
+  },
+  "tplReminder_confirm": {
+    "message": "يرجى تأكيد حضورك في أقرب وقت ممكن."
+  },
+  "tplReminder_confirmBtn": {
+    "message": "تأكيد الحضور"
+  },
+  "tplReminder_reschedule": {
+    "message": "إعادة الجدولة"
+  },
+  "tplAlert_title": {
+    "message": "انتبه!"
+  },
+  "tplAlert_message": {
+    "message": "هذه رسالة مهمة تتطلب انتباهك الفوري."
+  },
+  "tplAlert_deadline": {
+    "message": "إجراء مطلوب حتى: 31/12/2024"
+  },
+  "tplAlert_action": {
+    "message": "اتخذ إجراء الآن"
+  },
+  "tplBirthday_title": {
+    "message": "عيد ميلاد سعيد!"
+  },
+  "tplBirthday_message": {
+    "message": "نتمنى لك يوماً مليئاً بالسعادة والفرح والمفاجآت السارة!"
+  },
+  "tplBirthday_closing": {
+    "message": "أتمنى لك يوماً رائعاً!"
+  },
+  "tplJob_title": {
+    "message": "فرصة وظيفية مثيرة!"
+  },
+  "tplJob_subtitle": {
+    "message": "نحن نبحث عنك!"
+  },
+  "tplJob_position": {
+    "message": "المسمى الوظيفي"
+  },
+  "tplJob_location": {
+    "message": "الموقع"
+  },
+  "tplJob_locationValue": {
+    "message": "تل أبيب"
+  },
+  "tplJob_scope": {
+    "message": "النطاق"
+  },
+  "tplJob_scopeValue": {
+    "message": "دوام كامل"
+  },
+  "tplJob_salary": {
+    "message": "الراتب"
+  },
+  "tplJob_salaryValue": {
+    "message": "تنافسي"
+  },
+  "tplJob_requirements": {
+    "message": "متطلبات الوظيفة:"
+  },
+  "tplJob_req1": {
+    "message": "X سنوات من الخبرة في المجال"
+  },
+  "tplJob_req2": {
+    "message": "القدرة على العمل ضمن فريق"
+  },
+  "tplJob_req3": {
+    "message": "مستوى عالٍ من الإنجليزية"
+  },
+  "tplJob_offers": {
+    "message": "ما نقدمه:"
+  },
+  "tplJob_offer1": {
+    "message": "بيئة عمل ديناميكية"
+  },
+  "tplJob_offer2": {
+    "message": "فرص التقدم الوظيفي"
+  },
+  "tplJob_offer3": {
+    "message": "مزايا ممتازة"
+  },
+  "tplJob_apply": {
+    "message": "إرسال السيرة الذاتية"
+  },
+  "tplSurvey_title": {
+    "message": "رأيك مهم!"
+  },
+  "tplSurvey_subtitle": {
+    "message": "استطلاع سريع لمدة دقيقتين"
+  },
+  "tplSurvey_content": {
+    "message": "ساعدنا على التحسين! املأ الاستطلاع القصير واحصل على خصم 10% على مشترياتك القادمة."
+  },
+  "tplSurvey_time": {
+    "message": "الوقت المقدر: دقيقتان"
+  },
+  "tplSurvey_reward": {
+    "message": "ستحصل على كود خصم عند الانتهاء"
+  },
+  "tplSurvey_button": {
+    "message": "ملء الاستطلاع"
+  },
+  "tplSurvey_terms": {
+    "message": "الخصم ساري لمدة 30 يوماً من تاريخ استلام الكود"
+  },
+  "tplReceipt_title": {
+    "message": "تأكيد الطلب"
+  },
+  "tplReceipt_paid": {
+    "message": "مدفوع"
+  },
+  "tplReceipt_orderNumber": {
+    "message": "رقم الطلب"
+  },
+  "tplReceipt_item": {
+    "message": "العنصر"
+  },
+  "tplReceipt_quantity": {
+    "message": "الكمية"
+  },
+  "tplReceipt_price": {
+    "message": "السعر"
+  },
+  "tplReceipt_product1": {
+    "message": "اسم المنتج الأول"
+  },
+  "tplReceipt_price1": {
+    "message": "199 ر.س"
+  },
+  "tplReceipt_product2": {
+    "message": "اسم المنتج الثاني"
+  },
+  "tplReceipt_price2": {
+    "message": "298 ر.س"
+  },
+  "tplReceipt_subtotal": {
+    "message": "المجموع الفرعي:"
+  },
+  "tplReceipt_subtotalValue": {
+    "message": "497 ر.س"
+  },
+  "tplReceipt_shipping": {
+    "message": "الشحن:"
+  },
+  "tplReceipt_shippingValue": {
+    "message": "30 ر.س"
+  },
+  "tplReceipt_total": {
+    "message": "الإجمالي:"
+  },
+  "tplReceipt_totalValue": {
+    "message": "527 ر.س"
+  },
+  "tplReceipt_contact": {
+    "message": "أسئلة؟ اتصل بنا: support@example.com"
+  },
+  "tplSocial_title": {
+    "message": "انضم إلى مجتمعنا!"
+  },
+  "tplSocial_subtitle": {
+    "message": "تابعنا على وسائل التواصل الاجتماعي"
+  },
+  "tplSocial_content": {
+    "message": "ابق على اطلاع بجميع الأخبار والنصائح والعروض الخاصة!"
+  },
+  "tplSocial_followers": {
+    "message": "أكثر من 10,000 متابع بالفعل!"
+  },
+  "tplSocial_share": {
+    "message": "شارك هذه النشرة مع الأصدقاء!"
+  },
+  "tplWebinar_free": {
+    "message": "ندوة مجانية"
+  },
+  "tplWebinar_title": {
+    "message": "اسم الندوة"
+  },
+  "tplWebinar_subtitle": {
+    "message": "تعلم كيف تنجح في..."
+  },
+  "tplWebinar_day": {
+    "message": "الأربعاء"
+  },
+  "tplWebinar_date": {
+    "message": "15/01/2025"
+  },
+  "tplWebinar_time": {
+    "message": "8:00 مساءً"
+  },
+  "tplWebinar_timezone": {
+    "message": "توقيت إسرائيل"
+  },
+  "tplWebinar_learn": {
+    "message": "ما سوف تتعلمه:"
+  },
+  "tplWebinar_topic1": {
+    "message": "الموضوع الأول المهم"
+  },
+  "tplWebinar_topic2": {
+    "message": "الموضوع الثاني المثير للاهتمام"
+  },
+  "tplWebinar_topic3": {
+    "message": "نصائح عملية"
+  },
+  "tplWebinar_register": {
+    "message": "التسجيل مجاناً"
+  },
+  "tplWebinar_limited": {
+    "message": "أماكن محدودة - سجل الآن!"
+  },
+  "tplEvent_title": {
+    "message": "حدث العام!"
+  },
+  "tplEvent_subtitle": {
+    "message": "دعوة حصرية"
+  },
+  "tplEvent_location": {
+    "message": "الموقع"
+  },
+  "tplEvent_locationValue": {
+    "message": "اسم المكان"
+  },
+  "tplEvent_date": {
+    "message": "التاريخ"
+  },
+  "tplEvent_dateValue": {
+    "message": "الجمعة، 20/01/2025"
+  },
+  "tplEvent_time": {
+    "message": "الوقت"
+  },
+  "tplEvent_timeValue": {
+    "message": "8:00 مساءً"
+  },
+  "tplEvent_content": {
+    "message": "انضم إلينا في أمسية لا تُنسى من التواصل والمحتوى المهني والمتعة!"
+  },
+  "tplEvent_reserve": {
+    "message": "احجز مكانك"
+  },
+  "tplEvent_limited": {
+    "message": "عدد الأماكن محدود!"
+  },
+  "tplShipping_title": {
+    "message": "طلبك في الطريق!"
+  },
+  "tplShipping_tracking": {
+    "message": "رقم التتبع"
+  },
+  "tplShipping_ordered": {
+    "message": "تم الطلب"
+  },
+  "tplShipping_packed": {
+    "message": "تم التعبئة"
+  },
+  "tplShipping_shipping": {
+    "message": "قيد الشحن"
+  },
+  "tplShipping_delivered": {
+    "message": "تم التسليم"
+  },
+  "tplShipping_eta": {
+    "message": "الوقت المتوقع للوصول:"
+  },
+  "tplShipping_etaValue": {
+    "message": "الاثنين، 22/01/2025"
+  },
+  "tplShipping_track": {
+    "message": "تتبع الشحنة"
+  },
+  "tplReferral_title": {
+    "message": "ادعُ الأصدقاء واحصل على مكافآت!"
+  },
+  "tplReferral_subtitle": {
+    "message": "شارك رمزك واكسب"
+  },
+  "tplReferral_yourCode": {
+    "message": "رمزك الشخصي:"
+  },
+  "tplReferral_amount": {
+    "message": "50 ر.س"
+  },
+  "tplReferral_forYou": {
+    "message": "لك"
+  },
+  "tplReferral_forFriends": {
+    "message": "للأصدقاء"
+  },
+  "tplReferral_description": {
+    "message": "لكل صديق يسجل برمزك، تحصلان أنتما الاثنان على خصم 50 ر.س!"
+  },
+  "tplReferral_share": {
+    "message": "شارك الآن"
+  },
+  "tplReferral_stats": {
+    "message": "لقد دعوت بالفعل 3 أصدقاء وكسبت 150 ر.س!"
+  }
 }
-

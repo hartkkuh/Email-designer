@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // New features
   initThemeToggle();
-  initEmojiPicker();
+  initEmojiButton();
   initPreviewModes();
   initWordCounter();
   initQrCode();
@@ -633,6 +633,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   initAIFeatures();
   initVariables();
   initShortcutsHelp();
+  
+  // Initialize spell checker after a short delay to ensure everything is loaded
+  setTimeout(() => {
+    if (window.spellChecker && emailLanguage) {
+      window.spellChecker.init(emailLanguage);
+      window.spellChecker.initEvents();
+    }
+  }, 500);
 });
 
 // Tab Navigation
@@ -2071,8 +2079,29 @@ function initLanguageSelector() {
   // Toggle dropdown
   languageBtn.addEventListener('click', (e) => {
     e.stopPropagation();
+    const isOpen = languageDropdownMenu.classList.contains('show');
+    
+    if (!isOpen) {
+      // Calculate position for fixed dropdown
+      const rect = languageBtn.getBoundingClientRect();
+      languageDropdownMenu.style.top = `${rect.bottom + 4}px`;
+      languageDropdownMenu.style.right = `${window.innerWidth - rect.right}px`;
+    }
+    
     languageDropdownMenu.classList.toggle('show');
   });
+  
+  // Update dropdown position on scroll/resize
+  function updateDropdownPosition() {
+    if (languageDropdownMenu.classList.contains('show')) {
+      const rect = languageBtn.getBoundingClientRect();
+      languageDropdownMenu.style.top = `${rect.bottom + 4}px`;
+      languageDropdownMenu.style.right = `${window.innerWidth - rect.right}px`;
+    }
+  }
+  
+  window.addEventListener('scroll', updateDropdownPosition, true);
+  window.addEventListener('resize', updateDropdownPosition);
   
   // Close dropdown when clicking outside
   document.addEventListener('click', (e) => {
@@ -2090,6 +2119,12 @@ function initLanguageSelector() {
       
       // Update display
       updateLanguageDisplay();
+      
+      // Update spell checker with new language
+      if (window.spellChecker) {
+        window.spellChecker.init(emailLanguage);
+        window.spellChecker.initEvents(); // Re-initialize events for new language
+      }
       
       // Update preview
       updatePreview();
@@ -2663,6 +2698,12 @@ function loadSavedContent() {
         currentLanguageCode.textContent = emailLanguage;
       }
       
+      // Initialize spell checker with email language
+      if (window.spellChecker) {
+        window.spellChecker.init(emailLanguage);
+        window.spellChecker.initEvents();
+      }
+      
       // Update preview with loaded settings
       updatePreview();
       
@@ -2720,27 +2761,42 @@ function initThemeToggle() {
 }
 
 // ===========================================
-// EMOJI PICKER
+// EMOJI BUTTON
 // ===========================================
-const emojis = {
-  smileys: ['😀', '😃', '😄', '😁', '😊', '🥰', '😍', '🤩', '😘', '😗', '😚', '😙', '🥲', '😋', '😛', '😜', '🤪', '😝', '🤑', '🤗', '🤭', '🤫', '🤔', '🤐', '🤨', '😐', '😑', '😶', '😏', '😒', '🙄', '😬', '🤥', '😌', '😔', '😪', '🤤', '😴', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '🥵', '🥶', '🥴', '😵', '🤯', '🤠', '🥳', '🥸', '😎', '🤓', '🧐'],
-  gestures: ['👋', '🤚', '🖐️', '✋', '🖖', '👌', '🤌', '🤏', '✌️', '🤞', '🤟', '🤘', '🤙', '👈', '👉', '👆', '🖕', '👇', '☝️', '👍', '👎', '✊', '👊', '🤛', '🤜', '👏', '🙌', '👐', '🤲', '🤝', '🙏', '✍️', '💪', '🦾', '🦿', '🦵', '🦶', '👂', '🦻', '👃', '🧠', '👀', '👁️', '👅', '👄', '💋', '❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '🤍', '🤎', '💔'],
-  symbols: ['✅', '❌', '⭐', '🌟', '💫', '⚡', '🔥', '💥', '❄️', '🌈', '☀️', '🌙', '⭕', '❗', '❓', '‼️', '⁉️', '💯', '🔴', '🟠', '🟡', '🟢', '🔵', '🟣', '⚫', '⚪', '🟤', '🔶', '🔷', '🔸', '🔹', '🔺', '🔻', '💠', '🔘', '🔲', '🔳', '⬛', '⬜', '◼️', '◻️', '◾', '◽', '▪️', '▫️', '🔈', '🔇', '🔉', '🔊', '🔔', '🔕', '📣', '📢', '💬', '💭'],
-  objects: ['📧', '📨', '📩', '📤', '📥', '📦', '📫', '📪', '📬', '📭', '📮', '📝', '💼', '📁', '📂', '🗂️', '📅', '📆', '📇', '📈', '📉', '📊', '📋', '📌', '📍', '📎', '🖇️', '📏', '📐', '✂️', '🗃️', '🗄️', '🗑️', '🔒', '🔓', '🔏', '🔐', '🔑', '🗝️', '🔨', '🪓', '⛏️', '⚒️', '🛠️', '🗡️', '⚔️', '🔫', '🪃', '🏹', '🛡️', '🪚', '🔧', '🪛', '🔩', '⚙️']
-};
-
-function initEmojiPicker() {
+function initEmojiButton() {
   const emojiBtn = document.getElementById('emojiPickerBtn');
-  const emojiMenu = document.getElementById('emojiDropdownMenu');
-  if (!emojiBtn || !emojiMenu) return;
+  if (!emojiBtn) return;
   
-  // Populate emoji grids
-  populateEmojiGrid('emojiGridSmileys', emojis.smileys);
-  populateEmojiGrid('emojiGridGestures', emojis.gestures);
-  populateEmojiGrid('emojiGridSymbols', emojis.symbols);
-  populateEmojiGrid('emojiGridObjects', emojis.objects);
+  // Wait for EmojiButton to be available
+  if (typeof EmojiButton === 'undefined') {
+    setTimeout(initEmojiButton, 100);
+    return;
+  }
   
-  // Toggle dropdown
+  // Initialize EmojiButton
+  const picker = new EmojiButton({
+    position: 'bottom-start',
+    autoHide: true,
+    showPreview: false,
+    showSearch: true,
+    showRecents: false,
+    showVariants: false,
+    zIndex: 10000
+  });
+  
+  // Handle emoji selection
+  picker.on('emoji', selection => {
+    restoreSelection();
+    editor.focus();
+    // selection can be {emoji, name} or {url, emoji, name, custom}
+    const emojiToInsert = selection.emoji || selection.url || '';
+    if (emojiToInsert) {
+      document.execCommand('insertText', false, emojiToInsert);
+    }
+    picker.hidePicker();
+  });
+  
+  // Toggle picker on button click
   emojiBtn.addEventListener('mousedown', (e) => {
     e.preventDefault();
     saveSelection();
@@ -2748,32 +2804,17 @@ function initEmojiPicker() {
   
   emojiBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    emojiMenu.classList.toggle('show');
+    picker.togglePicker(emojiBtn);
   });
   
-  // Close on outside click
-  document.addEventListener('click', () => {
-    emojiMenu.classList.remove('show');
-  });
-  
-  emojiMenu.addEventListener('click', (e) => e.stopPropagation());
-}
-
-function populateEmojiGrid(gridId, emojiList) {
-  const grid = document.getElementById(gridId);
-  if (!grid) return;
-  
-  grid.innerHTML = emojiList.map(emoji => 
-    `<button class="emoji-btn" data-emoji="${emoji}">${emoji}</button>`
-  ).join('');
-  
-  grid.querySelectorAll('.emoji-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      restoreSelection();
-      editor.focus();
-      document.execCommand('insertText', false, btn.dataset.emoji);
-      document.getElementById('emojiDropdownMenu').classList.remove('show');
-    });
+  // Close picker on outside click
+  document.addEventListener('click', (e) => {
+    if (!emojiBtn.contains(e.target)) {
+      const pickerElement = document.querySelector('.emoji-picker');
+      if (pickerElement && !pickerElement.contains(e.target)) {
+        picker.hidePicker();
+      }
+    }
   });
 }
 

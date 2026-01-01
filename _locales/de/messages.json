@@ -537,6 +537,12 @@
   "emojiObjects": {
     "message": "Objekte"
   },
+  "emojiSearchPlaceholder": {
+    "message": "Emojis suchen..."
+  },
+  "searchResults": {
+    "message": "Suchergebnisse"
+  },
   "previewDesktop": {
     "message": "Desktop"
   },
@@ -912,148 +918,433 @@
   "signatureInserted": {
     "message": "Signatur eingefügt!"
   },
-  "tplNewsletter_title": {"message": "Wöchentlicher Newsletter"},
-  "tplNewsletter_subtitle": {"message": "Updates und spannende Neuigkeiten"},
-  "tplNewsletter_heading": {"message": "Hauptüberschrift"},
-  "tplNewsletter_content": {"message": "Hier können Sie den Hauptinhalt Ihres Newsletters schreiben. Erzählen Sie Ihren Lesern von Neuigkeiten, Updates und interessanten Inhalten."},
-  "tplNewsletter_readMore": {"message": "Weiterlesen"},
-  "tplNewsletter_yourName": {"message": "Ihr Name"},
-  "tplNewsletter_allRights": {"message": "Alle Rechte vorbehalten."},
-  "tplInvitation_special": {"message": "BESONDERE EINLADUNG"},
-  "tplInvitation_title": {"message": "Sie sind eingeladen!"},
-  "tplInvitation_event": {"message": "Veranstaltung"},
-  "tplInvitation_eventName": {"message": "Veranstaltungsname"},
-  "tplInvitation_date": {"message": "Datum"},
-  "tplInvitation_dateValue": {"message": "Sonntag, 1. Januar 2025"},
-  "tplInvitation_time": {"message": "Uhrzeit"},
-  "tplInvitation_timeValue": {"message": "19:00 Uhr"},
-  "tplInvitation_location": {"message": "Ort"},
-  "tplInvitation_locationValue": {"message": "Vollständige Adresse"},
-  "tplInvitation_confirm": {"message": "Teilnahme Bestätigen"},
-  "tplInvitation_closing": {"message": "Wir würden uns freuen, Sie zu sehen!"},
-  "tplSimple_greeting": {"message": "Hallo,"},
-  "tplSimple_content": {"message": "Hier können Sie den Inhalt Ihrer Nachricht schreiben. Dies ist eine einfache und saubere Vorlage für alltägliche Nachrichten."},
-  "tplSimple_closing": {"message": "Mit freundlichen Grüßen,"},
-  "tplSimple_yourName": {"message": "Ihr Name"},
-  "tplPromo_special": {"message": "Sonderangebot"},
-  "tplPromo_discount": {"message": "50% RABATT!"},
-  "tplPromo_limited": {"message": "Nur für begrenzte Zeit"},
-  "tplPromo_heading": {"message": "Unsere Beliebtesten Produkte"},
-  "tplPromo_content": {"message": "Verpassen Sie es nicht! Das Angebot endet bald."},
-  "tplPromo_buyNow": {"message": "Jetzt Kaufen"},
-  "tplPromo_terms": {"message": "Angebot gültig solange der Vorrat reicht"},
-  "tplWelcome_title": {"message": "Willkommen!"},
-  "tplWelcome_subtitle": {"message": "Wir freuen uns, dass Sie zu uns gestoßen sind"},
-  "tplWelcome_greeting": {"message": "Hallo und willkommen,"},
-  "tplWelcome_content": {"message": "Wir freuen uns, dass Sie sich entschieden haben, unserer Familie beizutreten! Hier finden Sie alles, was Sie brauchen, um zu beginnen."},
-  "tplWelcome_nextSteps": {"message": "Nächste Schritte:"},
-  "tplWelcome_step1": {"message": "Vervollständigen Sie Ihr Profil"},
-  "tplWelcome_step2": {"message": "Entdecken Sie unsere Funktionen"},
-  "tplWelcome_step3": {"message": "Beginnen Sie zu erstellen!"},
-  "tplWelcome_getStarted": {"message": "Loslegen"},
-  "tplWelcome_questions": {"message": "Haben Sie Fragen? Wir sind für Sie da!"},
-  "tplReminder_title": {"message": "Wichtige Erinnerung"},
-  "tplReminder_dontForget": {"message": "Nicht vergessen!"},
-  "tplReminder_meeting": {"message": "Ihr Meeting ist geplant für:"},
-  "tplReminder_dateTime": {"message": "Montag, 15. Januar 2025 um 10:00 Uhr"},
-  "tplReminder_confirm": {"message": "Bitte bestätigen Sie Ihre Teilnahme so bald wie möglich."},
-  "tplReminder_confirmBtn": {"message": "Teilnahme Bestätigen"},
-  "tplReminder_reschedule": {"message": "Verschieben"},
-  "tplAlert_title": {"message": "Achtung!"},
-  "tplAlert_message": {"message": "Dies ist eine wichtige Nachricht, die Ihre sofortige Aufmerksamkeit erfordert."},
-  "tplAlert_deadline": {"message": "Aktion erforderlich bis: 31.12.2024"},
-  "tplAlert_action": {"message": "Jetzt Handeln"},
-  "tplBirthday_title": {"message": "Alles Gute zum Geburtstag!"},
-  "tplBirthday_message": {"message": "Wir wünschen Ihnen einen Tag voller Glück, Freude und angenehmer Überraschungen!"},
-  "tplBirthday_closing": {"message": "Haben Sie einen wunderbaren Tag!"},
-  "tplJob_title": {"message": "Spannende Karrieremöglichkeit!"},
-  "tplJob_subtitle": {"message": "Wir suchen Sie!"},
-  "tplJob_position": {"message": "Stellenbezeichnung"},
-  "tplJob_location": {"message": "Standort"},
-  "tplJob_locationValue": {"message": "Tel Aviv"},
-  "tplJob_scope": {"message": "Umfang"},
-  "tplJob_scopeValue": {"message": "Vollzeit"},
-  "tplJob_salary": {"message": "Gehalt"},
-  "tplJob_salaryValue": {"message": "Wettbewerbsfähig"},
-  "tplJob_requirements": {"message": "Stellenanforderungen:"},
-  "tplJob_req1": {"message": "X Jahre Erfahrung im Bereich"},
-  "tplJob_req2": {"message": "Teamfähigkeit"},
-  "tplJob_req3": {"message": "Hohes Englischniveau"},
-  "tplJob_offers": {"message": "Was wir bieten:"},
-  "tplJob_offer1": {"message": "Dynamisches Arbeitsumfeld"},
-  "tplJob_offer2": {"message": "Karrieremöglichkeiten"},
-  "tplJob_offer3": {"message": "Hervorragende Leistungen"},
-  "tplJob_apply": {"message": "Lebenslauf Senden"},
-  "tplSurvey_title": {"message": "Ihre Meinung Zählt!"},
-  "tplSurvey_subtitle": {"message": "Schnelle 2-Minuten-Umfrage"},
-  "tplSurvey_content": {"message": "Helfen Sie uns, uns zu verbessern! Füllen Sie die kurze Umfrage aus und erhalten Sie 10% Rabatt auf Ihren nächsten Einkauf."},
-  "tplSurvey_time": {"message": "Geschätzte Zeit: 2 Minuten"},
-  "tplSurvey_reward": {"message": "Sie erhalten einen Rabattcode nach Abschluss"},
-  "tplSurvey_button": {"message": "Umfrage Ausfüllen"},
-  "tplSurvey_terms": {"message": "Rabatt gültig für 30 Tage ab Erhalt des Codes"},
-  "tplReceipt_title": {"message": "Bestellbestätigung"},
-  "tplReceipt_paid": {"message": "Bezahlt"},
-  "tplReceipt_orderNumber": {"message": "Bestellnummer"},
-  "tplReceipt_item": {"message": "Artikel"},
-  "tplReceipt_quantity": {"message": "Menge"},
-  "tplReceipt_price": {"message": "Preis"},
-  "tplReceipt_product1": {"message": "Erster Produktname"},
-  "tplReceipt_price1": {"message": "199€"},
-  "tplReceipt_product2": {"message": "Zweiter Produktname"},
-  "tplReceipt_price2": {"message": "298€"},
-  "tplReceipt_subtotal": {"message": "Zwischensumme:"},
-  "tplReceipt_subtotalValue": {"message": "497€"},
-  "tplReceipt_shipping": {"message": "Versand:"},
-  "tplReceipt_shippingValue": {"message": "30€"},
-  "tplReceipt_total": {"message": "Gesamt:"},
-  "tplReceipt_totalValue": {"message": "527€"},
-  "tplReceipt_contact": {"message": "Fragen? Kontaktieren Sie uns: support@example.com"},
-  "tplSocial_title": {"message": "Treten Sie Unserer Gemeinschaft Bei!"},
-  "tplSocial_subtitle": {"message": "Folgen Sie uns in den sozialen Medien"},
-  "tplSocial_content": {"message": "Bleiben Sie auf dem Laufenden mit allen Neuigkeiten, Tipps und Sonderangeboten!"},
-  "tplSocial_followers": {"message": "Bereits über 10.000 Follower!"},
-  "tplSocial_share": {"message": "Teilen Sie diesen Newsletter mit Freunden!"},
-  "tplWebinar_free": {"message": "Kostenloses Webinar"},
-  "tplWebinar_title": {"message": "Webinar-Name"},
-  "tplWebinar_subtitle": {"message": "Lernen Sie, wie man erfolgreich ist in..."},
-  "tplWebinar_day": {"message": "Mittwoch"},
-  "tplWebinar_date": {"message": "15.01.2025"},
-  "tplWebinar_time": {"message": "20:00 Uhr"},
-  "tplWebinar_timezone": {"message": "Israelische Zeit"},
-  "tplWebinar_learn": {"message": "Was Sie lernen werden:"},
-  "tplWebinar_topic1": {"message": "Erstes wichtiges Thema"},
-  "tplWebinar_topic2": {"message": "Zweites interessantes Thema"},
-  "tplWebinar_topic3": {"message": "Praktische Tipps"},
-  "tplWebinar_register": {"message": "Kostenlos Registrieren"},
-  "tplWebinar_limited": {"message": "Begrenzte Plätze - jetzt anmelden!"},
-  "tplEvent_title": {"message": "Event des Jahres!"},
-  "tplEvent_subtitle": {"message": "Exklusive Einladung"},
-  "tplEvent_location": {"message": "Ort"},
-  "tplEvent_locationValue": {"message": "Veranstaltungsort"},
-  "tplEvent_date": {"message": "Datum"},
-  "tplEvent_dateValue": {"message": "Freitag, 20.01.2025"},
-  "tplEvent_time": {"message": "Uhrzeit"},
-  "tplEvent_timeValue": {"message": "20:00 Uhr"},
-  "tplEvent_content": {"message": "Begleiten Sie uns zu einem unvergesslichen Abend mit Networking, professionellem Inhalt und Spaß!"},
-  "tplEvent_reserve": {"message": "Platz Reservieren"},
-  "tplEvent_limited": {"message": "Begrenzte Plätze!"},
-  "tplShipping_title": {"message": "Ihre Bestellung ist Unterwegs!"},
-  "tplShipping_tracking": {"message": "Sendungsnummer"},
-  "tplShipping_ordered": {"message": "Bestellt"},
-  "tplShipping_packed": {"message": "Verpackt"},
-  "tplShipping_shipping": {"message": "Unterwegs"},
-  "tplShipping_delivered": {"message": "Geliefert"},
-  "tplShipping_eta": {"message": "Geschätzte Ankunft:"},
-  "tplShipping_etaValue": {"message": "Montag, 22.01.2025"},
-  "tplShipping_track": {"message": "Sendung Verfolgen"},
-  "tplReferral_title": {"message": "Laden Sie Freunde Ein und Erhalten Sie Belohnungen!"},
-  "tplReferral_subtitle": {"message": "Teilen Sie Ihren Code und verdienen Sie"},
-  "tplReferral_yourCode": {"message": "Ihr Persönlicher Code:"},
-  "tplReferral_amount": {"message": "50€"},
-  "tplReferral_forYou": {"message": "Für Sie"},
-  "tplReferral_forFriends": {"message": "Für Freunde"},
-  "tplReferral_description": {"message": "Für jeden Freund, der sich mit Ihrem Code anmeldet, erhalten Sie beide 50€ Rabatt!"},
-  "tplReferral_share": {"message": "Jetzt Teilen"},
-  "tplReferral_stats": {"message": "Sie haben bereits 3 Freunde eingeladen und 150€ verdient!"}
+  "tplNewsletter_title": {
+    "message": "Wöchentlicher Newsletter"
+  },
+  "tplNewsletter_subtitle": {
+    "message": "Updates und spannende Neuigkeiten"
+  },
+  "tplNewsletter_heading": {
+    "message": "Hauptüberschrift"
+  },
+  "tplNewsletter_content": {
+    "message": "Hier können Sie den Hauptinhalt Ihres Newsletters schreiben. Erzählen Sie Ihren Lesern von Neuigkeiten, Updates und interessanten Inhalten."
+  },
+  "tplNewsletter_readMore": {
+    "message": "Weiterlesen"
+  },
+  "tplNewsletter_yourName": {
+    "message": "Ihr Name"
+  },
+  "tplNewsletter_allRights": {
+    "message": "Alle Rechte vorbehalten."
+  },
+  "tplInvitation_special": {
+    "message": "BESONDERE EINLADUNG"
+  },
+  "tplInvitation_title": {
+    "message": "Sie sind eingeladen!"
+  },
+  "tplInvitation_event": {
+    "message": "Veranstaltung"
+  },
+  "tplInvitation_eventName": {
+    "message": "Veranstaltungsname"
+  },
+  "tplInvitation_date": {
+    "message": "Datum"
+  },
+  "tplInvitation_dateValue": {
+    "message": "Sonntag, 1. Januar 2025"
+  },
+  "tplInvitation_time": {
+    "message": "Uhrzeit"
+  },
+  "tplInvitation_timeValue": {
+    "message": "19:00 Uhr"
+  },
+  "tplInvitation_location": {
+    "message": "Ort"
+  },
+  "tplInvitation_locationValue": {
+    "message": "Vollständige Adresse"
+  },
+  "tplInvitation_confirm": {
+    "message": "Teilnahme Bestätigen"
+  },
+  "tplInvitation_closing": {
+    "message": "Wir würden uns freuen, Sie zu sehen!"
+  },
+  "tplSimple_greeting": {
+    "message": "Hallo,"
+  },
+  "tplSimple_content": {
+    "message": "Hier können Sie den Inhalt Ihrer Nachricht schreiben. Dies ist eine einfache und saubere Vorlage für alltägliche Nachrichten."
+  },
+  "tplSimple_closing": {
+    "message": "Mit freundlichen Grüßen,"
+  },
+  "tplSimple_yourName": {
+    "message": "Ihr Name"
+  },
+  "tplPromo_special": {
+    "message": "Sonderangebot"
+  },
+  "tplPromo_discount": {
+    "message": "50% RABATT!"
+  },
+  "tplPromo_limited": {
+    "message": "Nur für begrenzte Zeit"
+  },
+  "tplPromo_heading": {
+    "message": "Unsere Beliebtesten Produkte"
+  },
+  "tplPromo_content": {
+    "message": "Verpassen Sie es nicht! Das Angebot endet bald."
+  },
+  "tplPromo_buyNow": {
+    "message": "Jetzt Kaufen"
+  },
+  "tplPromo_terms": {
+    "message": "Angebot gültig solange der Vorrat reicht"
+  },
+  "tplWelcome_title": {
+    "message": "Willkommen!"
+  },
+  "tplWelcome_subtitle": {
+    "message": "Wir freuen uns, dass Sie zu uns gestoßen sind"
+  },
+  "tplWelcome_greeting": {
+    "message": "Hallo und willkommen,"
+  },
+  "tplWelcome_content": {
+    "message": "Wir freuen uns, dass Sie sich entschieden haben, unserer Familie beizutreten! Hier finden Sie alles, was Sie brauchen, um zu beginnen."
+  },
+  "tplWelcome_nextSteps": {
+    "message": "Nächste Schritte:"
+  },
+  "tplWelcome_step1": {
+    "message": "Vervollständigen Sie Ihr Profil"
+  },
+  "tplWelcome_step2": {
+    "message": "Entdecken Sie unsere Funktionen"
+  },
+  "tplWelcome_step3": {
+    "message": "Beginnen Sie zu erstellen!"
+  },
+  "tplWelcome_getStarted": {
+    "message": "Loslegen"
+  },
+  "tplWelcome_questions": {
+    "message": "Haben Sie Fragen? Wir sind für Sie da!"
+  },
+  "tplReminder_title": {
+    "message": "Wichtige Erinnerung"
+  },
+  "tplReminder_dontForget": {
+    "message": "Nicht vergessen!"
+  },
+  "tplReminder_meeting": {
+    "message": "Ihr Meeting ist geplant für:"
+  },
+  "tplReminder_dateTime": {
+    "message": "Montag, 15. Januar 2025 um 10:00 Uhr"
+  },
+  "tplReminder_confirm": {
+    "message": "Bitte bestätigen Sie Ihre Teilnahme so bald wie möglich."
+  },
+  "tplReminder_confirmBtn": {
+    "message": "Teilnahme Bestätigen"
+  },
+  "tplReminder_reschedule": {
+    "message": "Verschieben"
+  },
+  "tplAlert_title": {
+    "message": "Achtung!"
+  },
+  "tplAlert_message": {
+    "message": "Dies ist eine wichtige Nachricht, die Ihre sofortige Aufmerksamkeit erfordert."
+  },
+  "tplAlert_deadline": {
+    "message": "Aktion erforderlich bis: 31.12.2024"
+  },
+  "tplAlert_action": {
+    "message": "Jetzt Handeln"
+  },
+  "tplBirthday_title": {
+    "message": "Alles Gute zum Geburtstag!"
+  },
+  "tplBirthday_message": {
+    "message": "Wir wünschen Ihnen einen Tag voller Glück, Freude und angenehmer Überraschungen!"
+  },
+  "tplBirthday_closing": {
+    "message": "Haben Sie einen wunderbaren Tag!"
+  },
+  "tplJob_title": {
+    "message": "Spannende Karrieremöglichkeit!"
+  },
+  "tplJob_subtitle": {
+    "message": "Wir suchen Sie!"
+  },
+  "tplJob_position": {
+    "message": "Stellenbezeichnung"
+  },
+  "tplJob_location": {
+    "message": "Standort"
+  },
+  "tplJob_locationValue": {
+    "message": "Tel Aviv"
+  },
+  "tplJob_scope": {
+    "message": "Umfang"
+  },
+  "tplJob_scopeValue": {
+    "message": "Vollzeit"
+  },
+  "tplJob_salary": {
+    "message": "Gehalt"
+  },
+  "tplJob_salaryValue": {
+    "message": "Wettbewerbsfähig"
+  },
+  "tplJob_requirements": {
+    "message": "Stellenanforderungen:"
+  },
+  "tplJob_req1": {
+    "message": "X Jahre Erfahrung im Bereich"
+  },
+  "tplJob_req2": {
+    "message": "Teamfähigkeit"
+  },
+  "tplJob_req3": {
+    "message": "Hohes Englischniveau"
+  },
+  "tplJob_offers": {
+    "message": "Was wir bieten:"
+  },
+  "tplJob_offer1": {
+    "message": "Dynamisches Arbeitsumfeld"
+  },
+  "tplJob_offer2": {
+    "message": "Karrieremöglichkeiten"
+  },
+  "tplJob_offer3": {
+    "message": "Hervorragende Leistungen"
+  },
+  "tplJob_apply": {
+    "message": "Lebenslauf Senden"
+  },
+  "tplSurvey_title": {
+    "message": "Ihre Meinung Zählt!"
+  },
+  "tplSurvey_subtitle": {
+    "message": "Schnelle 2-Minuten-Umfrage"
+  },
+  "tplSurvey_content": {
+    "message": "Helfen Sie uns, uns zu verbessern! Füllen Sie die kurze Umfrage aus und erhalten Sie 10% Rabatt auf Ihren nächsten Einkauf."
+  },
+  "tplSurvey_time": {
+    "message": "Geschätzte Zeit: 2 Minuten"
+  },
+  "tplSurvey_reward": {
+    "message": "Sie erhalten einen Rabattcode nach Abschluss"
+  },
+  "tplSurvey_button": {
+    "message": "Umfrage Ausfüllen"
+  },
+  "tplSurvey_terms": {
+    "message": "Rabatt gültig für 30 Tage ab Erhalt des Codes"
+  },
+  "tplReceipt_title": {
+    "message": "Bestellbestätigung"
+  },
+  "tplReceipt_paid": {
+    "message": "Bezahlt"
+  },
+  "tplReceipt_orderNumber": {
+    "message": "Bestellnummer"
+  },
+  "tplReceipt_item": {
+    "message": "Artikel"
+  },
+  "tplReceipt_quantity": {
+    "message": "Menge"
+  },
+  "tplReceipt_price": {
+    "message": "Preis"
+  },
+  "tplReceipt_product1": {
+    "message": "Erster Produktname"
+  },
+  "tplReceipt_price1": {
+    "message": "199€"
+  },
+  "tplReceipt_product2": {
+    "message": "Zweiter Produktname"
+  },
+  "tplReceipt_price2": {
+    "message": "298€"
+  },
+  "tplReceipt_subtotal": {
+    "message": "Zwischensumme:"
+  },
+  "tplReceipt_subtotalValue": {
+    "message": "497€"
+  },
+  "tplReceipt_shipping": {
+    "message": "Versand:"
+  },
+  "tplReceipt_shippingValue": {
+    "message": "30€"
+  },
+  "tplReceipt_total": {
+    "message": "Gesamt:"
+  },
+  "tplReceipt_totalValue": {
+    "message": "527€"
+  },
+  "tplReceipt_contact": {
+    "message": "Fragen? Kontaktieren Sie uns: support@example.com"
+  },
+  "tplSocial_title": {
+    "message": "Treten Sie Unserer Gemeinschaft Bei!"
+  },
+  "tplSocial_subtitle": {
+    "message": "Folgen Sie uns in den sozialen Medien"
+  },
+  "tplSocial_content": {
+    "message": "Bleiben Sie auf dem Laufenden mit allen Neuigkeiten, Tipps und Sonderangeboten!"
+  },
+  "tplSocial_followers": {
+    "message": "Bereits über 10.000 Follower!"
+  },
+  "tplSocial_share": {
+    "message": "Teilen Sie diesen Newsletter mit Freunden!"
+  },
+  "tplWebinar_free": {
+    "message": "Kostenloses Webinar"
+  },
+  "tplWebinar_title": {
+    "message": "Webinar-Name"
+  },
+  "tplWebinar_subtitle": {
+    "message": "Lernen Sie, wie man erfolgreich ist in..."
+  },
+  "tplWebinar_day": {
+    "message": "Mittwoch"
+  },
+  "tplWebinar_date": {
+    "message": "15.01.2025"
+  },
+  "tplWebinar_time": {
+    "message": "20:00 Uhr"
+  },
+  "tplWebinar_timezone": {
+    "message": "Israelische Zeit"
+  },
+  "tplWebinar_learn": {
+    "message": "Was Sie lernen werden:"
+  },
+  "tplWebinar_topic1": {
+    "message": "Erstes wichtiges Thema"
+  },
+  "tplWebinar_topic2": {
+    "message": "Zweites interessantes Thema"
+  },
+  "tplWebinar_topic3": {
+    "message": "Praktische Tipps"
+  },
+  "tplWebinar_register": {
+    "message": "Kostenlos Registrieren"
+  },
+  "tplWebinar_limited": {
+    "message": "Begrenzte Plätze - jetzt anmelden!"
+  },
+  "tplEvent_title": {
+    "message": "Event des Jahres!"
+  },
+  "tplEvent_subtitle": {
+    "message": "Exklusive Einladung"
+  },
+  "tplEvent_location": {
+    "message": "Ort"
+  },
+  "tplEvent_locationValue": {
+    "message": "Veranstaltungsort"
+  },
+  "tplEvent_date": {
+    "message": "Datum"
+  },
+  "tplEvent_dateValue": {
+    "message": "Freitag, 20.01.2025"
+  },
+  "tplEvent_time": {
+    "message": "Uhrzeit"
+  },
+  "tplEvent_timeValue": {
+    "message": "20:00 Uhr"
+  },
+  "tplEvent_content": {
+    "message": "Begleiten Sie uns zu einem unvergesslichen Abend mit Networking, professionellem Inhalt und Spaß!"
+  },
+  "tplEvent_reserve": {
+    "message": "Platz Reservieren"
+  },
+  "tplEvent_limited": {
+    "message": "Begrenzte Plätze!"
+  },
+  "tplShipping_title": {
+    "message": "Ihre Bestellung ist Unterwegs!"
+  },
+  "tplShipping_tracking": {
+    "message": "Sendungsnummer"
+  },
+  "tplShipping_ordered": {
+    "message": "Bestellt"
+  },
+  "tplShipping_packed": {
+    "message": "Verpackt"
+  },
+  "tplShipping_shipping": {
+    "message": "Unterwegs"
+  },
+  "tplShipping_delivered": {
+    "message": "Geliefert"
+  },
+  "tplShipping_eta": {
+    "message": "Geschätzte Ankunft:"
+  },
+  "tplShipping_etaValue": {
+    "message": "Montag, 22.01.2025"
+  },
+  "tplShipping_track": {
+    "message": "Sendung Verfolgen"
+  },
+  "tplReferral_title": {
+    "message": "Laden Sie Freunde Ein und Erhalten Sie Belohnungen!"
+  },
+  "tplReferral_subtitle": {
+    "message": "Teilen Sie Ihren Code und verdienen Sie"
+  },
+  "tplReferral_yourCode": {
+    "message": "Ihr Persönlicher Code:"
+  },
+  "tplReferral_amount": {
+    "message": "50€"
+  },
+  "tplReferral_forYou": {
+    "message": "Für Sie"
+  },
+  "tplReferral_forFriends": {
+    "message": "Für Freunde"
+  },
+  "tplReferral_description": {
+    "message": "Für jeden Freund, der sich mit Ihrem Code anmeldet, erhalten Sie beide 50€ Rabatt!"
+  },
+  "tplReferral_share": {
+    "message": "Jetzt Teilen"
+  },
+  "tplReferral_stats": {
+    "message": "Sie haben bereits 3 Freunde eingeladen und 150€ verdient!"
+  }
 }
-

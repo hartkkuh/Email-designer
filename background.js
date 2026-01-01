@@ -1,4 +1,5 @@
 // Email Designer - Background Service Worker
+// Note: Spell checking now uses Chrome's built-in spellcheck (no Typo.js needed)
 
 // Listen for extension installation
 chrome.runtime.onInstalled.addListener((details) => {
@@ -17,6 +18,10 @@ chrome.runtime.onInstalled.addListener((details) => {
 
 // Listen for messages from popup or content scripts
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  // Spell checking is now handled by Chrome's built-in spellcheck
+  // No need for custom dictionary loading
+
+  // Legacy messages
   switch (request.action) {
     case 'getSettings':
       chrome.storage.local.get(['settings'], (result) => {
