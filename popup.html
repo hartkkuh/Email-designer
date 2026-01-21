@@ -35,6 +35,12 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
         </button>
+        <button id="settingsBtn" class="settings-btn" data-i18n-title="settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
         <button id="shortcutsHelp" class="shortcuts-help-btn" data-i18n-title="keyboardShortcuts">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -1250,6 +1256,31 @@
       </div>
       <div class="modal-actions">
         <button class="btn btn-primary" id="closeShortcutsModal" data-i18n="close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settingsModal" class="modal">
+    <div class="modal-content" style="max-width: 420px;">
+      <h3 data-i18n="settings">Settings</h3>
+      
+      <div class="settings-section">
+        <h4 data-i18n="emailIntegration">Email Integration</h4>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="enableGmailEditor">
+            <span class="toggle-slider"></span>
+          </label>
+          <div class="setting-info">
+            <span class="setting-label" data-i18n="enableEmailEditorLabel">Enable embedded editor in email services</span>
+            <small class="setting-description" data-i18n="enableEmailEditorDesc">When enabled, the compose window in Gmail, Outlook, Yahoo and ProtonMail will be replaced with the full editor</small>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="closeSettingsModal" data-i18n="close">Close</button>
       </div>
     </div>
   </div>

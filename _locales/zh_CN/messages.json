@@ -1346,5 +1346,116 @@
   },
   "tplReferral_stats": {
     "message": "您已经邀请了3位朋友并赚取了¥150！"
+  },
+  "settings": {
+    "message": "设置"
+  },
+  "gmailIntegration": {
+    "message": "Gmail 集成"
+  },
+  "emailIntegration": {
+    "message": "邮件集成"
+  },
+  "enableGmailEditorLabel": {
+    "message": "在 Gmail 中启用嵌入式编辑器"
+  },
+  "enableEmailEditorLabel": {
+    "message": "在邮件服务中启用嵌入式编辑器"
+  },
+  "enableGmailEditorDesc": {
+    "message": "启用后，Gmail 中的撰写窗口将被完整编辑器替换"
+  },
+  "enableEmailEditorDesc": {
+    "message": "启用后，Gmail、Outlook、Yahoo 和 ProtonMail 中的撰写窗口将被完整编辑器替换"
+  },
+  "gmailEditorEnabled": {
+    "message": "Gmail 编辑器已启用"
+  },
+  "emailEditorEnabled": {
+    "message": "邮件编辑器已启用"
+  },
+  "gmailEditorDisabled": {
+    "message": "Gmail 编辑器已禁用"
+  },
+  "emailEditorDisabled": {
+    "message": "邮件编辑器已禁用"
+  },
+  "switchToGmailEditor": {
+    "message": "切换到完整编辑器"
+  },
+  "switchToNormalEditor": {
+    "message": "切换到普通编辑器"
+  },
+  "edit": {
+    "message": "编辑"
+  },
+  "editName": {
+    "message": "编辑名称"
+  },
+  "exportHtml": {
+    "message": "导出 HTML"
+  },
+  "delete": {
+    "message": "删除"
+  },
+  "enterFileUrl": {
+    "message": "请输入文件网址"
+  },
+  "bgImageAdded": {
+    "message": "已添加背景图片"
+  },
+  "enterImageUrl": {
+    "message": "请输入图片网址"
+  },
+  "bgImageRemoved": {
+    "message": "已移除背景图片"
+  },
+  "fileLinkAdded": {
+    "message": "文件链接添加成功"
+  },
+  "unsubscribeAdded": {
+    "message": "已添加退订链接"
+  },
+  "bgColorUpdated": {
+    "message": "背景颜色已更新"
+  },
+  "directionRtl": {
+    "message": "从右到左"
+  },
+  "directionLtr": {
+    "message": "从左到右"
+  },
+  "enterMapAddress": {
+    "message": "请输入地址"
+  },
+  "enterSignatureName": {
+    "message": "请输入签名名称"
+  },
+  "signatureDeleted": {
+    "message": "签名已删除"
+  },
+  "tableCellContent": {
+    "message": "内容"
+  },
+  "tableHeaderText": {
+    "message": "标题"
+  },
+  "selectCellsToMerge": {
+    "message": "选择要合并的表格单元格"
+  },
+  "enterVideoUrl": {
+    "message": "请输入 YouTube/Vimeo 链接或网址"
+  },
+  "enterQrContent": {
+    "message": "请输入二维码内容"
+  },
+  "signatureSaved": {
+    "message": "签名已保存！"
+  },
+  "tableUpdated": {
+    "message": "表格已更新！"
+  },
+  "contentInserted": {
+    "message": "内容已插入邮件！"
   }
 }

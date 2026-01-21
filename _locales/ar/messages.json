@@ -1346,5 +1346,116 @@
   },
   "tplReferral_stats": {
     "message": "لقد دعوت بالفعل 3 أصدقاء وكسبت 150 ر.س!"
+  },
+  "settings": {
+    "message": "الإعدادات"
+  },
+  "gmailIntegration": {
+    "message": "تكامل Gmail"
+  },
+  "emailIntegration": {
+    "message": "تكامل البريد الإلكتروني"
+  },
+  "enableGmailEditorLabel": {
+    "message": "تمكين المحرر المضمن في Gmail"
+  },
+  "enableEmailEditorLabel": {
+    "message": "تمكين المحرر المضمن في خدمات البريد الإلكتروني"
+  },
+  "enableGmailEditorDesc": {
+    "message": "عند التمكين، سيتم استبدال نافذة الإنشاء في Gmail بالمحرر الكامل"
+  },
+  "enableEmailEditorDesc": {
+    "message": "عند التمكين، سيتم استبدال نافذة الإنشاء في Gmail و Outlook و Yahoo و ProtonMail بالمحرر الكامل"
+  },
+  "gmailEditorEnabled": {
+    "message": "تم تمكين محرر Gmail"
+  },
+  "emailEditorEnabled": {
+    "message": "تم تمكين محرر البريد الإلكتروني"
+  },
+  "gmailEditorDisabled": {
+    "message": "تم تعطيل محرر Gmail"
+  },
+  "emailEditorDisabled": {
+    "message": "تم تعطيل محرر البريد الإلكتروني"
+  },
+  "switchToGmailEditor": {
+    "message": "التبديل إلى المحرر الكامل"
+  },
+  "switchToNormalEditor": {
+    "message": "التبديل إلى المحرر العادي"
+  },
+  "edit": {
+    "message": "تعديل"
+  },
+  "editName": {
+    "message": "تعديل الاسم"
+  },
+  "exportHtml": {
+    "message": "تصدير HTML"
+  },
+  "delete": {
+    "message": "حذف"
+  },
+  "enterFileUrl": {
+    "message": "الرجاء إدخال رابط الملف"
+  },
+  "bgImageAdded": {
+    "message": "تمت إضافة صورة الخلفية"
+  },
+  "enterImageUrl": {
+    "message": "الرجاء إدخال رابط الصورة"
+  },
+  "bgImageRemoved": {
+    "message": "تمت إزالة صورة الخلفية"
+  },
+  "fileLinkAdded": {
+    "message": "تمت إضافة رابط الملف بنجاح"
+  },
+  "unsubscribeAdded": {
+    "message": "تمت إضافة رابط إلغاء الاشتراك"
+  },
+  "bgColorUpdated": {
+    "message": "تم تحديث لون الخلفية"
+  },
+  "directionRtl": {
+    "message": "من اليمين إلى اليسار"
+  },
+  "directionLtr": {
+    "message": "من اليسار إلى اليمين"
+  },
+  "enterMapAddress": {
+    "message": "الرجاء إدخال العنوان"
+  },
+  "enterSignatureName": {
+    "message": "الرجاء إدخال اسم التوقيع"
+  },
+  "signatureDeleted": {
+    "message": "تم حذف التوقيع"
+  },
+  "tableCellContent": {
+    "message": "محتوى"
+  },
+  "tableHeaderText": {
+    "message": "عنوان"
+  },
+  "selectCellsToMerge": {
+    "message": "حدد خلايا الجدول للدمج"
+  },
+  "enterVideoUrl": {
+    "message": "الرجاء إدخال رابط YouTube/Vimeo أو URL"
+  },
+  "enterQrContent": {
+    "message": "الرجاء إدخال محتوى QR"
+  },
+  "signatureSaved": {
+    "message": "تم حفظ التوقيع!"
+  },
+  "tableUpdated": {
+    "message": "تم تحديث الجدول!"
+  },
+  "contentInserted": {
+    "message": "تم إدراج المحتوى في البريد الإلكتروني!"
   }
 }

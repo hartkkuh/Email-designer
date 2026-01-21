@@ -1346,5 +1346,116 @@
   },
   "tplReferral_stats": {
     "message": "¡Ya has invitado a 3 amigos y ganado $150!"
+  },
+  "settings": {
+    "message": "Configuración"
+  },
+  "gmailIntegration": {
+    "message": "Integración con Gmail"
+  },
+  "emailIntegration": {
+    "message": "Integración de correo"
+  },
+  "enableGmailEditorLabel": {
+    "message": "Activar editor integrado en Gmail"
+  },
+  "enableEmailEditorLabel": {
+    "message": "Activar editor integrado en servicios de correo"
+  },
+  "enableGmailEditorDesc": {
+    "message": "Cuando está activado, la ventana de redacción en Gmail será reemplazada por el editor completo"
+  },
+  "enableEmailEditorDesc": {
+    "message": "Cuando está activado, la ventana de redacción en Gmail, Outlook, Yahoo y ProtonMail será reemplazada por el editor completo"
+  },
+  "gmailEditorEnabled": {
+    "message": "Editor de Gmail activado"
+  },
+  "emailEditorEnabled": {
+    "message": "Editor de correo activado"
+  },
+  "gmailEditorDisabled": {
+    "message": "Editor de Gmail desactivado"
+  },
+  "emailEditorDisabled": {
+    "message": "Editor de correo desactivado"
+  },
+  "switchToGmailEditor": {
+    "message": "Cambiar al editor completo"
+  },
+  "switchToNormalEditor": {
+    "message": "Cambiar al editor normal"
+  },
+  "edit": {
+    "message": "Editar"
+  },
+  "editName": {
+    "message": "Editar nombre"
+  },
+  "exportHtml": {
+    "message": "Exportar HTML"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "enterFileUrl": {
+    "message": "Por favor ingrese una URL de archivo"
+  },
+  "bgImageAdded": {
+    "message": "Imagen de fondo añadida"
+  },
+  "enterImageUrl": {
+    "message": "Por favor ingrese una URL de imagen"
+  },
+  "bgImageRemoved": {
+    "message": "Imagen de fondo eliminada"
+  },
+  "fileLinkAdded": {
+    "message": "Enlace de archivo añadido con éxito"
+  },
+  "unsubscribeAdded": {
+    "message": "Enlace de cancelación añadido"
+  },
+  "bgColorUpdated": {
+    "message": "Color de fondo actualizado"
+  },
+  "directionRtl": {
+    "message": "Derecha a Izquierda"
+  },
+  "directionLtr": {
+    "message": "Izquierda a Derecha"
+  },
+  "enterMapAddress": {
+    "message": "Por favor ingrese una dirección"
+  },
+  "enterSignatureName": {
+    "message": "Por favor ingrese un nombre de firma"
+  },
+  "signatureDeleted": {
+    "message": "Firma eliminada"
+  },
+  "tableCellContent": {
+    "message": "Contenido"
+  },
+  "tableHeaderText": {
+    "message": "Encabezado"
+  },
+  "selectCellsToMerge": {
+    "message": "Seleccione celdas de la tabla para fusionar"
+  },
+  "enterVideoUrl": {
+    "message": "Por favor ingrese un enlace de YouTube/Vimeo o URL"
+  },
+  "enterQrContent": {
+    "message": "Por favor ingrese contenido QR"
+  },
+  "signatureSaved": {
+    "message": "¡Firma guardada!"
+  },
+  "tableUpdated": {
+    "message": "¡Tabla actualizada!"
+  },
+  "contentInserted": {
+    "message": "¡Contenido insertado en el correo!"
   }
 }

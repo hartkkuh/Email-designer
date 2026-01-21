@@ -1346,5 +1346,116 @@
   },
   "tplReferral_stats": {
     "message": "Вы уже пригласили 3 друзей и заработали ₽150!"
+  },
+  "settings": {
+    "message": "Настройки"
+  },
+  "gmailIntegration": {
+    "message": "Интеграция Gmail"
+  },
+  "emailIntegration": {
+    "message": "Интеграция электронной почты"
+  },
+  "enableGmailEditorLabel": {
+    "message": "Включить встроенный редактор в Gmail"
+  },
+  "enableEmailEditorLabel": {
+    "message": "Включить встроенный редактор в почтовых сервисах"
+  },
+  "enableGmailEditorDesc": {
+    "message": "Когда включено, окно создания письма в Gmail будет заменено полным редактором"
+  },
+  "enableEmailEditorDesc": {
+    "message": "Когда включено, окно создания письма в Gmail, Outlook, Yahoo и ProtonMail будет заменено полным редактором"
+  },
+  "gmailEditorEnabled": {
+    "message": "Редактор Gmail включён"
+  },
+  "emailEditorEnabled": {
+    "message": "Редактор почты включён"
+  },
+  "gmailEditorDisabled": {
+    "message": "Редактор Gmail отключён"
+  },
+  "emailEditorDisabled": {
+    "message": "Редактор почты отключён"
+  },
+  "switchToGmailEditor": {
+    "message": "Переключиться на полный редактор"
+  },
+  "switchToNormalEditor": {
+    "message": "Переключиться на обычный редактор"
+  },
+  "edit": {
+    "message": "Редактировать"
+  },
+  "editName": {
+    "message": "Редактировать имя"
+  },
+  "exportHtml": {
+    "message": "Экспортировать HTML"
+  },
+  "delete": {
+    "message": "Удалить"
+  },
+  "enterFileUrl": {
+    "message": "Пожалуйста, введите URL файла"
+  },
+  "bgImageAdded": {
+    "message": "Фоновое изображение добавлено"
+  },
+  "enterImageUrl": {
+    "message": "Пожалуйста, введите URL изображения"
+  },
+  "bgImageRemoved": {
+    "message": "Фоновое изображение удалено"
+  },
+  "fileLinkAdded": {
+    "message": "Ссылка на файл успешно добавлена"
+  },
+  "unsubscribeAdded": {
+    "message": "Ссылка отписки добавлена"
+  },
+  "bgColorUpdated": {
+    "message": "Цвет фона обновлён"
+  },
+  "directionRtl": {
+    "message": "Справа налево"
+  },
+  "directionLtr": {
+    "message": "Слева направо"
+  },
+  "enterMapAddress": {
+    "message": "Пожалуйста, введите адрес"
+  },
+  "enterSignatureName": {
+    "message": "Пожалуйста, введите имя подписи"
+  },
+  "signatureDeleted": {
+    "message": "Подпись удалена"
+  },
+  "tableCellContent": {
+    "message": "Содержимое"
+  },
+  "tableHeaderText": {
+    "message": "Заголовок"
+  },
+  "selectCellsToMerge": {
+    "message": "Выберите ячейки таблицы для объединения"
+  },
+  "enterVideoUrl": {
+    "message": "Пожалуйста, введите ссылку YouTube/Vimeo или URL"
+  },
+  "enterQrContent": {
+    "message": "Пожалуйста, введите содержимое QR"
+  },
+  "signatureSaved": {
+    "message": "Подпись сохранена!"
+  },
+  "tableUpdated": {
+    "message": "Таблица обновлена!"
+  },
+  "contentInserted": {
+    "message": "Содержимое вставлено в письмо!"
   }
 }

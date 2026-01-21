@@ -1,12 +1,12 @@
 /* Email Designer - Content Styles */
-/* Minimal styles injected into Gmail page */
+/* Minimal styles injected into email service pages (Gmail, Outlook, Yahoo, ProtonMail) */
 
 /* Optional: Add visual indicator when content is inserted */
-.gmail-html-editor-inserted {
-  animation: gmailHtmlEditorFade 0.5s ease;
+.email-html-editor-inserted {
+  animation: emailHtmlEditorFade 0.5s ease;
 }
 
-@keyframes gmailHtmlEditorFade {
+@keyframes emailHtmlEditorFade {
   from {
     background-color: rgba(99, 102, 241, 0.1);
   }
@@ -15,3 +15,7 @@
   }
 }
 
+/* Backward compatibility */
+.gmail-html-editor-inserted {
+  animation: emailHtmlEditorFade 0.5s ease;
+}

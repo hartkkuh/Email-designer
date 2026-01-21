@@ -10,7 +10,8 @@ chrome.runtime.onInstalled.addListener((details) => {
       settings: {
         autoSave: true,
         defaultFont: 'Heebo, sans-serif',
-        defaultFontSize: '14px'
+        defaultFontSize: '14px',
+        gmailIntegration: false
       }
     });
   }

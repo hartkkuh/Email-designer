@@ -416,5 +416,478 @@
     return { bodyStyle, bodyContent, htmlDir, htmlLang };
   }
 
+  // ===========================================
+  // EMBEDDED EDITOR INTEGRATION (Full UI)
+  // Supports: Gmail, Outlook, Yahoo, ProtonMail
+  // ===========================================
+  
+  // Run for all supported email services
+  if (emailService !== 'unknown') {
+    let emailIntegrationEnabled = false;
+    const processedComposeWindows = new WeakSet();
+    
+    // Service-specific compose dialog selectors
+    const composeDialogSelectors = {
+      gmail: ['div[role="dialog"]', '.AD', '.M9', 'div.nH[role="main"]'],
+      outlook: [
+        'div[role="dialog"]',
+        'div[data-app-section="ConversationContainer"]',
+        'div.customScrollBar',
+        'div[aria-label*="compose"]',
+        'div[aria-label*="Compose"]',
+        'div[aria-label*="כתיבה"]',
+        'div[class*="___ComposeMessage"]',
+        'div[data-testid="ComposePaneContent"]'
+      ],
+      yahoo: [
+        'div[data-test-id="compose-header"]',
+        'div[data-test-id="compose-editor-container"]',
+        'div.compose-editor',
+        'div[class*="compose"]'
+      ],
+      protonmail: [
+        'div.composer-container',
+        'div[class*="composer"]',
+        'div.composer',
+        'div[data-testid="composer:container"]'
+      ]
+    };
+    
+    // Helper to check if extension context is still valid
+    function isExtensionContextValid() {
+      try {
+        return !!chrome.runtime?.id;
+      } catch (e) {
+        return false;
+      }
+    }
+    
+    // Check if email integration is enabled
+    function checkEmailIntegration() {
+      return new Promise((resolve) => {
+        if (!isExtensionContextValid()) {
+          resolve(false);
+          return;
+        }
+        try {
+          chrome.storage.local.get(['settings'], (result) => {
+            // Support both old 'gmailIntegration' and new 'emailIntegration' keys
+            emailIntegrationEnabled = result.settings?.gmailIntegration || result.settings?.emailIntegration || false;
+            resolve(emailIntegrationEnabled);
+          });
+        } catch (e) {
+          resolve(false);
+        }
+      });
+    }
+    
+    // Listen for storage changes
+    chrome.storage.onChanged.addListener((changes, namespace) => {
+      if (!isExtensionContextValid()) return;
+      if (namespace === 'local' && changes.settings) {
+        emailIntegrationEnabled = changes.settings.newValue?.gmailIntegration || changes.settings.newValue?.emailIntegration || false;
+        
+        // If disabled, remove all injected editors
+        if (!emailIntegrationEnabled) {
+          removeAllInjectedEditors();
+        }
+      }
+    });
+    
+    // Find compose body element for current service
+    function findComposeBody(container) {
+      const selectors = serviceSelectors[emailService]?.body || [];
+      for (const selector of selectors) {
+        try {
+          const el = container.querySelector(selector);
+          if (el && isVisible(el) && isComposeArea(el)) {
+            return el;
+          }
+        } catch (e) {
+          // Invalid selector
+        }
+      }
+      
+      // Special handling for ProtonMail iframe
+      if (emailService === 'protonmail') {
+        const iframe = container.querySelector('iframe.composer-body-container, iframe[title*="Composer"]');
+        if (iframe && iframe.contentDocument) {
+          return iframe.contentDocument.body;
+        }
+      }
+      
+      return null;
+    }
+    
+    // Find subject field for current service
+    function findSubjectField(container) {
+      const selectors = serviceSelectors[emailService]?.subject || [];
+      for (const selector of selectors) {
+        try {
+          const el = container.querySelector(selector);
+          if (el && isVisible(el)) {
+            return el;
+          }
+        } catch (e) {
+          // Invalid selector
+        }
+      }
+      // Try to find in document if not in container
+      for (const selector of selectors) {
+        try {
+          const el = document.querySelector(selector);
+          if (el && isVisible(el)) {
+            return el;
+          }
+        } catch (e) {
+          // Invalid selector
+        }
+      }
+      return null;
+    }
+    
+    // Get the subject field container selector based on service
+    function getSubjectContainerSelector() {
+      switch (emailService) {
+        case 'gmail':
+          return 'tr, .aoD, .aox, [class*="subject"], div:has(> input[name="subjectbox"])';
+        case 'outlook':
+          return 'div[class*="subject"], div:has(> input[aria-label*="subject"]), div:has(> input[aria-label*="נושא"])';
+        case 'yahoo':
+          return 'div[data-test-id="compose-subject"], div:has(> input[placeholder*="Subject"])';
+        case 'protonmail':
+          return 'div.composer-subject, div:has(> input[data-testid="composer:subject"])';
+        default:
+          return null;
+      }
+    }
+    
+    // Inject the full editor UI into a compose window
+    function injectEditor(composeDialog) {
+      // Check if extension context is still valid
+      if (!isExtensionContextValid()) return;
+      
+      if (processedComposeWindows.has(composeDialog)) return;
+      
+      const composeBody = findComposeBody(composeDialog);
+      if (!composeBody) return;
+      
+      processedComposeWindows.add(composeDialog);
+      
+      // Get the parent container of the compose body
+      const composeBodyContainer = composeBody.parentElement;
+      if (!composeBodyContainer) return;
+      
+      // Find and hide the email service's subject field
+      const subjectField = findSubjectField(composeDialog);
+      let subjectContainer = null;
+      if (subjectField) {
+        // Find the row/container that holds the subject field
+        const containerSelector = getSubjectContainerSelector();
+        if (containerSelector) {
+          subjectContainer = subjectField.closest(containerSelector);
+        }
+        if (!subjectContainer) {
+          subjectContainer = subjectField.parentElement?.parentElement;
+        }
+        if (subjectContainer) {
+          subjectContainer.style.display = 'none';
+          subjectContainer.dataset.edHiddenSubject = 'true';
+        }
+      }
+      
+      // Double-check context before using chrome.runtime.getURL
+      if (!isExtensionContextValid()) return;
+      
+      // Create iframe container
+      const iframeContainer = document.createElement('div');
+      iframeContainer.className = 'email-designer-embedded-container';
+      let popupUrl;
+      try {
+        popupUrl = chrome.runtime.getURL('popup.html');
+      } catch (e) {
+        return;
+      }
+      iframeContainer.innerHTML = `
+        <div class="ed-header-bar">
+          <span class="ed-title">Email Designer</span>
+          <button class="ed-close-btn" title="Close editor">✕</button>
+        </div>
+        <iframe class="email-designer-iframe" src="${popupUrl}?embedded=true"></iframe>
+      `;
+      
+      // Hide the original compose body
+      composeBody.style.display = 'none';
+      composeBody.dataset.edHidden = 'true';
+      
+      // Insert our editor container
+      composeBodyContainer.insertBefore(iframeContainer, composeBody);
+      
+      // Get iframe reference
+      const iframe = iframeContainer.querySelector('.email-designer-iframe');
+      
+      // Close button - switch back to normal editor
+      iframeContainer.querySelector('.ed-close-btn')?.addEventListener('click', () => {
+        removeInjectedEditor(composeDialog);
+      });
+      
+      // Listen for messages from the iframe
+      window.addEventListener('message', function handleIframeMessage(event) {
+        // Verify the message is from our iframe
+        if (event.source !== iframe.contentWindow) return;
+        
+        const { type, html, subject } = event.data || {};
+        
+        if (type === 'insertToEmail') {
+          // Insert the HTML to the compose body
+          const { bodyContent } = extractBodyContent(html);
+          composeBody.innerHTML = bodyContent;
+          composeBody.dispatchEvent(new Event('input', { bubbles: true }));
+          
+          // For React-based apps (Outlook, Yahoo)
+          triggerReactUpdate(composeBody);
+          
+          // Insert subject if provided
+          if (subject) {
+            insertSubjectToEmail(subject);
+          }
+        }
+        
+        if (type === 'editorReady') {
+          // Send current compose content to iframe
+          const currentSubject = subjectField ? subjectField.value : '';
+          iframe.contentWindow.postMessage({
+            type: 'loadContent',
+            html: composeBody.innerHTML,
+            subject: currentSubject
+          }, '*');
+        }
+        
+        if (type === 'contentChanged') {
+          // Sync content to email service
+          if (html) {
+            const { bodyContent } = extractBodyContent(html);
+            composeBody.innerHTML = bodyContent;
+            composeBody.dispatchEvent(new Event('input', { bubbles: true }));
+            triggerReactUpdate(composeBody);
+          }
+          // Sync subject
+          if (subject !== undefined && subjectField) {
+            subjectField.value = subject;
+            subjectField.dispatchEvent(new Event('input', { bubbles: true }));
+            subjectField.dispatchEvent(new Event('change', { bubbles: true }));
+            triggerReactUpdate(subjectField);
+          }
+        }
+      });
+    }
+    
+    // Trigger React update for React-based apps
+    function triggerReactUpdate(element) {
+      try {
+        const inputEvent = new InputEvent('input', {
+          bubbles: true,
+          cancelable: true,
+          inputType: 'insertText'
+        });
+        element.dispatchEvent(inputEvent);
+        
+        // For React controlled inputs
+        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+          element.tagName === 'INPUT' ? window.HTMLInputElement.prototype : window.HTMLTextAreaElement.prototype,
+          'value'
+        )?.set;
+        if (nativeInputValueSetter && element.value !== undefined) {
+          nativeInputValueSetter.call(element, element.value);
+          element.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      } catch (e) {
+        // Ignore if native setter fails
+      }
+    }
+    
+    // Remove injected editor from a compose window
+    function removeInjectedEditor(composeDialog) {
+      const editorContainer = composeDialog.querySelector('.email-designer-embedded-container');
+      const composeBody = composeDialog.querySelector('[data-ed-hidden="true"]');
+      const subjectContainer = composeDialog.querySelector('[data-ed-hidden-subject="true"]');
+      
+      if (editorContainer && composeBody) {
+        // Show the original compose body again
+        composeBody.style.display = '';
+        delete composeBody.dataset.edHidden;
+        
+        // Show the subject field again
+        if (subjectContainer) {
+          subjectContainer.style.display = '';
+          delete subjectContainer.dataset.edHiddenSubject;
+        }
+        
+        // Remove our editor
+        editorContainer.remove();
+        
+        // Allow re-injection
+        processedComposeWindows.delete(composeDialog);
+      }
+    }
+    
+    // Remove all injected editors
+    function removeAllInjectedEditors() {
+      document.querySelectorAll('.email-designer-embedded-container').forEach(container => {
+        const selectors = composeDialogSelectors[emailService] || ['div[role="dialog"]'];
+        const composeDialog = container.closest(selectors.join(', '));
+        if (composeDialog) {
+          removeInjectedEditor(composeDialog);
+        } else {
+          container.remove();
+        }
+      });
+    }
+    
+    // Get compose dialog selectors for current service
+    function getComposeDialogSelectors() {
+      return composeDialogSelectors[emailService] || ['div[role="dialog"]'];
+    }
+    
+    // Watch for compose windows opening
+    function initComposeObserver() {
+      const dialogSelectors = getComposeDialogSelectors();
+      
+      const observer = new MutationObserver(async (mutations) => {
+        if (!emailIntegrationEnabled) return;
+        if (!isExtensionContextValid()) return;
+        
+        for (const mutation of mutations) {
+          for (const node of mutation.addedNodes) {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              // Check if this is a compose dialog or contains one
+              for (const selector of dialogSelectors) {
+                try {
+                  const dialogs = node.matches?.(selector) 
+                    ? [node] 
+                    : node.querySelectorAll?.(selector) || [];
+                  
+                  for (const dialog of dialogs) {
+                    // Wait a bit for the email service to fully render the compose window
+                    setTimeout(() => {
+                      if (!isExtensionContextValid()) return;
+                      if (emailIntegrationEnabled && findComposeBody(dialog)) {
+                        injectEditor(dialog);
+                      }
+                    }, 500);
+                  }
+                } catch (e) {
+                  // Invalid selector, skip
+                }
+              }
+            }
+          }
+        }
+      });
+      
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      
+      return observer;
+    }
+    
+    // Initialize email integration
+    async function initEmailIntegration() {
+      await checkEmailIntegration();
+      
+      // Inject styles
+      injectEditorStyles();
+      
+      if (emailIntegrationEnabled) {
+        // Check for any existing compose windows
+        const dialogSelectors = getComposeDialogSelectors();
+        for (const selector of dialogSelectors) {
+          try {
+            document.querySelectorAll(selector).forEach(container => {
+              if (findComposeBody(container)) {
+                injectEditor(container);
+              }
+            });
+          } catch (e) {
+            // Invalid selector, skip
+          }
+        }
+      }
+      
+      // Start watching for new compose windows
+      initComposeObserver();
+    }
+    
+    // Inject CSS styles for the embedded editor container
+    function injectEditorStyles() {
+      if (document.getElementById('email-designer-embedded-styles')) return;
+      
+      const style = document.createElement('style');
+      style.id = 'email-designer-embedded-styles';
+      style.textContent = `
+        .email-designer-embedded-container {
+          display: flex;
+          flex-direction: column;
+          border: 2px solid #6366f1;
+          border-radius: 12px;
+          overflow: hidden;
+          background: #0f0f13;
+          margin: 8px 0;
+          box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+          z-index: 9999;
+          position: relative;
+        }
+        
+        .ed-header-bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 8px 12px;
+          background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+          color: white;
+          font-family: 'Heebo', Arial, sans-serif;
+        }
+        
+        .ed-title {
+          font-weight: 600;
+          font-size: 14px;
+        }
+        
+        .ed-close-btn {
+          width: 24px;
+          height: 24px;
+          border: none;
+          background: rgba(255,255,255,0.2);
+          color: white;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s;
+        }
+        
+        .ed-close-btn:hover {
+          background: rgba(255,255,255,0.3);
+        }
+        
+        .email-designer-iframe {
+          width: 100%;
+          height: 550px;
+          border: none;
+          background: #0f0f13;
+        }
+      `;
+      
+      document.head.appendChild(style);
+    }
+    
+    // Start initialization
+    initEmailIntegration();
+  }
+
   // Initialize
 })();

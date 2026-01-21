@@ -1,6 +1,23 @@
 // Email Designer - Main Script
 
 // ===========================================
+// EMBEDDED MODE DETECTION
+// ===========================================
+
+// Check if running in embedded mode (inside Gmail iframe)
+const urlParams = new URLSearchParams(window.location.search);
+const isEmbeddedMode = urlParams.get('embedded') === 'true';
+
+// Helper to check if extension context is still valid
+function isExtensionContextValid() {
+  try {
+    return !!chrome.runtime?.id;
+  } catch (e) {
+    return false;
+  }
+}
+
+// ===========================================
 // INTERNATIONALIZATION (i18n)
 // ===========================================
 
@@ -18,10 +35,19 @@ let translations = {};
 
 // Load translations from JSON files
 async function loadTranslations() {
+  if (!isExtensionContextValid()) {
+    console.warn('Extension context invalid, skipping translation load');
+    return;
+  }
   try {
     const loadPromises = availableLanguages.map(async (lang) => {
-      const response = await fetch(chrome.runtime.getURL(`_locales/${lang}/messages.json`));
-      translations[lang] = await response.json();
+      try {
+        const url = chrome.runtime.getURL(`_locales/${lang}/messages.json`);
+        const response = await fetch(url);
+        translations[lang] = await response.json();
+      } catch (e) {
+        // Individual language load failed, continue with others
+      }
     });
     await Promise.all(loadPromises);
   } catch (e) {
@@ -46,8 +72,15 @@ function msg(key, substitutions) {
     }
     return message || key;
   }
-  // Fallback to Chrome's i18n API
-  return chrome.i18n.getMessage(key, substitutions) || key;
+  // Fallback to Chrome's i18n API (only if context is valid)
+  if (isExtensionContextValid()) {
+    try {
+      return chrome.i18n.getMessage(key, substitutions) || key;
+    } catch (e) {
+      return key;
+    }
+  }
+  return key;
 }
 
 // Apply translations to the page
@@ -138,8 +171,14 @@ function setLanguage(lang) {
     }
   }
   
-  // Save preference
-  chrome.storage.local.set({ language: currentLang });
+  // Save preference (only if context is valid)
+  if (isExtensionContextValid()) {
+    try {
+      chrome.storage.local.set({ language: currentLang });
+    } catch (e) {
+      // Extension context may have been invalidated
+    }
+  }
 }
 
 // Load saved language preference
@@ -147,29 +186,43 @@ async function loadLanguagePreference() {
   // First load translations
   await loadTranslations();
   
-  // Then get saved preference
-  chrome.storage.local.get(['language'], (result) => {
-    if (result.language && availableLanguages.includes(result.language)) {
-      currentLang = result.language;
-    } else {
-      // Auto-detect from browser
-      const browserLang = navigator.language.split('-')[0];
-      if (availableLanguages.includes(browserLang)) {
-        currentLang = browserLang;
-      } else if (navigator.language.startsWith('zh')) {
-        currentLang = 'zh_CN';
-      } else {
-        currentLang = 'en';
-      }
-    }
-    
-    // Update document direction
+  // Check if context is still valid before accessing storage
+  if (!isExtensionContextValid()) {
+    // Apply default language
     document.documentElement.lang = currentLang;
     document.documentElement.dir = rtlLanguages.includes(currentLang) ? 'rtl' : 'ltr';
-    
-    // Apply translations
     applyI18n();
-  });
+    return;
+  }
+  
+  // Then get saved preference
+  try {
+    chrome.storage.local.get(['language'], (result) => {
+      if (result.language && availableLanguages.includes(result.language)) {
+        currentLang = result.language;
+      } else {
+        // Auto-detect from browser
+        const browserLang = navigator.language.split('-')[0];
+        if (availableLanguages.includes(browserLang)) {
+          currentLang = browserLang;
+        } else if (navigator.language.startsWith('zh')) {
+          currentLang = 'zh_CN';
+        } else {
+          currentLang = 'en';
+        }
+      }
+      
+      // Update document direction
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = rtlLanguages.includes(currentLang) ? 'rtl' : 'ltr';
+      
+      // Apply translations
+      applyI18n();
+    });
+  } catch (e) {
+    // Extension context may have been invalidated
+    console.warn('Failed to load language preference:', e);
+  }
 }
 
 // Initialize language select
@@ -633,6 +686,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   initAIFeatures();
   initVariables();
   initShortcutsHelp();
+  initSettings();
+  
+  // Initialize embedded mode if running inside Gmail
+  if (isEmbeddedMode) {
+    initEmbeddedMode();
+  }
   
   // Initialize spell checker after a short delay to ensure everything is loaded
   setTimeout(() => {
@@ -642,6 +701,71 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }, 500);
 });
+
+// ===========================================
+// EMBEDDED MODE (Gmail Integration)
+// ===========================================
+function initEmbeddedMode() {
+  // Notify parent that editor is ready
+  window.parent.postMessage({ type: 'editorReady' }, '*');
+  
+  // Listen for messages from parent (Gmail content script)
+  window.addEventListener('message', (event) => {
+    const { type, html, subject } = event.data || {};
+    
+    if (type === 'loadContent') {
+      // Load content from Gmail compose body
+      if (html && editor) {
+        editor.innerHTML = html;
+      }
+      // Load subject from Gmail
+      if (subject && emailSubject) {
+        emailSubject.value = subject;
+      }
+    }
+  });
+  
+  // Debounce helper for sync
+  let syncTimeout;
+  function syncToParent() {
+    clearTimeout(syncTimeout);
+    syncTimeout = setTimeout(() => {
+      window.parent.postMessage({
+        type: 'contentChanged',
+        html: getFullHtml(),
+        subject: emailSubject ? emailSubject.value : ''
+      }, '*');
+    }, 300);
+  }
+  
+  // Sync editor changes to parent in real-time
+  if (editor) {
+    editor.addEventListener('input', syncToParent);
+    editor.addEventListener('paste', () => setTimeout(syncToParent, 50));
+  }
+  
+  // Sync subject changes to parent in real-time
+  if (emailSubject) {
+    emailSubject.addEventListener('input', syncToParent);
+  }
+  
+  // Also sync when using toolbar commands
+  const originalExecCommand = document.execCommand.bind(document);
+  document.execCommand = function(command, showUI, value) {
+    const result = originalExecCommand(command, showUI, value);
+    syncToParent();
+    return result;
+  };
+  
+  // Adjust UI for embedded mode
+  document.body.classList.add('embedded-mode');
+  
+  // Hide the "Insert to Email" button in embedded mode - sync is automatic
+  const insertBtn = document.getElementById('insertToGmail');
+  if (insertBtn) {
+    insertBtn.style.display = 'none';
+  }
+}
 
 // Tab Navigation
 function initTabs() {
@@ -880,7 +1004,7 @@ function initImageModal() {
       closeModal('imageModal');
       clearModalInputs('imageModal');
     } else {
-      showToast('יש להזין כתובת URL לתמונה', 'error');
+      showToast(msg('enterImageUrl'), 'error');
     }
   });
   
@@ -923,9 +1047,9 @@ function initEmailBgImageModal() {
         emailBgImageSize = sizeSelect ? sizeSelect.value : 'cover';
         updatePreview();
         saveContent(); // Save background image change
-        showToast('תמונת רקע נוספה', 'success');
+        showToast(msg('bgImageAdded'), 'success');
       } else {
-        showToast('יש להזין כתובת תמונה', 'error');
+        showToast(msg('enterImageUrl'), 'error');
         return;
       }
       closeModal('emailBgImageModal');
@@ -946,7 +1070,7 @@ function initEmailBgImageModal() {
       if (urlInput) urlInput.value = '';
       updatePreview();
       saveContent(); // Save background image removal
-      showToast('תמונת רקע הוסרה', 'success');
+      showToast(msg('bgImageRemoved'), 'success');
       closeModal('emailBgImageModal');
     });
   }
@@ -1002,7 +1126,7 @@ function initVideoModal() {
       closeModal('videoModal');
       resetVideoModal();
     } else {
-      showToast('יש להזין קישור YouTube/Vimeo או כתובת URL', 'error');
+      showToast(msg('enterVideoUrl'), 'error');
     }
   });
   
@@ -1065,10 +1189,10 @@ function initFileModal() {
   if (confirmBtn) {
     confirmBtn.addEventListener('click', () => {
       const fileUrl = document.getElementById('fileUrl').value;
-      const linkText = document.getElementById('fileLinkText').value || 'לחץ להורדה';
+      const linkText = document.getElementById('fileLinkText').value || msg('fileLinkPlaceholder');
       
       if (!fileUrl) {
-        showToast('יש להזין כתובת URL לקובץ', 'error');
+        showToast(msg('enterFileUrl'), 'error');
         return;
       }
       
@@ -1085,7 +1209,7 @@ function initFileModal() {
       </a>&nbsp;`;
       
       document.execCommand('insertHTML', false, fileHtml);
-      showToast('הקישור לקובץ הוסף בהצלחה', 'success');
+      showToast(msg('fileLinkAdded'), 'success');
       closeModal('fileModal');
       resetFileModal();
     });
@@ -1205,7 +1329,7 @@ function initTemplates() {
         reader.readAsText(file);
       });
       
-      showToast('התבניות יובאו בהצלחה', 'success');
+      showToast(msg('templatesImported'), 'success');
       // Don't reset color pickers
       if (e.target.type !== 'color') {
         e.target.value = ''; // Reset input
@@ -1229,7 +1353,7 @@ function initTemplates() {
       const name = document.getElementById('editTemplateName').value.trim();
       
       if (!name) {
-        showToast('יש להזין שם לתבנית', 'error');
+        showToast(msg('enterTemplateName'), 'error');
         return;
       }
       
@@ -1238,7 +1362,7 @@ function initTemplates() {
         if (personalTemplates[id]) {
           personalTemplates[id].name = name;
           chrome.storage.local.set({ personalTemplates: personalTemplates }, () => {
-            showToast('התבנית עודכנה', 'success');
+            showToast(msg('templateUpdated'), 'success');
             closeModal('editTemplateModal');
             loadPersonalTemplates();
           });
@@ -1273,7 +1397,7 @@ function loadTemplateToEditor(html, templateName = null) {
   // Save the loaded template so it persists
   saveContent();
   
-  showToast(msg('templateLoaded') || 'התבנית נטענה בהצלחה', 'success');
+  showToast(msg('templateLoaded'), 'success');
 }
 
 function loadPersonalTemplates() {
@@ -1312,20 +1436,20 @@ function createPersonalTemplateCard(id, template) {
     <div class="template-preview personal-preview"></div>
     <span title="${template.name}">${template.name}</span>
     <div class="template-card-actions">
-      <button class="template-action-btn edit" title="ערוך שם">
+      <button class="template-action-btn edit" title="${msg('editName')}">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
           <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
         </svg>
       </button>
-      <button class="template-action-btn export" title="ייצא HTML">
+      <button class="template-action-btn export" title="${msg('exportHtml')}">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
           <polyline points="7 10 12 15 17 10"/>
           <line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
       </button>
-      <button class="template-action-btn delete" title="מחק">
+      <button class="template-action-btn delete" title="${msg('delete')}">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="3 6 5 6 21 6"/>
           <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
@@ -1367,7 +1491,7 @@ function deleteTemplate(id) {
     const templates = result.personalTemplates || {};
     delete templates[id];
     chrome.storage.local.set({ personalTemplates: templates }, () => {
-      showToast('התבנית נמחקה', 'success');
+      showToast(msg('templateDeleted'), 'success');
       loadPersonalTemplates();
     });
   });
@@ -1393,7 +1517,7 @@ ${html}
   a.download = `${name}.html`;
   a.click();
   URL.revokeObjectURL(url);
-  showToast('התבנית יוצאה', 'success');
+  showToast(msg('templateExported'), 'success');
 }
 
 function exportAllTemplates() {
@@ -1402,7 +1526,7 @@ function exportAllTemplates() {
     const templateIds = Object.keys(templates);
     
     if (templateIds.length === 0) {
-      showToast('אין תבניות לייצוא', 'error');
+      showToast(msg('noTemplatesToExport'), 'error');
       return;
     }
     
@@ -1443,7 +1567,7 @@ function initFooterActions() {
         editor.innerHTML += unsubscribeHtml;
       }
       
-      showToast('שורת הסר נוספה', 'success');
+      showToast(msg('unsubscribeAdded'), 'success');
       updatePreview();
     });
   }
@@ -1508,7 +1632,7 @@ function initFooterActions() {
   async function copyToClipboard(text) {
     try {
       await navigator.clipboard.writeText(text);
-      showToast('הקוד הועתק ללוח!', 'success');
+      showToast(msg('codeCopied'), 'success');
     } catch (err) {
       // Fallback for older browsers
       const textArea = document.createElement('textarea');
@@ -1517,7 +1641,7 @@ function initFooterActions() {
       textArea.select();
       document.execCommand('copy');
       document.body.removeChild(textArea);
-      showToast('הקוד הועתק ללוח!', 'success');
+      showToast(msg('codeCopied'), 'success');
     }
   }
   
@@ -1541,7 +1665,7 @@ function initFooterActions() {
       const templateNameInput = document.getElementById('templateName');
       const name = templateNameInput ? templateNameInput.value.trim() : '';
       if (!name) {
-        showToast('יש להזין שם לתבנית', 'error');
+        showToast(msg('enterTemplateName'), 'error');
         return;
       }
       
@@ -1556,7 +1680,7 @@ function initFooterActions() {
           created: Date.now()
         };
         chrome.storage.local.set({ personalTemplates: personalTemplates }, () => {
-          showToast('התבנית נשמרה!', 'success');
+          showToast(msg('templateSaved'), 'success');
           closeModal('saveTemplateModal');
           loadPersonalTemplates();
         });
@@ -1577,6 +1701,17 @@ function initFooterActions() {
     insertToGmailBtn.addEventListener('click', async () => {
       const html = getFullHtml();
       const subject = emailSubject ? emailSubject.value : '';
+      
+      // If in embedded mode, send message to parent window
+      if (isEmbeddedMode) {
+        window.parent.postMessage({
+          type: 'insertToEmail',
+          html: html,
+          subject: subject
+        }, '*');
+        showToast(msg('contentInserted'), 'success');
+        return;
+      }
     
     try {
       // Get the active tab
@@ -1602,7 +1737,7 @@ function initFooterActions() {
       }
       
       if (!detectedService) {
-        showToast('יש לפתוח Gmail, Outlook, Yahoo או ProtonMail', 'error');
+        showToast(msg('openEmailService'), 'error');
         return;
       }
       
@@ -1639,7 +1774,7 @@ function initFooterActions() {
       
     } catch (err) {
       console.error(err);
-      showToast('שגיאה בהכנסת התוכן', 'error');
+      showToast(msg('errorInserting'), 'error');
     }
     });
   }
@@ -1996,7 +2131,7 @@ function initColorSwatches() {
       emailBgColor = e.target.value;
       updatePreview();
       saveContent(); // Save background color change
-      showToast('צבע רקע עודכן', 'success');
+      showToast(msg('bgColorUpdated'), 'success');
     });
   }
 }
@@ -2041,8 +2176,8 @@ function initDirectionToggle() {
     updateDirectionIcon();
     
     // Show toast
-    const directionText = emailDirection === 'rtl' ? 'ימין לשמאל' : 'שמאל לימין';
-    showToast(`כיוון קריאה: ${directionText}`, 'success');
+    const directionText = emailDirection === 'rtl' ? msg('directionRtl') : msg('directionLtr');
+    showToast(`${msg('toggleDirection')}: ${directionText}`, 'success');
   });
 }
 
@@ -2174,7 +2309,7 @@ function initNewTools() {
       
       // Word-style text box: draggable and resizable (very small initial size)
       const textBoxId = 'textbox-' + Date.now();
-      const placeholderText = msg('textBoxPlaceholder') || 'הזן טקסט כאן';
+      const placeholderText = msg('textBoxPlaceholder');
       const textBoxHtml = `<div class="word-textbox" data-textbox-id="${textBoxId}" style="position: relative; display: inline-block; width: 60px; height: 30px; padding: 4px; margin: 10px 0; cursor: move;">
   <div class="textbox-content" contenteditable="true" style="min-height: 22px; outline: none;">
     <p style="margin: 0; font-size: 11px;">${placeholderText}</p>
@@ -2221,7 +2356,7 @@ function initNewTools() {
   const confirmButton = document.getElementById('confirmButton');
   if (confirmButton) {
     confirmButton.addEventListener('click', () => {
-      const text = document.getElementById('buttonText').value || 'לחץ כאן';
+      const text = document.getElementById('buttonText').value || msg('buttonTextPlaceholder');
       const url = document.getElementById('buttonUrl').value || '#';
       const color = document.getElementById('buttonColor').value || '#3b82f6';
       
@@ -2251,7 +2386,7 @@ function initNewTools() {
         emailSubject.value = '';
         saveContent();
         editor.focus();
-        showToast('התוכן נמחק', 'success');
+        showToast(msg('contentCleared'), 'success');
       }
     });
   }
@@ -2740,6 +2875,46 @@ function initShortcutsHelp() {
 }
 
 // ===========================================
+// SETTINGS (Gmail Integration)
+// ===========================================
+function initSettings() {
+  const settingsBtn = document.getElementById('settingsBtn');
+  const enableGmailEditor = document.getElementById('enableGmailEditor');
+  
+  if (!settingsBtn) return;
+  
+  // Open settings modal
+  settingsBtn.addEventListener('click', () => {
+    openModal('settingsModal');
+  });
+  
+  // Close button
+  document.getElementById('closeSettingsModal')?.addEventListener('click', () => {
+    closeModal('settingsModal');
+  });
+  
+  // Load saved setting
+  chrome.storage.local.get(['settings'], (result) => {
+    if (enableGmailEditor && result.settings) {
+      enableGmailEditor.checked = result.settings.gmailIntegration || false;
+    }
+  });
+  
+  // Save setting when toggled
+  if (enableGmailEditor) {
+    enableGmailEditor.addEventListener('change', () => {
+      chrome.storage.local.get(['settings'], (result) => {
+        const settings = result.settings || {};
+        settings.gmailIntegration = enableGmailEditor.checked;
+        chrome.storage.local.set({ settings }, () => {
+          showToast(enableGmailEditor.checked ? msg('emailEditorEnabled') : msg('emailEditorDisabled'));
+        });
+      });
+    });
+  }
+}
+
+// ===========================================
 // THEME TOGGLE (Dark/Light Mode)
 // ===========================================
 function initThemeToggle() {
@@ -2897,7 +3072,7 @@ function initQrCode() {
     const size = document.getElementById('qrSize').value || 150;
     
     if (!content) {
-      showToast('יש להזין תוכן ל-QR', 'error');
+      showToast(msg('enterQrContent'), 'error');
       return;
     }
     
@@ -2946,7 +3121,7 @@ function initMapModal() {
     const height = Math.round(width * 0.6);
     
     if (!address) {
-      showToast('יש להזין כתובת', 'error');
+      showToast(msg('enterMapAddress'), 'error');
       return;
     }
     
@@ -3027,7 +3202,7 @@ function initSocialButtons() {
     });
     
     if (filledLinks.length === 0) {
-      showToast(msg('enterAtLeastOneLink') || 'הזן לפחות קישור אחד', 'error');
+      showToast(msg('enterAtLeastOneLink'), 'error');
       return;
     }
     
@@ -3050,7 +3225,7 @@ function initSocialButtons() {
     document.execCommand('insertHTML', false, html);
     
     closeModal('socialModal');
-    showToast(msg('socialButtonsAdded') || 'כפתורי הרשתות נוספו!', 'success');
+    showToast(msg('socialButtonsAdded'), 'success');
   });
   
   document.getElementById('cancelSocial')?.addEventListener('click', () => {
@@ -3086,7 +3261,7 @@ function initSignatureManager() {
     const editId = document.getElementById('editSignatureId').value;
     
     if (!name) {
-      showToast('יש להזין שם לחתימה', 'error');
+      showToast(msg('enterSignatureName'), 'error');
       return;
     }
     
@@ -3097,7 +3272,7 @@ function initSignatureManager() {
       signatures[id] = { name, content, created: Date.now() };
       
       chrome.storage.local.set({ signatures }, () => {
-        showToast('החתימה נשמרה!', 'success');
+        showToast(msg('signatureSaved'), 'success');
         closeModal('editSignatureModal');
         openModal('signatureModal');
         loadSignatures();
@@ -3150,13 +3325,13 @@ function loadSignatures() {
       item.innerHTML = `
         <span class="signature-item-name">${sig.name}</span>
         <div class="signature-item-actions">
-          <button class="signature-action-btn edit" title="ערוך">
+          <button class="signature-action-btn edit" title="${msg('edit')}">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
               <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
             </svg>
           </button>
-          <button class="signature-action-btn delete" title="מחק">
+          <button class="signature-action-btn delete" title="${msg('delete')}">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="3 6 5 6 21 6"/>
               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
@@ -3194,7 +3369,7 @@ function loadSignatures() {
         if (confirm(`למחוק את החתימה "${sig.name}"?`)) {
           delete signatures[id];
           chrome.storage.local.set({ signatures }, () => {
-            showToast('החתימה נמחקה', 'success');
+            showToast(msg('signatureDeleted'), 'success');
             loadSignatures();
           });
         }
@@ -3227,7 +3402,7 @@ function initAdvancedTableEditor() {
     for (let i = 0; i < cols; i++) {
       const cell = row.insertCell(-1);
       cell.style.cssText = 'border: 1px solid #e5e7eb; padding: 10px; text-align: right;';
-      cell.textContent = 'תוכן';
+      cell.textContent = msg('tableCellContent');
     }
   });
   
@@ -3236,7 +3411,7 @@ function initAdvancedTableEditor() {
     for (let i = 0; i < selectedTable.rows.length; i++) {
       const cell = selectedTable.rows[i].insertCell(-1);
       cell.style.cssText = 'border: 1px solid #e5e7eb; padding: 10px; text-align: right;';
-      cell.textContent = i === 0 ? 'כותרת' : 'תוכן';
+      cell.textContent = i === 0 ? msg('tableHeaderText') : msg('tableCellContent');
       if (i === 0) cell.style.background = '#f9fafb';
     }
   });
@@ -3256,7 +3431,7 @@ function initAdvancedTableEditor() {
   });
   
   document.getElementById('tableMergeCells')?.addEventListener('click', () => {
-    showToast('בחר תאים בטבלה למיזוג', 'info');
+    showToast(msg('selectCellsToMerge'), 'info');
   });
   
   document.getElementById('applyTableChanges')?.addEventListener('click', () => {
@@ -3277,7 +3452,7 @@ function initAdvancedTableEditor() {
     }
     
     closeModal('tableEditorModal');
-    showToast('הטבלה עודכנה!', 'success');
+    showToast(msg('tableUpdated'), 'success');
   });
   
   document.getElementById('cancelTableEditor')?.addEventListener('click', () => {
@@ -3399,7 +3574,7 @@ async function initAIFeatures() {
         saveBtn.disabled = false;
         
         closeModal('aiSettingsModal');
-        showToast(msg('apiKeySaved') || 'מפתח ה-API נשמר!', 'success');
+        showToast(msg('apiKeySaved'), 'success');
         
         // Open AI Write modal
         openModal('aiWriteModal');
@@ -3461,7 +3636,7 @@ async function initAIFeatures() {
     const language = document.getElementById('aiLanguage').value;
     
     if (!instructions) {
-      showToast(msg('enterInstructions') || 'הזן הוראות לכתיבת המייל', 'error');
+      showToast(msg('enterInstructions'), 'error');
       return;
     }
     
@@ -3469,7 +3644,7 @@ async function initAIFeatures() {
                    (currentAiProvider === 'openai' && openaiApiKey);
     
     if (!hasKey) {
-      showToast(msg('configureApiFirst') || 'יש להגדיר מפתח API קודם', 'error');
+      showToast(msg('configureApiFirst'), 'error');
       return;
     }
     
@@ -3496,14 +3671,14 @@ async function initAIFeatures() {
         
         closeModal('aiWriteModal');
         document.getElementById('aiInstructions').value = '';
-        showToast(msg('emailGenerated') || 'המייל נוצר בהצלחה!', 'success');
+        showToast(msg('emailGenerated'), 'success');
       }
     } catch (error) {
       // Show appropriate error message
       if (error.message === 'RATE_LIMIT') {
-        showToast(msg('rateLimitError') || 'יותר מדי בקשות. נסה שוב בעוד דקה', 'error');
+        showToast(msg('rateLimitError'), 'error');
       } else {
-        showToast(msg('aiGenerationError') || 'שגיאה ביצירת המייל', 'error');
+        showToast(msg('aiGenerationError'), 'error');
       }
     } finally {
       document.getElementById('aiLoading').classList.add('hidden');
@@ -3830,7 +4005,7 @@ function populateVariablesList() {
   
   builtInVars.forEach(v => {
     const value = v.isDate ? new Date().toLocaleDateString() : userVariables[v.key];
-    const btn = createVariableButton(`{{${v.key}}}`, value || (msg('notSet') || 'לא הוגדר'));
+    const btn = createVariableButton(`{{${v.key}}}`, value || msg('notSet'));
     list.appendChild(btn);
   });
   
@@ -3882,7 +4057,7 @@ function populateCustomVariables() {
   list.innerHTML = '';
   
   if (!userVariables.custom || Object.keys(userVariables.custom).length === 0) {
-    list.innerHTML = `<div class="no-custom-variables" data-i18n="noCustomVariables">${msg('noCustomVariables') || 'אין משתנים מותאמים אישית'}</div>`;
+    list.innerHTML = `<div class="no-custom-variables" data-i18n="noCustomVariables">${msg('noCustomVariables')}</div>`;
     return;
   }
   
@@ -3902,9 +4077,9 @@ function addCustomVariableRow(key = '', value = '') {
   const row = document.createElement('div');
   row.className = 'custom-variable-item';
   row.innerHTML = `
-    <input type="text" class="custom-var-key" placeholder="${msg('variableName') || 'שם משתנה'}" value="${key}">
-    <input type="text" class="custom-var-value" placeholder="${msg('variableValue') || 'ערך'}" value="${value}">
-    <button class="delete-variable-btn" title="${msg('delete') || 'מחק'}">
+    <input type="text" class="custom-var-key" placeholder="${msg('variableName')}" value="${key}">
+    <input type="text" class="custom-var-value" placeholder="${msg('variableValue')}" value="${value}">
+    <button class="delete-variable-btn" title="${msg('delete')}">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="18" y1="6" x2="6" y2="18"/>
         <line x1="6" y1="6" x2="18" y2="18"/>
@@ -3916,7 +4091,7 @@ function addCustomVariableRow(key = '', value = '') {
     row.remove();
     // Show "no variables" if list is empty
     if (list.children.length === 0) {
-      list.innerHTML = `<div class="no-custom-variables" data-i18n="noCustomVariables">${msg('noCustomVariables') || 'אין משתנים מותאמים אישית'}</div>`;
+      list.innerHTML = `<div class="no-custom-variables" data-i18n="noCustomVariables">${msg('noCustomVariables')}</div>`;
     }
   });
   
@@ -3952,7 +4127,7 @@ async function saveVariablesSettings() {
   closeModal('variablesSettingsModal');
   populateVariablesList();
   openModal('variablesModal');
-  showToast(msg('variablesSaved') || 'המשתנים נשמרו!', 'success');
+  showToast(msg('variablesSaved'), 'success');
 }
 
 function replaceVariables(content) {

@@ -1348,5 +1348,116 @@
   },
   "tplReferral_stats": {
     "message": "כבר הזמנתם 3 חברים והרווחתם ₪150!"
+  },
+  "settings": {
+    "message": "הגדרות"
+  },
+  "gmailIntegration": {
+    "message": "שילוב ב-Gmail"
+  },
+  "emailIntegration": {
+    "message": "שילוב במייל"
+  },
+  "enableGmailEditorLabel": {
+    "message": "הפעל עורך משולב ב-Gmail"
+  },
+  "enableEmailEditorLabel": {
+    "message": "הפעל עורך משולב בשירותי מייל"
+  },
+  "enableGmailEditorDesc": {
+    "message": "כשמופעל, חלון הכתיבה ב-Gmail יוחלף בעורך המלא"
+  },
+  "enableEmailEditorDesc": {
+    "message": "כשמופעל, חלון הכתיבה ב-Gmail, Outlook, Yahoo ו-ProtonMail יוחלף בעורך המלא"
+  },
+  "gmailEditorEnabled": {
+    "message": "עורך Gmail הופעל"
+  },
+  "emailEditorEnabled": {
+    "message": "עורך המייל הופעל"
+  },
+  "gmailEditorDisabled": {
+    "message": "עורך Gmail כובה"
+  },
+  "emailEditorDisabled": {
+    "message": "עורך המייל כובה"
+  },
+  "switchToGmailEditor": {
+    "message": "עבור לעורך המלא"
+  },
+  "switchToNormalEditor": {
+    "message": "חזור לעורך הרגיל"
+  },
+  "edit": {
+    "message": "ערוך"
+  },
+  "editName": {
+    "message": "ערוך שם"
+  },
+  "exportHtml": {
+    "message": "ייצא HTML"
+  },
+  "delete": {
+    "message": "מחק"
+  },
+  "enterFileUrl": {
+    "message": "יש להזין כתובת URL לקובץ"
+  },
+  "bgImageAdded": {
+    "message": "תמונת רקע נוספה"
+  },
+  "enterImageUrl": {
+    "message": "יש להזין כתובת תמונה"
+  },
+  "bgImageRemoved": {
+    "message": "תמונת רקע הוסרה"
+  },
+  "fileLinkAdded": {
+    "message": "הקישור לקובץ הוסף בהצלחה"
+  },
+  "unsubscribeAdded": {
+    "message": "שורת הסר נוספה"
+  },
+  "bgColorUpdated": {
+    "message": "צבע רקע עודכן"
+  },
+  "directionRtl": {
+    "message": "ימין לשמאל"
+  },
+  "directionLtr": {
+    "message": "שמאל לימין"
+  },
+  "enterMapAddress": {
+    "message": "יש להזין כתובת"
+  },
+  "enterSignatureName": {
+    "message": "יש להזין שם לחתימה"
+  },
+  "signatureDeleted": {
+    "message": "החתימה נמחקה"
+  },
+  "tableCellContent": {
+    "message": "תוכן"
+  },
+  "tableHeaderText": {
+    "message": "כותרת"
+  },
+  "selectCellsToMerge": {
+    "message": "בחר תאים בטבלה למיזוג"
+  },
+  "enterVideoUrl": {
+    "message": "יש להזין קישור YouTube/Vimeo או כתובת URL"
+  },
+  "enterQrContent": {
+    "message": "יש להזין תוכן ל-QR"
+  },
+  "signatureSaved": {
+    "message": "החתימה נשמרה!"
+  },
+  "tableUpdated": {
+    "message": "הטבלה עודכנה!"
+  },
+  "contentInserted": {
+    "message": "התוכן הוכנס למייל!"
   }
 }

@@ -1348,5 +1348,116 @@
   },
   "tplReferral_stats": {
     "message": "You've already invited 3 friends and earned $150!"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "gmailIntegration": {
+    "message": "Gmail Integration"
+  },
+  "emailIntegration": {
+    "message": "Email Integration"
+  },
+  "enableGmailEditorLabel": {
+    "message": "Enable embedded editor in Gmail"
+  },
+  "enableEmailEditorLabel": {
+    "message": "Enable embedded editor in email services"
+  },
+  "enableGmailEditorDesc": {
+    "message": "When enabled, the compose window in Gmail will be replaced with the full editor"
+  },
+  "enableEmailEditorDesc": {
+    "message": "When enabled, the compose window in Gmail, Outlook, Yahoo and ProtonMail will be replaced with the full editor"
+  },
+  "gmailEditorEnabled": {
+    "message": "Gmail editor enabled"
+  },
+  "emailEditorEnabled": {
+    "message": "Email editor enabled"
+  },
+  "gmailEditorDisabled": {
+    "message": "Gmail editor disabled"
+  },
+  "emailEditorDisabled": {
+    "message": "Email editor disabled"
+  },
+  "switchToGmailEditor": {
+    "message": "Switch to full editor"
+  },
+  "switchToNormalEditor": {
+    "message": "Switch to normal editor"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "editName": {
+    "message": "Edit name"
+  },
+  "exportHtml": {
+    "message": "Export HTML"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "enterFileUrl": {
+    "message": "Please enter a file URL"
+  },
+  "bgImageAdded": {
+    "message": "Background image added"
+  },
+  "enterImageUrl": {
+    "message": "Please enter an image URL"
+  },
+  "bgImageRemoved": {
+    "message": "Background image removed"
+  },
+  "fileLinkAdded": {
+    "message": "File link added successfully"
+  },
+  "unsubscribeAdded": {
+    "message": "Unsubscribe link added"
+  },
+  "bgColorUpdated": {
+    "message": "Background color updated"
+  },
+  "directionRtl": {
+    "message": "Right to Left"
+  },
+  "directionLtr": {
+    "message": "Left to Right"
+  },
+  "enterMapAddress": {
+    "message": "Please enter an address"
+  },
+  "enterSignatureName": {
+    "message": "Please enter a signature name"
+  },
+  "signatureDeleted": {
+    "message": "Signature deleted"
+  },
+  "tableCellContent": {
+    "message": "Content"
+  },
+  "tableHeaderText": {
+    "message": "Header"
+  },
+  "selectCellsToMerge": {
+    "message": "Select table cells to merge"
+  },
+  "enterVideoUrl": {
+    "message": "Please enter a YouTube/Vimeo link or URL"
+  },
+  "enterQrContent": {
+    "message": "Please enter QR content"
+  },
+  "signatureSaved": {
+    "message": "Signature saved!"
+  },
+  "tableUpdated": {
+    "message": "Table updated!"
+  },
+  "contentInserted": {
+    "message": "Content inserted to email!"
   }
 }
