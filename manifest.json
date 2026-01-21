@@ -56,7 +56,15 @@
   "web_accessible_resources": [
     {
       "resources": ["_locales/*/messages.json"],
-      "matches": ["<all_urls>"]
+      "matches": [
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.office.com/*",
+        "https://outlook.office365.com/*",
+        "https://mail.yahoo.com/*",
+        "https://mail.proton.me/*",
+        "https://mail.protonmail.com/*"
+      ]
     },
     {
       "resources": ["popup.html", "popup.js", "styles.css", "spell-checker.js", "emoji-loader.js", "emoji-button.js", "emoji-button.min.js", "icons/*"],

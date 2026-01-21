@@ -9,7 +9,7 @@ chrome.runtime.onInstalled.addListener((details) => {
       savedTemplates: {},
       settings: {
         autoSave: true,
-        defaultFont: 'Heebo, sans-serif',
+        defaultFont: "'Segoe UI', Tahoma, Arial, sans-serif",
         defaultFontSize: '14px',
         gmailIntegration: false
       }

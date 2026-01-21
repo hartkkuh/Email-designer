@@ -268,7 +268,7 @@ function getTemplate(templateName) {
   const lang = currentLang;
   const isRTL = rtlLanguages.includes(lang);
   const dir = isRTL ? 'rtl' : 'ltr';
-  const fontFamily = isRTL ? "'Heebo', Arial, sans-serif" : "Arial, sans-serif";
+  const fontFamily = isRTL ? "'Segoe UI', Tahoma, Arial, sans-serif" : "Arial, 'Segoe UI', sans-serif";
   
   // Helper to get template translations
   const t = (key) => {
@@ -1505,7 +1505,7 @@ function exportTemplate(name, html) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${name}</title>
 </head>
-<body style="margin: 0; padding: 20px; font-family: 'Heebo', Arial, sans-serif;">
+<body style="margin: 0; padding: 20px; font-family: 'Segoe UI', Tahoma, Arial, sans-serif;">
 ${html}
 </body>
 </html>`;
@@ -1835,7 +1835,7 @@ function getFullHtml(withVariableReplacement = true) {
   }
   
   // Build body style - includes background and base styles
-  let bodyStyle = "margin: 0; padding: 20px; font-family: 'Heebo', Arial, sans-serif; min-height: 100%;";
+  let bodyStyle = "margin: 0; padding: 20px; font-family: 'Segoe UI', Tahoma, Arial, sans-serif; min-height: 100%;";
   
   // Add background color
   if (emailBgColor) {

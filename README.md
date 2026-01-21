@@ -2,7 +2,7 @@
 
 A powerful Chrome extension for creating and designing beautiful, professional emails with AI writing assistance.
 
-![Version](https://img.shields.io/badge/version-2.0.4-blue)
+![Version](https://img.shields.io/badge/version-3.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Chrome](https://img.shields.io/badge/chrome-extension-yellow)
 

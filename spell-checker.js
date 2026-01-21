@@ -78,12 +78,6 @@ function initSpellChecker(lang) {
     editor.dispatchEvent(new Event('input', { bubbles: true, cancelable: true }));
   }, 100);
   
-  // Debug: Check if spellcheck is actually enabled
-  console.log(`Spell checker initialized for language: ${lang} (${spellcheckLang})`);
-  console.log('Editor spellcheck attribute:', editor.getAttribute('spellcheck'));
-  console.log('Editor spellcheck property:', editor.spellcheck);
-  console.log('Editor lang attribute:', editor.getAttribute('lang'));
-  console.log('Editor contentEditable:', editor.contentEditable);
 }
 
 /**

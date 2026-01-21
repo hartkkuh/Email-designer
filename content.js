@@ -847,7 +847,7 @@
           padding: 8px 12px;
           background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
           color: white;
-          font-family: 'Heebo', Arial, sans-serif;
+          font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
         }
         
         .ed-title {
